@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative:300);
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative:600);
+
+// Fonts
+@import "includes/fonts";
+
+// Rach5 imports
+@import "includes/rach5/definitions";
+@import "includes/rach5/fixes";
+
+// Your imports
+@import "includes/definitions";
+
+html .mceContentBody {
+	width: 700px;
+	margin: 20px 20px 20px 150px
+}
+
+.wp-caption-dd {
+	@extend .wp-caption-text;
+	padding: 0;
+}
+
+.wp-caption {
+	position: relative;
+	z-index: 10000;
+	
+	&.alignleft, &.aligncenter, &.alignright {
+		padding: 8px 3px 8px;
+	}
+}
+
+.alignleft, .alignright, .aligncenter {
+	@include border-radius(0px);
+}
+
+// Content
+@import "content/content";

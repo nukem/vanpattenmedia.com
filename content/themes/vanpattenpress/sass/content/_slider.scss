@@ -1,0 +1,98 @@
+.infocus {
+	background: $vpmtan;
+	margin: 30px 0 0 0;
+	height: 230px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.slide-hold {
+	width: 1400px;
+	// height: 230px;
+	position: relative;
+}
+
+.slide {
+	width: 700px;
+	height: 230px;
+	float: left;
+	position: relative;
+	@include opacity(0.3);
+	
+	a {
+		display: block;
+		// padding: 10px;
+		height: 100%;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		text-decoration: none;
+		position: relative;
+	}
+	
+	h3, p {
+		color: #FFF;
+		position: absolute;
+		@include rgba-background(rgba(0,0,0,0.75));
+		text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+		margin-left: 10px;
+	}
+	
+	h3 {
+		font: 26px 'Signika Negative', $neue;
+		padding: 16px 8px 5px;
+		display: inline;
+		top: 0;
+	}
+	
+	p {
+		padding: 4px 8px 10px;
+		line-height: 25px;
+		bottom: 0;
+		width: 44%;
+	}
+}
+
+.current-slide {
+	@include opacity(1);
+}
+
+
+// Slide nav
+
+.slide-nav {
+	height: 40px;
+	// margin-bottom: 30px;
+}
+
+.home {
+	.slide-nav {
+		height: 0;
+	}
+}
+
+.slide-nav-in {
+	float: right;
+}
+
+.slide-prev, .slide-next {
+	// font: 26px 'IconicStrokeRegular';
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #000;
+	background: $vpmtan;
+	padding: 10px;
+	margin: 0 0 0 10px;
+	position: relative;
+	z-index: 1000;
+	
+	&:hover {
+		color: #000;
+		background: darken($vpmtan, 10%);
+	}
+	
+	&:active {
+		background: darken($vpmtan, 30%);
+	}
+}

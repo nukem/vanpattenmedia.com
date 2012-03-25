@@ -1,0 +1,25 @@
+.home {
+	.entry-content {
+		width: 700px;
+		
+		p {
+			font: 300 24px $signika-negative;
+		}
+		
+		p:first-child {
+			font: 300 34px/48px $signika-negative;
+			margin: 30px 0 25px;
+			
+			a {
+				color: #FFF;
+				background: #ff9900 url(../img/lnkgrd.jpg) 0 0 no-repeat;
+				text-decoration: none;
+				padding: 2px 4px 0;
+			}
+		}
+		
+		strong {
+			font-weight: 600;
+		}
+	}
+}

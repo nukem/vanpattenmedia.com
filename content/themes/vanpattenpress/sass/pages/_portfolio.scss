@@ -1,0 +1,73 @@
+#folio_full {
+	height: 525px;
+	
+	.slide {
+		height: 525px;
+		background-position: top center;
+	}
+}
+
+.folio_item-thumb {
+	width: 280px;
+	height: 210px;
+	$left-padding: 700px - 280px - 10px;
+	padding: 10px 10px 10px $left-padding;
+	@include rgba-background(rgba(255, 255, 255, 0.4));
+}
+
+.folio_item-link {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	float: right;
+	
+	&:after {
+		content: 'S';
+		font: 20px IconicStrokeRegular, serif;
+		padding: 0 0 0 5px;
+	}
+}
+
+#folio_item-data {
+	height: 40px;
+	margin-top: -40px;
+	position: relative;
+	
+	.folio_item-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		float: none;
+	}
+}
+
+#folio_item-info {
+	margin: -10px 0 0;
+}
+
+#folio_item-tech_used {
+	float: left;
+	width: 210px;
+	background: $vpmtan;
+	padding: 10px 5px 10px 10px;
+	margin: -10px 0 0;
+	
+	ul {
+		margin: 0;
+	}
+	
+	li {
+		margin: 5px 5px 0 0;
+		padding: 1px 5px 2px;
+		background: darken($vpmtan, 10%);
+		list-style: none;
+		width: 90px;
+		float: left;
+	}
+}
+
+#folio_item-related {
+	margin: 0 0 0 245px;
+	// padding: 0 0 0 20px;
+	// border-left: 1px dotted #CCC;
+}
