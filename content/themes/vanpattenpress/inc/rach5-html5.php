@@ -41,7 +41,7 @@ function rach5_img_caption_shortcode($val, $attr, $content = null) {
 		$id = 'id="' . $id . '" ';
 	}
 
-	return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . $width . 'px">' . do_shortcode( $content ) . '<figcaption ' . $capid 
+	return '<figure ' . $id . 'class="wp-caption ' . esc_attr($align) . '">' . do_shortcode( $content ) . '<figcaption ' . $capid 
 	. 'class="wp-caption-text">' . $caption . '</figcaption></figure>';
 }
 add_filter('img_caption_shortcode', 'rach5_img_caption_shortcode',10,3);

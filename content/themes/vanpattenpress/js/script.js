@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$('#logo-sm').fadeTo(0, 0).css('visibility', 'visible');	
+	// Replace no-js with js
+	$('html').removeClass('no-js').addClass('js');
 });
 
 $('.home #content p:first-child a').css('background-position', '0% 0%').hover(
@@ -121,26 +122,5 @@ $('.slide-next').text('(').css('font','20px IconicStrokeRegular').click(function
 		var the_description = $(folio_data).html();
 		portfolio_desc.html(the_description);
 
-	}
-});
-
-// Homepage p animation
-$('.home .slide p').each(function() {
-	$(this).css('margin-bottom', -($(this).parent().find('p').height()) - 14);
-	$(this).show();
-});
-
-$('.home .slide a').hover(function() {
-	if ($(this).parent().hasClass('current')) {	
-		//$(this).find('p').show();
-		$(this).find('p').animate({
-			marginBottom: 0
-		}, 300);
-	}
-}, function () {
-	if ($(this).parent().hasClass('current')) {
-		$(this).find('p').delay(2000).animate({
-			marginBottom: -($(this).parent().find('p').height()) - 14		
-			}, 300, function() { });
 	}
 });

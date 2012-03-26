@@ -22,6 +22,31 @@ function stylesheet_link_tag($file, $local = true, $tabs = 0, $newline = true, $
 	echo $indent . '<link rel="' . $rel .'" href="' . ($local ? get_template_directory_uri() . '/css' : '') . $file . '">' . ($newline ? "\n" : "");
 }
 
+// returns WordPress subdirectory if applicable
+function wp_base_dir() {
+  preg_match('!(https?://[^/|"]+)([^"]+)?!', site_url(), $matches);
+  if (count($matches) === 3) {
+    return end($matches);
+  } else {
+    return '';
+  }
+}
+
+// opposite of built in WP functions for trailing slashes
+function leadingslashit($string) {
+  return '/' . unleadingslashit($string);
+}
+
+function unleadingslashit($string) {
+  return ltrim($string, '/');
+}
+
+function add_filters($tags, $function) {
+  foreach($tags as $tag) {
+    add_filter($tag, $function);
+  }
+}
+
 // What year should the copyright start?
 function copyright($copystart) {
 	echo 'Copyright &copy; ' . $copystart;
@@ -31,22 +56,21 @@ function copyright($copystart) {
 	}
 }
 
-// Userful word trim function
-function word_trim($string, $count, $ellipsis = FALSE){
-	$words = explode(' ', $string);
-	if (count($words) > $count){
-		array_splice($words, $count);
-		$string = implode(' ', $words);
-		if (is_string($ellipsis)){
-			$string .= $ellipsis;
-		}
-		elseif ($ellipsis){
-			$string .= '...';
-		}
-	}
-	return $string;
+// A nice tab function, if you like clean source like me.
+function tab($count=1){
+    for($x = 1; $x <= $count; $x++){
+        $output .= "\t";
+    }
+    return $output;
 }
 
+// Friendlier excerpt
+function new_excerpt_more($more) {
+	return '... <a href="'. get_permalink($post->ID) . '">Read more...</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+// Custom get_the_excerpt function
 function rach5_get_the_excerpt() {
 	global $posts;
 
@@ -58,7 +82,7 @@ function rach5_get_the_excerpt() {
 		$stripped_content = strip_tags($content);
 		
 		// 3. Trim words from $content
-		$trimmed_content = word_trim($stripped_content, 20, true);
+		$trimmed_content = wp_trim_words($stripped_content, 20);
 		
 		// 4. Here's your excerpt!
 		$rach5_excerpt = str_replace("\n", ' ', $trimmed_content);
