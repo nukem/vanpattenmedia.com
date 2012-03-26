@@ -10,7 +10,7 @@
 			</li>
 		</ul>
 		<div id="legal">
-			Copyright &copy; 2010<?php if ( date('Y') > 2010 ) { ?>-<?php echo date('Y'); ?><?php } ?> <?php bloginfo('name'); ?> <a href="/legal/">Legal</a> <a href="/colophon/">Colophon</a>
+			<?php copyright('2010'); echo ' ' . get_bloginfo('name'); ?> <a href="/legal/">Legal</a> <a href="/colophon/">Colophon</a>
 		</div>
 	</footer>
 	
