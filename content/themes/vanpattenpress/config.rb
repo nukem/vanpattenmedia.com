@@ -10,7 +10,7 @@ images_dir		= "img"
 javascripts_dir	= "js"
 
 # WordPress paths: No trailing slashes
-wordpress_root	= '/home/vanpattenmedia/vanpattenmedia.com'
+wordpress_root	= '/home/vanpattenmedia/staging/vanpattenmedia.com'
 rel_theme_path 	= '/content/themes/vanpattenpress'
 
 # Development
