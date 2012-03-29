@@ -30,11 +30,47 @@
 
 .alpha {
 	float: left;
-	width: 340px;
 	margin-right: 20px;
 }
 
 .omega {
 	float: right;
+}
+
+.homebox {
 	width: 340px;
+	margin: 0 0 20px;
+	position: relative;
+	
+	a {
+		display: block;
+		text-decoration: none;
+		color: #000;
+	}
+	
+	h2 {
+		color: #FFF;
+		font-size: 24px;
+		font-weight: 400;
+		@include rgba-background(rgba(0,0,0,0.75));
+		padding: 5px 10px;
+		margin: 0 0 0 10px;
+		height: 35px;
+		position: absolute;
+		top: 95px;
+	}
+	
+	img {
+		width: 340px;
+		height: 140px;
+		margin: 0;
+		display: block;
+		background: #C0C0C0;
+	}
+	
+	p {
+		margin: 0;
+		padding: 8px 10px 10px;
+		background: $vpmtan;
+	}
 }

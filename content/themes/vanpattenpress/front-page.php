@@ -64,8 +64,37 @@
 		</div>
 		
 		<div class="clearfix home-boxes">
-			<div class="alpha">Hi</div>
-			<div class="omega">Hi</div>
+			<section class="alpha homebox">
+				<a href="http://staging.vanpattenmedia.com/how/websites/">
+					<h2>WordPress</h2>
+					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/wordpress.jpg" alt="">
+					<p>WordPress websites, tailored to your needs. Custom themes, plugins, architecture, and managed hosting for your business.</p>
+				</a>
+			</section>
+			
+			<section class="omega homebox">
+				<a href="http://staging.vanpattenmedia.com/how/marketing/">
+					<h2>Social development</h2>
+					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/social.jpg" alt="" />
+					<p>Facebook pages, creative campaigns, social microsites, and custom tools for connecting with your closest fans.</p>
+				</a>
+			</section>
+			
+			<section class="alpha homebox">
+				<a href="http://staging.vanpattenmedia.com/how/open-source/">
+					<h2>Open source</h2>
+					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/opensource.jpg" alt="" />
+					<p>Free WordPress plugins, PHP modules, theme architectures, and content management apps. Open to contributions. From us to you.</p>
+				</a>
+			</section>
+			
+			<!-- <section class="omega homebox">
+				<a href="#">
+					<h2>Websites</h2>
+					<img src="" alt="" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada, libero eu accumsan aliquet.</p>
+				</a>
+			</section> -->
 		</div>
 	</section>
 
