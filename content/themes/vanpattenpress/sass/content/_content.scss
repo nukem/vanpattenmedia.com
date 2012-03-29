@@ -17,10 +17,14 @@ h5 {
 }
 
 p {
-	font: 16px/25px $palatino;
+	font: 14px/25px $body-font;
 	margin: 0 0 20px 0;
 	position: relative;
 	z-index: 20;
+	
+	strong {
+		font-weight: 700;
+	}
 }
 
 blockquote {
@@ -28,7 +32,7 @@ blockquote {
 	position: relative;
 	
 	p {
-		font: italic 16px/25px $palatino;
+		font-style: italic;
 		margin: 0 0 10px;
 		position: relative;
 		z-index: 10;
@@ -57,14 +61,13 @@ blockquote {
 }
 
 .wp-caption-text {
-	font: 12px Helvetica, Arial, sans-serif;
+	font: 12px $body-font;
 	color: #666;
 	margin: 4px 0 0;
 	display: block;
 }
 
 ul, ol {
-	font: 16px/25px $palatino;
 	margin: 10px 0 20px 35px;
 	
 	li {

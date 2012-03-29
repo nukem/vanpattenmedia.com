@@ -62,6 +62,11 @@
 		<div class="entry-content">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); the_content(); endwhile; endif; ?>
 		</div>
+		
+		<div class="clearfix home-boxes">
+			<div class="alpha">Hi</div>
+			<div class="omega">Hi</div>
+		</div>
 	</section>
 
 <?php get_footer(); ?>

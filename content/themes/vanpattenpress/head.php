@@ -5,11 +5,14 @@
 	<?php /* Credits */ 
 	?><link rel="author" href="/humans.txt">
 	
-	<?php /* CSS (see inc/rach5.php for options) */
+	<?php /* CSS (see inc/rach5-functions.php for options) */
 		stylesheet_link_tag('/global.css', true, 0, true);
 		
 		// Google Web Fonts: Signika Negative
 		stylesheet_link_tag('http://fonts.googleapis.com/css?family=Signika+Negative:300,600', false, 1, true);
+		
+		// Google Web Fonts: Open Sans
+		stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700', false, 1, true);
 		
 		// Formalize
 		stylesheet_link_tag('http://cdn.vanpattenmedia.com/js/libs/formalize/css/formalize.css', false, 1, false);
