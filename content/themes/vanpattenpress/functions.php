@@ -73,3 +73,11 @@ add_action('wp_before_admin_bar_render', 'my_admin_bar_remove');
 
 // Turn breadcrumbs on or off
 $breadcrumbs = 'off';
+
+// WP title fanciness
+function vpm_custom_title( ) {
+	if ( is_front_page() ) {
+		return 'Van Patten Media';
+	}
+}
+add_filter( 'wp_title', 'vpm_custom_title', 20 );

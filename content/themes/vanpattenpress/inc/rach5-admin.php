@@ -9,9 +9,6 @@
 //
 // ------------------------------------------------------------ //
 
-// Disable admin bar
-add_filter( 'show_admin_bar', '__return_false' );
-
 // Hide TinyMCE status bar
 function rach5_tinymce( $config ) {
     $config['theme_advanced_statusbar_location'] = none;

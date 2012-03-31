@@ -11,8 +11,27 @@
 	<section id="content"><?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
 		<article>
+			<?php 
+			
+			if ( has_post_thumbnail() ) {	
+				$post_thumb_id  = get_post_thumbnail_id();
+				$post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');	
+			
+			?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class('article thumbnailbg'); ?>>
+				<h2 class="post-title" style="background-image: url(<?php echo $post_thumb_url[0]; ?>);"><span><?php the_title(); ?></span></h2>
+			<?php 
+			
+			} else { 
+			
+			?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
-				<h2 class="post-title"><?php the_title(); ?></h2> 
+				<h2 class="post-title"><?php the_title(); ?></h2>
+			<?php 
+			
+			} 
+			
+			?>
 				<p class="info">at <time class="updated" datetime="<?php the_modified_time('c'); ?>" pubdate><strong><?php the_time(); ?></strong> on <strong><?php the_time(get_option('date_format')); ?></strong></time> <span class="byline author vcard">by <strong class="fn"><?php the_author(); ?></strong></span></p>
 				
 				<div class="entry-content">

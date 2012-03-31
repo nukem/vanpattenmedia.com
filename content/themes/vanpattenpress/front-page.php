@@ -65,7 +65,7 @@
 		
 		<div class="clearfix home-boxes">
 			<section class="alpha homebox">
-				<a href="http://staging.vanpattenmedia.com/how/websites/">
+				<a href="http://www.vanpattenmedia.com/how/websites/">
 					<h2>WordPress</h2>
 					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/wordpress.jpg" alt="">
 					<p>WordPress websites, tailored to your needs. Custom themes, plugins, architecture, and managed hosting for your business.</p>
@@ -73,7 +73,7 @@
 			</section>
 			
 			<section class="omega homebox">
-				<a href="http://staging.vanpattenmedia.com/how/marketing/">
+				<a href="http://www.vanpattenmedia.com/how/marketing/">
 					<h2>Social development</h2>
 					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/social.jpg" alt="" />
 					<p>Facebook pages, creative campaigns, social microsites, and custom tools for connecting with your closest fans.</p>
@@ -81,7 +81,7 @@
 			</section>
 			
 			<section class="alpha homebox">
-				<a href="http://staging.vanpattenmedia.com/how/open-source/">
+				<a href="http://www.vanpattenmedia.com/how/open-source/">
 					<h2>Open source</h2>
 					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/opensource.jpg" alt="" />
 					<p>Free WordPress plugins, PHP modules, theme architectures, and content management apps. Open to contributions. From us to you.</p>

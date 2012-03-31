@@ -49,7 +49,7 @@
 								echo tab(6) . '<a href="' . get_permalink() . '">' . "\n";
 								
 									echo tab(7) . '<h3>' . get_the_title() . '</h3>' . "\n";
-									echo tab(7) . '<p>' . word_trim(get_the_excerpt(), 15, true) . '</p>';
+									echo tab(7) . '<p>' . wp_trim_words(get_the_excerpt(), 15) . '</p>';
 									echo tab(7) . '<img class="folio_item-thumb" src="' . $medium_url[0] . '" alt="Screenshot of a website for ' . get_the_title() . '" title="Website for ' . get_the_title() . '">' . "\n";
 									
 									// Start .folio_item-data
