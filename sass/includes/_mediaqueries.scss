@@ -9,192 +9,31 @@
 
 // Smaller than standard 960 (devices and browsers)
 @media only screen and (max-width: 959px) {
-	#header,
-	#nav,
-	#content,
-	.slide-nav {
-		margin: 0 auto;
-	}
-	
-	#folio_item-data {
-		margin: -43px auto 0;
-	}
-	
-	.infocus {
-		margin: 30px auto 0;
-	}
-	
-	#footer {
-		margin: 30px auto;
-	}
-	
-	#nav, .slide-nav, #folio_item-data, article, #comments {
-		width: 100%;
-	}
-	
-	.entry-content {
-		.alignleft {
-			float: left;
-			margin: 5px 20px 10px 0;
-		}	
-	}
+
 }
 
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media handheld, only screen and (min-width: 768px) and (max-width: 959px) {
-	#header {
-		padding: 95px 0 30px;
-	}
-	
-	#header,
-	#content,
-	#footer {
-		width: 700px;
-	}
+
 }
 
 // All Mobile Sizes (devices and browser)
 @media handheld, only screen and (max-width: 767px) {
-	
-	// Header
+	#header {
+		padding: 20px 0 0;
+	}
+
 	#weare {
 		display: none;
-	}
-	
-	#header {
-		padding: 50px 0 30px;
-	}
-	
-	#logo {
-		display: block;
-		margin: 0 auto;
-		position: static;
-	}
-	
-	#menus {
-		width: auto;
-	}
-	
-	// Slider
-	.slide {
-		img {
-			height: auto;
-		}
-		
-		p {
-			width: auto;
-			margin-right: 10px;
-		}
-	}
-	
-	// Footer
-	#social {
-		li {
-			margin: 0 0 8px;
-		}
-	}
-	
-	#legal {
-		position: relative;
-		font: 13px Helvetica, Arial, Liberation Sans, sans-serif;
-		height: auto;
-		padding: 10px 0 15px;
-	}
-	
-	// 460px is the width of choice
-	#header,
-	#nav,
-	#content,
-	.slider,
-	#footer, 
-	#legal {
-		width: 460px;
-	}
-	
-	// Slider
-	.slide {
-		padding: 0 240px 0 0;
-		// pad to 700px
-	}
-	
-	// Portfolio
-	.folio_item-thumb {
-		padding: 10px 10px 10px 170px;
 	}
 }
 
 // Mobile Landscape Size to Tablet Portrait (devices and browsers)
 @media handheld, only screen and (min-width: 480px) and (max-width: 767px) {
-	
+
 }
 
 // Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 @media handheld, only screen and (max-width: 479px) {
-	
-	// 300px is the width of choice	
-	#header,
-	#logo,
-	#logo img,
-	#nav,
-	.infocus,
-	.slider,
-	#content,
-	#folio_item-data,
-	#footer,
-	#legal {
-		width: 300px;
-	}
-	
-	// Header
-	#logo img {
-		height: auto;
-	}
-	
-	#header {
-		padding: 40px 0 220px;
-	}
-	
-	// Nav
-	#nav-wrapper, #nav {
-		height: auto;
-	}
-	
-	#nav {
-		padding: 1px 10px 10px;
-	}
-	
-	#menus {
-		width: auto;
-	}
-	
-	#menu-primary-menu, #menu-secondary-menu {
-		li {
-			float: none;
-			
-			a {
-				margin: 10px 0 0;
-			}
-		}
-	}
-	
-	#menu-secondary-menu {
-		float: none;
-	}
-	
-	// Slider
-	.slide {
-		padding: 0 400px 0 0;
-		// pad to 700px
-	}
-	
-	// Portfolio
-	.folio_item-thumb {
-		padding: 10px;
-	}
-	
-	// Blog
-	.info {
-		margin: 0 0 20px 0 !important;
-		display: block;
-	}
+
 }

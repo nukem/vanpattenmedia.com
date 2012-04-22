@@ -1,30 +1,23 @@
 #header {
 	font: 300 60px/60px 'Signika Negative', sans-serif;
-
-	height: 133px;
-	padding: 95px 0 20px;
+	padding: 95px 0 0;
 	position: relative;
 }
 
-.home #header {
-	height: 66px;
-	padding: 95px 0 0;
-}
-
 #logo {
-	display: inline-block;
-	width: 423px;
-	height: 67px;
-	position: absolute;
-	top: 94px;
-	left: 202px;
+	display: block;
+	max-width: 423px;
+	max-height: 67px;
+	width: 100%;
+	height: auto;
 	z-index: 100;
+	line-height: 1;
 
-	a {
-		display: block;
-		width: 423px;
-		height: 67px;
-		@include hide-text();
+	img {
+		max-width: 423px;
+		max-height: 67px;
+		width: 100%;
+		height: auto;
 	}
 }
 
@@ -36,6 +29,9 @@
 }
 
 #weare {
-	padding-left: 24px;
-	text-transform: lowercase;
+	// padding-right: 24px;
+	text: {
+		align: right;
+		transform: lowercase;
+	}
 }

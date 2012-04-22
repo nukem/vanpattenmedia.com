@@ -1,6 +1,5 @@
 .home {
 	.entry-content {
-		width: 700px;
 
 		p {
 			font: 300 24px $header-font;
@@ -24,27 +23,14 @@
 	}
 }
 
-.home-boxes {
-	width: 700px;
-}
-
-.alpha {
-	float: left;
-	margin-right: 20px;
-}
-
-.omega {
-	float: right;
-}
 
 .homebox {
-	width: 340px;
-	margin: 0 0 20px;
 	position: relative;
 
 	.slide {
-		width: 340px;
+		width: 100%;
 		height: 140px;
+		overflow: hidden;
 	}
 
 	a {
@@ -69,8 +55,10 @@
 	}
 
 	img {
-		width: 340px;
-		height: 140px;
+		width: 100%;
+		height: auto;
+		min-width: 340px;
+		min-height: 140px;
 		margin: 0;
 		display: block;
 		background: #C0C0C0;

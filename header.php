@@ -1,8 +1,16 @@
 	<header id="header">
-		<span id="weare">We are</span><a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Van Patten Media logo" id="vpm-logo"></a><?php if ( !is_front_page() ) { ?>
+		<div class="sixteen columns">
+			<div class="row">
+				<div class="four columns alpha" id="weare">We are</div>
 
-		<div id="nav-wrapper">
-			<nav id="nav">
+				<div class="twelve columns omega">
+					<a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Van Patten Media logo" id="vpm-logo"></a>
+				</div>
+			</div>
+		</div>
+
+		<?php if ( !is_front_page() ) { ?><div class="twelve columns offset-by-four">
+			<nav id="nav" class="row">
 				<div id="menus">
 					<?php wp_nav_menu( array(
 						'menu' => 'primary-menu',

@@ -1,15 +1,27 @@
+// Fonts
+@import "includes/fonts";
 @import url(http://fonts.googleapis.com/css?family=Signika+Negative:300,600);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
-// Fonts
-@import "includes/fonts";
+// Reset
+@import "compass/reset";
 
 // Rach5 imports
 @import "includes/rach5/definitions";
-@import "includes/rach5/fixes";
 
 // Your imports
 @import "includes/definitions";
+
+// Compass imports
+@import "compass/css3";
+@import "compass/typography";
+
+
+/*
+ *
+ * HERE BE DRAGONS...
+ *
+ */
 
 html .mceContentBody {
 	width: 700px;
@@ -24,7 +36,7 @@ html .mceContentBody {
 .wp-caption {
 	position: relative;
 	z-index: 10000;
-	
+
 	&.alignleft, &.aligncenter, &.alignright {
 		padding: 8px 3px 8px;
 	}

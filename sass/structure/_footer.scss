@@ -1,8 +1,6 @@
 #footer {
-	width: 700px;
 	height: 40px;
 	text-align: right;
-	margin: 50px 0 30px 200px;
 	position: relative;
 }
 
@@ -10,7 +8,7 @@
 	text-align: left;
 	width: 200px;
 	list-style: none;
-	
+
 	li {
 		margin: 0 0 4px;
 	}
@@ -18,25 +16,21 @@
 
 #legal {
 	height: 30px;
-	width: 520px;
 	border-top: 1px dotted #CCC;
 	color: #999;
 	font: 13px/30px $body-font;
-	position: absolute;
-	top: 0;
-	right: 0;
-	
+
 	a {
 		color: #888;
 		margin-left: 3px;
-		
+
 		&:hover {
 			color: lighten(#888, 14%);
 		}
-		
+
 		&:visited {
 			color: darken(#888, 7%);
-			
+
 			&:hover {
 				color: lighten(#888, 7%);
 			}

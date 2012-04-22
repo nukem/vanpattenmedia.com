@@ -15,8 +15,8 @@
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); the_content(); endwhile; endif; ?>
 	</div>
 
-	<div class="clearfix home-boxes">
-		<section class="alpha homebox">
+	<div class="row">
+		<section class="six columns alpha homebox">
 			<a href="http://www.vanpattenmedia.com/how/websites/">
 				<div class="slide header-bottom">
 					<div>
@@ -28,7 +28,7 @@
 			</a>
 		</section>
 
-		<section class="omega homebox">
+		<section class="six columns omega homebox">
 			<a href="http://www.vanpattenmedia.com/how/marketing/">
 				<div class="slide header-bottom">
 					<div>
@@ -39,8 +39,10 @@
 				<p>Facebook pages, creative campaigns, social microsites, and custom tools for connecting with your closest fans.</p>
 			</a>
 		</section>
+	</div>
 
-		<section class="alpha homebox">
+	<div class="row">
+		<section class="six columns alpha homebox">
 			<a href="http://www.vanpattenmedia.com/how/open-source/">
 				<div class="slide header-bottom">
 					<div>

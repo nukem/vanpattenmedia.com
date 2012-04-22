@@ -1,9 +1,7 @@
 .infocus {
 	background: $vpmtan;
-	margin: 20px 0 0 0;
 	height: 230px;
-	overflow-x: hidden;
-	overflow-y: hidden;
+	overflow: hidden;
 
 	.slide {
 		@include opacity(0.3);

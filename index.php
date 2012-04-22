@@ -6,26 +6,28 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <?php get_template_part('head'); ?>
 <body <?php body_class(); ?>>
-<?php get_header(); ?>
+	<div class="container">
+		<?php get_header(); ?>
 
-	<section id="content">
-		<?php
+		<div class="twelve columns row offset-by-four">
+			<?php
 
-		if ( is_front_page() ) {
-			get_template_part('pg', 'front');
-		} elseif ( is_page('how') ) {
-			get_template_part('pg', 'how');
-		} elseif ( is_page('portfolio') ) {
-			get_template_part('pg', 'portfolio');
-		} elseif ( is_page() ) {
-			get_template_part('loop', 'page');
-		} else {
-			get_template_part('loop', 'post');
-		}
+			if ( is_front_page() ) {
+				get_template_part('pg', 'front');
+			} elseif ( is_page('how') ) {
+				get_template_part('pg', 'how');
+			} elseif ( is_page('portfolio') ) {
+				get_template_part('pg', 'portfolio');
+			} elseif ( is_page() ) {
+				get_template_part('loop', 'page');
+			} else {
+				get_template_part('loop', 'post');
+			}
 
-		?>
-	</section>
+			?>
+		</div>
 
-<?php get_footer(); ?>
+		<?php get_footer(); ?>
+	</div>
 </body>
 </html>

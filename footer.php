@@ -1,4 +1,4 @@
-	<footer id="footer">
+	<footer id="footer" class="twelve columns row offset-by-four">
 		<div id="legal">
 			<?php copyright('2010'); echo ' ' . get_bloginfo('name'); ?> <a href="/legal/">Legal</a> <a href="/colophon/">Colophon</a>
 		</div>

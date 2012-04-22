@@ -81,13 +81,21 @@ function vpm_content_header() {
 		$post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 	?>
 		<div class="slide header-bottom">
-			<div>
-				<h2><?php the_title(); ?></h2>
-			</div>
-			<img src="<?= $post_thumb_url[0]; ?>" alt="">
+			<?php if ( is_home() || is_archive() ) : ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
+				<div>
+					<h2><?php the_title(); ?></h2>
+				</div>
+				<img src="<?= $post_thumb_url[0]; ?>" alt="">
+			<?php if ( is_home() || is_archive() ) : ?></a><?php endif; ?>
 		</div>
 	<?php else : ?>
-		<h2 class="post-title"><?php the_title(); ?></h2>
+		<h2 class="post-title">
+			<?php if ( is_home() || is_archive() ) : ?>
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<?php else: ?>
+				<?php the_title(); ?>
+			<?php endif; ?>
+		</h2>
 	<?php endif;
 
 }
