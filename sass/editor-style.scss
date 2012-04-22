@@ -24,9 +24,16 @@
  */
 
 html .mceContentBody {
-	width: 700px;
-	margin: 20px 20px 20px 150px
+	max-width: 700px;
+	margin: 20px;
+	background: #fff;
+	font: 15px/1.8 $body-font;
+	color: #000;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
 }
+
+
 
 .wp-caption-dd {
 	@extend .wp-caption-text;

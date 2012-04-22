@@ -9,6 +9,7 @@
 
 // Your imports
 @import "includes/definitions";
+@import "includes/frameworks/skeleton";
 
 // Compass imports
 @import "rgbapng";
@@ -23,78 +24,48 @@
  */
 
 html, body {
+	// font: 300 15px/1.8 $body-font;
+	background: #fff;
 	font: 300 15px/1.8 $body-font;
+	color: #000;
+	// -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
 }
 
-// Skeleton
-@import "includes/frameworks/skeleton";
+// Content
+@import "content/content";
 
 
-// Header
+/*
+ *
+ * Import structure
+ *
+ */
+
+// Header/Nav
 @import "structure/header";
 
-// Nav
-@import "structure/nav";
+// Footer
+@import "structure/footer";
+
+// Slider
+@import "structure/slider";
 
 
-a {
-	color: $link-color;
-	text-decoration: underline;
+/*
+ *
+ * Import pages
+ *
+ */
 
-	&:hover {
-		color: $link-color-hover;
-		text-decoration: none;
-	}
-
-	&:visited {
-		color: darken($link-color, 7%);
-
-		&:hover {
-			color: $link-color-hover;
-		}
-
-		&:active {
-			color: $link-color-active;
-		}
-	}
-
-	&:active {
-		color: $link-color-active;
-	}
-}
+// Portfolio
+@import "pages/portfolio";
 
 // Front page
 @import "pages/front-page";
 
 // Blog
 @import "pages/blog";
-
-.entry-content {
-	@import "content/content";
-}
-
-h2 {
-	font: 600 32px $header-font;
-	margin: 0 0 15px;
-	// @include inline-block();
-
-	a {
-		text-decoration: none;
-	}
-
-	&.post-title {
-		margin: 0;
-	}
-}
-
-// Pages
-@import "pages/portfolio";
-
-// Footer
-@import "structure/footer";
-
-// Slider
-@import "content/slider";
 
 
 /*
