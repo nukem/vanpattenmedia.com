@@ -1,0 +1,101 @@
+h3 {
+	font: 600 28px $header-font;
+	color: #333;
+	margin: 0 0 10px 0;
+}
+
+h4 {
+	font: 600 22px $header-font;
+	color: #444;
+	margin: 0 0 10px 0;
+}
+
+h5 {
+	font: 600 20px $header-font;
+	color: #555;
+	margin: 0 0 10px 0;
+}
+
+p {
+	margin: 0 0 20px 0;
+	position: relative;
+	z-index: 20;
+
+	strong {
+		font-weight: 700;
+	}
+}
+
+blockquote {
+	padding: 0 0 10px 20px;
+	position: relative;
+
+	p {
+		font-style: italic;
+		margin: 0 0 10px;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.alignleft, .aligncenter, .alignright {
+	padding: 8px;
+	border: 1px solid #DDD;
+	background: #f6f3eb;
+}
+
+.alignleft {
+	float: left;
+	margin: 5px 20px 10px -109px;
+}
+
+.aligncenter {
+	margin: 9px auto 10px;
+	display: block;
+}
+
+.alignright {
+	float: right;
+	margin: 5px 0 10px 15px;
+}
+
+.wp-caption-text {
+	font: 12px $body-font;
+	color: #666;
+	margin: 4px 0 0;
+	display: block;
+}
+
+ul, ol {
+	margin: 10px 0 20px 35px;
+
+	li {
+		margin: 0 0 5px 0;
+	}
+}
+
+ul {
+	list-style: square;
+}
+
+ul ul {
+	margin: 5px 0 0 35px;
+}
+
+strong.cta {
+	font: 300 20px $header-font;
+	background: #F6F3EB;
+	padding: 6px 4px;
+	display: inline-block;
+
+	a {
+		color: #FFF;
+		background: #ff9900;
+		text-decoration: none;
+		padding: 2px 4px;
+
+		&:hover {
+			background: #336699;
+		}
+	}
+}

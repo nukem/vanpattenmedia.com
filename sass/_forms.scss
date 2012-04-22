@@ -1,0 +1,46 @@
+.wpcf7 {
+	padding: 0 0 0 20px !important;
+	border-left: 2px solid #336699;
+}
+
+form {
+	p {
+		background: #F6F3EB;
+		min-height: 43px;
+		line-height: normal !important;
+		font: 12px $neue !important;
+	}
+
+	label {
+		display: block;
+		float: left;
+		min-height: 25px;
+		height: 100%;
+		width: 140px;
+		font: 300 20px $header-font;
+		background: #336699;
+		padding: 9px 10px;
+		color: #FFF;
+		@include opacity(0.5);
+		border-bottom: 2px solid #0D1421;
+
+		&[for="project-description"] {
+			height: 83px;
+		}
+	}
+
+	span {
+		display: block;
+		margin: 0 0 0 160px;
+		padding: 10px;
+		border-bottom: 2px solid #D2CFBC;
+	}
+
+	textarea {
+		// width: auto !important;
+	}
+
+	.wpcf7-submit {
+		//margin: 10px;
+	}
+}

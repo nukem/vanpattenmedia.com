@@ -1,0 +1,78 @@
+.home {
+	.entry-content {
+		width: 700px;
+
+		p {
+			font: 300 24px $header-font;
+		}
+
+		p:first-child {
+			font: 300 34px/48px $header-font;
+			margin: 30px 0 25px;
+
+			a {
+				color: #FFF;
+				background: #ff9900 url(../img/lnkgrd.jpg) 0 0 no-repeat;
+				text-decoration: none;
+				padding: 2px 4px 0;
+			}
+		}
+
+		strong {
+			font-weight: 600;
+		}
+	}
+}
+
+.home-boxes {
+	width: 700px;
+}
+
+.alpha {
+	float: left;
+	margin-right: 20px;
+}
+
+.omega {
+	float: right;
+}
+
+.homebox {
+	width: 340px;
+	margin: 0 0 20px;
+	position: relative;
+
+	.slide {
+		width: 340px;
+		height: 140px;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		color: #000;
+
+		p {
+			margin: 0;
+			padding: 8px 10px 10px;
+			background: $vpmtan;
+		}
+
+		&:hover p {
+			color: #000;
+			background: darken($vpmtan, 10%);
+		}
+
+		&:active p {
+			background: darken($vpmtan, 30%);
+		}
+	}
+
+	img {
+		width: 340px;
+		height: 140px;
+		margin: 0;
+		display: block;
+		background: #C0C0C0;
+	}
+}
