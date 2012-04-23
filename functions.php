@@ -83,7 +83,11 @@ function vpm_custom_title() {
 	} elseif ( is_single() ) {
 		$thetitle = get_the_title() . $separator . get_bloginfo('name');
 	} elseif ( is_archive() ) {
-		$thetitle = post_type_archive_title('', false);
+		$thetitle = post_type_archive_title('', false) . $separator . get_bloginfo('name');;
+	} elseif ( is_home() ) {
+		$thetitle = 'Blog' . $separator . get_bloginfo('name');
+	} else {
+		$thetitle = get_bloginfo('name');
 	}
 
 	// For SEO, we check if it's less than 70 before we tack on your slogan.
@@ -98,7 +102,7 @@ add_filter( 'wp_title', 'vpm_custom_title', 20 );
 
 function vpm_content_header() {
 
-	if ( has_post_thumbnail() ) :
+	if ( has_post_thumbnail() && !is_home() ) :
 		$post_thumb_id  = get_post_thumbnail_id();
 		$post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 	?>

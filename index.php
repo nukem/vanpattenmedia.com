@@ -18,6 +18,8 @@
 				get_template_part('pg', 'how');
 			} elseif ( is_page('portfolio') ) {
 				get_template_part('pg', 'portfolio');
+			} elseif ( 'portfolio' == get_post_type() ) {
+				get_template_part('pg', 'portfolioitem');
 			} elseif ( is_page() ) {
 				get_template_part('loop', 'page');
 			} else {

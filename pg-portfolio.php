@@ -33,11 +33,11 @@
 				}
 
 				// Output all the things!
-				echo '<div id="post-' . get_the_ID() . '" '; post_class('slide'); echo ' style="background: url(' . get_bloginfo('template_directory') . '/img/timthumb/timthumb.php?src=' . $full_url[0] . '&w=700&f=2|8|8|8|8|8|8|8|8)">' . "\n";
+				echo '<div id="slide-' . get_the_ID() . '" '; post_class('slide header-top'); echo ' style="background: url(' . get_bloginfo('template_directory') . '/img/timthumb/timthumb.php?src=' . $full_url[0] . '&w=700&f=2|8|8|8|8|8|8|8|8)">' . "\n";
 
 						echo '<a href="' . get_permalink() . '">' . "\n";
 
-							echo '<h3>' . get_the_title() . '</h3>' . "\n";
+							echo '<h2>' . get_the_title() . '</h2>' . "\n";
 							echo '<p>' . wp_trim_words(get_the_excerpt(), 15) . '</p>';
 							echo '<img class="folio_item-thumb" src="' . $medium_url[0] . '" alt="Screenshot of a website for ' . get_the_title() . '" title="Website for ' . get_the_title() . '">' . "\n";
 
