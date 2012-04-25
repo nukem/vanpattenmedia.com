@@ -9,7 +9,7 @@
 	<div class="container">
 		<?php get_header(); ?>
 
-		<div class="twelve columns row offset-by-four">
+		<div class="twelve columns">
 			<?php
 
 			if ( is_front_page() ) {
@@ -27,6 +27,9 @@
 			}
 
 			?>
+		</div>
+		<div class="four columns">
+			<?php get_template_part('sidebar'); ?>
 		</div>
 
 		<?php get_footer(); ?>

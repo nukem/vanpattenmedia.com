@@ -15,10 +15,12 @@
 }
 
 #legal {
-	height: 30px;
+	padding: 5px 0 0;
 	border-top: 1px dotted #CCC;
 	color: #999;
-	font: 13px/30px $body-font;
+	font: {
+		size: 13px;
+	}
 
 	a {
 		color: #888;

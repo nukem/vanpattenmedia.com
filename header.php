@@ -1,11 +1,7 @@
 	<header id="header">
 		<div class="sixteen columns">
 			<div class="row">
-				<div class="four columns alpha" id="weare">We are</div>
-
-				<div class="twelve columns omega">
-					<a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Van Patten Media logo" id="vpm-logo"></a>
-				</div>
+				<a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Van Patten Media logo" id="vpm-logo"></a>
 			</div>
 		</div>
 
