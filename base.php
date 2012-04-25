@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php $base = app_template_base(); ?><!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
@@ -10,23 +10,7 @@
 		<?php get_header(); ?>
 
 		<div class="twelve columns">
-			<?php
-
-			if ( is_front_page() ) {
-				get_template_part('pg', 'front');
-			} elseif ( is_page('how') ) {
-				get_template_part('pg', 'how');
-			} elseif ( is_page('portfolio') ) {
-				get_template_part('pg', 'portfolio');
-			} elseif ( 'portfolio' == get_post_type() ) {
-				get_template_part('pg', 'portfolioitem');
-			} elseif ( is_page() ) {
-				get_template_part('loop', 'page');
-			} else {
-				get_template_part('loop', 'post');
-			}
-
-			?>
+			<?php include app_template_path(); ?>
 		</div>
 		<div class="four columns">
 			<?php get_template_part('sidebar'); ?>
