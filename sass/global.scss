@@ -24,11 +24,9 @@
  */
 
 html, body {
-	// font: 300 15px/1.8 $body-font;
 	background: #fff;
-	font: 300 15px/1.8 $body-font;
 	color: #000;
-	// -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	font: 300 15px/1.8 $body-font;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -42,8 +40,11 @@ html, body {
  *
  */
 
-// Header/Nav
+// Header
 @import "structure/header";
+
+// Nav
+@import "structure/nav";
 
 // Footer
 @import "structure/footer";

@@ -9,11 +9,11 @@
 	<div class="container">
 		<?php get_header(); ?>
 
+		<div class="four columns nav">
+			<?php get_template_part('sidebar'); ?>
+		</div>
 		<div class="twelve columns">
 			<?php include app_template_path(); ?>
-		</div>
-		<div class="four columns">
-			<?php get_template_part('sidebar'); ?>
 		</div>
 
 		<?php get_footer(); ?>
