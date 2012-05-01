@@ -47,7 +47,7 @@
 			<?php if ( $tag->name == 'Rach5' ) : ?>
 				<li><a href="http://labs.vanpattenmedia.com/projects/rach5/"><?= $tag->name; ?></a></li>
 			<?php elseif ( $tag->name == 'WordPress' ) : ?>
-				<li><a href="<?= get_bloginfo('url'); ?>/how/websites/#wordpress"><?= $tag->name; ?></a></li>
+				<li><a href="<?= get_bloginfo('url'); ?>/websites/wordpress/"><?= $tag->name; ?></a></li>
 			<?php else : ?>
 				<li><?= $tag->name; ?></li>
 			<?php endif; ?>

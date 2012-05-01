@@ -8,7 +8,7 @@
 	<?php /* CSS */
 
 	// Global Stylesheet
-	stylesheet_link_tag('/global.css?1335145765', true, 0, true);
+	stylesheet_link_tag('/global.css?1335883264', true, 0, true);
 
 	// Google Web Fonts: Signika Negative
 	stylesheet_link_tag('http://fonts.googleapis.com/css?family=Signika+Negative:300,600', false, 1, true);
