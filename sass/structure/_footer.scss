@@ -1,26 +1,19 @@
 #footer {
-	height: 40px;
-	text-align: right;
-	position: relative;
-}
-
-#social {
-	text-align: left;
-	width: 200px;
-	list-style: none;
-
-	li {
-		margin: 0 0 4px;
-	}
+	// background: $vpmtan;
+	padding: 0 0 20px;
 }
 
 #legal {
-	padding: 5px 0 0;
-	border-top: 1px dotted #CCC;
-	color: #999;
+	background: #FFF;
+	color: #666;
 	font: {
 		size: 13px;
 	}
+	padding: 2px 20px 10px 20px;
+	margin: 0 10px;
+	float: right;
+	border-right: 1px solid darken($vpmtan, 10%);
+	border-bottom: 1px solid darken($vpmtan, 10%);
 
 	a {
 		color: #888;

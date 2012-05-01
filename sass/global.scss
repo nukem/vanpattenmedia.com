@@ -24,7 +24,7 @@
  */
 
 html, body {
-	background: #fff;
+	background: $vpmtan;
 	color: #000;
 	font: 300 15px/1.8 $body-font;
 	-webkit-text-size-adjust: 100%;
@@ -51,6 +51,11 @@ html, body {
 
 // Slider
 @import "structure/slider";
+
+#main-container {
+	padding: 30px 0 10px;
+	background: #FFF;
+}
 
 
 /*

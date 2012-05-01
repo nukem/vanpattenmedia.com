@@ -2,6 +2,7 @@
 	font: 300 60px/60px 'Signika Negative', sans-serif;
 	padding: 65px 0 0;
 	position: relative;
+	// background: $vpmtan;
 }
 
 #logo {
@@ -12,6 +13,9 @@
 	height: auto;
 	z-index: 100;
 	line-height: 1;
+	padding: 15px 20px 5px;
+	background: #FFF;
+	border-right: 1px solid darken($vpmtan, 10%);
 
 	img {
 		max-width: 423px;

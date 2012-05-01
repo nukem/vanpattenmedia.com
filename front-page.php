@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<section class="six columns alpha homebox">
-			<a href="http://www.vanpattenmedia.com/how/websites/">
+			<a href="http://www.vanpattenmedia.com/websites/wordpress/">
 				<div class="slide header-bottom">
 					<div>
 						<h2>WordPress</h2>
@@ -29,21 +29,7 @@
 		</section>
 
 		<section class="six columns omega homebox">
-			<a href="http://www.vanpattenmedia.com/how/marketing/">
-				<div class="slide header-bottom">
-					<div>
-						<h2>Social development</h2>
-					</div>
-					<img src="<?php bloginfo('template_directory'); ?>/img/homeboxes/social.jpg" alt="">
-				</div>
-				<p>Facebook pages, creative campaigns, social microsites, and custom tools for connecting with your closest fans.</p>
-			</a>
-		</section>
-	</div>
-
-	<div class="row">
-		<section class="six columns alpha homebox">
-			<a href="http://www.vanpattenmedia.com/how/open-source/">
+			<a href="http://labs.vanpattenmedia.com/">
 				<div class="slide header-bottom">
 					<div>
 						<h2>Open source</h2>
@@ -53,13 +39,5 @@
 				<p>Free WordPress plugins, PHP modules, theme architectures, and content management apps. Open to contributions. From us to you.</p>
 			</a>
 		</section>
-
-		<!-- <section class="omega homebox">
-			<a href="#">
-				<h2>Websites</h2>
-				<img src="" alt="" />
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada, libero eu accumsan aliquet.</p>
-			</a>
-		</section> -->
 	</div>
 </div>
