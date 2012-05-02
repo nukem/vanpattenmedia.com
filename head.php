@@ -6,18 +6,10 @@
 	?><link rel="author" href="/humans.txt">
 
 	<?php /* CSS */
-
-	// Global Stylesheet
-	stylesheet_link_tag('/global.css?1335891995', true, 0, true);
-
-	// Google Web Fonts: Signika Negative
-	stylesheet_link_tag('http://fonts.googleapis.com/css?family=Signika+Negative:300,600', false, 1, true);
-
-	// Google Web Fonts: Lato
-	stylesheet_link_tag('http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700', false, 1, true);
-
-	// Formalize
-	stylesheet_link_tag('http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css', false, 1, false); ?>
+	?><link rel="stylesheet" type="text/css" href="/css/global.css?1335985487">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Signika+Negative:300,600">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700">
+	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
 
 	<?php /* Mobile viewport lock */
 	?><meta name="viewport" content="width=device-width; initial-scale=1.0">
