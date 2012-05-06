@@ -3,18 +3,37 @@
 }
 
 a.download-button {
-	display: block;
-	text-align: center;
-	color: #FFF;
+	padding: 14px 0;
+	font: 600 26px $header-font;
 
+	$text-color: #FFF;
 	$background-color: #ff9933;
-	@include vpm-button($background-color, default);
+	@include vpm-button($background-color, $text-color, default);
 
 	&:hover {
-		@include vpm-button($background-color, hover);
+		@include vpm-button($background-color, $text-color, hover);
 	}
 
 	&:active {
-		@include vpm-button($background-color, active);
+		@include vpm-button($background-color, $text-color, active);
+	}
+}
+
+#version-info {
+	display: block;
+	margin: 4px 0 0;
+	font: {
+		style: normal;
+		size: 10px;
+	};
+	text-align: center;
+}
+
+#project-content {
+	p:first-child {
+		font: {
+			weight: 700;
+			size: 18px;
+		};
 	}
 }
