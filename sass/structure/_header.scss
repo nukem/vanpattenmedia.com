@@ -37,8 +37,6 @@
 
 #alerts {
 	min-height: 16px;
-	@include border-bottom-left-radius(9px);
-	@include border-bottom-right-radius(9px);
 	padding: 8px 4px 8px 8px;
 	font: 400 14px/1 $body-font;
 	@include inline-block;
@@ -72,7 +70,7 @@
 		$text-color: #FFF;
 		$background-color: lighten(#F07E0D, 10%);
 		$spread: 12%;
-		@include vpm-button($background-color, $text-color, default, $spread);
+		@include vpm-button($background-color, $text-color, default, $spread, 5px);
 
 		&:hover {
 			@include vpm-button($background-color, $text-color, hover, $spread);
