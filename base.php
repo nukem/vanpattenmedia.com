@@ -6,17 +6,17 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <?php get_template_part('head'); ?>
 <body <?php body_class(); ?>>
-	<?php get_header(); ?>
+	<?php get_header( $base ); ?>
 	<div id="main-container">
 		<div class="container">
 			<div class="four columns nav">
-				<?php get_sidebar(); ?>
+				<?php get_sidebar( $base ); ?>
 			</div>
 			<div class="twelve columns">
 				<?php include app_template_path(); ?>
 			</div>
 		</div>
 	</div>
-	<?php get_footer(); ?>
+	<?php get_footer( $base ); ?>
 </body>
 </html>
