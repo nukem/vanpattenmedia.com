@@ -30,7 +30,7 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
  *
  */
 
-@mixin vpm-button($background-color, $text-color, $state: default, $radius: 8px) {
+@mixin vpm-button($background-color, $text-color, $state: default, $spread: 14%, $radius: 8px) {
 	@if $state == default {
 		border: 1px solid darken($background-color, 25%);
 		@include border-radius($radius);
@@ -53,14 +53,14 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 		background-color: darken($background-color, 5%); // Old browsers
 		@include filter-gradient(
 			darken($background-color, 0%),
-			darken($background-color, 14%),
+			darken($background-color, $spread),
 			vertical
 		); // IE6-9
 		@include background-image(
 			linear-gradient(
 				top,
 				darken($background-color, 0%) 0%,
-				darken($background-color, 14%) 100%
+				darken($background-color, $spread) 100%
 			)
 		);
 	} @else if $state == hover {
@@ -83,8 +83,8 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 		@include background-image(
 			linear-gradient(
 				top,
-				lighten($background-color, 7%) 0%,
-				darken($background-color, 7%) 100%
+				lighten($background-color, $spread / 2) 0%,
+				darken($background-color, $spread / 2) 100%
 			)
 		);
 	} @else if $state == active {
@@ -101,16 +101,41 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 		// Gradients and backgrounds
 		background-color: darken($background-color, 5%); // Old browsers
 		@include filter-gradient(
-			darken($background-color, 14%),
+			darken($background-color, $spread),
 			darken($background-color, 0%),
 			vertical
 		); // IE6-9
 		@include background-image(
 			linear-gradient(
 				top,
-				darken($background-color, 14%) 0%,
+				darken($background-color, $spread) 0%,
 				darken($background-color, 0%) 100%
 			)
 		);
 	}
+}
+
+@mixin vpm-alert($text-color, $background-color) {
+	// Text styles
+	color: $text-color;
+	@include text-shadow(0 1px 1px lighten(invert($text-color), 5%));
+
+	// Border
+	border: 1px solid darken($background-color, 15%);
+	border-top: none;
+
+	// Background
+	background-color: darken($background-color, 5%); // Old browsers
+	@include filter-gradient(
+		darken($background-color, 0%),
+		darken($background-color, 7%),
+		vertical
+	); // IE6-9
+	@include background-image(
+		linear-gradient(
+			top,
+			darken($background-color, 0%) 0%,
+			darken($background-color, 7%) 100%
+		)
+	);
 }
