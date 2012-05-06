@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	// Replace no-js with js
 	$('html').removeClass('no-js').addClass('js');
+
+	$("#project-media").fancybox();
 });
 
 $('.home #content p:first-child a').css('background-position', '0% 0%').hover(

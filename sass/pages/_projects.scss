@@ -4,7 +4,7 @@
 }
 
 #project-meta-inner {
-	background: lighten(#EEE, 2%);
+	background: desaturate(lighten($vpmtan, 6%), 15%);
 	padding: 20px;
 }
 
@@ -136,7 +136,7 @@
 #project-content {
 	p:first-child {
 		font: {
-			weight: 600;
+			weight: 400;
 			size: 18px;
 		};
 

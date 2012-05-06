@@ -229,3 +229,90 @@ class APP_Wrapping {
 }
 
 add_filter( 'template_include', array( 'APP_Wrapping', 'wrap' ), 99 );
+
+
+/*
+ *
+ * Misc functions
+ *
+ */
+
+function fuzzyDate($date, $inputFormat = DateTime::ATOM, $outputDateFormat = "l, F dS, Y", $outputTimeFormat = "H:ia") {
+	if (!$inputFormat) {
+		$inputFormat = DateTime::ATOM;
+	}
+
+	if (!$outputDateFormat) {
+		$outputDateFormat = "l, F dS, Y";
+	}
+
+	$dateTime = DateTime::createFromFormat($inputFormat, $date);
+
+	// Failed to parse, probably invalid date
+	if (!$dateTime) {
+		return false;
+	}
+
+	// Get Timezone so we can use it for the other dates
+	$timezone = $dateTime->getTimeZone();
+
+	// Fuzzy Date ranges
+	$lastWeekStart = new DateTime("2 weeks ago sunday 11:59:59", $timezone);
+
+	$yesterdayStart = new DateTime("yesterday midnight");
+
+	$todayStart = new DateTime("today midnight", $timezone);
+	$todayEnd = new DateTime("today 23:59:59", $timezone);
+
+	$tomorrowStart = new DateTime("tomorrow midnight", $timezone);
+	$tomorrowEnd = new DateTime("tomorrow 23:59:59", $timezone);
+
+	$thisWeekStart = new DateTime("1 week ago sunday 11:59:59", $timezone);
+	$thisWeekEnd = new DateTime("sunday 11:59:59", $timezone);
+
+	$nextWeekEnd = new DateTime("1 week sunday midnight", $timezone);
+
+	$prefix = '';
+
+	// We have to start with the oldest ones first
+	if ($dateTime < $lastWeekStart) {
+		// Older than 1 week
+		$prefix = "on";
+		$fuzzyDate = ucwords($dateTime->format($outputDateFormat));
+	} elseif ($dateTime > $lastWeekStart && $dateTime < $thisWeekStart) {
+		// Some time in the previous week
+		$prefix = "last";
+		$fuzzyDate = ucwords($dateTime->format("l"));
+	} elseif ($dateTime > $yesterdayStart && $dateTime < $todayStart) {
+		// Yesterday
+		$fuzzyDate = "yesterday";
+	} elseif ($dateTime < $todayEnd) {
+		// Today
+		$fuzzyDate = "today";
+	} elseif ($dateTime < $tomorrowEnd) {
+		// Tomorrow
+		$fuzzyDate = "tomorrow";
+	} elseif ($dateTime < $thisWeekEnd) {
+		// Sometime in the current week
+		$prefix = "this";
+		$fuzzyDate = ucwords($dateTime->format("l"));
+	} elseif ($dateTime < $nextWeekEnd) {
+		// Some time in the following week
+		$prefix = "next";
+		$fuzzyDate = ucwords($dateTime->format("l"));
+	} else {
+		// More than 2 weeks out.
+		$prefix = "on";
+		$fuzzyDate = ucwords($dateTime->format($outputDateFormat));
+	}
+
+	// Midnight or an actual time
+	if ($dateTime->format("Hi") != "0000") {
+		$fuzzyTime = $dateTime->format($outputTimeFormat);
+	} else {
+		$fuzzyTime = "midnight";
+	}
+
+	$format = '%s %s';
+	return trim(sprintf($format, $prefix, $fuzzyDate, $fuzzyTime));
+}

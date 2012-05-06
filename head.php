@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Signika+Negative:300,600">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,400,600,700">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
+	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/fancybox/2.0.6/jquery.fancybox.css">
 
 	<?php /* Mobile viewport lock */
 	?><meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -25,7 +26,12 @@
 		$LAB
 		.script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js').wait()
 		.script('//cdn.vanpattenmedia.com/js/libs/formalize/1.2/js/jquery.formalize.min.js').wait()
-		.script('<?php bloginfo('template_directory'); ?>/js/script.js?1335145451').wait();
+		.script('<?php bloginfo('template_directory'); ?>/js/script.js?1335145451').wait()
+		<?php if ( get_post_type() == 'portfolio' ) : ?>
+		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/2.0.6/jquery.fancybox.pack.js').wait()
+		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/helpers/1.0.0/jquery.fancybox-media.js').wait()
+		<?php endif; ?>
+		;
 	</script>
 
 	<?php /* WordPress head injection */

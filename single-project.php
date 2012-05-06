@@ -7,7 +7,12 @@
 						<div id="project-meta-inner">
 							<p id="project-download-box">
 								<a href="http://wordpress.org/extend/plugins/ssl-subdomain-for-multisite/" id="button-download">Download now</a><br>
-								<em id="project-version-info"><strong>Version 1.0</strong> &#8212; Released <time datetime="2012-04-28T20:00Z"><abbr title="Saturday, April 28, 2012 at 20:00 UTC" id="project-fuzzy-release-date">one week ago</abbr></time></em><br>
+								<?php
+								$release_time_unix = 1335243600;
+								$release_time_c = date('c', $release_time_unix);
+								$release_time_r = date('r', $release_time_unix);
+								?>
+								<em id="project-version-info"><strong>Version 1.0</strong> &#8212; Released <time datetime="<?= $release_time_c; ?>"><abbr title="<?= $release_time_r ?>" id="project-fuzzy-release-date"><?php echo fuzzyDate( $release_time_c ); ?></abbr></time></em><br>
 								<em id="project-requirements">Requires WordPress 3.3.1 or greater</em>
 							</p>
 							<p id="project-contribute-box">
@@ -43,6 +48,19 @@
 					<div class="entry-content" id="project-content">
 						<?php the_content(); ?>
 					</div>
+				</div>
+				<div class="row">
+					<h3><a name="media"></a>Media</h3>
+					<ul id="project-media">
+						<li><a href="https://www.youtube.com/watch?v=gfwKjLbk7YU" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+					</ul>
 				</div>
 				<div class="row">
 					<h3><a name="contribute"></a>Contribute</h3>
