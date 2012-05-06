@@ -1,15 +1,29 @@
 #project-meta {
 	float: right;
-	margin: 0 0 20px 20px;
+	margin: -20px 0 20px 20px;
+}
 
-	p {
-		margin: 0;
-	}
+#project-meta-inner {
+	background: lighten(#EEE, 2%);
+	padding: 20px;
 }
 
 #project-button {
 	display: block;
 	padding: 14px 4px;
+}
+
+
+/*
+ *
+ * Project download
+ *
+ */
+
+#project-download-box {
+	br {
+		display: none;
+	}
 }
 
 #button-download {
@@ -29,6 +43,37 @@
 	}
 }
 
+#project-version-info, #project-requirements {
+	display: block;
+	margin: 6px 0 3px;
+	font: {
+		style: normal;
+		size: 11px;
+	};
+	text-align: center;
+}
+
+#project-requirements {
+	margin: 0;
+}
+
+#project-fuzzy-release-date {
+	border-bottom: 1px dotted #AAA;
+}
+
+
+/*
+ *
+ * Project contribute
+ *
+ */
+
+#project-contribute-box {
+	margin: 20px 0 0;
+	padding: 20px 0 0;
+	border-top: 1px dotted #CCC;
+}
+
 #button-contribute {
 	@extend #project-button;
 	font: 600 24px $header-font;
@@ -46,26 +91,47 @@
 	}
 }
 
-#project-version-info, #project-requirements {
-	display: block;
-	margin: 6px 0 0;
-	font: {
-		style: normal;
-		size: 10px;
-	};
-	text-align: center;
-}
 
-#project-requirements {
-	margin: 3px 0 20px;
-	font: {
-		size: 11px;
+/*
+ *
+ * Project email signup
+ *
+ */
+
+#project-email-signup-box {
+	margin: 20px 0 0;
+	padding: 20px 0 0;
+	border-top: 1px dotted #CCC;
+
+	p {
+		margin: 0 0 10px;
+
+		&:first-child {
+			line-height: 1.6;
+			margin: 0 0 1px;
+		}
+
+		em {
+			font-size: 12px;
+			color: #666;
+		}
 	}
 }
 
-#project-fuzzy-release-date {
-	border-bottom: 1px dotted #AAA;
+#project-email-signup-form {
+	text-align: right;
 }
+
+#MERGE0 {
+	width: 100%;
+}
+
+
+/*
+ *
+ * Project content
+ *
+ */
 
 #project-content {
 	p:first-child {

@@ -70,7 +70,7 @@
 		$text-color: #FFF;
 		$background-color: lighten(#F07E0D, 10%);
 		$spread: 12%;
-		@include vpm-button($background-color, $text-color, default, $spread, 5px);
+		@include vpm-button($background-color, $text-color, default, $spread, 3px);
 
 		&:hover {
 			@include vpm-button($background-color, $text-color, hover, $spread);
