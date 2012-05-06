@@ -1,9 +1,9 @@
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article>
-			<div id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
+			<div id="page-<?php the_ID(); ?>" <?php post_class('article'); ?>>
 				<?php vpm_content_header(); ?>
 				<div class="entry-content">
-					<?php the_content('Read More &raquo;'); ?>
+					<?php the_content(); ?>
 				</div>
 			</div>
 		</article>
