@@ -26,10 +26,10 @@
 		$LAB
 		.script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js').wait()
 		.script('//cdn.vanpattenmedia.com/js/libs/formalize/1.2/js/jquery.formalize.min.js').wait()
-		.script('<?php bloginfo('template_directory'); ?>/js/script.js?1335145451').wait()
-		<?php if ( get_post_type() == 'portfolio' ) : ?>
+		.script('<?php bloginfo('template_directory'); ?>/js/script.js?1336336990').wait()
+		<?php if ( get_post_type() == 'project' ) : ?>
 		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/2.0.6/jquery.fancybox.pack.js').wait()
-		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/helpers/1.0.0/jquery.fancybox-media.js').wait()
+		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/helpers/media/1.0.0/jquery.fancybox-media.js').wait()
 		<?php endif; ?>
 		;
 	</script>

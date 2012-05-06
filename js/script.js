@@ -2,7 +2,13 @@ $(document).ready(function() {
 	// Replace no-js with js
 	$('html').removeClass('no-js').addClass('js');
 
-	$("#project-media").fancybox();
+	$(".project-media-item").fancybox({
+		helpers : {
+			media : {
+				//autoplay: false;
+			}
+		}
+	});
 });
 
 $('.home #content p:first-child a').css('background-position', '0% 0%').hover(

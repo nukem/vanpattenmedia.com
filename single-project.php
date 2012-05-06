@@ -52,14 +52,14 @@
 				<div class="row">
 					<h3><a name="media"></a>Media</h3>
 					<ul id="project-media">
-						<li><a href="https://www.youtube.com/watch?v=gfwKjLbk7YU" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://placehold.it/150x150" rel="gallery"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="https://www.youtube.com/watch?v=gfwKjLbk7YU" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
 					</ul>
 				</div>
 				<div class="row">
