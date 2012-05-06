@@ -8,6 +8,29 @@
 						<p><em id="project-version-info"><strong>Version 1.0</strong> &#8212; Released <time datetime="2012-04-28T20:00Z"><abbr title="Saturday, April 28, 2012 at 20:00 UTC" id="project-fuzzy-release-date">one week ago</abbr></time></em></p>
 						<p><em id="project-requirements">Requires WordPress 3.3.1 or greater</em></p>
 						<p><a href="#contribute" id="button-contribute">Contribute today!</a></p>
+						<p>
+							<form action="http://vanpattenmedia.us4.list-manage.com/subscribe/post" method="post">
+								<input type="hidden" name="u" value="093e419717726bf49301d1a62">
+								<input type="hidden" name="id" value="ba0b414c68">
+								<input type="hidden" name="group[7973][1]" value="true">
+
+								<label for="MERGE0"><strong>Email Address</strong> <span class="asterisk">*</span>:</label>
+								<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
+
+								<!-- <ul class="interestgroup_field" id="interestgroup_field_66257">
+									<li class="interestgroup_row">
+										<input type="checkbox" id="group_1" name="group[7973][1]" value="1">
+										<label for="group_1">Total Slider</label>
+									</li>
+									<li class="interestgroup_row">
+										<input type="checkbox" id="group_2" name="group[7973][2]" value="1">
+										<label for="group_2">Rach5</label>
+									</li>
+								</ul> -->
+
+								<input type="submit" value="Subscribe">
+							</form>
+						</p>
 					</div>
 					<div class="entry-content" id="project-content">
 						<?php the_content(); ?>
