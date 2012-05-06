@@ -32,7 +32,6 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 
 @mixin vpm-button($background-color, $text-color, $state: default, $radius: 8px) {
 	@if $state == default {
-		display: block;
 		border: 1px solid darken($background-color, 25%);
 		@include border-radius($radius);
 		text: {

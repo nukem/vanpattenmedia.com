@@ -1,14 +1,19 @@
 #project-meta {
 	float: right;
-	margin-left: 20px;
+	margin: 0 0 20px 20px;
 
 	p {
 		margin: 0;
 	}
 }
 
+#project-button {
+	display: block;
+	padding: 14px 4px;
+}
+
 #button-download {
-	padding: 14px 0;
+	@extend #project-button;
 	font: 600 26px $header-font;
 
 	$text-color: #FFF;
@@ -25,7 +30,7 @@
 }
 
 #button-contribute {
-	padding: 14px 0;
+	@extend #project-button;
 	font: 600 24px $header-font;
 
 	$text-color: #FFF;

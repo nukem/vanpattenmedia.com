@@ -1,8 +1,12 @@
 #header {
-	font: 300 60px/60px 'Signika Negative', sans-serif;
-	padding: 65px 0 0;
+	// font: 300 60px/60px 'Signika Negative', sans-serif;
+	//padding: 65px 0 0;
 	position: relative;
 	border-bottom: 1px solid darken($vpmtan, 10%);
+}
+
+#header-inner {
+	min-height: 150px;
 }
 
 #logo {
@@ -16,13 +20,57 @@
 	padding: 15px 20px 5px;
 	background: #FFF;
 	border-right: 1px solid darken($vpmtan, 10%);
-	position: relative;
-	top: 1px;
+	position: absolute;
+	bottom: -1px;
 
 	img {
 		max-width: 423px;
 		max-height: 67px;
 		width: 100%;
 		height: auto;
+	}
+}
+
+#alerts {
+	min-height: 16px;
+	@include border-radius(9px);
+	padding: 8px;
+	margin: 10px 0 0;
+	font: 300 14px/1 $body-font;
+
+	a {
+		color: #FFF;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.button {
+		padding: 2px;
+	}
+}
+
+#alert-announcement {
+	@extend #alerts;
+
+	$alert-text-color: #FFF;
+	$alert-background-color: #AAA;
+	color: $alert-text-color;
+	border: 1px solid darken($alert-background-color, 25%);
+	background: $alert-background-color;
+
+	.button {
+		$text-color: #FFF;
+		$background-color: #8596fa;
+		@include vpm-button($background-color, $text-color, default);
+
+		&:hover {
+			@include vpm-button($background-color, $text-color, hover);
+		}
+
+		&:active {
+			@include vpm-button($background-color, $text-color, active);
+		}
 	}
 }
