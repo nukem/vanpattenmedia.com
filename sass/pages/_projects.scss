@@ -1,8 +1,13 @@
 #project-meta {
 	float: right;
+	margin-left: 20px;
+
+	p {
+		margin: 0;
+	}
 }
 
-a.download-button {
+#button-download {
 	padding: 14px 0;
 	font: 600 26px $header-font;
 
@@ -19,9 +24,26 @@ a.download-button {
 	}
 }
 
-#version-info {
+#button-contribute {
+	padding: 14px 0;
+	font: 600 24px $header-font;
+
+	$text-color: #FFF;
+	$background-color: #8596fa;
+	@include vpm-button($background-color, $text-color, default);
+
+	&:hover {
+		@include vpm-button($background-color, $text-color, hover);
+	}
+
+	&:active {
+		@include vpm-button($background-color, $text-color, active);
+	}
+}
+
+#project-version-info, #project-requirements {
 	display: block;
-	margin: 4px 0 0;
+	margin: 6px 0 0;
 	font: {
 		style: normal;
 		size: 10px;
@@ -29,11 +51,28 @@ a.download-button {
 	text-align: center;
 }
 
+#project-requirements {
+	margin: 3px 0 20px;
+	font: {
+		size: 11px;
+	}
+}
+
+#project-fuzzy-release-date {
+	border-bottom: 1px dotted #AAA;
+}
+
 #project-content {
 	p:first-child {
 		font: {
-			weight: 700;
+			weight: 600;
 			size: 18px;
 		};
+
+		strong {
+			font: {
+				weight: 700;
+			}
+		}
 	}
 }

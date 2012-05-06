@@ -39,10 +39,10 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 			decoration: none;
 			align: center;
 		}
-		@include text-shadow(0 1px 1px invert($text-color));
 
-		// Text color
+		// Text style
 		color: $text-color;
+		@include text-shadow(0 1px 1px invert($text-color));
 
 		// Box Shadow
 		@include box-shadow(
@@ -65,7 +65,7 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 			)
 		);
 	} @else if $state == hover {
-		// Text color
+		// Text style
 		color: $text-color;
 
 		// Box Shadow
@@ -89,8 +89,9 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 			)
 		);
 	} @else if $state == active {
-		// Text color
+		// Text style
 		color: $text-color;
+		// @include text-shadow(0 -1px 1px invert($text-color));
 
 		// Box Shadow
 		@include box-shadow(

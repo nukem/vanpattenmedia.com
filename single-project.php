@@ -4,8 +4,10 @@
 				<?php vpm_content_header(); ?>
 				<div class="row">
 					<div class="four columns omega" id="project-meta">
-						<a href="#" class="download-button">Download now</a>
-						<em id="version-info"><strong>Version 1.0</strong> &#8212; Requires WordPress 3.3.1 or greater</em>
+						<p><a href="http://wordpress.org/extend/plugins/ssl-subdomain-for-multisite/" id="button-download">Download now</a></p>
+						<p><em id="project-version-info"><strong>Version 1.0</strong> &#8212; Released <time datetime="2012-04-28T20:00Z"><abbr title="Saturday, April 28, 2012 at 20:00 UTC" id="project-fuzzy-release-date">one week ago</abbr></time></em></p>
+						<p><em id="project-requirements">Requires WordPress 3.3.1 or greater</em></p>
+						<p><a href="#" id="button-contribute">Contribute today!</a></p>
 					</div>
 					<div class="entry-content" id="project-content">
 						<?php the_content(); ?>
