@@ -1,0 +1,20 @@
+#project-meta {
+	float: right;
+}
+
+a.download-button {
+	display: block;
+	text-align: center;
+	color: #FFF;
+
+	$background-color: #ff9933;
+	@include vpm-button($background-color, default);
+
+	&:hover {
+		@include vpm-button($background-color, hover);
+	}
+
+	&:active {
+		@include vpm-button($background-color, active);
+	}
+}
