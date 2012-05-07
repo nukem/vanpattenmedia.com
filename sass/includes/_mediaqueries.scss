@@ -14,7 +14,12 @@
 
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media handheld, only screen and (min-width: 768px) and (max-width: 959px) {
-
+	#project-media {
+		li {
+			width: 101px;
+			height: 76px;
+		}
+	}
 }
 
 // All Mobile Sizes (devices and browser)
@@ -24,10 +29,20 @@
 
 // Mobile Landscape Size to Tablet Portrait (devices and browsers)
 @media handheld, only screen and (min-width: 480px) and (max-width: 767px) {
-
+	#project-media {
+		li {
+			width: 95px;
+			height: 71px;
+		}
+	}
 }
 
 // Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 @media handheld, only screen and (max-width: 479px) {
-
+	#project-media {
+		li {
+			width: 90px;
+			height: 68px;
+		}
+	}
 }

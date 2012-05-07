@@ -49,6 +49,8 @@ function vpmp_setup() {
 }
 add_action('after_setup_theme', 'vpmp_setup');
 
+add_image_size( 'project-screenshot-thumbnail', 106, 80, true );
+
 // Content width
 if ( ! isset( $content_width ) ) {
 	$content_width = 900;

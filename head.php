@@ -11,6 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,400,600,700">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/fancybox/2.0.6/jquery.fancybox.css">
+	<?php if ( get_post_type() == 'project' ) : ?><style type="text/css">
+		.fancybox-skin {
+			-webkit-border-radius: 0px;
+			-moz-border-radius: 0px;
+			-ms-border-radius: 0px;
+			-o-border-radius: 0px;
+			border-radius: 0px;
+		}
+	</style><?php endif; ?>
 
 	<?php /* Mobile viewport lock */
 	?><meta name="viewport" content="width=device-width; initial-scale=1.0">

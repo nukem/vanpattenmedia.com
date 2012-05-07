@@ -2,7 +2,13 @@
 	float: right;
 
 	nav {
-		border-left: 1px dotted #CCC;
-		padding: 0 0 0 20px;
+		//border-left: 1px dotted #CCC;
+		//padding: 0 0 0 20px;
+	}
+}
+
+.menu {
+	li {
+		line-height: 1;
 	}
 }

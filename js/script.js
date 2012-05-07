@@ -3,6 +3,12 @@ $(document).ready(function() {
 	$('html').removeClass('no-js').addClass('js');
 
 	$(".project-media-item").fancybox({
+		openEffect: 'fade',
+		closeEffect: 'fade',
+		nextEffect: 'none',
+		prevEffect: 'none',
+		margin: 75,
+		padding: 2,
 		helpers : {
 			media : {
 				//autoplay: false;

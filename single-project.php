@@ -50,17 +50,30 @@
 					</div>
 				</div>
 				<div class="row">
+					<?php
+					$project_media = get_post_meta($post->ID, 'project_media', false);
+
+					if ( $project_media ) : ?>
 					<h3><a name="media"></a>Media</h3>
 					<ul id="project-media">
-						<li><a href="https://www.youtube.com/watch?v=gfwKjLbk7YU" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
-						<li><a href="http://staging.vanpattenmedia.com/content/uploads/2012/05/slider-bg.jpg" data-fancybox-group="gallery" class="project-media-item"><img src="http://placehold.it/150x150" alt=""></a></li>
+						<?php foreach ($project_media as $media) {
+							if ( preg_match( "/[^\W]\d{2,}/e", $media ) ) {
+							// If an image ID
+								$media_thmb = wp_get_attachment_image_src($media, 'project-screenshot-thumbnail');
+								$media_full = wp_get_attachment_image_src($media, 'full');
+								$media_post = get_post( $media, ARRAY_A );
+
+								echo '<li><a href="' . $media_full[0] . '" data-fancybox-group="gallery" class="project-media-item" title="' . $media_post['post_content'] . '"><img src="'. $media_thmb[0] . '" alt="" width="' . $media_thmb[1] . '" height="' . $media_thmb[2] . '"></a></li>';
+							} else {
+							// If a media URL
+								parse_str( parse_url( $media, PHP_URL_QUERY ) );
+								$v_id = $v;
+
+								echo '<li><a href="' . $media . '" data-fancybox-group="gallery" class="project-media-item"><img src="http://img.youtube.com/vi/' . $v_id . '/0.jpg" alt=""></a></li>';
+							}
+						} ?>
 					</ul>
+					<?php endif; ?>
 				</div>
 				<div class="row">
 					<h3><a name="contribute"></a>Contribute</h3>
