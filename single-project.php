@@ -1,34 +1,55 @@
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php
+
+if ( $post->post_parent ) {
+	$post_id = $post->post_parent;
+} else {
+	$post_id = $post->ID;
+}
+
+$post_thumb_id  = get_post_thumbnail_id( $post_id );
+$post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
+
+	if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article>
 			<div id="project-<?php the_ID(); ?>" <?php post_class('article'); ?>>
-				<?php vpm_content_header(); ?>
+				<?php if ( $post->post_parent ) : ?>
+					<div class="slide header-bottom">
+						<div>
+							<h2><a href="<?= get_permalink($post->post_parent); ?>"><?= get_the_title($post->post_parent); ?></a> &rsaquo; <?php the_title(); ?></h2>
+						</div>
+						<img src="<?= $post_thumb_url[0]; ?>" alt="">
+					</div>
+				<?php else : ?>
+					<?php vpm_content_header(); ?>
+				<?php endif; ?>
 				<div class="row">
 					<aside class="five columns omega" id="project-meta">
 						<div id="project-meta-inner">
 							<p id="project-download-box">
-								<a href="http://wordpress.org/extend/plugins/ssl-subdomain-for-multisite/" id="button-download">Download now</a><br>
+								<a href="<?= get_post_meta($post_id, 'project_download_url', true); ?>" id="button-download">Download now</a><br>
 								<?php
-								$release_time_unix = 1335243600;
+								$release_time_unix = get_post_meta($post_id, 'project_release_unix_time', true);
 								$release_time_c = date('c', $release_time_unix);
 								$release_time_r = date('r', $release_time_unix);
 								?>
-								<em id="project-version-info"><strong>Version 1.0</strong> &#8212; Released <time datetime="<?= $release_time_c; ?>"><abbr title="<?= $release_time_r ?>" id="project-fuzzy-release-date"><?php echo fuzzyDate( $release_time_c ); ?></abbr></time></em><br>
+								<em id="project-version-info"><strong>Version <?= get_post_meta($post_id, 'project_version_number', true); ?></strong> &#8212; Released <time datetime="<?= $release_time_c; ?>"><abbr title="<?= $release_time_r ?>" id="project-fuzzy-release-date"><?php echo fuzzyDate( $release_time_c ); ?></abbr></time></em><br>
 								<em id="project-requirements">Requires WordPress 3.3.1 or greater</em>
 							</p>
 							<p id="project-contribute-box">
 								<a href="#contribute" id="button-contribute">Contribute today!</a>
 							</p>
+							<?php if ( !$post->post_parent ) : ?>
 							<div id="project-key-links">
 								<h4>Key links</h4>
 								<ul>
 									<li><a href="<?php the_permalink(); ?>docs">User Docs</a></li>
-									<li><a href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/wiki">Developer Docs</a></li>
+									<li><a href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/wiki">Developer Docs</a></li>
 									<li><a href="<?php the_permalink(); ?>license">License</a></li>
 								</ul>
 							</div>
 							<div id="project-email-signup-box">
 								<h4>Update Alerts</h4>
-								<p>Get notified when we update <?php the_title(); ?>.</p>
+								<p>Get notified when we release a new version of <?php the_title(); ?>.</p>
 								<p><em>(And never for anything else; <a href="http://www.vanpattenmedia.com/legal/">we promise</a>.)</em></p>
 								<form action="http://vanpattenmedia.us4.list-manage.com/subscribe/post" method="post" id="project-email-signup-form">
 									<input type="hidden" name="u" value="093e419717726bf49301d1a62">
@@ -52,15 +73,17 @@
 									<input type="submit" value="Subscribe" id="project-email-subscribe">
 								</form>
 							</div>
+							<?php endif; ?>
 						</div>
 					</aside>
 					<div class="entry-content" id="project-content">
 						<?php the_content(); ?>
 					</div>
 				</div>
+				<?php if ( !$post->post_parent ) : ?>
 				<div class="row">
 					<?php
-					$project_media = get_post_meta($post->ID, 'project_media', false);
+					$project_media = get_post_meta($post_id, 'project_media', false);
 
 					if ( $project_media ) : ?>
 					<h3><a name="media"></a>Media</h3>
@@ -98,7 +121,7 @@
 							</a>
 						</li>
 						<li class="four columns">
-							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/issues/new">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues/new">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/bug.png" alt="">
 								<div class="contribute-text">
 									<strong>Report a bug</strong>
@@ -107,7 +130,7 @@
 							</a>
 						</li>
 						<li class="four columns omega">
-							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/issues/new">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues/new">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-idea.png" alt="">
 								<div class="contribute-text">
 									<strong>Suggest a feature</strong>
@@ -116,7 +139,7 @@
 							</a>
 						</li>
 						<li class="four columns alpha">
-							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/pull/new/master">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/pull/new/master">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-code.png" alt="">
 								<div class="contribute-text">
 									<strong>Contribute code</strong>
@@ -135,6 +158,7 @@
 						</li>
 					</ul>
 				</div>
+				<?php endif; ?>
 			</div>
 		</article>
 	<?php endwhile; else : ?>

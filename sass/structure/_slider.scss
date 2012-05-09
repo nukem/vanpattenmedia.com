@@ -50,6 +50,17 @@
 		font: {
 			weight: 400;
 		}
+
+		a {
+			display: inline;
+			color: #FFF;
+			border-bottom: 1px dotted #AAA;
+
+			&:hover {
+				border-bottom: 1px dotted #FFF;
+				color: #FFF;
+			}
+		}
 	}
 
 	h2, p {
