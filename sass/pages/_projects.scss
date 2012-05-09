@@ -8,9 +8,15 @@
 	padding: 20px;
 }
 
-#project-button {
+%project-button {
 	display: block;
 	padding: 14px 4px;
+}
+
+%project-sidebar-box {
+	margin: 20px 0 0;
+	padding: 20px 0 0;
+	border-top: 1px dotted #CCC;
 }
 
 
@@ -27,7 +33,7 @@
 }
 
 #button-download {
-	@extend #project-button;
+	@extend %project-button;
 	font: 600 26px $header-font;
 
 	$text-color: #FFF;
@@ -69,13 +75,11 @@
  */
 
 #project-contribute-box {
-	margin: 20px 0 0;
-	padding: 20px 0 0;
-	border-top: 1px dotted #CCC;
+	@extend %project-sidebar-box;
 }
 
 #button-contribute {
-	@extend #project-button;
+	@extend %project-button;
 	font: 600 24px $header-font;
 
 	$text-color: #FFF;
@@ -99,9 +103,7 @@
  */
 
 #project-email-signup-box {
-	margin: 20px 0 0;
-	padding: 20px 0 0;
-	border-top: 1px dotted #CCC;
+	@extend %project-sidebar-box;
 
 	p {
 		margin: 0 0 10px;
@@ -124,6 +126,18 @@
 
 #MERGE0 {
 	width: 100%;
+}
+
+
+/*
+ *
+ * Project key links
+ *
+ */
+
+
+#project-key-links {
+	@extend %project-sidebar-box;
 }
 
 
@@ -188,5 +202,55 @@
 				}
 			}
 		}
+	}
+}
+
+
+/*
+ *
+ * Contribute
+ *
+ */
+
+#contribute-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin-bottom: 20px;
+	}
+}
+
+.contribute-link {
+	display: block;
+	text-decoration: none;
+	min-height: 32px;
+	border: 1px solid darken($vpmtan, 10%);
+	background: lighten($vpmtan, 10%);
+	line-height: 1.3;
+}
+
+.contribute-icon {
+	padding: 4px;
+	//vertical-align: top;
+	//float: left;
+	float: left;
+}
+
+.contribute-text {
+	padding: 3px 8px 6px;
+	margin: 0 0 0 40px;
+	background: $vpmtan;
+
+	strong {
+		display: block;
+		padding: 0 0 4px;
+	}
+
+	span {
+		display: block;
+		font-size: 11px;
+		color: #333;
 	}
 }

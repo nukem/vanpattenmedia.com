@@ -35,7 +35,7 @@
 	text-align: center;
 }
 
-#alerts {
+%alerts {
 	min-height: 16px;
 	padding: 8px 4px 8px 8px;
 	font: 400 14px/1 $body-font;
@@ -58,7 +58,7 @@
 }
 
 #alert-announcement {
-	@extend #alerts;
+	@extend %alerts;
 
 	$text-color: #FFF;
 	$background-color: desaturate(darken($vpmtan, 20%), 20%);

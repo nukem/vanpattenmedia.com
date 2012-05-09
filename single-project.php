@@ -18,9 +18,18 @@
 							<p id="project-contribute-box">
 								<a href="#contribute" id="button-contribute">Contribute today!</a>
 							</p>
+							<div id="project-key-links">
+								<h4>Key links</h4>
+								<ul>
+									<li><a href="<?php the_permalink(); ?>docs">User Docs</a></li>
+									<li><a href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/wiki">Developer Docs</a></li>
+									<li><a href="<?php the_permalink(); ?>license">License</a></li>
+								</ul>
+							</div>
 							<div id="project-email-signup-box">
-								<p><strong>Get notified</strong> when we update Total Slider.</p>
-								<p><em>(And never for anything else; <a href="http://staging.vanpattenmedia.com/legal/">we promise</a>.)</em></p>
+								<h4>Update Alerts</h4>
+								<p>Get notified when we update <?php the_title(); ?>.</p>
+								<p><em>(And never for anything else; <a href="http://www.vanpattenmedia.com/legal/">we promise</a>.)</em></p>
 								<form action="http://vanpattenmedia.us4.list-manage.com/subscribe/post" method="post" id="project-email-signup-form">
 									<input type="hidden" name="u" value="093e419717726bf49301d1a62">
 									<input type="hidden" name="id" value="ba0b414c68">
@@ -77,9 +86,54 @@
 				</div>
 				<div class="row">
 					<h3><a name="contribute"></a>Contribute</h3>
-					<div class="four columns alpha">Donate</div>
-					<div class="four columns">Pull Requests</div>
-					<div class="four columns omega">Bug reports and feature requests</div>
+					<p><?php the_title(); ?> is <a href="">open source</a>, and thrives when the community supports its development. There are a number of ways you can contribute even if you don't have technical savvy. Below are a few ideas&hellip;</p>
+					<ul id="contribute-links">
+						<li class="four columns alpha">
+							<a class="contribute-link" href="">
+								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/gift.png" alt="">
+								<div class="contribute-text">
+									<strong>Donate</strong>
+									<span>Any amount is appreciated.</span>
+								</div>
+							</a>
+						</li>
+						<li class="four columns">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/issues/new">
+								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/bug.png" alt="">
+								<div class="contribute-text">
+									<strong>Report a bug</strong>
+									<span>Found a problem? Let us know!</span>
+								</div>
+							</a>
+						</li>
+						<li class="four columns omega">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/issues/new">
+								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-idea.png" alt="">
+								<div class="contribute-text">
+									<strong>Suggest a feature</strong>
+									<span>We'd love to hear your ideas!</span>
+								</div>
+							</a>
+						</li>
+						<li class="four columns alpha">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'github_slug', true); ?>/pull/new/master">
+								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-code.png" alt="">
+								<div class="contribute-text">
+									<strong>Contribute code</strong>
+									<span>File a pull request on Github.</span>
+								</div>
+							</a>
+						</dliiv>
+						<li class="four columns">
+							<a class="contribute-link" href="">
+								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-translation.png" alt="">
+								<div class="contribute-text">
+									<strong>Prepare a translation</strong>
+									<span>Aiutaci connettersi al mondo.</span>
+								</div>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</article>
