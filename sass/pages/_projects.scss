@@ -19,6 +19,11 @@
 	border-top: 1px dotted darken($vpmtan, 15%);
 }
 
+%donate-button {
+	display: block;
+	padding: 8px 4px;
+}
+
 
 /*
  *
@@ -256,5 +261,68 @@
 		display: block;
 		font-size: 11px;
 		color: #333;
+	}
+}
+
+
+/*
+ *
+ * Donate popup
+ *
+ */
+
+#project-donate {
+	max-width: 450px;
+	padding: 20px;
+}
+
+#donate5 {
+	@extend %donate-button;
+	font: 400 18px $header-font;
+
+	$text-color: #FFF;
+	$background-color: #33cc66;
+	@include vpm-button($background-color, $text-color, default);
+
+	&:hover {
+		@include vpm-button($background-color, $text-color, hover);
+	}
+
+	&:active {
+		@include vpm-button($background-color, $text-color, active);
+	}
+}
+
+#donate10 {
+	@extend %donate-button;
+	font: 400 18px $header-font;
+
+	$text-color: #FFF;
+	$background-color: #3399ff;
+	@include vpm-button($background-color, $text-color, default);
+
+	&:hover {
+		@include vpm-button($background-color, $text-color, hover);
+	}
+
+	&:active {
+		@include vpm-button($background-color, $text-color, active);
+	}
+}
+
+#donateCustom {
+	@extend %donate-button;
+	font: 400 18px $header-font;
+
+	$text-color: #FFF;
+	$background-color: #ff9933;
+	@include vpm-button($background-color, $text-color, default);
+
+	&:hover {
+		@include vpm-button($background-color, $text-color, hover);
+	}
+
+	&:active {
+		@include vpm-button($background-color, $text-color, active);
 	}
 }

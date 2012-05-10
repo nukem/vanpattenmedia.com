@@ -59,17 +59,6 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 									<!-- <label for="MERGE0"><strong>Email Address</strong> <span class="asterisk">*</span>:</label> -->
 									<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" placeholder="email@address.com">
 
-									<!-- <ul class="interestgroup_field" id="interestgroup_field_66257">
-										<li class="interestgroup_row">
-											<input type="checkbox" id="group_1" name="group[7973][1]" value="1">
-											<label for="group_1">Total Slider</label>
-										</li>
-										<li class="interestgroup_row">
-											<input type="checkbox" id="group_2" name="group[7973][2]" value="1">
-											<label for="group_2">Rach5</label>
-										</li>
-									</ul> -->
-
 									<input type="submit" value="Subscribe" id="project-email-subscribe">
 								</form>
 							</div>
@@ -112,7 +101,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 					<p><?php the_title(); ?> is <a href="">open source</a>, and thrives when the community supports its development. There are a number of ways you can contribute even if you don't have technical savvy. Below are a few ideas&hellip;</p>
 					<ul id="contribute-links">
 						<li class="four columns alpha">
-							<a class="contribute-link" href="">
+							<a class="contribute-link project-media-item" href="#project-donate">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/gift.png" alt="">
 								<div class="contribute-text">
 									<strong>Donate</strong>
@@ -159,6 +148,20 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 					</ul>
 				</div>
 				<?php endif; ?>
+			</div>
+			<div id="project-donate" style="display: none;">
+				<h3>Donate to <?php the_title(); ?></h3>
+				<p>As a free and <a href="">open source</a> project, <?php the_title(); ?> does not regularly make its development team money. But if you feel compelled to contribute and are not able (or do not have the time) to code or contribute a translation, a financial donation is a great way to show your support.</p>
+				<p>Donations go directly to the developers of each project (minus PayPal fees). Van Patten Media does not take any cut.</p>
+
+				<?php // $5.00 button
+				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5L2HRGFVLPY2Y" id="donate5">Donate $5</a>
+
+				<?php // $10.00 button
+				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=77864J8RNXECA" id="donate10">Donate $10</a>
+
+				<?php // Custom amount button
+				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSLVG59E9YPDL" id="donateCustom">Donate a custom amount</a>
 			</div>
 		</article>
 	<?php endwhile; else : ?>
