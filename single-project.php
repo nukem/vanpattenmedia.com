@@ -108,6 +108,31 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 									<span>Any amount is appreciated.</span>
 								</div>
 							</a>
+							<div id="project-donate" style="display: none;">
+								<h3>Donate to <?php the_title(); ?></h3>
+								<p>As a free and <a href="">open source</a> project, <?php the_title(); ?> does not regularly make its development team money. But if you feel compelled to contribute and are not able (or do not have the time) to code or prepare a translation, a financial donation is a great way to show your support.</p>
+								<p>Donations go directly to the developers of each project (minus PayPal fees). Van Patten Media does not take any cut.</p>
+
+								<?php // $5.00 button
+								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5L2HRGFVLPY2Y" id="project-donate-5">Donate $5</a>
+
+								<?php // $10.00 button
+								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=77864J8RNXECA" id="project-donate-10">Donate $10</a>
+
+								<?php // Custom amount button
+								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSLVG59E9YPDL" id="project-donate-custom">Donate a custom amount</a>
+
+								<div id="project-donate-payment-info" class="clearfix">
+									<div id="project-donate-paypal-message">Donate safely with <a href="https://www.paypal.com/" id="paypal"><img src="<?= get_template_directory_uri(); ?>/img/paypal.png" alt="PayPal" title="PayPal" id="project-donate-paypal-logo"></a>.</div>
+									<ul id="project-donate-payment-cards">
+										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/generic.png" alt="Debit"></li>
+										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/amex.png" alt="American Express"></li>
+										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/discover.png" alt="Discover"></li>
+										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/mastercard.png" alt="Mastercard"></li>
+										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/visa.png" alt="Visa"></li>
+									</ul>
+								</div>
+							</div>
 						</li>
 						<li class="four columns">
 							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues/new">
@@ -148,20 +173,6 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 					</ul>
 				</div>
 				<?php endif; ?>
-			</div>
-			<div id="project-donate" style="display: none;">
-				<h3>Donate to <?php the_title(); ?></h3>
-				<p>As a free and <a href="">open source</a> project, <?php the_title(); ?> does not regularly make its development team money. But if you feel compelled to contribute and are not able (or do not have the time) to code or contribute a translation, a financial donation is a great way to show your support.</p>
-				<p>Donations go directly to the developers of each project (minus PayPal fees). Van Patten Media does not take any cut.</p>
-
-				<?php // $5.00 button
-				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5L2HRGFVLPY2Y" id="donate5">Donate $5</a>
-
-				<?php // $10.00 button
-				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=77864J8RNXECA" id="donate10">Donate $10</a>
-
-				<?php // Custom amount button
-				?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSLVG59E9YPDL" id="donateCustom">Donate a custom amount</a>
 			</div>
 		</article>
 	<?php endwhile; else : ?>

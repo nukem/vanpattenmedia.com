@@ -276,7 +276,7 @@
 	padding: 20px;
 }
 
-#donate5 {
+#project-donate-5 {
 	@extend %donate-button;
 	font: 400 18px $header-font;
 
@@ -293,7 +293,7 @@
 	}
 }
 
-#donate10 {
+#project-donate-10 {
 	@extend %donate-button;
 	font: 400 18px $header-font;
 
@@ -310,7 +310,7 @@
 	}
 }
 
-#donateCustom {
+#project-donate-custom {
 	@extend %donate-button;
 	font: 400 18px $header-font;
 
@@ -324,5 +324,32 @@
 
 	&:active {
 		@include vpm-button($background-color, $text-color, active);
+	}
+}
+
+#project-donate-payment-info {
+	margin: 15px 0 0;
+	height: 27px;
+}
+
+#project-donate-paypal-message {
+	position: relative;
+	top: 4px;
+	float: left;
+}
+
+#project-donate-paypal-logo {
+	position: relative;
+	top: 4px;
+	left: 1px;
+}
+
+#project-donate-payment-cards {
+	float: right;
+	margin: 0;
+
+	li {
+		float: left;
+		margin: 0 0 0 8px;
 	}
 }
