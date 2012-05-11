@@ -272,13 +272,20 @@
  */
 
 #project-donate {
-	max-width: 450px;
+	max-width: 455px;
 	padding: 20px;
+}
+
+#project-donate-buttons {
+
 }
 
 #project-donate-5 {
 	@extend %donate-button;
 	font: 400 18px $header-font;
+	width: 100px;
+	float: left;
+	margin: 0 10px 0 0;
 
 	$text-color: #FFF;
 	$background-color: #33cc66;
@@ -296,6 +303,9 @@
 #project-donate-10 {
 	@extend %donate-button;
 	font: 400 18px $header-font;
+	width: 100px;
+	float: left;
+	margin: 0 10px 0 0;
 
 	$text-color: #FFF;
 	$background-color: #3399ff;
@@ -313,6 +323,8 @@
 #project-donate-custom {
 	@extend %donate-button;
 	font: 400 18px $header-font;
+	width: 205px;
+	float: left;
 
 	$text-color: #FFF;
 	$background-color: #ff9933;
@@ -329,7 +341,7 @@
 
 #project-donate-payment-info {
 	margin: 15px 0 0;
-	height: 27px;
+	height: 28px;
 }
 
 #project-donate-paypal-message {
