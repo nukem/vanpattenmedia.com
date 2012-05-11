@@ -26,7 +26,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 					<aside class="five columns omega" id="project-meta">
 						<div id="project-meta-inner">
 							<p id="project-download-box">
-								<a href="<?= get_post_meta($post_id, 'project_download_url', true); ?>" id="button-download">Download now</a><br>
+								<a href="<?= get_post_meta($post_id, 'project_download_url', true); ?>" id="button-download" onClick="recordOutboundLink(this, 'Project Download', 'wordpress.org');return false;">Download now</a><br>
 								<?php
 								$release_time_unix = get_post_meta($post_id, 'project_release_unix_time', true);
 								$release_time_c = date('c', $release_time_unix);
@@ -36,7 +36,11 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 								<em id="project-requirements">Requires WordPress 3.3.1 or greater</em>
 							</p>
 							<p id="project-contribute-box">
-								<a href="#contribute" id="button-contribute">Contribute today!</a>
+								<?php if ( $post->post_parent ) : ?>
+									<a href="<?= get_permalink($post->post_parent); ?>#contribute" id="button-contribute">Contribute today!</a>
+								<?php else : ?>
+									<a href="#contribute" id="button-contribute">Contribute today!</a>
+								<?php endif; ?>
 							</p>
 							<?php if ( !$post->post_parent ) : ?>
 							<div id="project-key-links">
@@ -54,9 +58,8 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 								<form action="http://vanpattenmedia.us4.list-manage.com/subscribe/post" method="post" id="project-email-signup-form">
 									<input type="hidden" name="u" value="093e419717726bf49301d1a62">
 									<input type="hidden" name="id" value="ba0b414c68">
-									<input type="hidden" name="group[7973][1]" value="true">
+									<input type="hidden" name="<?= get_post_meta($post_id, 'project_mailchimp_group', true); ?>" value="true">
 
-									<!-- <label for="MERGE0"><strong>Email Address</strong> <span class="asterisk">*</span>:</label> -->
 									<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" placeholder="email@address.com">
 
 									<input type="submit" value="Subscribe" id="project-email-subscribe">
@@ -97,7 +100,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 					<?php endif; ?>
 				</div>
 				<div class="row">
-					<h3><a name="contribute"></a>Contribute</h3>
+					<h3><a name="contribute"></a><a name="translate"></a>Contribute</h3>
 					<p><?php the_title(); ?> is <a href="">open source</a>, and thrives when the community supports its development. There are a number of ways you can contribute even if you don't have technical savvy. Below are a few ideas&hellip;</p>
 					<ul id="contribute-links">
 						<li class="four columns alpha">
@@ -113,17 +116,19 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 								<p>As a free and <a href="">open source</a> project, <?php the_title(); ?> does not regularly make its development team money. But if you feel compelled to contribute and are not able (or do not have the time) to code or prepare a translation, a financial donation is a great way to show your support.</p>
 								<p>Donations go directly to the developers of each project (minus PayPal fees). Van Patten Media does not take any cut.</p>
 
-								<?php // $5.00 button
-								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5L2HRGFVLPY2Y" id="project-donate-5">Donate $5</a>
+								<div id="project-donate-buttons" class="clearfix">
+									<?php // $5.00 button
+									?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=<?= get_post_meta($post_id, 'project_paypal_button_id_5', true); ?>" id="project-donate-5">Donate $5</a>
 
-								<?php // $10.00 button
-								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=77864J8RNXECA" id="project-donate-10">Donate $10</a>
+									<?php // $10.00 button
+									?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=<?= get_post_meta($post_id, 'project_paypal_button_id_10', true); ?>" id="project-donate-10">Donate $10</a>
 
-								<?php // Custom amount button
-								?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSLVG59E9YPDL" id="project-donate-custom">Donate a custom amount</a>
+									<?php // Custom amount button
+									?><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=<?= get_post_meta($post_id, 'project_paypal_button_id_custom', true); ?>" id="project-donate-custom">Donate a custom amount</a>
+								</div>
 
 								<div id="project-donate-payment-info" class="clearfix">
-									<div id="project-donate-paypal-message">Donate safely with <a href="https://www.paypal.com/" id="paypal"><img src="<?= get_template_directory_uri(); ?>/img/paypal.png" alt="PayPal" title="PayPal" id="project-donate-paypal-logo"></a>.</div>
+									<div id="project-donate-paypal-message">Donate safely with <a href="https://www.paypal.com/" id="paypal"><img src="<?= get_template_directory_uri(); ?>/img/paypal.png" alt="PayPal" title="PayPal" id="project-donate-paypal-logo"></a></div>
 									<ul id="project-donate-payment-cards">
 										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/generic.png" alt="Debit"></li>
 										<li><img src="<?= get_template_directory_uri(); ?>/img/icons/cards/amex.png" alt="American Express"></li>
@@ -135,7 +140,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 							</div>
 						</li>
 						<li class="four columns">
-							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues/new">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues?direction=desc&sort=open&state=open">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/bug.png" alt="">
 								<div class="contribute-text">
 									<strong>Report a bug</strong>
@@ -144,7 +149,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 							</a>
 						</li>
 						<li class="four columns omega">
-							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues/new">
+							<a class="contribute-link" href="https://github.com/<?= get_post_meta($post_id, 'project_github_slug', true); ?>/issues?direction=desc&sort=open&state=open">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-idea.png" alt="">
 								<div class="contribute-text">
 									<strong>Suggest a feature</strong>
@@ -162,7 +167,7 @@ $post_thumb_url = wp_get_attachment_image_src($post_thumb_id, 'focus');
 							</a>
 						</dliiv>
 						<li class="four columns">
-							<a class="contribute-link" href="">
+							<a class="contribute-link" href="<?= get_permalink(); ?>translate/">
 								<img class="contribute-icon" src="<?= get_template_directory_uri(); ?>/img/icons/add-translation.png" alt="">
 								<div class="contribute-text">
 									<strong>Prepare a translation</strong>

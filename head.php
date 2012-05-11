@@ -6,7 +6,7 @@
 	?><link rel="author" href="/humans.txt">
 
 	<?php /* CSS */
-	?><link rel="stylesheet" type="text/css" href="/css/global.css?1335985487">
+	?><link rel="stylesheet" type="text/css" href="/css/global.css?1336685338">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Signika+Negative:300,600">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,400,600,700">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
@@ -60,5 +60,13 @@
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
+
+		function recordOutboundLink(link, category, action) {
+			try {
+				var myTracker=_gat._getTrackerByName();
+				_gaq.push(['myTracker._trackEvent', category ,  action ]);
+				setTimeout('document.location = "' + link.href + '"', 100)
+			}catch(err){}
+		}
 	</script><?php endif; ?>
 </head>
