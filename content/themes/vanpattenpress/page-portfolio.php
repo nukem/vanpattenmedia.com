@@ -74,4 +74,4 @@
 
 ?>
 
-<div id="folio_item-data"></div>
+<div id="folio_item-data" style="margin-bottom: 20px;"></div>

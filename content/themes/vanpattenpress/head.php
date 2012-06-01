@@ -47,7 +47,7 @@
 	wp_head(); ?>
 
 	<?php /* Google Analytics */
-	if ( !vpm_is_staging() ) :
+	if ( !vpm_is_staging() && !is_user_logged_in() ) :
 	?><script type="text/javascript">
 		var _gaq = _gaq || [];
 
