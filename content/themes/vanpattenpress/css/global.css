@@ -1,1 +1,2018 @@
-@font-face{font-family:'IconicStrokeRegular';src:url("../fonts/iconicstroke/iconic_stroke-webfont.eot");src:url("../fonts/iconicstroke/iconic_stroke-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/iconicstroke/iconic_stroke-webfont.woff") format("woff"),url("../fonts/iconicstroke/iconic_stroke-webfont.ttf") format("truetype"),url("../fonts/iconicstroke/iconic_stroke-webfont.svg#IconicStrokeRegular") format("svg");font-weight:normal;font-style:normal}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}.container{position:relative;width:960px;margin:0 auto;padding:0}.container .column,.container .columns{float:left;display:inline;margin-left:10px;margin-right:10px}.row{margin-bottom:20px}.column.alpha,.columns.alpha{margin-left:0}.column.omega,.columns.omega{margin-right:0}.container .one.column,.container .one.columns{width:40px}.container .two.columns{width:100px}.container .three.columns{width:160px}.container .four.columns{width:220px}.container .five.columns{width:280px}.container .six.columns{width:340px}.container .seven.columns{width:400px}.container .eight.columns{width:460px}.container .nine.columns{width:520px}.container .ten.columns{width:580px}.container .eleven.columns{width:640px}.container .twelve.columns{width:700px}.container .thirteen.columns{width:760px}.container .fourteen.columns{width:820px}.container .fifteen.columns{width:880px}.container .sixteen.columns{width:940px}.container .one-third.column{width:300px}.container .two-thirds.column{width:620px}.container .offset-by-one{padding-left:60px}.container .offset-by-two{padding-left:120px}.container .offset-by-three{padding-left:180px}.container .offset-by-four{padding-left:240px}.container .offset-by-five{padding-left:300px}.container .offset-by-six{padding-left:360px}.container .offset-by-seven{padding-left:420px}.container .offset-by-eight{padding-left:480px}.container .offset-by-nine{padding-left:540px}.container .offset-by-ten{padding-left:600px}.container .offset-by-eleven{padding-left:660px}.container .offset-by-twelve{padding-left:720px}.container .offset-by-thirteen{padding-left:780px}.container .offset-by-fourteen{padding-left:840px}.container .offset-by-fifteen{padding-left:900px}@media only screen and (min-width: 768px) and (max-width: 959px){.container{width:768px}.container .column,.container .columns{margin-left:10px;margin-right:10px}.column.alpha,.columns.alpha{margin-left:0;margin-right:10px}.column.omega,.columns.omega{margin-right:0;margin-left:10px}.alpha.omega{margin-left:0;margin-right:0}.container .one.column,.container .one.columns{width:28px}.container .two.columns{width:76px}.container .three.columns{width:124px}.container .four.columns{width:172px}.container .five.columns{width:220px}.container .six.columns{width:268px}.container .seven.columns{width:316px}.container .eight.columns{width:364px}.container .nine.columns{width:412px}.container .ten.columns{width:460px}.container .eleven.columns{width:508px}.container .twelve.columns{width:556px}.container .thirteen.columns{width:604px}.container .fourteen.columns{width:652px}.container .fifteen.columns{width:700px}.container .sixteen.columns{width:748px}.container .one-third.column{width:236px}.container .two-thirds.column{width:492px}.container .offset-by-one{padding-left:48px}.container .offset-by-two{padding-left:96px}.container .offset-by-three{padding-left:144px}.container .offset-by-four{padding-left:192px}.container .offset-by-five{padding-left:240px}.container .offset-by-six{padding-left:288px}.container .offset-by-seven{padding-left:336px}.container .offset-by-eight{padding-left:384px}.container .offset-by-nine{padding-left:432px}.container .offset-by-ten{padding-left:480px}.container .offset-by-eleven{padding-left:528px}.container .offset-by-twelve{padding-left:576px}.container .offset-by-thirteen{padding-left:624px}.container .offset-by-fourteen{padding-left:672px}.container .offset-by-fifteen{padding-left:720px}}@media only screen and (max-width: 767px){.container{width:300px}.container .columns,.container .column{margin:0}.container .one.column,.container .one.columns,.container .two.columns,.container .three.columns,.container .four.columns,.container .five.columns,.container .six.columns,.container .seven.columns,.container .eight.columns,.container .nine.columns,.container .ten.columns,.container .eleven.columns,.container .twelve.columns,.container .thirteen.columns,.container .fourteen.columns,.container .fifteen.columns,.container .sixteen.columns,.container .one-third.column,.container .two-thirds.column{width:300px}.container .offset-by-one,.container .offset-by-two,.container .offset-by-three,.container .offset-by-four,.container .offset-by-five,.container .offset-by-six,.container .offset-by-seven,.container .offset-by-eight,.container .offset-by-nine,.container .offset-by-ten,.container .offset-by-eleven,.container .offset-by-twelve,.container .offset-by-thirteen,.container .offset-by-fourteen,.container .offset-by-fifteen{padding-left:0}}@media only screen and (min-width: 480px) and (max-width: 767px){.container{width:420px}.container .columns,.container .column{margin:0}.container .one.column,.container .one.columns,.container .two.columns,.container .three.columns,.container .four.columns,.container .five.columns,.container .six.columns,.container .seven.columns,.container .eight.columns,.container .nine.columns,.container .ten.columns,.container .eleven.columns,.container .twelve.columns,.container .thirteen.columns,.container .fourteen.columns,.container .fifteen.columns,.container .sixteen.columns,.container .one-third.column,.container .two-thirds.column{width:420px}}.container:after{content:"\0020";display:block;height:0;clear:both;visibility:hidden}.clearfix:before,.clearfix:after,.row:before,.row:after{content:'\0020';display:block;overflow:hidden;visibility:hidden;width:0;height:0}.row:after,.clearfix:after{clear:both}.row,.clearfix{zoom:1}.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}html,body{background:#ebe4d2;color:#000;font:300 15px/1.8 "Open Sans","Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;-webkit-text-size-adjust:100%}p img,.alignleft,.aligncenter,.alignright,#project-media li a img{border:1px solid #BBB;background:#FFF;padding:3px;-webkit-box-shadow:0 1px 4px -2px #000;-moz-box-shadow:0 1px 4px -2px #000;box-shadow:0 1px 4px -2px #000}a{color:#369;text-decoration:underline}a:hover{color:#4f8ac4;text-decoration:none}a:visited{color:#2a547e}a:visited:hover{color:#4f8ac4}a:visited:active{color:#f90}a:active{color:#f90}h1,h2,h3,h4,h5,h6{color:#181818;font-family:"Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;font-weight:600}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit;text-decoration:none}h1{font-size:46px;line-height:50px;margin-bottom:14px}h2{font-size:35px;line-height:40px;margin-bottom:10px}h3{font-size:28px;line-height:34px;margin-bottom:8px}h4{font-size:21px;line-height:30px;margin-bottom:4px}h5{font-size:17px;line-height:24px}h6{font-size:14px;line-height:21px}p{margin:0 0 20px 0;z-index:20}p img{margin:0}p.lead{font-size:21px;line-height:27px;color:#777}em{font-style:italic}strong{font-weight:bold}small{font-size:80%}ul,ol{margin-bottom:20px}ul{list-style:none outside}ol{list-style:decimal}.entry-content ol,.entry-content ul{margin-left:30px}.entry-content ul{list-style:square outside}ul ul,ul ol,ol ol,ol ul{margin:4px 0 5px 30px;font-size:90%}ul ul li,ul ol li,ol ol li,ol ul li{margin-bottom:6px}li{margin-bottom:12px}blockquote{padding:0 0 10px 20px;position:relative}blockquote p{font-style:italic;position:relative;z-index:10}.alignleft{float:left;margin:5px 20px 10px 0}.aligncenter{margin:9px auto 10px;display:block}.alignright{float:right;margin:5px 0 10px 20px}.wp-caption-text{font:12px "Open Sans","Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;color:#666;margin:4px 0 0;display:block}strong.cta{font:300 20px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;background:#F6F3EB;padding:6px 4px;display:inline-block}strong.cta a{color:#FFF;background:#ff9900;text-decoration:none;padding:2px 4px}strong.cta a:hover{background:#336699}#header{position:relative;border-bottom:1px solid #dbcfaf}#header-inner{min-height:150px}#logo{display:block;max-width:423px;max-height:67px;width:100%;height:auto;z-index:100;line-height:1;padding:15px 20px 5px;background:#FFF;border-right:1px solid #dbcfaf;position:absolute;bottom:-1px}#logo img{max-width:423px;max-height:67px;width:100%;height:auto}#alert-container{text-align:center}#alert-announcement{min-height:16px;padding:8px 4px 8px 8px;font:400 14px/1 "Open Sans","Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;display:-moz-inline-box;-moz-box-orient:vertical;display:inline-block;vertical-align:middle;*vertical-align:auto}#alert-announcement{*display:inline}#alert-announcement a{color:#FFF}#alert-announcement p{margin:0}#alert-announcement .button{padding:2px 6px;font-weight:600}#alert-announcement{color:#fff;text-shadow:0 1px 1px #0d0d0d;border:1px solid #9b8f70;border-top:none;background-color:#bbb29d}#alert-announcement .button{margin:0 0 0 5px;border:1px solid #a75809;-webkit-border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-o-border-radius:3px;border-radius:3px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#f3881f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4983C', endColorstr='#FFE6790C');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0OTgzYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U2NzkwYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4983c), color-stop(100%, #e6790c));background-image:-webkit-linear-gradient(top, #f4983c 0%,#e6790c 100%);background-image:-moz-linear-gradient(top, #f4983c 0%,#e6790c 100%);background-image:-o-linear-gradient(top, #f4983c 0%,#e6790c 100%);background-image:-ms-linear-gradient(top, #f4983c 0%,#e6790c 100%);background-image:linear-gradient(top, #f4983c 0%,#e6790c 100%);-webkit-box-shadow:inset 0 1px 0 0 #fbd8b5,inset 0 -1px 0 0 #c0650a;-moz-box-shadow:inset 0 1px 0 0 #fbd8b5,inset 0 -1px 0 0 #c0650a;box-shadow:inset 0 1px 0 0 #fbd8b5,inset 0 -1px 0 0 #c0650a;color:#fff;filter:none}#alert-announcement .button:hover{background-color:#f4983c;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF6A759', endColorstr='#FFF3881F');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2YTc1OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YzODgxZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6a759), color-stop(100%, #f3881f));background-image:-webkit-linear-gradient(top, #f6a759 0%,#f3881f 100%);background-image:-moz-linear-gradient(top, #f6a759 0%,#f3881f 100%);background-image:-o-linear-gradient(top, #f6a759 0%,#f3881f 100%);background-image:-ms-linear-gradient(top, #f6a759 0%,#f3881f 100%);background-image:linear-gradient(top, #f6a759 0%,#f3881f 100%);color:#fff;filter:none}#alert-announcement .button:active{background-color:#f3881f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE6790C', endColorstr='#FFF4983C');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2NzkwYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y0OTgzYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6790c), color-stop(100%, #f4983c));background-image:-webkit-linear-gradient(top, #e6790c 0%,#f4983c 100%);background-image:-moz-linear-gradient(top, #e6790c 0%,#f4983c 100%);background-image:-o-linear-gradient(top, #e6790c 0%,#f4983c 100%);background-image:-ms-linear-gradient(top, #e6790c 0%,#f4983c 100%);background-image:linear-gradient(top, #e6790c 0%,#f4983c 100%);-webkit-box-shadow:inset 0 -1px 0 0 #fbd8b5,inset 0 1px 0 0 #c0650a;-moz-box-shadow:inset 0 -1px 0 0 #fbd8b5,inset 0 1px 0 0 #c0650a;box-shadow:inset 0 -1px 0 0 #fbd8b5,inset 0 1px 0 0 #c0650a;color:#fff;filter:none}.four.columns.nav{float:right}#footer{padding:0 0 20px;border-top:1px solid #dbcfaf}#legal{background:#FFF;color:#666;font-size:13px;padding:2px 20px 10px 20px;margin:0 10px;float:right;border-right:1px solid #dbcfaf;border-bottom:1px solid #dbcfaf;position:relative;top:-1px}#legal a{color:#888;margin-left:3px}#legal a:hover{color:#acacac}#legal a:visited{color:#767676}#legal a:visited:hover{color:#9a9a9a}.infocus{background:#ebe4d2;height:230px;overflow:hidden}.infocus .slide{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);opacity:0.3}.type-page .slide,.type-project .slide{margin-bottom:20px}.slide-hold{width:1400px;position:relative}.slide{float:left;position:relative;max-width:700px;width:100%;height:230px;overflow:hidden}.slide div{position:absolute;top:0;right:0;bottom:0;left:0;border-bottom:3px solid rgba(0,0,0,0.75)}.slide a{display:block;height:100%;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;text-decoration:none;position:relative}.slide h2{font-weight:400}.slide h2 a{display:inline;color:#FFF;border-bottom:1px dotted #AAA}.slide h2 a:hover{border-bottom:1px dotted #FFF;color:#FFF}.slide h2,.slide p{color:#FFF;position:absolute;background:url('../img/rgbapng/000000bf.png?1327244643');background:rgba(0,0,0,0.75);text-shadow:0 1px 1px rgba(0,0,0,0.3);margin:0 0 0 10px}.slide.header-top h2{font-size:26px;padding:16px 8px 5px;display:inline;top:0}.slide.header-top p{padding:4px 8px 10px;line-height:25px;bottom:0;width:44%}.slide.header-bottom{float:none}.slide.header-bottom h2{font-size:24px;padding:5px 10px;bottom:0px}.current-slide{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1}.slide-nav{height:40px}.home .slide-nav{height:0}.slide-nav-in{float:right}.slide-prev,.slide-next{display:block;float:left;text-decoration:none;color:#000;background:#ebe4d2;padding:10px;position:relative;z-index:1000}.slide-prev:hover,.slide-next:hover{color:#000;background:#dbcfaf}.slide-prev:active,.slide-next:active{background:#bba569}#main-container{padding:30px 0 10px;background:#FFF}#folio_full{height:525px}#folio_full .slide{height:525px;background-position:top center}.folio_item-thumb{width:280px;height:210px;padding:10px 10px 10px 410px;background:url('../img/rgbapng/ffffff66.png?1329588425');background:rgba(255,255,255,0.4)}.folio_item-link{display:block;padding:10px;text-decoration:none;float:right}.folio_item-link:after{content:'S';font:20px IconicStrokeRegular, serif;padding:0 0 0 5px}#folio_item-data{height:40px;margin-top:-40px;position:relative}#folio_item-data .folio_item-link{position:absolute;top:0;left:0;float:none}#folio_item-info{margin:-10px 0 0}#folio_item-tech_used{float:left;width:210px;background:#ebe4d2;padding:10px 5px 10px 10px;margin:-10px 0 0}#folio_item-tech_used ul{margin:0}#folio_item-tech_used li{margin:5px 5px 0 0;padding:1px 5px 2px;background:#dbcfaf;list-style:none;width:90px;float:left}#folio_item-related{margin:0 0 0 245px}.home .entry-content p{font:300 24px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif}.home .entry-content p:first-child{font:300 34px/48px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;margin:20px 0 25px}.home .entry-content p:first-child a{color:#FFF;background:#f90 url(../img/lnkgrd.jpg) 0 0 no-repeat;text-decoration:none;padding:2px 4px 0}.home .entry-content strong{font-weight:600}.homebox{position:relative}.homebox .slide{width:100%;height:140px;overflow:hidden}.homebox a{display:block;text-decoration:none;color:#000}.homebox a p{margin:0;padding:8px 10px 10px;background:#ebe4d2}.homebox a:hover p{color:#000;background:#dbcfaf}.homebox a:active p{background:#bba569}.homebox img{width:100%;height:auto;min-width:340px;min-height:140px;margin:0;display:block;background:#C0C0C0}#project-meta{float:right;margin:-20px 0 20px 20px}#project-meta-inner{background:#f2f0ea;padding:20px}#button-download,#button-contribute{display:block;padding:14px 4px}#project-contribute-box,#project-email-signup-box,#project-key-links{margin:20px 0 0;padding:20px 0 0;border-top:1px dotted #d3c59e}#project-donate-5,#project-donate-10,#project-donate-custom{display:block;padding:8px 4px}#project-download-box br{display:none}#button-download{font:600 26px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;border:1px solid #b35900;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#ff870f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9933', endColorstr='#FFEB7500');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9933), color-stop(100%, #eb7500));background-image:-webkit-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-moz-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-o-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-ms-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:linear-gradient(top, #ff9933 0%,#eb7500 100%);-webkit-box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;-moz-box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;color:#fff;filter:none}#button-download:hover{background-color:#f93;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFAB57', endColorstr='#FFFF870F');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYWI1NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmODcwZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffab57), color-stop(100%, #ff870f));background-image:-webkit-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-moz-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-o-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-ms-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:linear-gradient(top, #ffab57 0%,#ff870f 100%);color:#fff;filter:none}#button-download:active{background-color:#ff870f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEB7500', endColorstr='#FFFF9933');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eb7500), color-stop(100%, #ff9933));background-image:-webkit-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-moz-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-o-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-ms-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:linear-gradient(top, #eb7500 0%,#ff9933 100%);-webkit-box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;-moz-box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;color:#fff;filter:none}#project-version-info,#project-requirements{display:block;margin:6px 0 3px;font-style:normal;font-size:11px;text-align:center}#project-requirements{margin:0}#project-fuzzy-release-date{border-bottom:1px dotted #AAA}#button-contribute{font:600 24px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;border:1px solid #0b2df5;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#6378f9;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF8596FA', endColorstr='#FF405BF7');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg1OTZmYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzQwNWJmNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8596fa), color-stop(100%, #405bf7));background-image:-webkit-linear-gradient(top, #8596fa 0%,#405bf7 100%);background-image:-moz-linear-gradient(top, #8596fa 0%,#405bf7 100%);background-image:-o-linear-gradient(top, #8596fa 0%,#405bf7 100%);background-image:-ms-linear-gradient(top, #8596fa 0%,#405bf7 100%);background-image:linear-gradient(top, #8596fa 0%,#405bf7 100%);-webkit-box-shadow:inset 0 1px 0 0 #fff,inset 0 -1px 0 0 #2342f6;-moz-box-shadow:inset 0 1px 0 0 #fff,inset 0 -1px 0 0 #2342f6;box-shadow:inset 0 1px 0 0 #fff,inset 0 -1px 0 0 #2342f6;color:#fff;filter:none}#button-contribute:hover{background-color:#8596fa;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA7B4FB', endColorstr='#FF6378F9');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3YjRmYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzYzNzhmOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7b4fb), color-stop(100%, #6378f9));background-image:-webkit-linear-gradient(top, #a7b4fb 0%,#6378f9 100%);background-image:-moz-linear-gradient(top, #a7b4fb 0%,#6378f9 100%);background-image:-o-linear-gradient(top, #a7b4fb 0%,#6378f9 100%);background-image:-ms-linear-gradient(top, #a7b4fb 0%,#6378f9 100%);background-image:linear-gradient(top, #a7b4fb 0%,#6378f9 100%);color:#fff;filter:none}#button-contribute:active{background-color:#6378f9;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF405BF7', endColorstr='#FF8596FA');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwNWJmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzg1OTZmYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #405bf7), color-stop(100%, #8596fa));background-image:-webkit-linear-gradient(top, #405bf7 0%,#8596fa 100%);background-image:-moz-linear-gradient(top, #405bf7 0%,#8596fa 100%);background-image:-o-linear-gradient(top, #405bf7 0%,#8596fa 100%);background-image:-ms-linear-gradient(top, #405bf7 0%,#8596fa 100%);background-image:linear-gradient(top, #405bf7 0%,#8596fa 100%);-webkit-box-shadow:inset 0 -1px 0 0 #fff,inset 0 1px 0 0 #2342f6;-moz-box-shadow:inset 0 -1px 0 0 #fff,inset 0 1px 0 0 #2342f6;box-shadow:inset 0 -1px 0 0 #fff,inset 0 1px 0 0 #2342f6;color:#fff;filter:none}#project-email-signup-box p{margin:0 0 10px}#project-email-signup-box p:first-child{line-height:1.6;margin:0 0 1px}#project-email-signup-box p em{font-size:12px;color:#666}#project-email-signup-form{text-align:right}#MERGE0{width:100%}#project-key-links li{margin:0 0 8px 26px;list-style:square;line-height:1.3}#project-content p:first-child{font-weight:400;font-size:18px}#project-content p:first-child strong{font-weight:700}#project-media li{width:106px;height:80px;float:left;margin:0 10px 10px 0}#project-media li a{display:block;line-height:1}#project-media li a img{width:100%;height:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#project-media li a:hover img{border:1px solid #777;width:112%;height:112%;margin:-5.5% 0 0 -6.5%;padding:4px;-webkit-box-shadow:0 1px 3px -1px #000;-moz-box-shadow:0 1px 3px -1px #000;box-shadow:0 1px 3px -1px #000}#contribute-links{list-style:none;margin:0;padding:0}#contribute-links li{margin-bottom:20px}.contribute-link{display:block;text-decoration:none;min-height:32px;border:1px solid #dbcfaf;background:#fbf9f6;line-height:1.3}.contribute-icon{padding:4px;float:left;border:0}.contribute-text{padding:3px 8px 6px;margin:0 0 0 40px;background:#ebe4d2}.contribute-text strong{display:block;padding:0 0 4px}.contribute-text span{display:block;font-size:11px;color:#333}#project-donate{max-width:455px;padding:20px}#project-donate-5{font:400 18px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;width:100px;float:left;margin:0 10px 0 0;border:1px solid #196633;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#2caf58;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF33CC66', endColorstr='#FF259349');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzY2M2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI1OTM0OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33cc66), color-stop(100%, #259349));background-image:-webkit-linear-gradient(top, #33cc66 0%,#259349 100%);background-image:-moz-linear-gradient(top, #33cc66 0%,#259349 100%);background-image:-o-linear-gradient(top, #33cc66 0%,#259349 100%);background-image:-ms-linear-gradient(top, #33cc66 0%,#259349 100%);background-image:linear-gradient(top, #33cc66 0%,#259349 100%);-webkit-box-shadow:inset 0 1px 0 0 #99e6b3,inset 0 -1px 0 0 #1f7a3d;-moz-box-shadow:inset 0 1px 0 0 #99e6b3,inset 0 -1px 0 0 #1f7a3d;box-shadow:inset 0 1px 0 0 #99e6b3,inset 0 -1px 0 0 #1f7a3d;color:#fff;filter:none}#project-donate-5:hover{background-color:#3c6;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50D37B', endColorstr='#FF2CAF58');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwZDM3YiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJjYWY1OCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50d37b), color-stop(100%, #2caf58));background-image:-webkit-linear-gradient(top, #50d37b 0%,#2caf58 100%);background-image:-moz-linear-gradient(top, #50d37b 0%,#2caf58 100%);background-image:-o-linear-gradient(top, #50d37b 0%,#2caf58 100%);background-image:-ms-linear-gradient(top, #50d37b 0%,#2caf58 100%);background-image:linear-gradient(top, #50d37b 0%,#2caf58 100%);color:#fff;filter:none}#project-donate-5:active{background-color:#2caf58;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF259349', endColorstr='#FF33CC66');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI1OTM0OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzY2M2NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #259349), color-stop(100%, #33cc66));background-image:-webkit-linear-gradient(top, #259349 0%,#33cc66 100%);background-image:-moz-linear-gradient(top, #259349 0%,#33cc66 100%);background-image:-o-linear-gradient(top, #259349 0%,#33cc66 100%);background-image:-ms-linear-gradient(top, #259349 0%,#33cc66 100%);background-image:linear-gradient(top, #259349 0%,#33cc66 100%);-webkit-box-shadow:inset 0 -1px 0 0 #99e6b3,inset 0 1px 0 0 #1f7a3d;-moz-box-shadow:inset 0 -1px 0 0 #99e6b3,inset 0 1px 0 0 #1f7a3d;box-shadow:inset 0 -1px 0 0 #99e6b3,inset 0 1px 0 0 #1f7a3d;color:#fff;filter:none}#project-donate-10{font:400 18px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;width:100px;float:left;margin:0 10px 0 0;border:1px solid #0059b3;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#0f87ff;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3399FF', endColorstr='#FF0075EB');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzOTlmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNzVlYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3399ff), color-stop(100%, #0075eb));background-image:-webkit-linear-gradient(top, #3399ff 0%,#0075eb 100%);background-image:-moz-linear-gradient(top, #3399ff 0%,#0075eb 100%);background-image:-o-linear-gradient(top, #3399ff 0%,#0075eb 100%);background-image:-ms-linear-gradient(top, #3399ff 0%,#0075eb 100%);background-image:linear-gradient(top, #3399ff 0%,#0075eb 100%);-webkit-box-shadow:inset 0 1px 0 0 #b3d9ff,inset 0 -1px 0 0 #06c;-moz-box-shadow:inset 0 1px 0 0 #b3d9ff,inset 0 -1px 0 0 #06c;box-shadow:inset 0 1px 0 0 #b3d9ff,inset 0 -1px 0 0 #06c;color:#fff;filter:none}#project-donate-10:hover{background-color:#39f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF57ABFF', endColorstr='#FF0F87FF');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU3YWJmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmODdmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57abff), color-stop(100%, #0f87ff));background-image:-webkit-linear-gradient(top, #57abff 0%,#0f87ff 100%);background-image:-moz-linear-gradient(top, #57abff 0%,#0f87ff 100%);background-image:-o-linear-gradient(top, #57abff 0%,#0f87ff 100%);background-image:-ms-linear-gradient(top, #57abff 0%,#0f87ff 100%);background-image:linear-gradient(top, #57abff 0%,#0f87ff 100%);color:#fff;filter:none}#project-donate-10:active{background-color:#0f87ff;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0075EB', endColorstr='#FF3399FF');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzVlYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzOTlmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0075eb), color-stop(100%, #3399ff));background-image:-webkit-linear-gradient(top, #0075eb 0%,#3399ff 100%);background-image:-moz-linear-gradient(top, #0075eb 0%,#3399ff 100%);background-image:-o-linear-gradient(top, #0075eb 0%,#3399ff 100%);background-image:-ms-linear-gradient(top, #0075eb 0%,#3399ff 100%);background-image:linear-gradient(top, #0075eb 0%,#3399ff 100%);-webkit-box-shadow:inset 0 -1px 0 0 #b3d9ff,inset 0 1px 0 0 #06c;-moz-box-shadow:inset 0 -1px 0 0 #b3d9ff,inset 0 1px 0 0 #06c;box-shadow:inset 0 -1px 0 0 #b3d9ff,inset 0 1px 0 0 #06c;color:#fff;filter:none}#project-donate-custom{font:400 18px "Signika Negative","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;width:205px;float:left;border:1px solid #b35900;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;text-shadow:0 1px 1px #000;background-color:#ff870f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9933', endColorstr='#FFEB7500');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9933), color-stop(100%, #eb7500));background-image:-webkit-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-moz-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-o-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:-ms-linear-gradient(top, #ff9933 0%,#eb7500 100%);background-image:linear-gradient(top, #ff9933 0%,#eb7500 100%);-webkit-box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;-moz-box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;box-shadow:inset 0 1px 0 0 #ffd9b3,inset 0 -1px 0 0 #c60;color:#fff;filter:none}#project-donate-custom:hover{background-color:#f93;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFAB57', endColorstr='#FFFF870F');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYWI1NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmODcwZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffab57), color-stop(100%, #ff870f));background-image:-webkit-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-moz-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-o-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:-ms-linear-gradient(top, #ffab57 0%,#ff870f 100%);background-image:linear-gradient(top, #ffab57 0%,#ff870f 100%);color:#fff;filter:none}#project-donate-custom:active{background-color:#ff870f;*zoom:1;filter:progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEB7500', endColorstr='#FFFF9933');background-image:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');background-size:100%;background-image:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eb7500), color-stop(100%, #ff9933));background-image:-webkit-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-moz-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-o-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:-ms-linear-gradient(top, #eb7500 0%,#ff9933 100%);background-image:linear-gradient(top, #eb7500 0%,#ff9933 100%);-webkit-box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;-moz-box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;box-shadow:inset 0 -1px 0 0 #ffd9b3,inset 0 1px 0 0 #c60;color:#fff;filter:none}#project-donate-payment-info{margin:15px 0 0;height:28px}#project-donate-paypal-message{position:relative;top:4px;float:left}#project-donate-paypal-logo{position:relative;top:4px;left:1px}#project-donate-payment-cards{float:right;margin:0}#project-donate-payment-cards li{float:left;margin:0 0 0 8px}.blog article{margin:30px 0 0;padding:30px 0 0;border-top:1px dotted #CCC}.blog article:first-child{padding:0;border:0;margin:0}.info{font:14px "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif !important;margin:7px 0 20px 3px !important;color:#AAA;display:block;text-align:right;clear:both}#comments_wrap{border-top:1px dotted #CCC;padding:10px 0 0;margin:40px 0 0}@media handheld, only screen and (min-width: 768px) and (max-width: 959px){#project-media li{width:101px;height:76px}}@media handheld, only screen and (min-width: 480px) and (max-width: 767px){#project-media li{width:95px;height:71px}}@media handheld, only screen and (max-width: 479px){#project-media li{width:90px;height:68px}}
+@font-face {
+  font-family: 'IconicStrokeRegular';
+  src: url("../fonts/iconicstroke/iconic_stroke-webfont.eot");
+  src: url("../fonts/iconicstroke/iconic_stroke-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconicstroke/iconic_stroke-webfont.woff") format("woff"), url("../fonts/iconicstroke/iconic_stroke-webfont.ttf") format("truetype"), url("../fonts/iconicstroke/iconic_stroke-webfont.svg#IconicStrokeRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 18, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 41, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+ *
+ * Rach5 default variables
+ *
+ */
+/*
+ *
+ * Default colors
+ *
+ */
+/*
+ *
+ * Font stacks
+ *
+ */
+/*
+ *
+ * Buttons
+ *
+ */
+/*
+* Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 8/17/2011
+*/
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+/* #Base 960 Grid
+================================================== */
+/* line 24, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* line 26, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .column,
+.container .columns {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 27, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.row {
+  margin-bottom: 20px;
+}
+
+/* Nested Column Classes */
+/* line 30, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.column.alpha, .columns.alpha {
+  margin-left: 0;
+}
+
+/* line 31, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.column.omega, .columns.omega {
+  margin-right: 0;
+}
+
+/* Base Grid */
+/* line 35, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .one.column,
+.container .one.columns {
+  width: 40px;
+}
+
+/* line 36, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .two.columns {
+  width: 100px;
+}
+
+/* line 37, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .three.columns {
+  width: 160px;
+}
+
+/* line 38, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .four.columns {
+  width: 220px;
+}
+
+/* line 39, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .five.columns {
+  width: 280px;
+}
+
+/* line 40, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .six.columns {
+  width: 340px;
+}
+
+/* line 41, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .seven.columns {
+  width: 400px;
+}
+
+/* line 42, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .eight.columns {
+  width: 460px;
+}
+
+/* line 43, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .nine.columns {
+  width: 520px;
+}
+
+/* line 44, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .ten.columns {
+  width: 580px;
+}
+
+/* line 45, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .eleven.columns {
+  width: 640px;
+}
+
+/* line 46, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .twelve.columns {
+  width: 700px;
+}
+
+/* line 47, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .thirteen.columns {
+  width: 760px;
+}
+
+/* line 48, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .fourteen.columns {
+  width: 820px;
+}
+
+/* line 49, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .fifteen.columns {
+  width: 880px;
+}
+
+/* line 50, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .sixteen.columns {
+  width: 940px;
+}
+
+/* line 52, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .one-third.column {
+  width: 300px;
+}
+
+/* line 53, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .two-thirds.column {
+  width: 620px;
+}
+
+/* Offsets */
+/* line 56, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-one {
+  padding-left: 60px;
+}
+
+/* line 57, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-two {
+  padding-left: 120px;
+}
+
+/* line 58, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-three {
+  padding-left: 180px;
+}
+
+/* line 59, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-four {
+  padding-left: 240px;
+}
+
+/* line 60, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-five {
+  padding-left: 300px;
+}
+
+/* line 61, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-six {
+  padding-left: 360px;
+}
+
+/* line 62, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-seven {
+  padding-left: 420px;
+}
+
+/* line 63, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-eight {
+  padding-left: 480px;
+}
+
+/* line 64, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-nine {
+  padding-left: 540px;
+}
+
+/* line 65, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-ten {
+  padding-left: 600px;
+}
+
+/* line 66, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-eleven {
+  padding-left: 660px;
+}
+
+/* line 67, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-twelve {
+  padding-left: 720px;
+}
+
+/* line 68, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-thirteen {
+  padding-left: 780px;
+}
+
+/* line 69, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-fourteen {
+  padding-left: 840px;
+}
+
+/* line 70, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container .offset-by-fifteen {
+  padding-left: 900px;
+}
+
+/* #Tablet (Portrait)
+================================================== */
+/* Note: Design for a width of 768px */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 80, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container {
+    width: 768px;
+  }
+
+  /* line 82, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .column,
+  .container .columns {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* line 83, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .column.alpha, .columns.alpha {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  /* line 84, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .column.omega, .columns.omega {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+
+  /* line 85, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .alpha.omega {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 88, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .one.column,
+  .container .one.columns {
+    width: 28px;
+  }
+
+  /* line 89, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .two.columns {
+    width: 76px;
+  }
+
+  /* line 90, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .three.columns {
+    width: 124px;
+  }
+
+  /* line 91, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .four.columns {
+    width: 172px;
+  }
+
+  /* line 92, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .five.columns {
+    width: 220px;
+  }
+
+  /* line 93, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .six.columns {
+    width: 268px;
+  }
+
+  /* line 94, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .seven.columns {
+    width: 316px;
+  }
+
+  /* line 95, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .eight.columns {
+    width: 364px;
+  }
+
+  /* line 96, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .nine.columns {
+    width: 412px;
+  }
+
+  /* line 97, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .ten.columns {
+    width: 460px;
+  }
+
+  /* line 98, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .eleven.columns {
+    width: 508px;
+  }
+
+  /* line 99, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .twelve.columns {
+    width: 556px;
+  }
+
+  /* line 100, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .thirteen.columns {
+    width: 604px;
+  }
+
+  /* line 101, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .fourteen.columns {
+    width: 652px;
+  }
+
+  /* line 102, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .fifteen.columns {
+    width: 700px;
+  }
+
+  /* line 103, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .sixteen.columns {
+    width: 748px;
+  }
+
+  /* line 105, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .one-third.column {
+    width: 236px;
+  }
+
+  /* line 106, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .two-thirds.column {
+    width: 492px;
+  }
+
+  /* Offsets */
+  /* line 109, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-one {
+    padding-left: 48px;
+  }
+
+  /* line 110, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-two {
+    padding-left: 96px;
+  }
+
+  /* line 111, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-three {
+    padding-left: 144px;
+  }
+
+  /* line 112, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-four {
+    padding-left: 192px;
+  }
+
+  /* line 113, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-five {
+    padding-left: 240px;
+  }
+
+  /* line 114, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-six {
+    padding-left: 288px;
+  }
+
+  /* line 115, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-seven {
+    padding-left: 336px;
+  }
+
+  /* line 116, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-eight {
+    padding-left: 384px;
+  }
+
+  /* line 117, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-nine {
+    padding-left: 432px;
+  }
+
+  /* line 118, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-ten {
+    padding-left: 480px;
+  }
+
+  /* line 119, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-eleven {
+    padding-left: 528px;
+  }
+
+  /* line 120, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-twelve {
+    padding-left: 576px;
+  }
+
+  /* line 121, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-thirteen {
+    padding-left: 624px;
+  }
+
+  /* line 122, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-fourteen {
+    padding-left: 672px;
+  }
+
+  /* line 123, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-fifteen {
+    padding-left: 720px;
+  }
+}
+/*  #Mobile (Portrait)
+================================================== */
+/* Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {
+  /* line 133, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container {
+    width: 300px;
+  }
+
+  /* line 135, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .columns,
+  .container .column {
+    margin: 0;
+  }
+
+  /* line 155, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column {
+    width: 300px;
+  }
+
+  /* Offsets */
+  /* line 172, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .offset-by-one,
+  .container .offset-by-two,
+  .container .offset-by-three,
+  .container .offset-by-four,
+  .container .offset-by-five,
+  .container .offset-by-six,
+  .container .offset-by-seven,
+  .container .offset-by-eight,
+  .container .offset-by-nine,
+  .container .offset-by-ten,
+  .container .offset-by-eleven,
+  .container .offset-by-twelve,
+  .container .offset-by-thirteen,
+  .container .offset-by-fourteen,
+  .container .offset-by-fifteen {
+    padding-left: 0;
+  }
+}
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 183, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container {
+    width: 420px;
+  }
+
+  /* line 185, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .columns,
+  .container .column {
+    margin: 0;
+  }
+
+  /* line 205, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+  .container .one.column,
+  .container .one.columns,
+  .container .two.columns,
+  .container .three.columns,
+  .container .four.columns,
+  .container .five.columns,
+  .container .six.columns,
+  .container .seven.columns,
+  .container .eight.columns,
+  .container .nine.columns,
+  .container .ten.columns,
+  .container .eleven.columns,
+  .container .twelve.columns,
+  .container .thirteen.columns,
+  .container .fourteen.columns,
+  .container .fifteen.columns,
+  .container .sixteen.columns,
+  .container .one-third.column,
+  .container .two-thirds.column {
+    width: 420px;
+  }
+}
+/* #Clearing
+================================================== */
+/* Self Clearing Goodness */
+/* line 213, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.container:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+/* line 220, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 228, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.row:after,
+.clearfix:after {
+  clear: both;
+}
+
+/* line 231, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.row,
+.clearfix {
+  zoom: 1;
+}
+
+/* You can also use a <br class="clear" /> to clear columns */
+/* line 235, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/frameworks/_skeleton.scss */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/*
+  Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
+  rgba-background mixin can now be passed an option $dir variable
+*/
+/*
+ *
+ * HERE BE DRAGONS...
+ *
+ */
+/* line 26, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/global.scss */
+html, body {
+  background: #ebe4d2;
+  color: #000;
+  font: 300 15px/1.8 "Open Sans", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+p img, .alignleft, .aligncenter, .alignright, #project-media li a img {
+  border: 1px solid #BBB;
+  background: #FFF;
+  padding: 3px;
+  -webkit-box-shadow: 0 1px 4px -2px black;
+  -moz-box-shadow: 0 1px 4px -2px black;
+  box-shadow: 0 1px 4px -2px black;
+}
+
+/* line 8, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a {
+  color: #336699;
+  text-decoration: underline;
+}
+/* line 12, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a:hover {
+  color: #4f8ac4;
+  text-decoration: none;
+}
+/* line 17, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a:visited {
+  color: #2a547e;
+}
+/* line 20, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a:visited:hover {
+  color: #4f8ac4;
+}
+/* line 24, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a:visited:active {
+  color: #ff9900;
+}
+/* line 29, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+a:active {
+  color: #ff9900;
+}
+
+/* line 34, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #181818;
+  font-family: "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-weight: 600;
+}
+
+/* line 41, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+/* line 42, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h1 {
+  font-size: 46px;
+  line-height: 50px;
+  margin-bottom: 14px;
+}
+
+/* line 43, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h2 {
+  font-size: 35px;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+/* line 44, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 8px;
+}
+
+/* line 45, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h4 {
+  font-size: 21px;
+  line-height: 30px;
+  margin-bottom: 4px;
+}
+
+/* line 46, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h5 {
+  font-size: 17px;
+  line-height: 24px;
+}
+
+/* line 47, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+h6 {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* line 49, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+p {
+  margin: 0 0 20px 0;
+  z-index: 20;
+}
+
+/* line 54, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+p img {
+  margin: 0;
+}
+
+/* line 59, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+p.lead {
+  font-size: 21px;
+  line-height: 27px;
+  color: #777;
+}
+
+/* line 63, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+em {
+  font-style: italic;
+}
+
+/* line 64, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 65, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 67, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+ul, ol {
+  margin-bottom: 20px;
+}
+
+/* line 68, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+ul {
+  list-style: none outside;
+}
+
+/* line 69, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 71, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.entry-content ol, .entry-content ul {
+  margin-left: 30px;
+}
+/* line 72, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.entry-content ul {
+  list-style: square outside;
+}
+
+/* line 75, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+ul ul, ul ol,
+ol ol, ol ul {
+  margin: 4px 0 5px 30px;
+  font-size: 90%;
+}
+
+/* line 77, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+ul ul li, ul ol li,
+ol ol li, ol ul li {
+  margin-bottom: 6px;
+}
+
+/* line 78, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+li {
+  margin-bottom: 12px;
+}
+
+/* line 80, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+blockquote {
+  padding: 0 0 10px 20px;
+  position: relative;
+}
+/* line 84, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+blockquote p {
+  font-style: italic;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 95, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.alignleft {
+  float: left;
+  margin: 5px 20px 10px 0;
+}
+
+/* line 100, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.aligncenter {
+  margin: 9px auto 10px;
+  display: block;
+}
+
+/* line 105, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.alignright {
+  float: right;
+  margin: 5px 0 10px 20px;
+}
+
+/* line 110, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+.wp-caption-text {
+  font: 12px "Open Sans", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  color: #666;
+  margin: 4px 0 0;
+  display: block;
+}
+
+/* line 117, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+strong.cta {
+  font: 300 20px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  background: #F6F3EB;
+  padding: 6px 4px;
+  display: inline-block;
+}
+/* line 123, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+strong.cta a {
+  color: #FFF;
+  background: #ff9900;
+  text-decoration: none;
+  padding: 2px 4px;
+}
+/* line 129, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/content/_content.scss */
+strong.cta a:hover {
+  background: #336699;
+}
+
+/*
+ *
+ * Import structure
+ *
+ */
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#header {
+  position: relative;
+  border-bottom: 1px solid #dbcfaf;
+}
+
+/* line 8, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#header-inner {
+  min-height: 150px;
+}
+
+/* line 12, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#logo {
+  display: block;
+  max-width: 423px;
+  max-height: 67px;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  line-height: 1;
+  padding: 15px 20px 5px;
+  background: #FFF;
+  border-right: 1px solid #dbcfaf;
+  position: absolute;
+  bottom: -1px;
+}
+/* line 26, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#logo img {
+  max-width: 423px;
+  max-height: 67px;
+  width: 100%;
+  height: auto;
+}
+
+/* line 34, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-container {
+  text-align: center;
+}
+
+/* line 38, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement {
+  min-height: 16px;
+  padding: 8px 4px 8px 8px;
+  font: 400 14px/1 "Open Sans", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, /Users/Chris/.rvm/gems/ruby-1.8.7-p357/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+#alert-announcement {
+  *display: inline;
+}
+/* line 44, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement a {
+  color: #FFF;
+}
+/* line 48, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement p {
+  margin: 0;
+}
+/* line 52, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement .button {
+  padding: 2px 6px;
+  font-weight: 600;
+}
+
+/* line 60, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement {
+  color: white;
+  text-shadow: 0 1px 1px #0d0d0d;
+  border: 1px solid #9b8f70;
+  border-top: none;
+  background-color: #bbb29d;
+}
+/* line 67, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement .button {
+  margin: 0 0 0 5px;
+  border: 1px solid #a75809;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #f3881f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF4983C', endColorstr='#FFE6790C');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0OTgzYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U2NzkwYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f4983c), color-stop(100%, #e6790c));
+  background-image: -webkit-linear-gradient(top, #f4983c 0%, #e6790c 100%);
+  background-image: -moz-linear-gradient(top, #f4983c 0%, #e6790c 100%);
+  background-image: -o-linear-gradient(top, #f4983c 0%, #e6790c 100%);
+  background-image: -ms-linear-gradient(top, #f4983c 0%, #e6790c 100%);
+  background-image: linear-gradient(top, #f4983c 0%, #e6790c 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
+  -moz-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
+  box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
+  color: white;
+  filter: none;
+}
+/* line 75, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement .button:hover {
+  background-color: #f4983c;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF6A759', endColorstr='#FFF3881F');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2YTc1OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YzODgxZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f6a759), color-stop(100%, #f3881f));
+  background-image: -webkit-linear-gradient(top, #f6a759 0%, #f3881f 100%);
+  background-image: -moz-linear-gradient(top, #f6a759 0%, #f3881f 100%);
+  background-image: -o-linear-gradient(top, #f6a759 0%, #f3881f 100%);
+  background-image: -ms-linear-gradient(top, #f6a759 0%, #f3881f 100%);
+  background-image: linear-gradient(top, #f6a759 0%, #f3881f 100%);
+  color: white;
+  filter: none;
+}
+/* line 79, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_header.scss */
+#alert-announcement .button:active {
+  background-color: #f3881f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFE6790C', endColorstr='#FFF4983C');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2NzkwYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y0OTgzYyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6790c), color-stop(100%, #f4983c));
+  background-image: -webkit-linear-gradient(top, #e6790c 0%, #f4983c 100%);
+  background-image: -moz-linear-gradient(top, #e6790c 0%, #f4983c 100%);
+  background-image: -o-linear-gradient(top, #e6790c 0%, #f4983c 100%);
+  background-image: -ms-linear-gradient(top, #e6790c 0%, #f4983c 100%);
+  background-image: linear-gradient(top, #e6790c 0%, #f4983c 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
+  -moz-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
+  box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
+  color: white;
+  filter: none;
+}
+
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_nav.scss */
+.four.columns.nav {
+  float: right;
+}
+
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#footer {
+  padding: 0 0 20px;
+  border-top: 1px solid #dbcfaf;
+}
+
+/* line 7, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#legal {
+  background: #FFF;
+  color: #666;
+  font-size: 13px;
+  padding: 2px 20px 10px 20px;
+  margin: 0 10px;
+  float: right;
+  border-right: 1px solid #dbcfaf;
+  border-bottom: 1px solid #dbcfaf;
+  position: relative;
+  top: -1px;
+}
+/* line 21, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#legal a {
+  color: #888;
+  margin-left: 3px;
+}
+/* line 25, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#legal a:hover {
+  color: #acacac;
+}
+/* line 29, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#legal a:visited {
+  color: #767676;
+}
+/* line 32, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_footer.scss */
+#legal a:visited:hover {
+  color: #9a9a9a;
+}
+
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.infocus {
+  background: #ebe4d2;
+  height: 230px;
+  overflow: hidden;
+}
+/* line 6, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.infocus .slide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 12, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.type-page .slide, .type-project .slide {
+  margin-bottom: 20px;
+}
+
+/* line 17, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-hold {
+  width: 1400px;
+  position: relative;
+}
+
+/* line 22, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide {
+  float: left;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+/* line 30, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.75);
+}
+/* line 39, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide a {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  text-decoration: none;
+  position: relative;
+}
+/* line 49, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide h2 {
+  font-weight: 400;
+}
+/* line 54, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide h2 a {
+  display: inline;
+  color: #FFF;
+  border-bottom: 1px dotted #AAA;
+}
+/* line 59, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide h2 a:hover {
+  border-bottom: 1px dotted #FFF;
+  color: #FFF;
+}
+/* line 66, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide h2, .slide p {
+  color: #FFF;
+  position: absolute;
+  background: url('../img/rgbapng/000000bf.png?1338519541');
+  background: rgba(0, 0, 0, 0.75);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  margin: 0 0 0 10px;
+}
+/* line 75, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide.header-top h2 {
+  font-size: 26px;
+  padding: 16px 8px 5px;
+  display: inline;
+  top: 0;
+}
+/* line 84, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide.header-top p {
+  padding: 4px 8px 10px;
+  line-height: 25px;
+  bottom: 0;
+  width: 44%;
+}
+/* line 92, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide.header-bottom {
+  float: none;
+}
+/* line 93, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide.header-bottom h2 {
+  font-size: 24px;
+  padding: 5px 10px;
+  bottom: 0px;
+}
+
+/* line 105, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.current-slide {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 112, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-nav {
+  height: 40px;
+}
+
+/* line 117, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.home .slide-nav {
+  height: 0;
+}
+
+/* line 122, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-nav-in {
+  float: right;
+}
+
+/* line 126, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-prev, .slide-next {
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: #000;
+  background: #ebe4d2;
+  padding: 10px;
+  position: relative;
+  z-index: 1000;
+}
+/* line 136, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-prev:hover, .slide-next:hover {
+  color: #000;
+  background: #dbcfaf;
+}
+/* line 141, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/structure/_slider.scss */
+.slide-prev:active, .slide-next:active {
+  background: #bba569;
+}
+
+/* line 55, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/global.scss */
+#main-container {
+  padding: 30px 0 10px;
+  background: #FFF;
+}
+
+/*
+ *
+ * Import pages
+ *
+ */
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_full {
+  height: 525px;
+}
+/* line 4, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_full .slide {
+  height: 525px;
+  background-position: top center;
+}
+
+/* line 10, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+.folio_item-thumb {
+  width: 280px;
+  height: 210px;
+  padding: 10px 10px 10px 410px;
+  background: url('../img/rgbapng/ffffff66.png?1338519541');
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* line 18, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+.folio_item-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  float: right;
+}
+/* line 24, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+.folio_item-link:after {
+  content: 'S';
+  font: 20px IconicStrokeRegular, serif;
+  padding: 0 0 0 5px;
+}
+
+/* line 31, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-data {
+  height: 40px;
+  margin-top: -40px;
+  position: relative;
+}
+/* line 36, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-data .folio_item-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: none;
+}
+
+/* line 44, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-info {
+  margin: -10px 0 0;
+}
+
+/* line 48, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-tech_used {
+  float: left;
+  width: 210px;
+  background: #ebe4d2;
+  padding: 10px 5px 10px 10px;
+  margin: -10px 0 0;
+}
+/* line 55, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-tech_used ul {
+  margin: 0;
+}
+/* line 59, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-tech_used li {
+  margin: 5px 5px 0 0;
+  padding: 1px 5px 2px;
+  background: #dbcfaf;
+  list-style: none;
+  width: 90px;
+  float: left;
+}
+
+/* line 69, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_portfolio.scss */
+#folio_item-related {
+  margin: 0 0 0 245px;
+}
+
+/* line 4, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.home .entry-content p {
+  font: 300 24px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+/* line 8, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.home .entry-content p:first-child {
+  font: 300 34px/48px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  margin: 20px 0 25px;
+}
+/* line 12, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.home .entry-content p:first-child a {
+  color: #FFF;
+  background: #ff9900 url(../img/lnkgrd.jpg) 0 0 no-repeat;
+  text-decoration: none;
+  padding: 2px 4px 0;
+}
+/* line 20, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.home .entry-content strong {
+  font-weight: 600;
+}
+
+/* line 27, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox {
+  position: relative;
+}
+/* line 30, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox .slide {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+/* line 36, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+/* line 41, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox a p {
+  margin: 0;
+  padding: 8px 10px 10px;
+  background: #ebe4d2;
+}
+/* line 47, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox a:hover p {
+  color: #000;
+  background: #dbcfaf;
+}
+/* line 52, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox a:active p {
+  background: #bba569;
+}
+/* line 57, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_front-page.scss */
+.homebox img {
+  width: 100%;
+  height: auto;
+  min-width: 340px;
+  min-height: 140px;
+  margin: 0;
+  display: block;
+  background: #C0C0C0;
+}
+
+/* line 1, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-meta {
+  float: right;
+  margin: -20px 0 20px 20px;
+}
+
+/* line 6, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-meta-inner {
+  background: #f2f0ea;
+  padding: 20px;
+}
+
+/* line 11, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-download, #button-contribute {
+  display: block;
+  padding: 14px 4px;
+}
+
+/* line 16, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-contribute-box, #project-email-signup-box, #project-key-links {
+  margin: 20px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px dotted #d3c59e;
+}
+
+/* line 22, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-5, #project-donate-10, #project-donate-custom {
+  display: block;
+  padding: 8px 4px;
+}
+
+/*
+ *
+ * Project download
+ *
+ */
+/* line 35, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-download-box br {
+  display: none;
+}
+
+/* line 40, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-download {
+  font: 600 26px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  border: 1px solid #b35900;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #ff870f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9933', endColorstr='#FFEB7500');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9933), color-stop(100%, #eb7500));
+  background-image: -webkit-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -moz-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -o-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -ms-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -moz-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  color: white;
+  filter: none;
+}
+/* line 48, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-download:hover {
+  background-color: #ff9933;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFAB57', endColorstr='#FFFF870F');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYWI1NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmODcwZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffab57), color-stop(100%, #ff870f));
+  background-image: -webkit-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -moz-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -o-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -ms-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  color: white;
+  filter: none;
+}
+/* line 52, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-download:active {
+  background-color: #ff870f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEB7500', endColorstr='#FFFF9933');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eb7500), color-stop(100%, #ff9933));
+  background-image: -webkit-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -moz-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -o-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -ms-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -moz-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  color: white;
+  filter: none;
+}
+
+/* line 57, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-version-info, #project-requirements {
+  display: block;
+  margin: 6px 0 3px;
+  font-style: normal;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* line 67, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-requirements {
+  margin: 0;
+}
+
+/* line 71, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-fuzzy-release-date {
+  border-bottom: 1px dotted #AAA;
+}
+
+/*
+ *
+ * Project contribute
+ *
+ */
+/* line 86, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-contribute {
+  font: 600 24px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  border: 1px solid #0b2df5;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #6378f9;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF8596FA', endColorstr='#FF405BF7');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg1OTZmYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzQwNWJmNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8596fa), color-stop(100%, #405bf7));
+  background-image: -webkit-linear-gradient(top, #8596fa 0%, #405bf7 100%);
+  background-image: -moz-linear-gradient(top, #8596fa 0%, #405bf7 100%);
+  background-image: -o-linear-gradient(top, #8596fa 0%, #405bf7 100%);
+  background-image: -ms-linear-gradient(top, #8596fa 0%, #405bf7 100%);
+  background-image: linear-gradient(top, #8596fa 0%, #405bf7 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
+  -moz-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
+  box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
+  color: white;
+  filter: none;
+}
+/* line 94, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-contribute:hover {
+  background-color: #8596fa;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA7B4FB', endColorstr='#FF6378F9');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3YjRmYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzYzNzhmOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a7b4fb), color-stop(100%, #6378f9));
+  background-image: -webkit-linear-gradient(top, #a7b4fb 0%, #6378f9 100%);
+  background-image: -moz-linear-gradient(top, #a7b4fb 0%, #6378f9 100%);
+  background-image: -o-linear-gradient(top, #a7b4fb 0%, #6378f9 100%);
+  background-image: -ms-linear-gradient(top, #a7b4fb 0%, #6378f9 100%);
+  background-image: linear-gradient(top, #a7b4fb 0%, #6378f9 100%);
+  color: white;
+  filter: none;
+}
+/* line 98, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#button-contribute:active {
+  background-color: #6378f9;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF405BF7', endColorstr='#FF8596FA');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwNWJmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzg1OTZmYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #405bf7), color-stop(100%, #8596fa));
+  background-image: -webkit-linear-gradient(top, #405bf7 0%, #8596fa 100%);
+  background-image: -moz-linear-gradient(top, #405bf7 0%, #8596fa 100%);
+  background-image: -o-linear-gradient(top, #405bf7 0%, #8596fa 100%);
+  background-image: -ms-linear-gradient(top, #405bf7 0%, #8596fa 100%);
+  background-image: linear-gradient(top, #405bf7 0%, #8596fa 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
+  -moz-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
+  box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
+  color: white;
+  filter: none;
+}
+
+/*
+ *
+ * Project email signup
+ *
+ */
+/* line 113, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-email-signup-box p {
+  margin: 0 0 10px;
+}
+/* line 116, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-email-signup-box p:first-child {
+  line-height: 1.6;
+  margin: 0 0 1px;
+}
+/* line 121, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-email-signup-box p em {
+  font-size: 12px;
+  color: #666;
+}
+
+/* line 128, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-email-signup-form {
+  text-align: right;
+}
+
+/* line 132, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#MERGE0 {
+  width: 100%;
+}
+
+/*
+ *
+ * Project key links
+ *
+ */
+/* line 147, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-key-links li {
+  margin: 0 0 8px 26px;
+  list-style: square;
+  line-height: 1.3;
+}
+
+/*
+ *
+ * Project content
+ *
+ */
+/* line 162, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-content p:first-child {
+  font-weight: 400;
+  font-size: 18px;
+}
+/* line 168, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-content p:first-child strong {
+  font-weight: 700;
+}
+
+/*
+ *
+ * Project media
+ *
+ */
+/* line 184, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-media li {
+  width: 106px;
+  height: 80px;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+/* line 191, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-media li a {
+  display: block;
+  line-height: 1;
+}
+/* line 195, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-media li a img {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 203, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-media li a:hover img {
+  border: 1px solid #777;
+  width: 112%;
+  height: 112%;
+  margin: -5.5% 0 0 -6.5%;
+  padding: 4px;
+  -webkit-box-shadow: 0 1px 3px -1px black;
+  -moz-box-shadow: 0 1px 3px -1px black;
+  box-shadow: 0 1px 3px -1px black;
+}
+
+/*
+ *
+ * Contribute
+ *
+ */
+/* line 223, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#contribute-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 228, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#contribute-links li {
+  margin-bottom: 20px;
+}
+
+/* line 233, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+.contribute-link {
+  display: block;
+  text-decoration: none;
+  min-height: 32px;
+  border: 1px solid #dbcfaf;
+  background: #fbf9f6;
+  line-height: 1.3;
+}
+
+/* line 242, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+.contribute-icon {
+  padding: 4px;
+  float: left;
+  border: 0;
+}
+
+/* line 250, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+.contribute-text {
+  padding: 3px 8px 6px;
+  margin: 0 0 0 40px;
+  background: #ebe4d2;
+}
+/* line 255, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+.contribute-text strong {
+  display: block;
+  padding: 0 0 4px;
+}
+/* line 260, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+.contribute-text span {
+  display: block;
+  font-size: 11px;
+  color: #333;
+}
+
+/*
+ *
+ * Donate popup
+ *
+ */
+/* line 274, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate {
+  max-width: 455px;
+  padding: 20px;
+}
+
+/* line 283, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-5 {
+  font: 400 18px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  width: 100px;
+  float: left;
+  margin: 0 10px 0 0;
+  border: 1px solid #196633;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #2caf58;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF33CC66', endColorstr='#FF259349');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzY2M2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI1OTM0OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #33cc66), color-stop(100%, #259349));
+  background-image: -webkit-linear-gradient(top, #33cc66 0%, #259349 100%);
+  background-image: -moz-linear-gradient(top, #33cc66 0%, #259349 100%);
+  background-image: -o-linear-gradient(top, #33cc66 0%, #259349 100%);
+  background-image: -ms-linear-gradient(top, #33cc66 0%, #259349 100%);
+  background-image: linear-gradient(top, #33cc66 0%, #259349 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
+  -moz-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
+  box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
+  color: white;
+  filter: none;
+}
+/* line 294, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-5:hover {
+  background-color: #33cc66;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50D37B', endColorstr='#FF2CAF58');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwZDM3YiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJjYWY1OCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50d37b), color-stop(100%, #2caf58));
+  background-image: -webkit-linear-gradient(top, #50d37b 0%, #2caf58 100%);
+  background-image: -moz-linear-gradient(top, #50d37b 0%, #2caf58 100%);
+  background-image: -o-linear-gradient(top, #50d37b 0%, #2caf58 100%);
+  background-image: -ms-linear-gradient(top, #50d37b 0%, #2caf58 100%);
+  background-image: linear-gradient(top, #50d37b 0%, #2caf58 100%);
+  color: white;
+  filter: none;
+}
+/* line 298, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-5:active {
+  background-color: #2caf58;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF259349', endColorstr='#FF33CC66');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI1OTM0OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzY2M2NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #259349), color-stop(100%, #33cc66));
+  background-image: -webkit-linear-gradient(top, #259349 0%, #33cc66 100%);
+  background-image: -moz-linear-gradient(top, #259349 0%, #33cc66 100%);
+  background-image: -o-linear-gradient(top, #259349 0%, #33cc66 100%);
+  background-image: -ms-linear-gradient(top, #259349 0%, #33cc66 100%);
+  background-image: linear-gradient(top, #259349 0%, #33cc66 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
+  -moz-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
+  box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
+  color: white;
+  filter: none;
+}
+
+/* line 303, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-10 {
+  font: 400 18px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  width: 100px;
+  float: left;
+  margin: 0 10px 0 0;
+  border: 1px solid #0059b3;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #0f87ff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3399FF', endColorstr='#FF0075EB');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzOTlmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNzVlYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3399ff), color-stop(100%, #0075eb));
+  background-image: -webkit-linear-gradient(top, #3399ff 0%, #0075eb 100%);
+  background-image: -moz-linear-gradient(top, #3399ff 0%, #0075eb 100%);
+  background-image: -o-linear-gradient(top, #3399ff 0%, #0075eb 100%);
+  background-image: -ms-linear-gradient(top, #3399ff 0%, #0075eb 100%);
+  background-image: linear-gradient(top, #3399ff 0%, #0075eb 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
+  -moz-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
+  box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
+  color: white;
+  filter: none;
+}
+/* line 314, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-10:hover {
+  background-color: #3399ff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF57ABFF', endColorstr='#FF0F87FF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU3YWJmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmODdmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57abff), color-stop(100%, #0f87ff));
+  background-image: -webkit-linear-gradient(top, #57abff 0%, #0f87ff 100%);
+  background-image: -moz-linear-gradient(top, #57abff 0%, #0f87ff 100%);
+  background-image: -o-linear-gradient(top, #57abff 0%, #0f87ff 100%);
+  background-image: -ms-linear-gradient(top, #57abff 0%, #0f87ff 100%);
+  background-image: linear-gradient(top, #57abff 0%, #0f87ff 100%);
+  color: white;
+  filter: none;
+}
+/* line 318, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-10:active {
+  background-color: #0f87ff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0075EB', endColorstr='#FF3399FF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzVlYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMzOTlmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0075eb), color-stop(100%, #3399ff));
+  background-image: -webkit-linear-gradient(top, #0075eb 0%, #3399ff 100%);
+  background-image: -moz-linear-gradient(top, #0075eb 0%, #3399ff 100%);
+  background-image: -o-linear-gradient(top, #0075eb 0%, #3399ff 100%);
+  background-image: -ms-linear-gradient(top, #0075eb 0%, #3399ff 100%);
+  background-image: linear-gradient(top, #0075eb 0%, #3399ff 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
+  -moz-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
+  box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
+  color: white;
+  filter: none;
+}
+
+/* line 323, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-custom {
+  font: 400 18px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  width: 205px;
+  float: left;
+  border: 1px solid #b35900;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 1px 1px black;
+  background-color: #ff870f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF9933', endColorstr='#FFEB7500');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff9933), color-stop(100%, #eb7500));
+  background-image: -webkit-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -moz-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -o-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: -ms-linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  background-image: linear-gradient(top, #ff9933 0%, #eb7500 100%);
+  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -moz-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  color: white;
+  filter: none;
+}
+/* line 333, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-custom:hover {
+  background-color: #ff9933;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFAB57', endColorstr='#FFFF870F');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmYWI1NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmODcwZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffab57), color-stop(100%, #ff870f));
+  background-image: -webkit-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -moz-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -o-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: -ms-linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  background-image: linear-gradient(top, #ffab57 0%, #ff870f 100%);
+  color: white;
+  filter: none;
+}
+/* line 337, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-custom:active {
+  background-color: #ff870f;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEB7500', endColorstr='#FFFF9933');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViNzUwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmOTkzMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eb7500), color-stop(100%, #ff9933));
+  background-image: -webkit-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -moz-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -o-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: -ms-linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  background-image: linear-gradient(top, #eb7500 0%, #ff9933 100%);
+  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -moz-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  color: white;
+  filter: none;
+}
+
+/* line 342, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-payment-info {
+  margin: 15px 0 0;
+  height: 28px;
+}
+
+/* line 347, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-paypal-message {
+  position: relative;
+  top: 4px;
+  float: left;
+}
+
+/* line 353, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-paypal-logo {
+  position: relative;
+  top: 4px;
+  left: 1px;
+}
+
+/* line 359, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-payment-cards {
+  float: right;
+  margin: 0;
+}
+/* line 363, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_projects.scss */
+#project-donate-payment-cards li {
+  float: left;
+  margin: 0 0 0 8px;
+}
+
+/* line 2, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_blog.scss */
+.blog article {
+  margin: 30px 0 0;
+  padding: 30px 0 0;
+  border-top: 1px dotted #CCC;
+}
+/* line 7, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_blog.scss */
+.blog article:first-child {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+/* line 15, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_blog.scss */
+.info {
+  font: 14px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif !important;
+  margin: 7px 0 20px 3px !important;
+  color: #AAA;
+  display: block;
+  text-align: right;
+  clear: both;
+}
+
+/* line 24, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/pages/_blog.scss */
+#comments_wrap {
+  border-top: 1px dotted #CCC;
+  padding: 10px 0 0;
+  margin: 40px 0 0;
+}
+
+/*
+ *
+ * Media Queries should always be loaded *last*
+ * for the good of the cascade.
+ *
+ */
+@media handheld, only screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 18, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_mediaqueries.scss */
+  #project-media li {
+    width: 101px;
+    height: 76px;
+  }
+}
+@media handheld, only screen and (min-width: 480px) and (max-width: 767px) {
+  /* line 33, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_mediaqueries.scss */
+  #project-media li {
+    width: 95px;
+    height: 71px;
+  }
+}
+@media handheld, only screen and (max-width: 479px) {
+  /* line 43, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/content/themes/vanpattenpress/sass/includes/_mediaqueries.scss */
+  #project-media li {
+    width: 90px;
+    height: 68px;
+  }
+}
