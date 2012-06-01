@@ -1,2 +1,7 @@
+# Server options
 server "50.116.59.75", :app, :web, :db, :primary => true
-set :deploy_to, "/home/user/vanpattenmedia/staging.vanpattenmedia.com"
+ssh_options[:port] = 9012
+default_run_options[:pty] = true
+
+# Deploy path
+set :deploy_to, "/home/vanpattenmedia/staging.vanpattenmedia.com"
