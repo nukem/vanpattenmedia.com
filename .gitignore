@@ -1,9 +1,8 @@
 # Ignore environment configs (they have passwords)
+database.yml
+local.db.php
 
-.DS_Store
-staging-config.php
-production-config.php
-local-config.php
-.vagrant
 # Misc.
+.vagrant
+.DS_Store
 .sass-caches

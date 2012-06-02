@@ -2,7 +2,7 @@
 require 'rgbapng'
 
 # Path to theme from project root
-project_path    = "./content/themes/vanpattenpress/"
+project_path      = "./content/themes/vanpattenpress/"
 
 # Where's stuff being stored?
 css_dir           = "css"

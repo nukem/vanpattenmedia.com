@@ -2,21 +2,30 @@
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-	define( 'WP_LOCAL_DEV', true );
+
+require_once(dirname(__FILE__).'../vendor/php/yaml/lib/sfYamlParser.php');
+$yaml = new sfYamlParser();
+$config = $yaml->parse(file_get_contents(dirname(__FILE__).'../config/database.yml'));
+
+$urlParts = explode('.', $_SERVER['HTTP_HOST']);
+if ($urlParts[0] == 'dev') {
+	define( 'WP_LOCAL_DEV', false );
 	define( 'WP_STAGING_DEV', false );
-	include( dirname( __FILE__ ) . '/local-config.php' );
-} elseif ( file_exists( dirname( __FILE__ ) . '/staging-config.php' ) {
+	foreach($config['local'] as $db_variable => $value) {
+		define(('DB_' . strtoupper($db_variable)), $value);
+	}
+} elseif ($urlParts[0] == 'staging') {
 	define( 'WP_LOCAL_DEV', false );
 	define( 'WP_STAGING_DEV', true );
-	include( dirname( __FILE__ ) . '/staging-config.php' );
+	foreach($config['staging'] as $db_variable => $value) {
+		define(('DB_' . strtoupper($db_variable)), $value);
+	}
 } else {
-	define( 'WP_LOCAL_DEV', false );
+	define( 'WP_LOCAL_DEV', true );
 	define( 'WP_STAGING_DEV', false );
-	define( 'DB_NAME', '%%DB_NAME%%' );
-	define( 'DB_USER', '%%DB_USER%%' );
-	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
-	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+	foreach($config['production'] as $db_variable => $value) {
+		define(('DB_' . strtoupper($db_variable)), $value);
+	}
 }
 
 // ==============
