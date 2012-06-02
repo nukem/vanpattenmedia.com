@@ -6,6 +6,7 @@ set :scm, :git
 set :git_enable_submodules, 1
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
+set :deploy_via, :remote_cache
 
 # This site...
 set :application, "vanpattenmedia"
@@ -18,7 +19,7 @@ set :app_group, "vanpattenmedia-sitewriters"
 namespace :deploy do
 	task :finalize_update do
 		transaction do
-			# run "chmod -R g+w #{releases_path}/#{release_name}"
+			# do nothing
 		end
 	end
 
@@ -33,7 +34,7 @@ end
 
 # Set up some VPM-specific tasks
 before "deploy:setup", "vpm:create_folder"
-after "deploy:setup", "vpm:fix_setup_ownership"
+after "deploy:setup", "vpm:fix_setup_ownership", "nginx:setup", "nginx:reload"
 after "deploy", "vpm:fix_deploy_ownership"
 
 namespace :vpm do
@@ -50,5 +51,12 @@ namespace :vpm do
 	desc "Fix ownership on deploy"
 	task :fix_deploy_ownership, :roles => :app do
 		run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current"
+	end
+
+	desc "Add a new PHP-FPM pool"
+	task :new_fpm_pool, :roles => :app do
+		db_config = ERB.new File.new("config/templates/php-fpm.erb").read
+		put db_config.result, "/etc/php5/fpm/pool.d/#{application}.pool.conf"
+		run "#{sudo} service php5-fpm restart"
 	end
 end
