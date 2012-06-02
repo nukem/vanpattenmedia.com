@@ -4,14 +4,18 @@ ssh_options[:port] = 9012
 default_run_options[:pty] = true
 
 # Deploy path
-set :deploy_to, "/home/vanpattenmedia/vanpattenmedia.com"
+set(:deploy_to)         { "/home/vanpattenmedia/vanpattenmedia.com" }
+set(:releases_path)     { File.join(deploy_to, version_dir) }
+set(:shared_path)       { File.join(deploy_to, shared_dir) }
+set(:current_path)      { File.join(deploy_to, current_dir) }
+set(:release_path)      { File.join(releases_path, release_name) }
 
 # nginx config
-set :domain_name, "vanpattenmedia.com"
-set :wp_theme_name, "vanpattenpress"
-set :staging, false
+set(:domain_name)       { "vanpattenmedia.com" }
+set(:wp_theme_name)     { "vanpattenpress" }
+set(:staging)           { false }
 
-after "deploy:check", "nginx:config"
+after "deploy:setup", "nginx:config"
 after "deploy", "nginx:reload"
 
 namespace :nginx do
