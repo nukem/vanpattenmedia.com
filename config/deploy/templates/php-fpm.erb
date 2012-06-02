@@ -7,7 +7,7 @@ group = <%= "#{app_group}" %>
 ; listen on sock
 listen = /var/run/php5-fpm-pools-<%= "#{application}" %>.sock
 
-chdir = /home/<%= "#{app_user}" %>/<%= "#{application}" %>
+chdir = <%= "#{deploy_to}" %>
 
 ; process manager
 pm = dynamic

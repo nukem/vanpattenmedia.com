@@ -12,6 +12,7 @@ set :wp_theme_name, "vanpattenpress"
 set :staging, true
 
 after "deploy:setup", "nginx:config"
+after "deploy:setup", "fpm:new_pool"
 after "deploy", "nginx:reload"
 
 namespace :nginx do
@@ -26,5 +27,16 @@ namespace :nginx do
 
 	task :reload do
 		run "#{sudo} nginx -s reload"
+	end
+end
+
+namespace :fpm do
+	desc "Add a new PHP-FPM pool"
+	task :new_pool, :roles => :app do
+		php_fpm_config = ERB.new(File.read("./config/deploy/templates/php-fpm.erb")).result(binding)
+		put php_fpm_config, "#{deploy_to}/shared/#{application}.pool.conf"
+		run "#{sudo} mv #{deploy_to}/shared/#{application}.pool.conf /etc/php5/fpm/pool.d/#{application}.pool.conf"
+		run "#{sudo} chown root:root /etc/php5/fpm/pool.d/#{application}.pool.conf"
+		run "#{sudo} service php5-fpm restart"
 	end
 end

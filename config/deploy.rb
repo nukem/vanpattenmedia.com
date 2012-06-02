@@ -52,16 +52,7 @@ namespace :vpm do
 
 	desc "Fix ownership on deploy"
 	task :fix_deploy_ownership, :roles => :app do
-		run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current"
-		run "#{sudo} chmod -R g+s #{deploy_to}/current"
-	end
-
-	desc "Add a new PHP-FPM pool"
-	task :newfpm, :roles => :app do
-		php_fpm_config = ERB.new(File.read("./config/deploy/templates/php-fpm.erb")).result(binding)
-		put php_fpm_config, "#{deploy_to}/shared/#{application}.pool.conf"
-		run "#{sudo} mv #{deploy_to}/shared/#{application}.pool.conf /etc/php5/fpm/pool.d/#{application}.pool.conf"
-		run "#{sudo} chown root:root /etc/php5/fpm/pool.d/#{application}.pool.conf"
-		run "#{sudo} service php5-fpm restart"
+		run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current/public"
+		run "#{sudo} chmod -R g+s #{deploy_to}/current/public"
 	end
 end
