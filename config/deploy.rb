@@ -11,7 +11,7 @@ set :deploy_via, :remote_cache
 # This site...
 set :application, "vanpattenmedia"
 set :repository,  "git://github.com/vanpattenmedia/vanpattenmedia.com.git"
-set :user, "chris"
+set :user, "deploy"
 set :app_user, "vanpattenmedia"
 set :app_group, "vanpattenmedia-sitewriters"
 
