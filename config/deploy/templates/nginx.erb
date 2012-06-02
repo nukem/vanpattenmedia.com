@@ -1,4 +1,6 @@
-<% if staging = false %>
+set :template_dir, "config/deploy/templates"
+
+<% if staging == false %>
 # Redirect to www.*
 server {
 	listen 8080;
@@ -16,7 +18,7 @@ server {
 	root <%= "#{deploy_to}/current/public" %>;
 	index index.php index.html index.htm;
 
-	<% if staging = false %>
+	<% if staging == false %>
 	server_name www.<%= "#{domain_name}" %>;
 	<% else %>
 	server_name <%= "#{domain_name}" %>;

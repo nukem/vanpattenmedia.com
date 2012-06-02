@@ -28,7 +28,7 @@ namespace :deploy do
 	end
 
 	task :restart do
-		# do nothing
+		run "#{sudo} nginx -s reload"
 	end
 end
 
@@ -55,8 +55,10 @@ namespace :vpm do
 
 	desc "Add a new PHP-FPM pool"
 	task :new_fpm_pool, :roles => :app do
-		db_config = ERB.new File.new("deploy/templates/php-fpm.erb").read
-		put db_config.result, "/etc/php5/fpm/pool.d/#{application}.pool.conf"
+		php_fpm_config = ERB.new(File.read("./config/deploy/templates/php-fpm.erb")).result(binding)
+		put php_fpm_config, "#{deploy_to}/shared/#{application}.pool.conf"
+		run "#{sudo} mv #{deploy_to}/shared/#{application}.pool.conf /etc/php5/fpm/pool.d/#{application}.pool.conf"
+		run "#{sudo} chown root:root /etc/php5/fpm/pool.d/#{application}.pool.conf"
 		run "#{sudo} service php5-fpm restart"
 	end
 end

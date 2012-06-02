@@ -9,17 +9,20 @@ set :deploy_to, "/home/vanpattenmedia/staging.vanpattenmedia.com"
 # nginx config
 set :domain_name, "staging.vanpattenmedia.com"
 set :wp_theme_name, "vanpattenpress"
+set :staging, true
 
-after "deploy:setup", "nginx:config"
+after "deploy:check", "nginx:config"
 after "deploy", "nginx:reload"
 
 namespace :nginx do
 	task :config do
-		db_config = ERB.new File.new("templates/nginx.erb").read
-		put db_config.result, "/etc/nginx/sites-available/#{application}-staging"
+		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
+		put nginx_config, "#{deploy_to}/shared/#{application}-staging"
+		run "#{sudo} mv #{deploy_to}/shared/#{application}-staging /etc/nginx/sites-available/#{application}-staging"
+		run "#{sudo} ln -s /etc/nginx/sites-available/#{application}-staging /etc/nginx/sites-enabled/#{application}-staging"
 	end
 
 	task :reload do
-		run "nginx -s reload"
+		run "#{sudo} nginx -s reload"
 	end
 end
