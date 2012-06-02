@@ -19,7 +19,9 @@ namespace :nginx do
 		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
 		put nginx_config, "#{deploy_to}/shared/#{application}-staging"
 		run "#{sudo} mv #{deploy_to}/shared/#{application}-staging /etc/nginx/sites-available/#{application}-staging"
+		run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}-staging"
 		run "#{sudo} ln -s /etc/nginx/sites-available/#{application}-staging /etc/nginx/sites-enabled/#{application}-staging"
+		run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}-staging"
 	end
 
 	task :reload do
