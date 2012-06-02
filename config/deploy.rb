@@ -55,7 +55,7 @@ namespace :vpm do
 
 	desc "Add a new PHP-FPM pool"
 	task :new_fpm_pool, :roles => :app do
-		db_config = ERB.new File.new("config/templates/php-fpm.erb").read
+		db_config = ERB.new File.new("deploy/templates/php-fpm.erb").read
 		put db_config.result, "/etc/php5/fpm/pool.d/#{application}.pool.conf"
 		run "#{sudo} service php5-fpm restart"
 	end

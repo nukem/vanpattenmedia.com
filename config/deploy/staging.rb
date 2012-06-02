@@ -15,7 +15,7 @@ after "deploy", "nginx:reload"
 
 namespace :nginx do
 	task :config do
-		db_config = ERB.new File.new("config/templates/nginx.erb").read
+		db_config = ERB.new File.new("templates/nginx.erb").read
 		put db_config.result, "/etc/nginx/sites-available/#{application}-staging"
 	end
 
