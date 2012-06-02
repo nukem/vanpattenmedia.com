@@ -34,27 +34,30 @@ end
 
 # Set up some VPM-specific tasks
 before "deploy:setup", "vpm:create_folder"
-after "deploy:setup", "vpm:fix_setup_ownership", "nginx:setup", "nginx:reload"
+after "deploy:setup", "vpm:fix_setup_ownership"
 after "deploy", "vpm:fix_deploy_ownership"
 
 namespace :vpm do
 	desc "Create the environment folder"
 	task :create_folder, :roles => :app do
 		run "mkdir #{deploy_to}"
+		run "#{sudo} chown -R #{app_user}:#{app_group} #{deploy_to}"
 	end
 
 	desc "Fix ownership on setup"
 	task :fix_setup_ownership, :roles => :app do
-		run "#{sudo} chown -R #{app_user}:#{app_group} #{deploy_to} #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
+		run "#{sudo} chown -R #{user}:#{user} #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
+		run "#{sudo} chmod -R g+s #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
 	end
 
 	desc "Fix ownership on deploy"
 	task :fix_deploy_ownership, :roles => :app do
 		run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current"
+		run "#{sudo} chmod -R g+s #{deploy_to}/current"
 	end
 
 	desc "Add a new PHP-FPM pool"
-	task :new_fpm_pool, :roles => :app do
+	task :newfpm, :roles => :app do
 		php_fpm_config = ERB.new(File.read("./config/deploy/templates/php-fpm.erb")).result(binding)
 		put php_fpm_config, "#{deploy_to}/shared/#{application}.pool.conf"
 		run "#{sudo} mv #{deploy_to}/shared/#{application}.pool.conf /etc/php5/fpm/pool.d/#{application}.pool.conf"

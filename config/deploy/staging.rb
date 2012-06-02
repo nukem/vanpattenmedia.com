@@ -11,7 +11,7 @@ set :domain_name, "staging.vanpattenmedia.com"
 set :wp_theme_name, "vanpattenpress"
 set :staging, true
 
-after "deploy:check", "nginx:config"
+after "deploy:setup", "nginx:config"
 after "deploy", "nginx:reload"
 
 namespace :nginx do
