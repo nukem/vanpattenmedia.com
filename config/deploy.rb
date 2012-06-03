@@ -17,19 +17,19 @@ set :app_group, "vanpattenmedia-sitewriters"
 
 # Don't do Railsy things...
 namespace :deploy do
-	task :finalize_update do
-		transaction do
-			# do nothing
-		end
-	end
+  task :finalize_update do
+    transaction do
+      # do nothing
+    end
+  end
 
-	task :migrate do
-		# do nothing
-	end
+  task :migrate do
+    # do nothing
+  end
 
-	task :restart do
-		run "#{sudo} nginx -s reload"
-	end
+  task :restart do
+   run "#{sudo} nginx -s reload"
+  end
 end
 
 # Set up some VPM-specific tasks
@@ -38,21 +38,21 @@ after "deploy:setup", "vpm:fix_setup_ownership"
 after "deploy", "vpm:fix_deploy_ownership"
 
 namespace :vpm do
-	desc "Create the environment folder"
-	task :create_folder, :roles => :app do
-		run "mkdir #{deploy_to}"
-		run "#{sudo} chown -R #{app_user}:#{app_group} #{deploy_to}"
-	end
+  desc "Create the environment folder"
+  task :create_folder, :roles => :app do
+    run "mkdir #{deploy_to}"
+    run "#{sudo} chown -R #{app_user}:#{app_group} #{deploy_to}"
+  end
 
-	desc "Fix ownership on setup"
-	task :fix_setup_ownership, :roles => :app do
-		run "#{sudo} chown -R #{user}:#{user} #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
-		run "#{sudo} chmod -R g+s #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
-	end
+  desc "Fix ownership on setup"
+  task :fix_setup_ownership, :roles => :app do
+    run "#{sudo} chown -R #{user}:#{user} #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
+    run "#{sudo} chmod -R g+s #{deploy_to}/releases #{deploy_to}/shared #{deploy_to}/shared/system #{deploy_to}/shared/log #{deploy_to}/shared/pids"
+  end
 
-	desc "Fix ownership on deploy"
-	task :fix_deploy_ownership, :roles => :app do
-		run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current/public"
-		run "#{sudo} chmod -R g+s #{deploy_to}/current/public"
-	end
+  desc "Fix ownership on deploy"
+  task :fix_deploy_ownership, :roles => :app do
+    run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current/public"
+    run "#{sudo} chmod -R g+s #{deploy_to}/current/public"
+  end
 end
