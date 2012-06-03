@@ -17,7 +17,6 @@ set(:staging)             { true }
 
 after "deploy:setup", "nginx:config"
 after "deploy:setup", "fpm:new_pool"
-after "deploy", "nginx:reload"
 
 namespace :nginx do
 	task :config, :roles => :app do
@@ -27,10 +26,6 @@ namespace :nginx do
 		run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}-staging"
 		run "#{sudo} ln -s /etc/nginx/sites-available/#{application}-staging /etc/nginx/sites-enabled/#{application}-staging"
 		run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}-staging"
-	end
-
-	task :reload, :roles => :app do
-		run "#{sudo} nginx -s reload"
 	end
 end
 

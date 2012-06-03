@@ -16,22 +16,14 @@ set(:wp_theme_name)       { "vanpattenpress" }
 set(:staging)             { false }
 
 after "deploy:setup", "nginx:config"
-after "deploy", "nginx_prod:reload"
 
 namespace :nginx do
 	task :config do
-		run "echo hi"
-		nginx_config_template = ERB.new(File.read("./config/deploy/templates/nginx.erb"), nil, '<>')
-		result = nginx_config_template.result(binding)
-		put(result, "#{deploy_to}/shared/#{application}")
-		#put nginx_config, "#{deploy_to}/shared/#{application}"
-		#run "#{sudo} mv #{deploy_to}/shared/#{application} /etc/nginx/sites-available/#{application}"
-		#run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}"
-		#run "#{sudo} ln -s /etc/nginx/sites-available/#{application} /etc/nginx/sites-enabled/#{application}"
-		#run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}"
-	end
-
-	task :reload do
-		run "#{sudo} nginx -s reload"
+		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
+		put nginx_config, "#{deploy_to}/shared/#{application}"
+		run "#{sudo} mv #{deploy_to}/shared/#{application} /etc/nginx/sites-available/#{application}"
+		run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}"
+		run "#{sudo} ln -s /etc/nginx/sites-available/#{application} /etc/nginx/sites-enabled/#{application}"
+		run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}"
 	end
 end
