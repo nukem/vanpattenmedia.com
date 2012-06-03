@@ -1,26 +1,26 @@
 # Server options
 server "50.116.59.75", :app, :web, :db, :primary => true
-ssh_options[:port] = 9012
+ssh_options[:port]        = 9012
 default_run_options[:pty] = true
 
 # Deploy path
-set(:deploy_to)         { "/home/vanpattenmedia/staging.vanpattenmedia.com" }
-set(:releases_path)     { File.join(deploy_to, version_dir) }
-set(:shared_path)       { File.join(deploy_to, shared_dir) }
-set(:current_path)      { File.join(deploy_to, current_dir) }
-set(:release_path)      { File.join(releases_path, release_name) }
+set(:deploy_to)           { "/home/vanpattenmedia/staging.vanpattenmedia.com" }
+set(:releases_path)       { File.join(deploy_to, version_dir) }
+set(:shared_path)         { File.join(deploy_to, shared_dir) }
+set(:current_path)        { File.join(deploy_to, current_dir) }
+set(:release_path)        { File.join(releases_path, release_name) }
 
 # nginx config
-set(:domain_name)       { "staging.vanpattenmedia.com" }
-set(:wp_theme_name)     { "vanpattenpress" }
-set(:staging)           { false }
+set(:domain_name)         { "staging.vanpattenmedia.com" }
+set(:wp_theme_name)       { "vanpattenpress" }
+set(:staging)             { true }
 
 after "deploy:setup", "nginx:config"
 after "deploy:setup", "fpm:new_pool"
 after "deploy", "nginx:reload"
 
 namespace :nginx do
-	task :config do
+	task :config, :roles => :app do
 		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
 		put nginx_config, "#{deploy_to}/shared/#{application}-staging"
 		run "#{sudo} mv #{deploy_to}/shared/#{application}-staging /etc/nginx/sites-available/#{application}-staging"
@@ -29,7 +29,7 @@ namespace :nginx do
 		run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}-staging"
 	end
 
-	task :reload do
+	task :reload, :roles => :app do
 		run "#{sudo} nginx -s reload"
 	end
 end
