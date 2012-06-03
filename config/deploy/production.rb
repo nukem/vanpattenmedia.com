@@ -18,6 +18,7 @@ set(:staging)             { false }
 after "deploy:setup", "nginx:config"
 
 namespace :nginx do
+	desc "Set up nginx configs for the production environment"
 	task :config do
 		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
 		put nginx_config, "#{deploy_to}/shared/#{application}"

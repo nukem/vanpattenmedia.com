@@ -19,6 +19,7 @@ after "deploy:setup", "nginx:config"
 after "deploy:setup", "fpm:new_pool"
 
 namespace :nginx do
+	desc "Set up nginx configs for the staging environment"
 	task :config, :roles => :app do
 		nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
 		put nginx_config, "#{deploy_to}/shared/#{application}-staging"
