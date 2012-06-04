@@ -1,0 +1,17 @@
+development:
+  name:
+  user:
+  password:
+  host:
+
+staging:
+  name:
+  user:
+  password:
+  host:
+
+production:
+  name:
+  user:
+  password:
+  host:
