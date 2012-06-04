@@ -1,13 +1,13 @@
-[<%= "#{application}" %>]
+[<%= "#{fetch(:application)}" %>]
 
 ; application credentials
-user = <%= "#{app_user}" %>
-group = <%= "#{app_group}" %>
+user = <%= "#{fetch(:app_user)}" %>
+group = <%= "#{fetch(:app_group)}" %>
 
 ; listen on sock
-listen = /var/run/php5-fpm-pools-<%= "#{application}" %>.sock
+listen = /var/run/php5-fpm-pools-<%= "#{fetch(:application)}" %>.sock
 
-chdir = <%= "#{deploy_to}" %>
+chdir = <%= "#{fetch(:deploy_to)}" %>
 
 ; process manager
 pm = dynamic
@@ -18,9 +18,9 @@ pm.max_spare_servers = 5
 pm.max_requests = 500
 
 ; logging
-access.log = /home/<%= "#{app_user}" %>/php/log/<%= "#{application}" %>.access.log
-access.format = %R - %u %t "%m %r%Q%q" %s %f %{mili}d %{kilo}M %C%%
-slowlog = /home/<%= "#{app_user}" %>/php/log/<%= "#{application}" %>.slow.log
+access.log = /home/<%= "#{fetch(:app_user)}" %>/php/log/<%= "#{fetch(:application)}" %>.access.log
+access.format = %R - %u %t "%m %r%Q%q" %s %f %{mili)}d %{kilo)}M %C%%
+slowlog = /home/<%= "#{fetch(:app_user)}" %>/php/log/<%= "#{fetch(:application)}" %>.slow.log
 
 request_slowlog_timeout = 5s
 
@@ -33,9 +33,9 @@ security.limit_extensions = .php
 php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f info@vanpattenmedia.com
 php_flag[display_errors] = off
 php_admin_flag[log_errors] = on
-php_admin_value[error_log] = /home/<%= "#{app_user}" %>/php/log/error.log
+php_admin_value[error_log] = /home/<%= "#{fetch(:app_user)}" %>/php/log/error.log
 php_admin_value[memory_limit] = 128M
-php_admin_value[session.save_path] = /home/<%= "#{app_user}" %>/php/sessions
-php_admin_value[session.name] = sess_<%= "#{application}" %>
+php_admin_value[session.save_path] = /home/<%= "#{fetch(:app_user)}" %>/php/sessions
+php_admin_value[session.name] = sess_<%= "#{fetch(:application)}" %>
 php_admin_value[session.hash_function] = sha512
 php_admin_value[session.hash_bits_per_character] = 5
