@@ -4,3 +4,6 @@
 [submodule "public/wp"]
 	path = public/wp
 	url = git://github.com/vanpattenmedia/WordPress.git
+[submodule "public/content/plugins/vpm-custom-admin"]
+	path = public/content/plugins/vpm-custom-admin
+	url = git://github.com/vanpattenmedia/vpm-custom-admin.git
