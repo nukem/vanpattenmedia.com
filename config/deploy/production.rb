@@ -1,5 +1,3 @@
-puts "PRODUCTION"
-
 # Server options
 server "50.116.59.75", :app, :web, :db, :primary => true
 ssh_options[:port]        = 9012
@@ -11,7 +9,7 @@ set :deploy_to,             "/home/vanpattenmedia/vanpattenmedia.com"
 # nginx config
 set :domain_name,           "vanpattenmedia.com"
 set :wp_theme_name,         "vanpattenpress"
-set :staging,               true
+set :staging,               false
 
 after "deploy:setup", "nginx:config"
 

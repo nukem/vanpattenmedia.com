@@ -1,5 +1,3 @@
-puts "STAGING"
-
 # Server options
 server "50.116.59.75", :app, :web, :db, :primary => true
 ssh_options[:port]        = 9012

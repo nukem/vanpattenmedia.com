@@ -28,14 +28,14 @@ namespace :deploy do
   end
 
   task :restart do
-   run "#{sudo} nginx -s reload"
+    run "#{sudo} nginx -s reload"
   end
 end
 
 # Set up some VPM-specific tasks
 before "deploy:setup", "vpm:create_folder"
-after "deploy:setup", "vpm:fix_setup_ownership"
-after "deploy", "vpm:fix_deploy_ownership"
+after "deploy:setup", "vpm:fix_setup_ownership", "vpm:upload_db_cred"
+after "deploy", "vpm:fix_deploy_ownership", "vpm:symlink_db_cred"
 
 namespace :vpm do
   desc "Create the environment folder"
@@ -54,5 +54,16 @@ namespace :vpm do
   task :fix_deploy_ownership, :roles => :app do
     run "#{sudo} chown --dereference -RL #{app_user}:#{app_group} #{deploy_to}/current/public"
     run "#{sudo} chmod -R g+s #{deploy_to}/current/public"
+  end
+
+  desc "Upload database credentials to the shared directory"
+  task :upload_db_cred, :roles => :app do
+    run "mkdir #{shared_path}/config"
+    upload("./config/database.yml", "#{shared_path}/config/database.yml")
+  end
+
+  desc "Symlink database credentials to the current release directory"
+  task :symlink_db_cred, :roles => :app do
+    run "#{sudo} ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 end
