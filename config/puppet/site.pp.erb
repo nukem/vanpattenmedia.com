@@ -1,6 +1,4 @@
-$stage = "development"
-
-import "mysqldb.pp"
+$stage = "<%= stage %>"
 
 package { "nginx":
 	ensure => latest,
