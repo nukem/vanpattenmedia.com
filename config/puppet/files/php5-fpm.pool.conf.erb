@@ -1,8 +1,16 @@
 [<%= application %>]
 
+<% if stage == "development" %>
+<% php_user = "vagrant" %>
+<% php_group = "vagrant" %>
+<% else %>
+<% php_user = user %>
+<% php_group = group %>
+<% end %>
+
 ; application credentials
-user = <%= user %>
-group = <%= group %>
+user = <%= php_user %>
+group = <%= php_group %>
 
 ; listen on sock
 listen = /var/run/php5-fpm-pools-<%= application %>.sock
@@ -22,9 +30,9 @@ pm.max_spare_servers = 5
 pm.max_requests = 500
 
 ; logging
-access.log = /home/<%= user %>/php/log/<%= application %>.access.log
+access.log = /home/<%= php_user %>/php/log/<%= application %>.access.log
 access.format = %R - %u %t "%m %r%Q%q" %s %f %{mili}d %{kilo}M %C%%
-slowlog = /home/<%= user %>/php/log/<%= application %>.slow.log
+slowlog = /home/<%= php_user %>/php/log/<%= application %>.slow.log
 
 request_slowlog_timeout = 2s
 
@@ -40,9 +48,9 @@ php_flag[display_errors] = off
 php_flag[display_errors] = on
 <% end %>
 php_admin_flag[log_errors] = on
-php_admin_value[error_log] = /home/<%= user %>/php/log/error.log
+php_admin_value[error_log] = /home/<%= php_user %>/php/log/error.log
 php_admin_value[memory_limit] = 128M
-php_admin_value[session.save_path] = /home/<%= user %>/php/sessions
+php_admin_value[session.save_path] = /home/<%= php_user %>/php/sessions
 php_admin_value[session.name] = sess_<%= application %>
 php_admin_value[session.hash_function] = sha512
 php_admin_value[session.hash_bits_per_character] = 5
