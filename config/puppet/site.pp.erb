@@ -18,14 +18,14 @@ file { "/etc/resolv.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
+	content => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
 }
 
 file { "/etc/nginx/sites-available/vagrantsite":
 	owner => root,
 	group => root,
 	mode  => 644,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_nginx_postprocess",
+	content => "<%= deploy_to %>/config/puppet/files/nginx.erb",
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -47,7 +47,7 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_php5-fpm.pool.conf_postprocess",
+	content => "<%= deploy_to %>/config/puppet/files/php5-fpm.pool.conf.erb",
 	#require => Package["php5-fpm"],
 	#notify => Package["php5-fpm"]
 }
@@ -61,34 +61,34 @@ file { "/home/vagrant/php":
 
 file { "/home/vagrant/php/log":
 	ensure => directory,
-            owner => vagrant,
-            group => vagrant,
-            require => Package["php5-fpm"]
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
 }
 
 file { "/home/vagrant/php/sessions":
 	ensure => directory,
-            owner => vagrant,
-            group => vagrant,
-            require => Package["php5-fpm"]
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
 }
 
 file { "/home/vagrant/php/log/vagrantsite.access.log":
-            owner => vagrant,
-            group => vagrant,
-            require => Package["php5-fpm"]
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
 }
 
 file { "/home/vagrant/php/log/vagrantsite.slow.log":
-            owner => vagrant,
-            group => vagrant,
-            require => Package["php5-fpm"]
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
 }
 
 file { "/home/vagrant/php/log/error.log":
-            owner => vagrant,
-            group => vagrant,
-            require => Package["php5-fpm"]
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
 }
 
 # varnish config file for :80
