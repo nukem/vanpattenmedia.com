@@ -21,6 +21,15 @@ Vagrant::Config.run do |config|
 	wp_theme_name = project['application']['theme']
 	application = project['application']['name']
 
+	# bring in DB details
+	database = YAML.load_file("./config/database.yml")
+	db_name = database['development']['name']
+	db_user = database['development']['user']
+	db_password = database['development']['password']
+	db_host = database['development']['host']
+	
+
+
 	# these variables are now ready for hardcore ERBing
 
 
@@ -39,6 +48,13 @@ Vagrant::Config.run do |config|
 		# write to file
 		File.open('config/puppet/files/vagrant_php5-fpm.pool.conf_postprocess', 'w') do |f|
 			f.write fpm_erb.result(binding)
+		end
+
+		# write the manifest with the db info
+		pp_erb = ERB.new( File.read('config/puppet/vagrant.pp.erb') )
+		# write to file
+		File.open('config/puppet/vagrant.pp', 'w') do |f|
+			f.write pp_erb.result(binding)
 		end
 
         	puppet.manifests_path = "config/puppet"

@@ -1,3 +1,7 @@
+	$stage = "development"
+
+	import "mysqldb.pp"
+
 	package { "nginx":
 		ensure => latest,
 	#	hasrestart => true
@@ -104,6 +108,14 @@
 		source => "/vagrant/config/puppet/files/vagrant_default.vcl",
 		require => Package["varnish"]
 	}
+
+	# set up database
+	mysqldb { "<%= db_name %>":
+        	user => "<%= db_user %>",
+        	password => "<%= db_password %>",
+		host => "localhost",
+		local_hostname => "localhost",
+    	}	
 
 	service { "nginx":
 		ensure => running,
