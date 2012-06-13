@@ -28,6 +28,7 @@ file { "/etc/resolv.conf":
 	mode => 644,
 	source => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
 }
+<% end %>
 
 file { "/etc/nginx/sites-available/<%= application %>":
 	owner => root,
