@@ -1,0 +1,150 @@
+$stage = "development"
+
+import "mysqldb.pp"
+
+package { "nginx":
+	ensure => latest,
+#	hasrestart => true
+}
+
+package { "php5-fpm":
+	ensure => latest
+}
+
+package { "varnish":
+	ensure => latest
+}
+
+# to hack around the name resolution problem with a 12.04 host, Peter's env only
+file { "/etc/resolv.conf":
+	owner => root,
+	group => root,
+	mode => 644,
+	source => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
+}
+
+file { "/etc/nginx/sites-available/vagrantsite":
+	owner => root,
+	group => root,
+	mode  => 644,
+	source => "<%= deploy_to %>/config/puppet/files/vagrant_nginx_postprocess",
+	require => Package["nginx"],
+	notify => Service["nginx"]
+}
+
+file { "/etc/nginx/sites-enabled/vagrantsite":
+	ensure => symlink,
+	target => "/etc/nginx/sites-available/vagrantsite",
+	require => Package["nginx"],
+	notify => Service["nginx"]
+}
+
+file { "/etc/nginx/sites-enabled/default":
+	ensure => absent,
+	#require => Package["nginx"],
+	#notify => Package["nginx"]
+}
+
+file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
+	owner => root,
+	group => root,
+	mode => 644,
+	source => "<%= deploy_to %>/config/puppet/files/vagrant_php5-fpm.pool.conf_postprocess",
+	#require => Package["php5-fpm"],
+	#notify => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php":
+	ensure => directory,
+	owner => vagrant,
+	group => vagrant,
+	require => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php/log":
+	ensure => directory,
+            owner => vagrant,
+            group => vagrant,
+            require => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php/sessions":
+	ensure => directory,
+            owner => vagrant,
+            group => vagrant,
+            require => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php/log/vagrantsite.access.log":
+            owner => vagrant,
+            group => vagrant,
+            require => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php/log/vagrantsite.slow.log":
+            owner => vagrant,
+            group => vagrant,
+            require => Package["php5-fpm"]
+}
+
+file { "/home/vagrant/php/log/error.log":
+            owner => vagrant,
+            group => vagrant,
+            require => Package["php5-fpm"]
+}
+
+# varnish config file for :80
+file { "/etc/default/varnish":
+	owner => root,
+	group => root,
+	source => "<%= deploy_to %>/config/puppet/files/vagrant_etc_default_varnish",
+	require => Package["varnish"]
+}
+
+file { "/etc/varnish/default.vcl":
+	owner => root,
+	group => root,
+	source => "<%= deploy_to %>/config/puppet/files/vagrant_default.vcl",
+	require => Package["varnish"]
+}
+
+define mysqldb( $user, $password, $host, $local_hostname ) {
+	exec { "create-${name}-db":
+		unless => $stage ? {
+			'development' => "/usr/bin/mysql -u${user} -pvagrant ${name}",
+			default	      => "/usr/bin/mysql --ssl -h ${db_host} ${name}",
+		},
+		command => $stage ? {
+			'development' => "/usr/bin/mysql -uroot -pvagrant -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TO ${user}@localhost IDENTIFIED BY '$password';\"",
+			default       => "/usr/bin/mysql --ssl -h ${db_host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${local_hostname} IDENTIFIED BY '$password' REQUIRE SSL;\"",
+			require => Service["mysqld"],
+		},
+	}
+}
+
+# set up database
+mysqldb { "<%= db_name %>":
+	user => "<%= db_user %>",
+	password => "<%= db_password %>",
+	host => "localhost",
+	local_hostname => "localhost",
+}
+
+service { "nginx":
+	ensure => running,
+	#hasrestart => true,
+	require => Package["nginx"]
+}
+
+service { "php5-fpm":
+	ensure => running,
+	#hasrestart => true,
+	require => Package["php5-fpm"]
+}
+
+# start varnish
+service { "varnish":
+	ensure => running,
+	require => Package["varnish"],
+	subscribe => File["/etc/default/varnish"]
+}
