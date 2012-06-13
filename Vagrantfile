@@ -7,7 +7,8 @@ Vagrant::Config.run do |config|
   require "yaml"
   require "erb"
 
-  project = YAML.load_file("./config/project.yml")
+  project  = YAML.load_file("./config/project.yml")
+  database = YAML.load_file("./config/database.yml")
 
   repo          = project['application']['repo']
   wp_theme_name = project['application']['theme']
@@ -17,9 +18,6 @@ Vagrant::Config.run do |config|
   stage         = "development"
   domain_name   = "dev." + project['application']['domain']
   deploy_to     = "/vagrant"
-
-  # bring in DB details
-  database = YAML.load_file("./config/database.yml")
 
   db_name     = database['development']['name']
   db_user     = database['development']['user']
@@ -33,14 +31,14 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :puppet do |puppet|
     # Grab the manifest erb
-    pp_erb = ERB.new( File.read('config/puppet/site.pp.erb') )
+    pp_erb = ERB.new( File.read('config/puppet/templates/site.pp.erb') )
 
     # Write it out to a file
-    File.open('config/puppet/site.pp', 'w') do |f|
+    File.open('config/puppet/rendered/site.pp', 'w') do |f|
       f.write pp_erb.result(binding)
     end
 
-    puppet.manifests_path = "config/puppet/rendered"
+    puppet.manifests_path = "./config/puppet/rendered"
     puppet.manifest_file = "site.pp"
   end
 end

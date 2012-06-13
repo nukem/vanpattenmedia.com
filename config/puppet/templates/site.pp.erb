@@ -1,5 +1,11 @@
 # i eat variables for breakfast
 $stage         = "<%= stage %>"
+$domain_name   = "<%= domain_name %>"
+$deploy_to     = "<%= deploy_to %>"
+$wp_theme_name = "<%= wp_theme_name %>"
+$application   = "<%= application %>"
+$user          = "<%= user %>"
+$group         = "<%= group %>"
 
 package { "nginx":
 	ensure => latest,
