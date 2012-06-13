@@ -16,11 +16,11 @@ environment       = "development"
 
 # What should environments look like?
 if environment == "production"
-	output_style  = :compressed
-	line_comments = false
+  output_style  = :compressed
+  line_comments = false
 else
-	output_style  = :expanded
-	line_comments = true
+  output_style  = :expanded
+  line_comments = true
 end
 
 # Enable relative asset paths
