@@ -20,6 +20,7 @@ package { "varnish":
 	ensure => latest
 }
 
+<% if stage == "development" %>
 # to hack around the name resolution problem with a 12.04 host, Peter's env only
 file { "/etc/resolv.conf":
 	owner => root,
@@ -28,7 +29,7 @@ file { "/etc/resolv.conf":
 	source => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
 }
 
-file { "/etc/nginx/sites-available/vagrantsite":
+file { "/etc/nginx/sites-available/<%= application %>":
 	owner => root,
 	group => root,
 	mode  => 644,
@@ -37,9 +38,9 @@ file { "/etc/nginx/sites-available/vagrantsite":
 	notify => Service["nginx"]
 }
 
-file { "/etc/nginx/sites-enabled/vagrantsite":
+file { "/etc/nginx/sites-enabled/<%= application %>":
 	ensure => symlink,
-	target => "/etc/nginx/sites-available/vagrantsite",
+	target => "/etc/nginx/sites-available/<%= application %>",
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -59,42 +60,42 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	#notify => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php":
+file { "/home/<%= user %>/php":
 	ensure => directory,
-	owner => vagrant,
-	group => vagrant,
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php/log":
+file { "/home/<%= user %>/php/log":
 	ensure => directory,
-	owner => vagrant,
-	group => vagrant,
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php/sessions":
+file { "/home/<%= user %>/php/sessions":
 	ensure => directory,
-	owner => vagrant,
-	group => vagrant,
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php/log/vagrantsite.access.log":
-	owner => vagrant,
-	group => vagrant,
+file { "/home/<%= user %>/php/log/vagrantsite.access.log":
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php/log/vagrantsite.slow.log":
-	owner => vagrant,
-	group => vagrant,
+file { "/home/<%= user %>/php/log/vagrantsite.slow.log":
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/vagrant/php/log/error.log":
-	owner => vagrant,
-	group => vagrant,
+file { "/home/<%= user %>/php/log/error.log":
+	owner => <%= user %>,
+	group => <%= group %>,
 	require => Package["php5-fpm"]
 }
 
