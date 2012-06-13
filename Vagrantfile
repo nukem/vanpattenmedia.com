@@ -14,6 +14,13 @@ Vagrant::Config.run do |config|
 	user = project['application']['user']
 	group = project['application']['group']
 	theme = project['application']['theme']
+
+	stage = "development"
+	domain_name = "dev.vanpattenmedia.com"
+	deploy_to = "/vagrant"
+	wp_theme_name = project['application']['theme']
+	application = project['application']['name']
+
 	# these variables are now ready for hardcore ERBing
 
 
