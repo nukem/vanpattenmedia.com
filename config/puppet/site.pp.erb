@@ -34,7 +34,7 @@ file { "/etc/nginx/sites-available/<%= application %>":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= deploy_to %>/config/puppet/files/nginx.erb"),
+	content => template("<%= deploy_to %>/config/puppet/templates/nginx.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -56,7 +56,7 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	content => template("<%= deploy_to %>/config/puppet/files/php5-fpm.pool.conf.erb"),
+	content => template("<%= deploy_to %>/config/puppet/templates/php5-fpm.pool.conf.erb"),
 	#require => Package["php5-fpm"],
 	#notify => Package["php5-fpm"]
 }
