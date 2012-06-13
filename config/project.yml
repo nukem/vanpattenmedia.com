@@ -4,3 +4,4 @@ application:
   user: vanpattenmedia
   group: vanpattenmedia-sitewriters
   theme: vanpattenpress
+  domain: vanpattenmedia.com

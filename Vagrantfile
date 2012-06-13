@@ -9,17 +9,14 @@ Vagrant::Config.run do |config|
 
   project = YAML.load_file("./config/project.yml")
 
-  app = project['application']['name']
-  repo = project['application']['repo']
-  user = project['application']['user']
-  group = project['application']['group']
-  theme = project['application']['theme']
-
-  stage = "development"
-  domain_name = "dev.vanpattenmedia.com"
-  deploy_to = "/vagrant"
+  repo          = project['application']['repo']
   wp_theme_name = project['application']['theme']
-  application = project['application']['name']
+  application   = project['application']['name']
+  user          = "vagrant"
+  group         = "vagrant"
+  stage         = "development"
+  domain_name   = "dev." + project['application']['domain']
+  deploy_to     = "/vagrant"
 
   # bring in DB details
   database = YAML.load_file("./config/database.yml")
