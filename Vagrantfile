@@ -20,10 +20,11 @@ Vagrant::Config.run do |config|
 
   # bring in DB details
   database = YAML.load_file("./config/database.yml")
-  db_name = database['development']['name']
-  db_user = database['development']['user']
+
+  db_name     = database['development']['name']
+  db_user     = database['development']['user']
   db_password = database['development']['password']
-  db_host = database['development']['host']
+  db_host     = database['development']['host']
 
   # these variables are now ready for hardcore ERBing
 

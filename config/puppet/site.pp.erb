@@ -1,11 +1,5 @@
 # i eat variables for breakfast
-$stage = "<%= stage %>"
-$domain_name = "<%= domain_name %>"
-$deploy_to = "<%= deploy_to %>"
-$wp_theme_name = "<%= wp_theme_name %>"
-$application = "<%= application %>"
-$user = "<%= user %>"
-$group = "<%= group %>"
+$stage         = "<%= stage %>"
 
 package { "nginx":
 	ensure => latest,
@@ -30,7 +24,7 @@ file { "/etc/resolv.conf":
 }
 <% end %>
 
-file { "/etc/nginx/sites-available/<%= application %>":
+file { "/etc/nginx/sites-available/<%= application %>-<%= stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
@@ -39,9 +33,9 @@ file { "/etc/nginx/sites-available/<%= application %>":
 	notify => Service["nginx"]
 }
 
-file { "/etc/nginx/sites-enabled/<%= application %>":
+file { "/etc/nginx/sites-enabled/<%= application %>-<%= stage %>":
 	ensure => symlink,
-	target => "/etc/nginx/sites-available/<%= application %>",
+	target => "/etc/nginx/sites-available/<%= application %>-<%= stage %>",
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -100,6 +94,7 @@ file { "/home/<%= user %>/php/log/error.log":
 	require => Package["php5-fpm"]
 }
 
+<% if stage == "development" %>
 # varnish config file for :80
 file { "/etc/default/varnish":
 	owner => root,
@@ -114,6 +109,7 @@ file { "/etc/varnish/default.vcl":
 	source => "<%= deploy_to %>/config/puppet/files/vagrant_default.vcl",
 	require => Package["varnish"]
 }
+<% end %>
 
 define mysqldb( $user, $password, $host, $local_hostname ) {
 	exec { "create-${name}-db":
@@ -133,7 +129,7 @@ define mysqldb( $user, $password, $host, $local_hostname ) {
 mysqldb { "<%= db_name %>":
 	user => "<%= db_user %>",
 	password => "<%= db_password %>",
-	host => "localhost",
+	host => "<%= db_host %>",
 	local_hostname => "localhost",
 }
 
