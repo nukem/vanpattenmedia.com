@@ -42,7 +42,7 @@ Vagrant::Config.run do |config|
       f.write pp_erb.result(binding)
     end
 
-    puppet.manifests_path = "config/puppet"
+    puppet.manifests_path = "config/puppet/rendered"
     puppet.manifest_file = "site.pp"
   end
 end
