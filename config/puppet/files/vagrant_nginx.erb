@@ -1,13 +1,4 @@
-<%
-if capistrano.respond_to?('fetch')
-  fetch(:stage)         = stage
-  fetch(:domain_name)   = domain_name
-  fetch(:deploy_to)     = deploy_to
-  fetch(:wp_theme_name) = wp_theme_name
-  fetch(:application)   = application
-end
-
-if stage == "production" %>
+<% if stage == "production" %>
 # Redirect to www.*
 server {
     listen 8080;

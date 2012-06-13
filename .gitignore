@@ -6,3 +6,4 @@ local.db.php
 .vagrant
 .DS_Store
 .sass-caches
+vagrant_nginx_postprocess
