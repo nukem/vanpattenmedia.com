@@ -18,14 +18,14 @@ file { "/etc/resolv.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	content => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
+	source => <%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
 }
 
 file { "/etc/nginx/sites-available/vagrantsite":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => "<%= deploy_to %>/config/puppet/files/nginx.erb",
+	content => template("<%= deploy_to %>/config/puppet/files/nginx.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -47,7 +47,7 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	content => "<%= deploy_to %>/config/puppet/files/php5-fpm.pool.conf.erb",
+	content => template("<%= deploy_to %>/config/puppet/files/php5-fpm.pool.conf.erb"),
 	#require => Package["php5-fpm"],
 	#notify => Package["php5-fpm"]
 }
