@@ -13,7 +13,11 @@ server {
 
     listen 8080;
 
+    <% if stage == "development" %>
+    root /vagrant/public;
+    <% else %>
     root <%= deploy_to %>/current/public;
+    <% end %>
     index index.php index.html index.htm;
 
     <% if stage == "production" %>

@@ -45,7 +45,7 @@
 		owner => root,
 		group => root,
 		mode => 644,
-		source => "/vagrant/config/puppet/files/vagrant_php5-fpm_pool.conf",
+		source => "/vagrant/config/puppet/files/vagrant_php5-fpm.pool.conf_postprocess",
 		#require => Package["php5-fpm"],
 		#notify => Package["php5-fpm"]
 	}

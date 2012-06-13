@@ -29,10 +29,16 @@ Vagrant::Config.run do |config|
 
 	config.vm.provision :puppet do |puppet|
 		# prepare the site ERB for Puppet
-		nginx_erb = ERB.new( File.read('config/puppet/files/vagrant_nginx.erb') )
+		nginx_erb = ERB.new( File.read('config/puppet/files/nginx.erb') )
 		# write to file
 		File.open('config/puppet/files/vagrant_nginx_postprocess', 'w') do |f|
 			f.write nginx_erb.result(binding)
+		end
+
+		fpm_erb = ERB.new( File.read('config/puppet/files/php5-fpm.pool.conf.erb') )
+		# write to file
+		File.open('config/puppet/files/vagrant_php5-fpm.pool.conf_postprocess', 'w') do |f|
+			f.write fpm_erb.result(binding)
 		end
 
         	puppet.manifests_path = "config/puppet"
