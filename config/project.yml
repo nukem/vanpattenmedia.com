@@ -1,0 +1,6 @@
+application:
+  name: vanpattenmedia
+  repo: git://github.com/vanpattenmedia/vanpattenmedia.com.git
+  user: vanpattenmedia
+  group: vanpattenmedia-sitewriters
+  theme: vanpattenpress
