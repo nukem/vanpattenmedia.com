@@ -16,16 +16,16 @@ Vagrant::Config.run do |config|
   app_name      = project['application']['name']
   app_user      = "vagrant"
   app_group     = "vagrant"
-  app_stage     = "development"
-  app_domain    = "dev." + project['application']['domain']
-  app_deploy_to = "/home/vagrant/#{app_domain}/current"
+  app_stage     = "dev"
+  app_domain    = "#{app_stage}." + project['application']['domain']
+  app_deploy_to = "/home/#{app_user}/#{app_domain}"
 
   db_name       = database['development']['name']
   db_user       = database['development']['user']
   db_password   = database['development']['password']
   db_host       = database['development']['host']
 
-  config.vm.share_folder("v-root", "/home/vagrant/#{app_domain}/current", ".")
+  config.vm.share_folder("v-root", "#{app_deploy_to}/current", ".")
 
   config.vm.provision :puppet do |puppet|
     # Grab the manifest erb

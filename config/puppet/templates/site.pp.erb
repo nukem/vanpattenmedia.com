@@ -26,7 +26,7 @@ file { "/etc/resolv.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_resolv.conf"
+	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_resolv.conf"
 }
 <% end %>
 
@@ -34,7 +34,7 @@ file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= app_deploy_to %>/config/puppet/templates/nginx.erb"),
+	content => template("<%= app_deploy_to %>/current/config/puppet/templates/nginx.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -56,7 +56,7 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	content => template("<%= app_deploy_to %>/config/puppet/templates/php5-fpm.pool.conf.erb"),
+	content => template("<%= app_deploy_to %>/current/config/puppet/templates/php5-fpm.pool.conf.erb"),
 	#require => Package["php5-fpm"],
 	#notify => Package["php5-fpm"]
 }
@@ -105,14 +105,14 @@ file { "/home/<%= app_user %>/php/log/error.log":
 file { "/etc/default/varnish":
 	owner => root,
 	group => root,
-	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_etc_default_varnish",
+	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_etc_default_varnish",
 	require => Package["varnish"]
 }
 
 file { "/etc/varnish/default.vcl":
 	owner => root,
 	group => root,
-	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_default.vcl",
+	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_default.vcl",
 	require => Package["varnish"]
 }
 <% end %>
