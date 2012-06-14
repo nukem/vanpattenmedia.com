@@ -12,7 +12,6 @@ Vagrant::Config.run do |config|
   project  = YAML.load_file("./config/project.yml")
   database = YAML.load_file("./config/database.yml")
 
-  #repo          = project['application']['repo']
   app_theme     = project['application']['theme']
   app_name      = project['application']['name']
   app_user      = "vagrant"
