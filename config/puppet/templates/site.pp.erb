@@ -20,7 +20,7 @@ package { "varnish":
 	ensure => latest
 }
 
-<% if app_stage == "development" %>
+<% if app_stage == "dev" %>
 # to hack around the name resolution problem with a 12.04 host, Peter's env only
 file { "/etc/resolv.conf":
 	owner => root,
@@ -100,7 +100,7 @@ file { "/home/<%= app_user %>/php/log/error.log":
 	require => Package["php5-fpm"]
 }
 
-<% if app_stage == "development" %>
+<% if app_stage == "dev" %>
 # varnish config file for :80
 file { "/etc/default/varnish":
 	owner => root,
