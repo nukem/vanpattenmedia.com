@@ -1,11 +1,11 @@
 # i eat variables for breakfast
-$stage         = "<%= stage %>"
-$domain_name   = "<%= domain_name %>"
-$deploy_to     = "<%= deploy_to %>"
-$wp_theme_name = "<%= wp_theme_name %>"
-$application   = "<%= application %>"
-$user          = "<%= user %>"
-$group         = "<%= group %>"
+$app_stage     = "<%= app_stage %>"
+$app_domain    = "<%= app_domain %>"
+$app_deploy_to = "<%= app_deploy_to %>"
+$app_theme     = "<%= app_theme %>"
+$app_name      = "<%= app_name %>"
+$app_user      = "<%= app_user %>"
+$app_group     = "<%= app_group %>"
 
 package { "nginx":
 	ensure => latest,
@@ -20,28 +20,28 @@ package { "varnish":
 	ensure => latest
 }
 
-<% if stage == "development" %>
+<% if app_stage == "development" %>
 # to hack around the name resolution problem with a 12.04 host, Peter's env only
 file { "/etc/resolv.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_resolv.conf"
+	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_resolv.conf"
 }
 <% end %>
 
-file { "/etc/nginx/sites-available/<%= application %>-<%= stage %>":
+file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= deploy_to %>/config/puppet/templates/nginx.erb"),
+	content => template("<%= app_deploy_to %>/config/puppet/templates/nginx.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
 
-file { "/etc/nginx/sites-enabled/<%= application %>-<%= stage %>":
+file { "/etc/nginx/sites-enabled/<%= app_name %>-<%= app_stage %>":
 	ensure => symlink,
-	target => "/etc/nginx/sites-available/<%= application %>-<%= stage %>",
+	target => "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>",
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -56,63 +56,63 @@ file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
 	owner => root,
 	group => root,
 	mode => 644,
-	content => template("<%= deploy_to %>/config/puppet/templates/php5-fpm.pool.conf.erb"),
+	content => template("<%= app_deploy_to %>/config/puppet/templates/php5-fpm.pool.conf.erb"),
 	#require => Package["php5-fpm"],
 	#notify => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php":
+file { "/home/<%= app_user %>/php":
 	ensure => directory,
-	owner => <%= user %>,
-	group => <%= group %>,
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php/log":
+file { "/home/<%= app_user %>/php/log":
 	ensure => directory,
-	owner => <%= user %>,
-	group => <%= group %>,
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php/sessions":
+file { "/home/<%= app_user %>/php/sessions":
 	ensure => directory,
-	owner => <%= user %>,
-	group => <%= group %>,
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php/log/vagrantsite.access.log":
-	owner => <%= user %>,
-	group => <%= group %>,
+file { "/home/<%= app_user %>/php/log/vagrantsite.access.log":
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php/log/vagrantsite.slow.log":
-	owner => <%= user %>,
-	group => <%= group %>,
+file { "/home/<%= app_user %>/php/log/vagrantsite.slow.log":
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= user %>/php/log/error.log":
-	owner => <%= user %>,
-	group => <%= group %>,
+file { "/home/<%= app_user %>/php/log/error.log":
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-<% if stage == "development" %>
+<% if app_stage == "development" %>
 # varnish config file for :80
 file { "/etc/default/varnish":
 	owner => root,
 	group => root,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_etc_default_varnish",
+	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_etc_default_varnish",
 	require => Package["varnish"]
 }
 
 file { "/etc/varnish/default.vcl":
 	owner => root,
 	group => root,
-	source => "<%= deploy_to %>/config/puppet/files/vagrant_default.vcl",
+	source => "<%= app_deploy_to %>/config/puppet/files/vagrant_default.vcl",
 	require => Package["varnish"]
 }
 <% end %>

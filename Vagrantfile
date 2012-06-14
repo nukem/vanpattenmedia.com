@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
+  config.vm.box = "vpm_vagrant"
+  config.vm.network :hostonly, "192.168.33.10"
 
   # bring in the YAML!!!111!1oneONE
   require "yaml"
@@ -10,24 +12,21 @@ Vagrant::Config.run do |config|
   project  = YAML.load_file("./config/project.yml")
   database = YAML.load_file("./config/database.yml")
 
-  repo          = project['application']['repo']
-  wp_theme_name = project['application']['theme']
-  application   = project['application']['name']
-  user          = "vagrant"
-  group         = "vagrant"
-  stage         = "development"
-  domain_name   = "dev." + project['application']['domain']
-  deploy_to     = "/vagrant"
+  #repo          = project['application']['repo']
+  app_theme     = project['application']['theme']
+  app_name      = project['application']['name']
+  app_user      = "vagrant"
+  app_group     = "vagrant"
+  app_stage     = "development"
+  app_domain    = "dev." + project['application']['domain']
+  app_deploy_to = "/home/vagrant/#{app_domain}/current"
 
-  db_name     = database['development']['name']
-  db_user     = database['development']['user']
-  db_password = database['development']['password']
-  db_host     = database['development']['host']
+  db_name       = database['development']['name']
+  db_user       = database['development']['user']
+  db_password   = database['development']['password']
+  db_host       = database['development']['host']
 
-  # these variables are now ready for hardcore ERBing
-
-  config.vm.box = "vpm_vagrant"
-  config.vm.network :hostonly, "192.168.33.10"
+  config.vm.share_folder("v-root", "/home/vagrant/#{app_domain}/current", ".")
 
   config.vm.provision :puppet do |puppet|
     # Grab the manifest erb

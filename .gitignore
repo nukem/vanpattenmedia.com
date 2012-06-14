@@ -8,3 +8,4 @@ local.db.php
 .sass-caches
 vagrant_nginx_postprocess
 site.pp
+.cache

@@ -1,24 +1,16 @@
-[<%= application %>]
-
-<% if stage == "development" %>
-<% php_user = "vagrant" %>
-<% php_group = "vagrant" %>
-<% else %>
-<% php_user = user %>
-<% php_group = group %>
-<% end %>
+[<%= app_name %>]
 
 ; application credentials
-user = <%= php_user %>
-group = <%= php_group %>
+user = <%= app_user %>
+group = <%= app_group %>
 
 ; listen on sock
-listen = /var/run/php5-fpm-pools-<%= application %>.sock
+listen = /var/run/php5-fpm-pools-<%= app_name %>.sock
 
-<% if stage == "development" %>
-chdir = /vagrant/public
+<% if app_stage == "development" %>
+chdir = <%= app_deploy_to %>/public
 <% else %>
-chdir = <%= deploy_to %>/current/public
+chdir = <%= app_deploy_to %>/current/public
 <% end %>
 
 ; process manager
@@ -30,9 +22,9 @@ pm.max_spare_servers = 5
 pm.max_requests = 500
 
 ; logging
-access.log = /home/<%= php_user %>/php/log/<%= application %>.access.log
+access.log = /home/<%= app_user %>/php/log/<%= app_name %>.access.log
 access.format = %R - %u %t "%m %r%Q%q" %s %f %{mili}d %{kilo}M %C%%
-slowlog = /home/<%= php_user %>/php/log/<%= application %>.slow.log
+slowlog = /home/<%= app_user %>/php/log/<%= app_name %>.slow.log
 
 request_slowlog_timeout = 2s
 
@@ -42,15 +34,15 @@ security.limit_extensions = .php
 
 ; php.ini overrides
 php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f info@vanpattenmedia.com
-<% if stage == "production" %>
+<% if app_stage == "production" %>
 php_flag[display_errors] = off
 <% else %>
 php_flag[display_errors] = on
 <% end %>
 php_admin_flag[log_errors] = on
-php_admin_value[error_log] = /home/<%= php_user %>/php/log/error.log
+php_admin_value[error_log] = /home/<%= app_user %>/php/log/error.log
 php_admin_value[memory_limit] = 128M
-php_admin_value[session.save_path] = /home/<%= php_user %>/php/sessions
-php_admin_value[session.name] = sess_<%= application %>
+php_admin_value[session.save_path] = /home/<%= app_user %>/php/sessions
+php_admin_value[session.name] = sess_<%= app_name %>
 php_admin_value[session.hash_function] = sha512
 php_admin_value[session.hash_bits_per_character] = 5
