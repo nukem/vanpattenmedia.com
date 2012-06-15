@@ -12,7 +12,7 @@ if ($urlParts[0] == 'dev') {
 	// Local dev
 	define( 'WP_LOCAL_DEV', false );
 	define( 'WP_STAGING_DEV', false );
-	foreach($config['local'] as $db_variable => $value) {
+	foreach($config['dev'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
 } elseif ($urlParts[0] == 'staging') {

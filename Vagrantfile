@@ -20,10 +20,10 @@ Vagrant::Config.run do |config|
   app_domain    = "#{app_stage}." + project['application']['domain']
   app_deploy_to = "/home/#{app_user}/#{app_domain}"
 
-  db_name       = database['development']['name']
-  db_user       = database['development']['user']
-  db_password   = database['development']['password']
-  db_host       = database['development']['host']
+  db_name       = database['dev']['name']
+  db_user       = database['dev']['user']
+  db_password   = database['dev']['password']
+  db_host       = database['dev']['host']
 
   config.vm.share_folder("v-root", "#{app_deploy_to}/current", ".")
 
