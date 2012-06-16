@@ -24,6 +24,8 @@ Vagrant::Config.run do |config|
   db_user       = database['dev']['user']
   db_password   = database['dev']['password']
   db_host       = database['dev']['host']
+  db_local_hostname = "localhost" # needed for the MySQL DB permissions stage -- `GRANT ... TO user@<%= db_local_hostname %>`
+				  # should be 'localhost' for Vagrant, and 'pongo' for Capistrano deployments
 
   config.vm.share_folder("v-root", "#{app_deploy_to}/current", ".")
 
