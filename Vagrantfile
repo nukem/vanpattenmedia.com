@@ -4,7 +4,7 @@
 Vagrant::Config.run do |config|
   config.vm.box = "vpm_vagrant"
 
-  if File.exist?("config/vagrant-custom.rb")
+  if File.exist?("./config/vagrant-custom.rb")
     require "./config/vagrant-custom.rb"
   else
     config.vm.network :hostonly, "192.168.33.50"
