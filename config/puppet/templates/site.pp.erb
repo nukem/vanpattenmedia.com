@@ -28,6 +28,13 @@ file { "/etc/resolv.conf":
 	mode => 644,
 	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_resolv.conf"
 }
+
+# www-data needs read and enter on /home/vagrant
+file { "/home/vagrant":
+	owner => "vagrant",
+	group => "www-data",
+	mode => 750,
+}
 <% end %>
 
 file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
@@ -52,14 +59,6 @@ file { "/etc/nginx/sites-enabled/default":
 	#notify => Package["nginx"]
 }
 
-file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
-	owner => root,
-	group => root,
-	mode => 644,
-	content => template("<%= app_deploy_to %>/current/config/puppet/templates/php5-fpm.pool.conf.erb"),
-	#require => Package["php5-fpm"],
-	#notify => Package["php5-fpm"]
-}
 
 file { "/home/<%= app_user %>/php":
 	ensure => directory,
@@ -82,23 +81,37 @@ file { "/home/<%= app_user %>/php/sessions":
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= app_user %>/php/log/vagrantsite.access.log":
+file { "/home/<%= app_user %>/php/log/<%= app_name %>.access.log":
+	ensure => file,
 	owner => <%= app_user %>,
 	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
-file { "/home/<%= app_user %>/php/log/vagrantsite.slow.log":
+file { "/home/<%= app_user %>/php/log/<%= app_name %>.slow.log":
+	ensure => file,
 	owner => <%= app_user %>,
 	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
 
 file { "/home/<%= app_user %>/php/log/error.log":
+	ensure => file,
 	owner => <%= app_user %>,
 	group => <%= app_group %>,
 	require => Package["php5-fpm"]
 }
+
+# pool must be after the files it depends on above
+file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
+        owner => root,
+        group => root,
+        mode => 644,
+        content => template("<%= app_deploy_to %>/current/config/puppet/templates/php5-fpm.pool.conf.erb"),
+        #require => Package["php5-fpm"],
+        #notify => Package["php5-fpm"]
+}
+
 
 <% if app_stage == "dev" %>
 # varnish config file for :80
@@ -148,6 +161,8 @@ service { "nginx":
 service { "php5-fpm":
 	ensure => running,
 	#hasrestart => true,
+	subscribe => [File["/etc/php5/fpm/pool.d/vagrantsite.pool.conf"],File["/home/<%= app_user %>/php/log"]],
+	
 	require => Package["php5-fpm"]
 }
 
