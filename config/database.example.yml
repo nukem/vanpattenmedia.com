@@ -3,15 +3,18 @@ dev:
   user:
   password:
   host:
+  grant_to:
 
 staging:
   name:
   user:
   password:
   host:
+  grant_to:
 
 production:
   name:
   user:
   password:
   host:
+  grant_to:

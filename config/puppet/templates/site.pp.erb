@@ -130,7 +130,7 @@ file { "/etc/varnish/default.vcl":
 }
 <% end %>
 
-define mysqldb( $user, $password, $host, $local_hostname ) {
+define mysqldb( $user, $password, $host, $grant_to ) {
 	exec { "create-${name}-db":
 		unless => $app_stage ? {
 			'dev'   => "/usr/bin/mysql -u${user} -pvagrant ${name}",
@@ -138,7 +138,7 @@ define mysqldb( $user, $password, $host, $local_hostname ) {
 		},
 		command => $app_stage ? {
 			'dev'   => "/usr/bin/mysql -uroot -pvagrant -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TO ${user}@localhost IDENTIFIED BY '$password';\"",
-			default => "/usr/bin/mysql --ssl -h ${db_host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${local_hostname} IDENTIFIED BY '$password' REQUIRE SSL;\"",
+			default => "/usr/bin/mysql --ssl -h ${db_host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${grant_to} IDENTIFIED BY '$password' REQUIRE SSL;\"",
 			require => Service["mysqld"],
 		},
 	}
@@ -149,7 +149,7 @@ mysqldb { "<%= db_name %>":
 	user => "<%= db_user %>",
 	password => "<%= db_password %>",
 	host => "<%= db_host %>",
-	local_hostname => "<%= db_local_hostname %>",
+	grant_to => "<%= db_grant_to %>",
 }
 
 service { "nginx":
@@ -162,7 +162,7 @@ service { "php5-fpm":
 	ensure => running,
 	#hasrestart => true,
 	subscribe => [File["/etc/php5/fpm/pool.d/vagrantsite.pool.conf"],File["/home/<%= app_user %>/php/log"]],
-	
+
 	require => Package["php5-fpm"]
 }
 

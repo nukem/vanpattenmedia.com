@@ -3,7 +3,10 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "vpm_vagrant"
-  config.vm.network :hostonly, "192.168.33.10"
+
+  if File.exist?("config/vagrant-custom.rb")
+    require "./config/vagrant-custom.rb"
+  end
 
   # bring in the YAML!!!111!1oneONE
   require "yaml"
@@ -24,8 +27,7 @@ Vagrant::Config.run do |config|
   db_user       = database['dev']['user']
   db_password   = database['dev']['password']
   db_host       = database['dev']['host']
-  db_local_hostname = "localhost" # needed for the MySQL DB permissions stage -- `GRANT ... TO user@<%= db_local_hostname %>`
-				  # should be 'localhost' for Vagrant, and 'pongo' for Capistrano deployments
+  db_grant_to   = database['dev']['grant_to']
 
   config.vm.share_folder("v-root", "#{app_deploy_to}/current", ".")
 

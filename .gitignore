@@ -9,3 +9,4 @@ local.db.php
 vagrant_nginx_postprocess
 site.pp
 .cache
+vagrant-custom.rb
