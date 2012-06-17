@@ -10,24 +10,21 @@ $config = $yaml->parse(file_get_contents(dirname(__FILE__).'./../config/database
 $urlParts = explode('.', $_SERVER['HTTP_HOST']);
 if ($urlParts[0] == 'dev') {
 	// Local dev
-	define( 'WP_LOCAL_DEV', false );
-	define( 'WP_STAGING_DEV', false );
+	define( 'WP_STAGE', 'dev' );
 	foreach($config['dev'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
 } elseif ($urlParts[0] == 'staging') {
 	// Staging
-	define( 'WP_LOCAL_DEV', false );
-	define( 'WP_STAGING_DEV', true );
-	define('DB_SSL', true);
+	define( 'WP_STAGE', 'staging' );
+	define( 'DB_CLIENT_FLAGS', 'MYSQL_CLIENT_SSL' );
 	foreach($config['staging'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
 } else {
 	// Production
-	define( 'WP_LOCAL_DEV', true );
-	define( 'WP_STAGING_DEV', false );
-	define('DB_SSL', true);
+	define( 'WP_STAGE', 'production' );
+	define( 'DB_CLIENT_FLAGS', 'MYSQL_CLIENT_SSL' );
 	foreach($config['production'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
