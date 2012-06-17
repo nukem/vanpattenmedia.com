@@ -7,3 +7,6 @@
 [submodule "public/content/plugins/vpm-custom-admin"]
 	path = public/content/plugins/vpm-custom-admin
 	url = git://github.com/vanpattenmedia/vpm-custom-admin.git
+[submodule "public/content/plugins/rach5-helper"]
+	path = public/content/plugins/rach5-helper
+	url = git://github.com/vanpattenmedia/rach5-helper.git
