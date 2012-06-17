@@ -1,11 +1,15 @@
-# Ignore environment configs (they have passwords)
+# WordPress
+public/content/uploads
+
+# Ignore environment config (passwords)
 database.yml
-local.db.php
 
 # Misc.
-.vagrant
+.sass-cache
 .DS_Store
-.sass-caches
+
+# Vagranty things
+.vagrant
 vagrant_nginx_postprocess
 site.pp
 .cache
