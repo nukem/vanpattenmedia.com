@@ -67,6 +67,43 @@ file { "/etc/nginx/sites-enabled/default":
 	#notify => Package["nginx"]
 }
 
+group { "<%= app_user %>-homerw":
+	ensure => present,
+}
+
+group { "<%= app_group %>":
+	ensure => present,
+}
+
+user { "www-data":
+	groups => "<%= app_user %>-homerw",
+	membership => "minimum",
+}
+
+user { "peter":
+	groups => ["<%= app_user %>-homerw","<%= app_group %>"],
+	membership => "minimum",
+}
+
+user { "chris":
+	groups => ["<%= app_user %>-homerw","<%= app_group %>],
+	membership => "minimum",
+}
+
+user { "<%= app_user %>":
+	gid => "<%= app_group %>",
+	groups => ["www-php-loggers","<%= app_user %>-homerw"],
+	membership => "minimum",
+	password => "*", # disable password-based logins entirely
+}
+
+
+file { "/home/<%= app_user %>":
+	ensure => directory,
+	owner => <%= app_user %>,
+	group => <%= app_user %>-homerw,
+	mode => 770,
+}
 
 file { "/home/<%= app_user %>/php":
 	ensure => directory,
