@@ -3,10 +3,6 @@ server "50.116.59.75", :app, :web, :db, :primary => true
 ssh_options[:port]        = 9012
 default_run_options[:pty] = true
 
-# Deploy path
-set :deploy_to, "/home/#{app_user}/#{app_domain}"
-set :app_deploy_to, fetch(:deploy_to)
-
 project  = YAML.load_file("./config/project.yml")
 database = YAML.load_file("./config/database.yml")
 
@@ -23,14 +19,20 @@ set :app_theme,  "vanpattenpress"
 set :app_stage,  "staging"
 set :app_domain, "#{app_stage}." + project['application']['domain']
 
+# Deploy path
+set :deploy_to, "/home/#{fetch(:app_user)}/#{fetch(:app_domain)}"
+set :app_deploy_to, fetch(:deploy_to)
+
 before "deploy:setup", "puppet:show"
 
 namespace :puppet do
   desc "Set up puppet"
   task :show, :roles => :app do
-    puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
-    put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}-#{fetch(:app_stage)}.pp"
+    run "mkdir -p /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
 
-    run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}-#{fetch(:app_stage)}.pp"
+    puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
+    put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
+
+   # run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}-#{fetch(:app_stage)}.pp"
   end
 end
