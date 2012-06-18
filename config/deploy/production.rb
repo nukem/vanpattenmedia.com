@@ -3,24 +3,24 @@ server "50.116.59.75", :app, :web, :db, :primary => true
 ssh_options[:port]        = 9012
 default_run_options[:pty] = true
 
-# Deploy path
-set :deploy_to,             "/home/vanpattenmedia/vanpattenmedia.com"
+# Set stage
+set :app_stage,  "production"
+
+project  = YAML.load_file("./config/project.yml")
+database = YAML.load_file("./config/database.yml")
+
+set :db_name,     database[fetch(:app_stage)]['name']
+set :db_user,     database[fetch(:app_stage)]['user']
+set :db_password, database[fetch(:app_stage)]['password']
+set :db_host,     database[fetch(:app_stage)]['host']
+set :db_grant_to, database[fetch(:app_stage)]['grant_to']
 
 # nginx config
-set :domain_name,           "vanpattenmedia.com"
-set :wp_theme_name,         "vanpattenpress"
-set :staging,               false
+set :app_name,   project['application']['name']
+set :app_theme,  project['application']['theme']
+set :app_theme,  "vanpattenpress"
+set :app_domain, project['application']['domain']
 
-after "deploy:setup", "nginx:config"
-
-namespace :nginx do
-  desc "Set up nginx configs for the production environment"
-  task :config do
-    nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
-    put nginx_config, "#{deploy_to}/shared/#{application}"
-    run "#{sudo} mv #{deploy_to}/shared/#{application} /etc/nginx/sites-available/#{application}"
-    run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}"
-    run "#{sudo} ln -s /etc/nginx/sites-available/#{application} /etc/nginx/sites-enabled/#{application}"
-    run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}"
-  end
-end
+# Deploy path
+set :deploy_to, "/home/#{fetch(:app_user)}/#{fetch(:app_domain)}"
+set :app_deploy_to, fetch(:deploy_to)

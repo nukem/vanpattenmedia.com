@@ -33,9 +33,22 @@ namespace :deploy do
 end
 
 # Set up some VPM-specific tasks
-# before "deploy:setup", "vpm:create_folder"
+before "deploy:setup", "puppet:show"
 after "deploy:setup", "vpm:fix_setup_ownership", "vpm:upload_db_cred"
 after "deploy", "vpm:fix_deploy_ownership", "vpm:symlink_db_cred"
+
+namespace :puppet do
+  desc "Set up puppet"
+  task :show, :roles => :app do
+    run "mkdir -p /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
+    upload("./config/puppet/templates", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}", :via => :scp, :recursive => :true)
+
+    puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
+    put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
+
+    run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
+  end
+end
 
 namespace :vpm do
   desc "Fix ownership on setup"
