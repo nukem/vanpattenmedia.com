@@ -103,7 +103,7 @@ file { "/home/<%= app_user %>/php/log/error.log":
 }
 
 # pool must be after the files it depends on above
-file { "/etc/php5/fpm/pool.d/vagrantsite.pool.conf":
+file { "/etc/php5/fpm/pool.d/<%= app_name %>.pool.conf":
         owner => root,
         group => root,
         mode => 644,
@@ -161,7 +161,7 @@ service { "nginx":
 service { "php5-fpm":
 	ensure => running,
 	#hasrestart => true,
-	subscribe => [File["/etc/php5/fpm/pool.d/vagrantsite.pool.conf"],File["/home/<%= app_user %>/php/log"]],
+	subscribe => [File["/etc/php5/fpm/pool.d/<%= app_name %>.pool.conf"],File["/home/<%= app_user %>/php/log"]],
 
 	require => Package["php5-fpm"]
 }
