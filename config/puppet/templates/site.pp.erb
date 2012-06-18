@@ -37,12 +37,6 @@ file { "/etc/resolv.conf":
 	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_resolv.conf"
 }
 
-# www-data needs read and enter on /home/vagrant
-file { "/home/vagrant":
-	owner => "vagrant",
-	group => "www-data",
-	mode => 750,
-}
 <% end %>
 
 file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
@@ -93,6 +87,7 @@ user { "chris":
 	membership => minimum,
 }
 
+<% if app_stage != "dev" %>
 user { "<%= app_user %>":
 	ensure => present,
 	gid => "<%= app_group %>",
@@ -100,21 +95,29 @@ user { "<%= app_user %>":
 	membership => minimum,
 	password => "*", # disable password-based logins entirely
 }
-
-<% if app_stage == "dev" %>
+<% else %>
 user { "vagrant":
 	ensure => present,
+	gid => "<%= app_user %>",
 	groups => ["<%= app_user %>-homerw","<%= app_group %>"],
 	membership => minimum,
 }
 <% end %>
-
+<% if app_stage != "dev" %>
 file { "/home/<%= app_user %>":
 	ensure => directory,
 	owner => <%= app_user %>,
 	group => <%= app_user %>-homerw,
 	mode => 770,
 }
+<% else %>
+file { "/home/<%= app_user %>":
+	ensure => directory,
+	owner => vagrant,
+	group => vagrant-homerw,
+	mode => 755,
+}
+<% end %>
 
 file { "/home/<%= app_user %>/php":
 	ensure => directory,
