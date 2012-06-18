@@ -17,14 +17,14 @@ if ($urlParts[0] == 'dev') {
 } elseif ($urlParts[0] == 'staging') {
 	// Staging
 	define( 'WP_STAGE', 'staging' );
-	define( 'DB_CLIENT_FLAGS', 'MYSQL_CLIENT_SSL' );
+	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['staging'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
 } else {
 	// Production
 	define( 'WP_STAGE', 'production' );
-	define( 'DB_CLIENT_FLAGS', 'MYSQL_CLIENT_SSL' );
+	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['production'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}

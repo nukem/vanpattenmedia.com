@@ -6,7 +6,7 @@ set :scm, :git
 set :git_enable_submodules, 1
 set :stages, ["staging", "production"]
 set :default_stage, "staging"
-set :deploy_via, :remote_cache
+# set :deploy_via, :remote_cache
 
 # This site...
 set :application, "vanpattenmedia"
