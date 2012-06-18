@@ -4,35 +4,33 @@ ssh_options[:port]        = 9012
 default_run_options[:pty] = true
 
 # Deploy path
-set :deploy_to,             "/home/vanpattenmedia/staging.vanpattenmedia.com"
+set :deploy_to, "/home/#{app_user}/#{app_domain}"
+set :app_deploy_to, fetch(:deploy_to)
+
+project  = YAML.load_file("./config/project.yml")
+database = YAML.load_file("./config/database.yml")
+
+set :db_name,     database['dev']['name']
+set :db_user,     database['dev']['user']
+set :db_password, database['dev']['password']
+set :db_host,     database['dev']['host']
+set :db_grant_to, database['dev']['grant_to']
 
 # nginx config
-set :domain_name,           "staging.vanpattenmedia.com"
-set :wp_theme_name,         "vanpattenpress"
-set :staging,               true
+set :app_name,   project['application']['name']
+set :app_theme,  project['application']['theme']
+set :app_theme,  "vanpattenpress"
+set :app_stage,  "staging"
+set :app_domain, "#{app_stage}." + project['application']['domain']
 
-after "deploy:setup", "nginx:config"
-after "deploy:setup", "fpm:new_pool"
+before "deploy:setup", "puppet:show"
 
-namespace :nginx do
-  desc "Set up nginx configs for the staging environment"
-  task :config, :roles => :app do
-    nginx_config = ERB.new(File.read("./config/deploy/templates/nginx.erb")).result(binding)
-    put nginx_config, "#{deploy_to}/shared/#{application}-staging"
-    run "#{sudo} mv #{deploy_to}/shared/#{application}-staging /etc/nginx/sites-available/#{application}-staging"
-    run "#{sudo} chown root:root /etc/nginx/sites-available/#{application}-staging"
-    run "#{sudo} ln -s /etc/nginx/sites-available/#{application}-staging /etc/nginx/sites-enabled/#{application}-staging"
-    run "#{sudo} chown root:root /etc/nginx/sites-enabled/#{application}-staging"
-  end
-end
+namespace :puppet do
+  desc "Set up puppet"
+  task :show, :roles => :app do
+    puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
+    put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}-#{fetch(:app_stage)}.pp"
 
-namespace :fpm do
-  desc "Add a new PHP-FPM pool"
-  task :new_pool, :roles => :app do
-    php_fpm_config = ERB.new(File.read("./config/deploy/templates/php-fpm.erb")).result(binding)
-    put php_fpm_config, "#{deploy_to}/shared/#{application}.pool.conf"
-    run "#{sudo} mv #{deploy_to}/shared/#{application}.pool.conf /etc/php5/fpm/pool.d/#{application}.pool.conf"
-    run "#{sudo} chown root:root /etc/php5/fpm/pool.d/#{application}.pool.conf"
-    run "#{sudo} service php5-fpm restart"
+    run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}-#{fetch(:app_stage)}.pp"
   end
 end

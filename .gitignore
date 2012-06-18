@@ -7,6 +7,7 @@ database.yml
 # Misc.
 .sass-cache
 .DS_Store
+cache
 
 # Vagranty things
 .vagrant
