@@ -146,7 +146,7 @@ define mysqldb( $user, $password, $host, $grant_to ) {
 		},
 		command => $app_stage ? {
 			'dev'   => "/usr/bin/mysql -uroot -pvagrant -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TO ${user}@localhost IDENTIFIED BY '$password';\"",
-			default => "/usr/bin/mysql --ssl -h ${host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${grant_to} IDENTIFIED BY '$password' REQUIRE SSL;\"",
+			default => "/usr/bin/mysql --ssl -h ${host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TO ${user}@${grant_to} IDENTIFIED BY '$password' REQUIRE SSL;\"",
 			require => Service["mysqld"],
 		},
 	}
