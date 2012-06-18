@@ -31,7 +31,7 @@ namespace :puppet do
   desc "Set up puppet"
   task :show, :roles => :app do
     run "mkdir -p /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
-    upload("./config/puppet/templates", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/templates")
+    upload("./config/puppet/templates", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}", :via => :scp, :recursive => :true)
 
     puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
     put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
