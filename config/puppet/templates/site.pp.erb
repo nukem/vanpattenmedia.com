@@ -89,7 +89,7 @@ user { "peter":
 
 user { "chris":
 	ensure => "present,
-	groups => ["<%= app_user %>-homerw","<%= app_group %>],
+	groups => ["<%= app_user %>-homerw","<%= app_group %>"],
 	membership => minimum,
 }
 
@@ -104,7 +104,7 @@ user { "<%= app_user %>":
 <% if app_stage == "dev" %>
 user { "vagrant":
 	ensure => present,
-	groups => ["<%= app_user %>-homerw","<%= app_group %>",
+	groups => ["<%= app_user %>-homerw","<%= app_group %>"],
 	membership => minimum,
 }
 <% end %>
