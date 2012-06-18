@@ -76,27 +76,38 @@ group { "<%= app_group %>":
 }
 
 user { "www-data":
+	ensure => "present",
 	groups => "<%= app_user %>-homerw",
 	membership => "minimum",
 }
 
 user { "peter":
+	ensure => "present",
 	groups => ["<%= app_user %>-homerw","<%= app_group %>"],
 	membership => "minimum",
 }
 
 user { "chris":
+	ensure => "present",
 	groups => ["<%= app_user %>-homerw","<%= app_group %>],
 	membership => "minimum",
 }
 
 user { "<%= app_user %>":
+	ensure => "present",
 	gid => "<%= app_group %>",
 	groups => ["www-php-loggers","<%= app_user %>-homerw"],
 	membership => "minimum",
 	password => "*", # disable password-based logins entirely
 }
 
+<% if app_stage == "dev" %>
+user { "vagrant":
+	ensure => "present",
+	groups => ["<%= app_user %>-homerw","<%= app_group %>",
+	membership => "minimum",
+}
+<% end %>
 
 file { "/home/<%= app_user %>":
 	ensure => directory,
