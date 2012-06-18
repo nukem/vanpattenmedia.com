@@ -7,6 +7,14 @@ $app_name      = "<%= app_name %>"
 $app_user      = "<%= app_user %>"
 $app_group     = "<%= app_group %>"
 
+<%
+if app_stage == "dev"
+  erb_path = "#{app_deploy_to}/current/config/puppet/templates"
+else
+  erb_path = "/home/deploy/tmp/#{app_name}/#{app_stage}/templates"
+end
+%>
+
 package { "nginx":
 	ensure => latest,
 #	hasrestart => true
@@ -41,7 +49,7 @@ file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= app_deploy_to %>/current/config/puppet/templates/nginx.erb"),
+	content => template("<%= erb_path %>/nginx.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -104,12 +112,12 @@ file { "/home/<%= app_user %>/php/log/error.log":
 
 # pool must be after the files it depends on above
 file { "/etc/php5/fpm/pool.d/<%= app_name %>.pool.conf":
-        owner => root,
-        group => root,
-        mode => 644,
-        content => template("<%= app_deploy_to %>/current/config/puppet/templates/php5-fpm.pool.conf.erb"),
-        #require => Package["php5-fpm"],
-        #notify => Package["php5-fpm"]
+	owner => root,
+	group => root,
+	mode => 644,
+	content => template("<%= erb_path %>/php5-fpm.pool.conf.erb"),
+	#require => Package["php5-fpm"],
+	#notify => Package["php5-fpm"]
 }
 
 
@@ -138,7 +146,7 @@ define mysqldb( $user, $password, $host, $grant_to ) {
 		},
 		command => $app_stage ? {
 			'dev'   => "/usr/bin/mysql -uroot -pvagrant -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TO ${user}@localhost IDENTIFIED BY '$password';\"",
-			default => "/usr/bin/mysql --ssl -h ${db_host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${grant_to} IDENTIFIED BY '$password' REQUIRE SSL;\"",
+			default => "/usr/bin/mysql --ssl -h ${host} -e \"CREATE DATABASE ${name}; GRANT ALL ON ${name}.* TOTO ${user}@${grant_to} IDENTIFIED BY '$password' REQUIRE SSL;\"",
 			require => Service["mysqld"],
 		},
 	}
