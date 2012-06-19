@@ -23,6 +23,8 @@ server {
 	server_name <%= app_domain %>;
 	<% end %>
 
+	sendfile off; # avoid sendfile issues with sending stale files
+
 	location / {
 		# if you're just using wordpress and don't want extra rewrites
 		# then replace the word @rewrites with /index.php
