@@ -10,12 +10,14 @@ $config = $yaml->parse(file_get_contents(dirname(__FILE__).'./../config/database
 $urlParts = explode('.', $_SERVER['HTTP_HOST']);
 if ($urlParts[0] == 'dev') {
 	// Local dev
+	define('WP_CACHE', true); //Added by WP-Cache Manager
 	define( 'WP_STAGE', 'dev' );
 	foreach($config['dev'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
 } elseif ($urlParts[0] == 'staging') {
 	// Staging
+	define('WP_CACHE', true); //Added by WP-Cache Manager
 	define( 'WP_STAGE', 'staging' );
 	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['staging'] as $db_variable => $value) {
@@ -23,6 +25,7 @@ if ($urlParts[0] == 'dev') {
 	}
 } else {
 	// Production
+	define('WP_CACHE', true); //Added by WP-Cache Manager
 	define( 'WP_STAGE', 'production' );
 	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['production'] as $db_variable => $value) {

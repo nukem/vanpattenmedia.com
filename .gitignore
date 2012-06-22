@@ -15,3 +15,6 @@ vagrant_nginx_postprocess
 site.pp
 .cache
 vagrant-custom.rb
+
+# WordPressy things
+w3tc

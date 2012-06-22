@@ -674,8 +674,9 @@ p img, .alignleft, .aligncenter, .alignright, #project-media li a img {
   border: 1px solid #BBB;
   background: #FFF;
   padding: 3px;
-  -webkit-box-shadow: 0 1px 4px -2px black;
   -moz-box-shadow: 0 1px 4px -2px black;
+  -webkit-box-shadow: 0 1px 4px -2px black;
+  -o-box-shadow: 0 1px 4px -2px black;
   box-shadow: 0 1px 4px -2px black;
 }
 
@@ -946,7 +947,7 @@ strong.cta a:hover {
   vertical-align: middle;
   *vertical-align: auto;
 }
-/* line 7, /Users/Chris/.rvm/gems/ruby-1.8.7-p357/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 #alert-announcement {
   *display: inline;
 }
@@ -976,10 +977,11 @@ strong.cta a:hover {
 #alert-announcement .button {
   margin: 0 0 0 5px;
   border: 1px solid #a75809;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
+  -webkit-border-radius: 3px;
   -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
   border-radius: 3px;
   text-decoration: none;
   text-align: center;
@@ -995,8 +997,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #f4983c 0%, #e6790c 100%);
   background-image: -ms-linear-gradient(top, #f4983c 0%, #e6790c 100%);
   background-image: linear-gradient(top, #f4983c 0%, #e6790c 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
   -moz-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
+  -webkit-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
+  -o-box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
   box-shadow: inset 0 1px 0 0 #fbd8b5, inset 0 -1px 0 0 #c0650a;
   color: white;
   filter: none;
@@ -1030,8 +1033,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #e6790c 0%, #f4983c 100%);
   background-image: -ms-linear-gradient(top, #e6790c 0%, #f4983c 100%);
   background-image: linear-gradient(top, #e6790c 0%, #f4983c 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
   -moz-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
+  -webkit-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
+  -o-box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
   box-shadow: inset 0 -1px 0 0 #fbd8b5, inset 0 1px 0 0 #c0650a;
   color: white;
   filter: none;
@@ -1419,10 +1423,11 @@ strong.cta a:hover {
 #button-download {
   font: 600 26px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   border: 1px solid #b35900;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
+  -webkit-border-radius: 8px;
   -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -1438,8 +1443,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #ff9933 0%, #eb7500 100%);
   background-image: -ms-linear-gradient(top, #ff9933 0%, #eb7500 100%);
   background-image: linear-gradient(top, #ff9933 0%, #eb7500 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   -moz-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -o-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   color: white;
   filter: none;
@@ -1473,8 +1479,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #eb7500 0%, #ff9933 100%);
   background-image: -ms-linear-gradient(top, #eb7500 0%, #ff9933 100%);
   background-image: linear-gradient(top, #eb7500 0%, #ff9933 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   -moz-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -o-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   color: white;
   filter: none;
@@ -1508,10 +1515,11 @@ strong.cta a:hover {
 #button-contribute {
   font: 600 24px "Signika Negative", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   border: 1px solid #0b2df5;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
+  -webkit-border-radius: 8px;
   -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -1527,8 +1535,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #8596fa 0%, #405bf7 100%);
   background-image: -ms-linear-gradient(top, #8596fa 0%, #405bf7 100%);
   background-image: linear-gradient(top, #8596fa 0%, #405bf7 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
   -moz-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
+  -webkit-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
+  -o-box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
   box-shadow: inset 0 1px 0 0 white, inset 0 -1px 0 0 #2342f6;
   color: white;
   filter: none;
@@ -1562,8 +1571,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #405bf7 0%, #8596fa 100%);
   background-image: -ms-linear-gradient(top, #405bf7 0%, #8596fa 100%);
   background-image: linear-gradient(top, #405bf7 0%, #8596fa 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
   -moz-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
+  -webkit-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
+  -o-box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
   box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 #2342f6;
   color: white;
   filter: none;
@@ -1647,8 +1657,9 @@ strong.cta a:hover {
 #project-media li a img {
   width: 100%;
   height: 100%;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* line 203, /Users/Chris/Websites/Personal/Van Patten Media/vanpattenmedia.com/public/content/themes/vanpattenpress/sass/pages/_projects.scss */
@@ -1658,8 +1669,9 @@ strong.cta a:hover {
   height: 112%;
   margin: -5.5% 0 0 -6.5%;
   padding: 4px;
-  -webkit-box-shadow: 0 1px 3px -1px black;
   -moz-box-shadow: 0 1px 3px -1px black;
+  -webkit-box-shadow: 0 1px 3px -1px black;
+  -o-box-shadow: 0 1px 3px -1px black;
   box-shadow: 0 1px 3px -1px black;
 }
 
@@ -1732,10 +1744,11 @@ strong.cta a:hover {
   float: left;
   margin: 0 10px 0 0;
   border: 1px solid #196633;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
+  -webkit-border-radius: 8px;
   -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -1751,8 +1764,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #33cc66 0%, #259349 100%);
   background-image: -ms-linear-gradient(top, #33cc66 0%, #259349 100%);
   background-image: linear-gradient(top, #33cc66 0%, #259349 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
   -moz-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
+  -webkit-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
+  -o-box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
   box-shadow: inset 0 1px 0 0 #99e6b3, inset 0 -1px 0 0 #1f7a3d;
   color: white;
   filter: none;
@@ -1786,8 +1800,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #259349 0%, #33cc66 100%);
   background-image: -ms-linear-gradient(top, #259349 0%, #33cc66 100%);
   background-image: linear-gradient(top, #259349 0%, #33cc66 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
   -moz-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
+  -webkit-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
+  -o-box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
   box-shadow: inset 0 -1px 0 0 #99e6b3, inset 0 1px 0 0 #1f7a3d;
   color: white;
   filter: none;
@@ -1800,10 +1815,11 @@ strong.cta a:hover {
   float: left;
   margin: 0 10px 0 0;
   border: 1px solid #0059b3;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
+  -webkit-border-radius: 8px;
   -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -1819,8 +1835,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #3399ff 0%, #0075eb 100%);
   background-image: -ms-linear-gradient(top, #3399ff 0%, #0075eb 100%);
   background-image: linear-gradient(top, #3399ff 0%, #0075eb 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
   -moz-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
+  -webkit-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
+  -o-box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
   box-shadow: inset 0 1px 0 0 #b3d9ff, inset 0 -1px 0 0 #0066cc;
   color: white;
   filter: none;
@@ -1854,8 +1871,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #0075eb 0%, #3399ff 100%);
   background-image: -ms-linear-gradient(top, #0075eb 0%, #3399ff 100%);
   background-image: linear-gradient(top, #0075eb 0%, #3399ff 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
   -moz-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
+  -webkit-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
+  -o-box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
   box-shadow: inset 0 -1px 0 0 #b3d9ff, inset 0 1px 0 0 #0066cc;
   color: white;
   filter: none;
@@ -1867,10 +1885,11 @@ strong.cta a:hover {
   width: 205px;
   float: left;
   border: 1px solid #b35900;
-  -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
+  -webkit-border-radius: 8px;
   -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   text-align: center;
@@ -1886,8 +1905,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #ff9933 0%, #eb7500 100%);
   background-image: -ms-linear-gradient(top, #ff9933 0%, #eb7500 100%);
   background-image: linear-gradient(top, #ff9933 0%, #eb7500 100%);
-  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   -moz-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -webkit-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
+  -o-box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   box-shadow: inset 0 1px 0 0 #ffd9b3, inset 0 -1px 0 0 #cc6600;
   color: white;
   filter: none;
@@ -1921,8 +1941,9 @@ strong.cta a:hover {
   background-image: -o-linear-gradient(top, #eb7500 0%, #ff9933 100%);
   background-image: -ms-linear-gradient(top, #eb7500 0%, #ff9933 100%);
   background-image: linear-gradient(top, #eb7500 0%, #ff9933 100%);
-  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   -moz-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -webkit-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
+  -o-box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   box-shadow: inset 0 -1px 0 0 #ffd9b3, inset 0 1px 0 0 #cc6600;
   color: white;
   filter: none;
