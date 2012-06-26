@@ -7,7 +7,7 @@
 
 	<?php /* CSS */
 	?><link rel="stylesheet" type="text/css" href="/css/global.css?1336685338">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Signika+Negative:300,600">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,400,600,700">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/fancybox/2.0.6/jquery.fancybox.css">

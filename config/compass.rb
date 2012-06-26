@@ -1,8 +1,10 @@
 # Require some gems
-require 'rgbapng'
+require "rgbapng"
+require "yaml"
+project  = YAML.load_file("./config/project.yml")
 
 # Path to theme from project root
-project_path      = "./public/content/themes/vanpattenpress/"
+project_path      = "./public/content/themes/" + project['application']['theme'] + "/"
 
 # Where's stuff being stored?
 css_dir           = "css"
@@ -12,7 +14,7 @@ javascripts_dir   = "js"
 fonts_dir         = "fonts"
 
 # Are we in development or production?
-environment       = "development"
+environment       = "production"
 
 # What should environments look like?
 if environment == "production"
