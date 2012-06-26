@@ -42,7 +42,7 @@ file { "/etc/nginx/sites-available/<%= app_name %>/<%= app_stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= erb_path %>/nginx.erb"),
+	content => template("<%= erb_path %>/nginx/default.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
@@ -59,7 +59,7 @@ file { "/etc/nginx/sites-available/<%= app_name %>/uploads":
 	owner => root,
 	group => root,
 	mode  => 644,
-	content => template("<%= erb_path %>/nginx-uploads.erb"),
+	content => template("<%= erb_path %>/nginx/uploads.erb"),
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
