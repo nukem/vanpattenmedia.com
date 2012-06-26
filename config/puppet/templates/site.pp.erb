@@ -38,6 +38,14 @@ file { "/etc/resolv.conf":
 }
 <% end %>
 
+# create parent dir if not exists
+file { "/etc/nginx/sites-available/<%= app_name %>":
+	owner => root,
+	group => root,
+	mode => 755,
+	ensure => directory,
+}
+
 file { "/etc/nginx/sites-available/<%= app_name %>/<%= app_stage %>":
 	owner => root,
 	group => root,
