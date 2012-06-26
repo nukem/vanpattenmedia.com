@@ -36,10 +36,9 @@ file { "/etc/resolv.conf":
 	mode => 644,
 	source => "<%= app_deploy_to %>/current/config/puppet/files/vagrant_resolv.conf"
 }
-
 <% end %>
 
-file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
+file { "/etc/nginx/sites-available/<%= app_name %>/<%= app_stage %>":
 	owner => root,
 	group => root,
 	mode  => 644,
@@ -50,10 +49,28 @@ file { "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>":
 
 file { "/etc/nginx/sites-enabled/<%= app_name %>-<%= app_stage %>":
 	ensure => symlink,
-	target => "/etc/nginx/sites-available/<%= app_name %>-<%= app_stage %>",
+	target => "/etc/nginx/sites-available/<%= app_name %>/<%= app_stage %>",
 	require => Package["nginx"],
 	notify => Service["nginx"]
 }
+
+<% if app_stage == "staging" %>
+file { "/etc/nginx/sites-available/<%= app_name %>/uploads":
+	owner => root,
+	group => root,
+	mode  => 644,
+	content => template("<%= erb_path %>/nginx-uploads.erb"),
+	require => Package["nginx"],
+	notify => Service["nginx"]
+}
+
+file { "/etc/nginx/sites-enabled/<%= app_name %>-uploads":
+	ensure => symlink,
+	target => "/etc/nginx/sites-available/<%= app_name %>/uploads",
+	require => Package["nginx"],
+	notify => Service["nginx"]
+}
+<% end %>
 
 file { "/etc/nginx/sites-enabled/default":
 	ensure => absent,

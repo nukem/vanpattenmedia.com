@@ -19,7 +19,6 @@ if ($urlParts[0] == 'dev') {
 	// Staging
 	define('WP_CACHE', true); //Added by WP-Cache Manager
 	define( 'WP_STAGE', 'staging' );
-	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['staging'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
@@ -27,7 +26,6 @@ if ($urlParts[0] == 'dev') {
 	// Production
 	define('WP_CACHE', true); //Added by WP-Cache Manager
 	define( 'WP_STAGE', 'production' );
-	define( 'DB_CLIENT_FLAGS', MYSQL_CLIENT_SSL );
 	foreach($config['production'] as $db_variable => $value) {
 		define(('DB_' . strtoupper($db_variable)), $value);
 	}
@@ -54,14 +52,14 @@ define( 'DB_COLLATE', '' );
 // Salts, for security
 // Grab these from: https://api.wordpress.org/secret-key/1.1/salt
 // ==============================================================
-define('AUTH_KEY',         '7{sH-wO(O~qLO( O]/X2c9fS zds?7ev:Q~I(CxXq+$+sRr6/Np-#.<]!oHy8f(y');
-define('SECURE_AUTH_KEY',  'ITQl5zJ<3;s>H~f{PvFRtSu*2|`}n2$N?VN|6/d}}Du&4,gi7Yk|S~APL9`UlmU6');
-define('LOGGED_IN_KEY',    'o:Fzq>,?&9*:X{]sD:F1t<3yR:~Kcf:#},)~ZJ<pbT*|Z!(]h[LDX|sWumDc=s-t');
-define('NONCE_KEY',        'LW;&ms-Im=H1UND[e}+X-Y`(d$h,+gb2-m?(Ap`ftgA+U+(K#lwq gqa-7+UPoJ[');
-define('AUTH_SALT',        'Va|MFYP6rv[qLN:!E#j6;}VNn8 7Y`>Ug-+3=&s#aB(AZp$_}5I*XoG#1$Ns;TCU');
-define('SECURE_AUTH_SALT', 'RsVI0P+:=>3?+-uTJGURJo=|CS9.yNM3x|pLs_yw-52s-`cfgn@KV)4a<b_iy_gq');
-define('LOGGED_IN_SALT',   'uGz04dTP/@GL|^z-0lnINGw}!}U2,n9+N.~%Y+MvV!<v_+%.-_ALm/cZN`:Kkte ');
-define('NONCE_SALT',       '?6/j&QU`+0rNoSl8H4B5g~n0)dTPm+_)%_Ti. !tmM/ChPzo(GiDEh64]u|%_Ot3');
+define('AUTH_KEY',         ',r8}aNC}*|K^$z]`iZ;`J!$aiGX0A~Eq,}YIcLW];pf|PD4QjmOXf+}uUf}pA}vg');
+define('SECURE_AUTH_KEY',  'elbv~#PcKSDUPKpp82)!mrj5s=|j%yG6Z-RV~|nYs-IJ1shK6|[3o1]q ^w2Id#q');
+define('LOGGED_IN_KEY',    'h+m]`fZ29Ce_AJ<o][Y=z1|Z>fzWC}k^D]UIEM?ruqomd|^pT}Y31=PThCWp-zG5');
+define('NONCE_KEY',        '-@]uHep@53j?T64(UM|An>,#R+>-l4|1@aF~sR$3`x0>3j;haGP0P#+$9n-(:KG6');
+define('AUTH_SALT',        'TNDAzvF m1lP9Yz%t8OeYj?RaSu5#_ER(48kpb4^OgK#N)A;(jR|fJ|%L|359_X9');
+define('SECURE_AUTH_SALT', 'N@T-{vWKPt5y6oVg-g[|;U3e9Tz&[*#Z(~ceT?%e6`%KAzl2%@2Se4A/r-A/sH@t');
+define('LOGGED_IN_SALT',   'V<KhzEHhMwzfAq/gN{Y04GSEHf~Iq(+c:zjm}9.87NV9RWJ/Y(Iot,sxCUG XCp?');
+define('NONCE_SALT',       '~-gZF&py;nSNfdQXYL>dfF4Uu0VN/b561nmF0nkmg7cM{JeS8?3[$ljC~tQr-K}:');
 
 // ============
 // Table prefix
