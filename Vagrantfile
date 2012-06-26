@@ -22,6 +22,7 @@ Vagrant::Config.run do |config|
   app_user      = "vagrant"
   app_group     = "vagrant"
   app_stage     = "dev"
+  site_domain   = project['application']['domain']
   app_domain    = "#{app_stage}." + project['application']['domain']
   app_deploy_to = "/home/#{app_user}/#{app_domain}"
 

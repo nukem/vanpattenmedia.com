@@ -2,9 +2,9 @@ server {
 	error_log debug;
 
 	listen 8080;
-	server_name uploads.<%= app_domain %>;
+	server_name uploads.<%= site_domain %>;
 
-	root /home/<%= app_name %>/uploads.<%= app_domain %>;
+	root /home/<%= app_name %>/uploads.<%= site_domain %>;
 
 	location / {
 		try_files $uri $uri/ @s3;
@@ -19,6 +19,6 @@ server {
 		proxy_pass_request_body off;
 		#proxy_pass_request_headers off;
 		proxy_set_header Content-Length 0; # prevent big POST-style requests to S3
-		proxy_pass http://media.<%= app_domain %>; # trailing slash is important
+		proxy_pass http://media.<%= site_domain %>; # trailing slash is important
 	}
 }

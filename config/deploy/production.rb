@@ -16,10 +16,11 @@ set :db_host,     database[fetch(:app_stage)]['host']
 set :db_grant_to, database[fetch(:app_stage)]['grant_to']
 
 # nginx config
-set :app_name,   project['application']['name']
-set :app_theme,  project['application']['theme']
-set :app_theme,  "vanpattenpress"
-set :app_domain, project['application']['domain']
+set :app_name,    project['application']['name']
+set :app_theme,   project['application']['theme']
+set :app_theme,   "vanpattenpress"
+set :site_domain, project['application']['domain']
+set :app_domain,  project['application']['domain']
 
 # Deploy path
 set :deploy_to, "/home/#{fetch(:app_user)}/#{fetch(:app_domain)}"
