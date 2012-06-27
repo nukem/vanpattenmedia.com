@@ -64,10 +64,11 @@ namespace :vpm do
     run "#{sudo} chmod -R g+s #{deploy_to}/current/public"
   end
 
-  desc "Upload database credentials to the shared directory"
+  desc "Upload database and S3 credentials to the shared directory"
   task :upload_db_cred, :roles => :app do
     run "mkdir #{shared_path}/config"
     upload("./config/database.yml", "#{shared_path}/config/database.yml")
+    upload("./config/s3.yml", "#{shared_path}/config/s3.yml")
   end
 
   desc "Symlink database credentials to the current release directory"
