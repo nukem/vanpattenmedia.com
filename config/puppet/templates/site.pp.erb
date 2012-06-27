@@ -8,6 +8,9 @@ $app_name      = "<%= app_name %>"
 $app_user      = "<%= app_user %>"
 $app_group     = "<%= app_group %>"
 
+# random minute for cron
+$random_minute = "<%= rand(60) %>"
+
 <%
 if app_stage == "dev"
   erb_path = "#{app_deploy_to}/current/config/puppet/templates"
@@ -292,12 +295,14 @@ file { "/home/<%= app_user %>/bin/uploads_to_s3.py":
 	content => template("<%= erb_path %>/uploads_to_s3.py.erb"),
 }
 
-cron_job { "<%= app_name %>_uploads_to_s3"
+cron_job { "<%= app_name %>_uploads_to_s3":
 
 	interval	=> "d", # use cron.d folder for user-specific execution
 	script 		=> "# created by Puppet
-# m  h  dom   mon   dow    user			command
- 13  4  *     *     6      <%= app_user %>	/home/<%= app_user %>/bin/uploads_to_s3.py
+MAILTO="strategyoracle@gmail.com"
+
+# m  		 h  dom   mon   dow    user		command
+ $random_minute  4  *     *     6      <%= app_user %>	/usr/bin/nice -n 17 /home/<%= app_user %>/bin/uploads_to_s3.py
 ", 
 
 
