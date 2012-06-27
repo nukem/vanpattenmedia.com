@@ -151,6 +151,13 @@ file { "/home/<%= app_user %>":
 }
 <% end %>
 
+file { "/home/<%= app_user %>/uploads.<%= site_domain %>":
+	ensure => directory,
+	owner => <%= app_user %>,
+	group => <%= app_group %>,
+	mode => 775,
+}
+
 file { "/home/<%= app_user %>/php":
 	ensure => directory,
 	owner => <%= app_user %>,
