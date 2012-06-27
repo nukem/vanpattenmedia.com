@@ -22,7 +22,7 @@ from boto.s3.key import Key
 #				Configuration					    #
 #####################################################################################
 
-configpath = '/home/<%= app_user %>/<%= app_domain %>/current/config/s3.yml'
+config_path = '/home/<%= app_user %>/<%= app_domain %>/current/config/s3.yml'
 content_directory = '/home/<%= app_user %>/uploads.<%= site_domain %>/'
 
 #####################################################################################
@@ -68,7 +68,7 @@ except S3ResponseError as e:
 	exit(1)
 
 
-# loop through tmp.<%= app_domain %> directory	
+# loop through uploads.<%= app_domain %> directory	
 for root, dirs, files in os.walk(content_directory):
 	for file in files:
 
