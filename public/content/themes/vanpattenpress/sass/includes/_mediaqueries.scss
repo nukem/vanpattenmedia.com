@@ -32,8 +32,12 @@
 
 // All Mobile Sizes (devices and browser)
 @media handheld, only screen and (max-width: 767px) {
-	#responsive-demo {
+	#responsive-demo, #slogan {
 		width: 100%;
+	}
+
+	#slogan {
+		margin: 0 0 30px;
 	}
 }
 

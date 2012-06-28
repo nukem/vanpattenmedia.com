@@ -1,7 +1,6 @@
 #feature-box {
 	border-bottom: 1px dotted $vpmtan;
 	padding: 0 0 10px;
-	margin-bottom: 30px;
 }
 
 #slogan {
@@ -68,31 +67,58 @@
 	}
 }
 
-.home {
-	.entry-content {
+#featured-quote {
+	border-bottom: 1px dotted $vpmtan;
+	padding: 30px 0;
+	margin: 0 0 30px;
 
-		p {
-			font: 300 24px $header-font;
-		}
+	blockquote {
+		font: italic 22px/1.5 serif;
+		margin: 0;
+		padding: 0;
+		color: #555;
+		background: #FFF;
+		padding-right: 30px;
+		@include text-shadow(0 1px 1px #FFF);
+	}
 
-		p:first-child {
-			font: 300 34px/48px $header-font;
-			margin: 20px 0 25px;
+	cite {
+		text-transform: lowercase;
+		font-variant: small-caps;
+		margin: 10px 0 0 20px;
+	}
 
-			a {
-				color: #FFF;
-				background: #ff9900 url(../img/lnkgrd.jpg) 0 0 no-repeat;
-				text-decoration: none;
-				padding: 2px 4px 0;
-			}
-		}
-
-		strong {
-			font-weight: 600;
-		}
+	span {
+		background: red;
 	}
 }
 
+#nav-wrap {
+	border-top: 1px solid darken($vpmtan, 15%);
+	position: relative;
+	top: -1px;
+	z-index: 1000;
+}
+
+#nav {
+	background: $vpmtan image-url('noise.png') center center;
+
+	ul, li {
+		margin: 0;
+	}
+
+	a {
+		display: block;
+		padding: 5px 9px;
+		text-decoration: none;
+		@include text-shadow(0 1px 1px #FFF);
+		color: #000;
+
+		&:hover {
+			@include rgba-background(rgba(darken($vpmtan, 30%), 0.2));
+		}
+	}
+}
 
 .homebox {
 	position: relative;
