@@ -1,3 +1,73 @@
+#feature-box {
+	border-bottom: 1px solid $vpmtan;
+	padding: 0 0 10px;
+	margin: 0 10px 30px;
+}
+
+#slogan {
+	float: left;
+	width: 300px;
+	font-size: 28px;
+	line-height: 1.6;
+}
+
+#responsive-demo {
+	display: block;
+	position: relative;
+	height: 210px;
+	width: 500px;
+	margin: 0 0 20px;
+	float: right;
+}
+
+%demo-products {
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
+
+#laptop-demo {
+	background: image-url('homepage/laptop.png') no-repeat;
+	width: 393px;
+	height: 210px;
+	@extend %demo-products;
+	right: 100px;
+
+	img {
+		position: absolute;
+		top: 15px;
+		left: 62px;
+	}
+}
+
+#tablet-demo {
+	background: image-url('homepage/tablet.png') no-repeat;
+	width: 203px;
+	height: 158px;
+	@extend %demo-products;
+	right: 0;
+
+	img {
+		position: absolute;
+		top: 17px;
+		left: 19px;
+	}
+}
+
+#smartphone-demo {
+	background: image-url('homepage/smartphone.png') no-repeat;
+	width: 45px;
+	height: 89px;
+	@extend %demo-products;
+	left: 17px;
+
+	img {
+		position: absolute;
+		top: 14px;
+		left: 3px;
+	}
+}
+
 .home {
 	.entry-content {
 
