@@ -44,11 +44,10 @@
 
 		<?php
 		if ( is_single() ) :
-		$dev_permalink = get_permalink($post->ID);
-		$permalink = preg_replace('/\/\/(?:staging|dev)./', '//www.', $dev_permalink);
+		$disqus_permalink = preg_replace('/\/\/(?:staging|dev)./', '//www.', get_permalink($post->ID) );
 		?>
 		<?php if ( vpm_is_staging() ) : ?>var disqus_developer = 1;<?php endif; ?>
-		var disqus_url = '<?= $permalink ?>';
+		var disqus_url = '<?= $disqus_permalink ?>';
 		<?php endif; ?>
 	</script>
 

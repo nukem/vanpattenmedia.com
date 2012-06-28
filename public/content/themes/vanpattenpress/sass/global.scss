@@ -24,7 +24,7 @@
  */
 
 html, body {
-	background: $vpmtan;
+	background: $vpmtan image-url('noise.png') center center;
 	color: #000;
 	font: 300 15px/1.8 $body-font;
 	-webkit-text-size-adjust: 100%;
