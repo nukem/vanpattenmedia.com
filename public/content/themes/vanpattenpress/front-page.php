@@ -1,4 +1,4 @@
-<div class="sixteen columns alpha omega" id="feature-box">
+<div class="sixteen columns" id="feature-box">
 	<h2 id="slogan">Beautiful responsive websites that help your business succeed online, so it flourishes offline.</h2>
 	<div id="responsive-demo">
 		<div id="laptop-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/jeremyyaddaw/laptop.png" alt=""></div>

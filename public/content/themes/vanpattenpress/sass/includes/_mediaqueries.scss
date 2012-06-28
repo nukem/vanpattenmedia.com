@@ -20,11 +20,21 @@
 			height: 76px;
 		}
 	}
+
+	#responsive-demo {
+		width: 448px;
+	}
+
+	#laptop-demo {
+		right: 30px;
+	}
 }
 
 // All Mobile Sizes (devices and browser)
 @media handheld, only screen and (max-width: 767px) {
-
+	#responsive-demo {
+		width: 100%;
+	}
 }
 
 // Mobile Landscape Size to Tablet Portrait (devices and browsers)
@@ -35,6 +45,14 @@
 			height: 71px;
 		}
 	}
+
+	#laptop-demo {
+		right: 20px;
+	}
+
+	#smartphone-demo {
+		left: 0;
+	}
 }
 
 // Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
@@ -44,5 +62,17 @@
 			width: 90px;
 			height: 68px;
 		}
+	}
+
+	#laptop-demo {
+		right: -46px;
+	}
+
+	#tablet-demo {
+		right: -10px;
+	}
+
+	#smartphone-demo {
+		left: -10px;
 	}
 }

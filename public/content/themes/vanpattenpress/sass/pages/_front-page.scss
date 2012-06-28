@@ -1,7 +1,7 @@
 #feature-box {
-	border-bottom: 1px solid $vpmtan;
+	border-bottom: 1px dotted $vpmtan;
 	padding: 0 0 10px;
-	margin: 0 10px 30px;
+	margin-bottom: 30px;
 }
 
 #slogan {
@@ -15,7 +15,7 @@
 	display: block;
 	position: relative;
 	height: 210px;
-	width: 500px;
+	width: 620px;
 	margin: 0 0 20px;
 	float: right;
 }
@@ -31,7 +31,7 @@
 	width: 393px;
 	height: 210px;
 	@extend %demo-products;
-	right: 100px;
+	right: 185px;
 
 	img {
 		position: absolute;
