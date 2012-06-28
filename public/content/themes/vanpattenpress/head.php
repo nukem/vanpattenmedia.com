@@ -41,6 +41,17 @@
 		.script('//cdn.vanpattenmedia.com/js/libs/fancybox/helpers/media/1.0.0/jquery.fancybox-media.js').wait()
 		<?php endif; ?>
 		;
+
+		<?php if ( vpm_is_staging() ) : ?>
+		var disqus_developer = 1;
+		<?php endif; ?>
+		<?php
+		if ( is_single() ) :
+		$dev_permalink = get_permalink($post->ID);
+		$permalink = preg_replace('/(//staging.)/', '//www.', $permalink)
+		?>
+		var disqus_url = '<?= dev_permalink ?>';
+		<?php endif; ?>
 	</script>
 
 	<?php /* WordPress head injection */
