@@ -6,7 +6,7 @@
 						<p><strong>New:</strong> We just released a new WordPress plugin that makes sliders awesome. <a href="http://www.vanpattenmedia.com/project/total-slider/?utm_source=vpmwebsite&utm_medium=alert&utm_campaign=totalslider" class="button">Check out Total Slider</a></p>
 					</div>
 				</div>
-				<a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png" alt="Van Patten Media logo" id="vpm-logo"></a>
+				<a href="<?php echo home_url(); ?>" id="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.png?1340894565" alt="Van Patten Media logo" id="vpm-logo"></a>
 			</div>
 		</div>
 	</header>

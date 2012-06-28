@@ -38,6 +38,7 @@
 	padding: 8px 4px 8px 8px;
 	font: 400 14px/1 $body-font;
 	@include inline-block;
+	@include border-bottom-radius(3px);
 
 	a {
 		color: #FFF;
@@ -59,7 +60,7 @@
 	@extend %alerts;
 
 	$text-color: #FFF;
-	$background-color: desaturate(darken($vpmtan, 20%), 20%);
+	$background-color: rgba(desaturate(darken($vpmtan, 20%), 20%), 0.8);
 	@include vpm-alert($text-color, $background-color);
 
 	.button {
