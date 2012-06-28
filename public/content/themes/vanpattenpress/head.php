@@ -6,7 +6,7 @@
 	?><link rel="author" href="/humans.txt">
 
 	<?php /* CSS */
-	?><link rel="stylesheet" type="text/css" href="/css/global.css?1340858073">
+	?><link rel="stylesheet" type="text/css" href="/css/global.css?1340892772">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,400,600,700">
 	<link rel="stylesheet" type="text/css" href="http://cdn.vanpattenmedia.com/js/libs/formalize/1.2/css/formalize.css">
