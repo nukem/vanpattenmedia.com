@@ -26,7 +26,7 @@
 
 	<?php /* HTML5 Shiv for <IE9 */
 	?><!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="//cdn.vanpattenmedia.com/js/libs/html5shiv/pre3.6/html5shiv.js"></script>
 	<![endif]-->
 
 	<?php /* JavaScript */
@@ -42,15 +42,13 @@
 		<?php endif; ?>
 		;
 
-		<?php if ( vpm_is_staging() ) : ?>
-		var disqus_developer = 1;
-		<?php endif; ?>
 		<?php
 		if ( is_single() ) :
 		$dev_permalink = get_permalink($post->ID);
-		$permalink = preg_replace('/(//staging.)/', '//www.', $permalink)
+		$permalink = preg_replace('/\/\/(?:staging|dev)./', '//www.', $dev_permalink);
 		?>
-		var disqus_url = '<?= dev_permalink ?>';
+		<?php if ( vpm_is_staging() ) : ?>var disqus_developer = 1;<?php endif; ?>
+		var disqus_url = '<?= $permalink ?>';
 		<?php endif; ?>
 	</script>
 
