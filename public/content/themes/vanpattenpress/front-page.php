@@ -1,9 +1,9 @@
 <div class="sixteen columns alpha omega" id="feature-box">
 	<h2 id="slogan">Beautiful responsive websites that help your business succeed online, so it flourishes offline.</h2>
 	<div id="responsive-demo">
-		<div id="laptop-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/35mm/laptop.png" alt=""></div>
-		<div id="tablet-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/35mm/tablet.png" alt=""></div>
-		<div id="smartphone-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/35mm/smartphone.png" alt=""></div>
+		<div id="laptop-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/jeremyyaddaw/laptop.png" alt=""></div>
+		<div id="tablet-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/jeremyyaddaw/tablet.png" alt=""></div>
+		<div id="smartphone-demo"><img src="<?php bloginfo('template_directory'); ?>/img/homepage/responsive-screenshots/jeremyyaddaw/smartphone.png" alt=""></div>
 	</div>
 </div>
 
