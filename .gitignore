@@ -1,8 +1,9 @@
 # WordPress
 public/content/uploads
 
-# Ignore environment config (passwords)
+# Ignore things with passwords
 database.yml
+s3.yml
 
 # Misc.
 .sass-cache

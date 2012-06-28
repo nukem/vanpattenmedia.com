@@ -34,8 +34,9 @@ end
 
 # Set up some VPM-specific tasks
 before "deploy:setup", "puppet:show"
-after "deploy:setup", "vpm:fix_setup_ownership", "vpm:upload_db_cred"
-after "deploy", "vpm:fix_deploy_ownership", "vpm:symlink_db_cred"
+after "deploy:setup", "vpm:fix_setup_ownership"
+before "deploy:create_symlink", "vpm:upload_db_cred", "vpm:symlink_db_cred"
+before "deploy:restart", "vpm:fix_deploy_ownership"
 
 namespace :puppet do
   desc "Set up puppet"
