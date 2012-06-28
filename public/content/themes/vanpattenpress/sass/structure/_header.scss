@@ -6,26 +6,24 @@
 }
 
 #header-inner {
-	min-height: 150px;
+	// min-height: 150px;
 }
 
 #logo {
 	display: block;
-	max-width: 423px;
-	max-height: 67px;
+	max-width: 435px;
+	max-height: 78px;
 	width: 100%;
 	height: auto;
 	z-index: 100;
 	line-height: 1;
-	padding: 15px 20px 5px;
-	background: #FFF;
-	border-right: 1px solid darken($vpmtan, 10%);
-	position: absolute;
-	bottom: -1px;
+	padding: 40px 0 8px;
+	position: relative;
+	left: -6px;
 
 	img {
-		max-width: 423px;
-		max-height: 67px;
+		max-width: 435px;
+		max-height: 78px;
 		width: 100%;
 		height: auto;
 	}
