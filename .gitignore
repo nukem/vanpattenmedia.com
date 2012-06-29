@@ -10,12 +10,12 @@ s3.yml
 .DS_Store
 cache
 
-# Vagranty things
+# Vagrant and Puppet
 .vagrant
 vagrant_nginx_postprocess
 site.pp
 .cache
 vagrant-custom.rb
 
-# WordPressy things
-w3tc
+# Site
+css/
