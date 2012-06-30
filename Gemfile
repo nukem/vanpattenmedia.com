@@ -5,6 +5,8 @@ gem "capistrano"
 group :development do
   # Compass
   gem "compass"
+  gem "oily_png"
+  gem "css_parser"
 
   # Sass 3.2+ and Sass plugins
   gem "sass", "~>3.2.0.alpha"
@@ -14,18 +16,14 @@ group :development do
   gem "compass-rgbapng"
   gem "compass-validator"
 
-  # Enhance Compass
-  gem "oily_png"
-  gem "css_parser"
-
-  # Sprockets
+  # JavaScript
+  gem "jammit"
   gem "therubyracer"
-  gem "execjs"
   gem "uglifier"
 
   # Guard
   gem "guard-compass", :git => "git://github.com/chrisvanpatten/guard-compass.git", :branch => "patch-1"
   gem "guard-livereload"
-  gem "guard-sprockets"
+  gem "guard-jammit"
   gem "yajl-ruby"
 end

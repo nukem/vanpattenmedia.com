@@ -1,0 +1,8 @@
+compress_assets:       on
+gzip_assets:           off
+javascript_compressor: uglifier
+
+javascripts:
+  script.min:
+    - app/assets/javascripts/*.js
+    - http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
