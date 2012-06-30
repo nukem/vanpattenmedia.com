@@ -18,8 +18,14 @@ group :development do
   gem "oily_png"
   gem "css_parser"
 
+  # Sprockets
+  gem "therubyracer"
+  gem "execjs"
+  gem "uglifier"
+
   # Guard
   gem "guard-compass", :git => "git://github.com/chrisvanpatten/guard-compass.git", :branch => "patch-1"
   gem "guard-livereload"
+  gem "guard-sprockets"
   gem "yajl-ruby"
 end
