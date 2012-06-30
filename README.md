@@ -4,6 +4,16 @@ This is our website, open sourcified!
 
 Want to contribute? Go right ahead. The content is all handled via WordPress, but you can contribute to the look of the site (or steal from us, under the license terms) with the code above.
 
+## Getting started
+
+1. Make sure you have Ruby installed (we use 1.8.7 - we like [RVM](https://rvm.io/) for managing rubies).
+2. `gem install bundler`
+3. `git clone git://github.com/vanpattenmedia/vanpattenmedia.com.git`
+4. `cd vanpattenmedia.com`
+5. `bundle install`
+6. `vagrant up` _(probably won't work unless you use an alternate Vagrant box)_
+7. `bundle exec guard`
+
 ### License
 
 **Copyright &copy; 2012, Van Patten Media.**
