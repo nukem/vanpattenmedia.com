@@ -2,14 +2,14 @@
 @import "includes/fonts";
 
 // Reset
-@import "includes/reset";
+@import "../../../vendor/sass/reset/*";
 
 // Rach5 imports
-@import "includes/rach5/definitions";
+@import "../../../vendor/sass/rach5/*";
 
 // Your imports
 @import "includes/definitions";
-@import "includes/frameworks/skeleton";
+@import "../../../vendor/sass/skeleton/*";
 
 // Compass imports
 @import "rgbapng";

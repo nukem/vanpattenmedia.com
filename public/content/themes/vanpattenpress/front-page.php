@@ -10,7 +10,7 @@
 <div class="twelve columns">
 	<section id="featured-quote">
 		<blockquote><span>Wow!  It looks so great, Chris!!  I'm so excited! LOVE, LOVE your work on this!</span></blockquote>
-		<cite>&mdash; Broadway actress <strong>Susan Egan</strong></cite>
+		<cite>&mdash; Broadway actress <strong><a href="http://www.susanegan.net/">Susan Egan</a></strong></cite>
 	</section>
 
 	<!-- <section class="slider">
