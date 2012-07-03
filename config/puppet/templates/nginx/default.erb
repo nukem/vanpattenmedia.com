@@ -26,39 +26,29 @@ server {
 	sendfile off; # avoid sendfile issues with sending stale files
 
 	location / {
-		# if you're just using wordpress and don't want extra rewrites
-		# then replace the word @rewrites with /index.php
 		try_files $uri $uri/ @rewrites;
 	}
 
 	location @rewrites {
-		# Can put some of your own rewrite rules in here
-		# for example rewrite ^/~(.*)/(.*)/? /users/$1/$2 last;
-		# If nothing matches we'll just send it to /index.php
-		rewrite ^/(css|js|img)/([a-z0-9]*).(?:[0-9]*).([a-z]{3,4})$ /$1/$2.$3 last;
-
-		rewrite ^/css/(.*)$ /content/themes/<%= app_theme %>/css/$1 last;
-		rewrite ^/js/(.*)$ /content/themes/<%= app_theme %>/js/$1 last;
-		rewrite ^/img/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
-		rewrite ^/fonts/(.*)$ /content/themes/<%= app_theme %>/fonts/$1 last;
-
 		rewrite ^/plugins/(.*)$ /content/plugins/$1 last;
 
+		# If nothing matches, send it to index.php
 		rewrite ^ /index.php last;
 	}
 
-	# This block will catch static file requests, such as images, css, js
-	# The ?: prefix is a 'non-capturing' mark, meaning we do not require
-	# the pattern to be captured into $1 which should help improve performance
-	location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
-		# timthumb prettification
+	# Act on specific static filetypes
+	location ~* \.(?:ico|css|js|gif|jpe?g|png|eot|ttf|otf|woff|svg)$ {
+		# Mask TimThumb
 		rewrite ^/img/thumbnail/grayblur/([0-9]+)w(.*)$ /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=$2&w=$1&f=2|8|8|8|8|8|8|8|8 last;
 
+		# Rule for QuickAssets compatibility
+		rewrite "^/(css|js|img)/([a-z0-9]*).(?:[0-9]*).([a-z]{2,4})$" /content/themes/<%= app_theme %>/$1/$2.$3 last;
+
+		# Roots inspired rewrites
 		rewrite ^/css/(.*)$ /content/themes/<%= app_theme %>/css/$1 last;
 		rewrite ^/js/(.*)$ /content/themes/<%= app_theme %>/js/$1 last;
 		rewrite ^/img/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
 		rewrite ^/fonts/(.*)$ /content/themes/<%= app_theme %>/fonts/$1 last;
-		rewrite ^/plugins/(.*)$ /content/plugins/$1 last;
 
 		# Some basic cache-control for static files to be sent to the browser
 		<% if app_stage != "dev" %>
@@ -72,10 +62,8 @@ server {
 		<% end %>
 	}
 
-	#error_page 404 /404.html;
-
 	# redirect server error pages to the static page /50x.html
-	#
+	#error_page 404 /404.html;
 	#error_page 500 502 503 504 /50x.html;
 	#location = /50x.html {
 	#   root /usr/share/nginx/www;
