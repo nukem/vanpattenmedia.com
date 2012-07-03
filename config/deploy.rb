@@ -1,5 +1,6 @@
 # Require multistage for local->staging->production deployment...
 require "capistrano/ext/multistage"
+project = YAML.load_file("./config/project.yml")
 
 # Defaults...
 set :scm, :git
@@ -35,7 +36,7 @@ end
 # Set up some VPM-specific tasks
 before "deploy:setup", "puppet:show"
 after "deploy:setup", "vpm:fix_setup_ownership"
-before "deploy:create_symlink", "vpm:upload_db_cred", "vpm:symlink_db_cred"
+before "deploy:create_symlink", "vpm:upload_db_cred", "vpm:symlink_db_cred", "vpm:upload_assets"
 before "deploy:restart", "vpm:fix_deploy_ownership"
 after "deploy", "deploy:cleanup"
 
@@ -71,6 +72,17 @@ namespace :vpm do
     run "mkdir -p #{shared_path}/config"
     upload("./config/database.yml", "#{shared_path}/config/database.yml")
     upload("./config/s3.yml", "#{shared_path}/config/s3.yml")
+  end
+
+  desc "Upload compiled JS and CSS"
+  task :upload_assets, :roles => :app do
+    run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project['application']['theme']}/js/"
+
+    system('compass compile -e production --force')
+    system('jammit -o .')
+
+    upload("./public/content/themes/#{project['application']['theme']}/css/", "#{release_path}/public/content/themes/#{project['application']['theme']}/", :via => :scp, :recursive => :true)
+    upload("./public/content/themes/#{project['application']['theme']}/js/", "#{release_path}/public/content/themes/#{project['application']['theme']}/", :via => :scp, :recursive => :true)
   end
 
   desc "Symlink database credentials to the current release directory"
