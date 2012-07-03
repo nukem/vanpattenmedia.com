@@ -13,10 +13,12 @@ $a = new QuickAsset();
 
 $a->addAssetType('img', array(
 	'assetPath' => 'img/',
+	'rootPath'  => plugin_dir_path( __FILE__ ) . '../../themes/vanpattenpress',
 ));
 
 $a->addAssetType('js', array(
 	'assetPath' => 'js/',
+	'rootPath'  => plugin_dir_path( __FILE__ ) . '../../themes/vanpattenpress',
 ));
 
 $a->addAssetType('css', array(

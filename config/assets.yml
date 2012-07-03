@@ -3,5 +3,5 @@ gzip_assets:           off
 javascript_compressor: uglifier
 
 javascripts:
-  /public/content/themes/vanpattenpress/js/script.min:
+  /public/content/themes/vanpattenpress/js/script:
     - app/assets/javascripts/*.js

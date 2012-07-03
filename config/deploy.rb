@@ -37,6 +37,7 @@ before "deploy:setup", "puppet:show"
 after "deploy:setup", "vpm:fix_setup_ownership"
 before "deploy:create_symlink", "vpm:upload_db_cred", "vpm:symlink_db_cred"
 before "deploy:restart", "vpm:fix_deploy_ownership"
+after "deploy", "deploy:cleanup"
 
 namespace :puppet do
   desc "Set up puppet"
