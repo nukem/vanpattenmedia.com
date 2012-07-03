@@ -9,7 +9,7 @@ server {
 
 server {
 	error_log /var/log/nginx/error.log notice;
-	#rewrite_log on;
+	rewrite_log on;
 
 	listen 8080;
 
@@ -35,12 +35,14 @@ server {
 		# Can put some of your own rewrite rules in here
 		# for example rewrite ^/~(.*)/(.*)/? /users/$1/$2 last;
 		# If nothing matches we'll just send it to /index.php
+		rewrite ^/(css|js|img)/([a-z0-9]*).(?:[0-9]*).([a-z]{3,4})$ /$1/$2.$3 last;
+
 		rewrite ^/css/(.*)$ /content/themes/<%= app_theme %>/css/$1 last;
 		rewrite ^/js/(.*)$ /content/themes/<%= app_theme %>/js/$1 last;
-
 		rewrite ^/img/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
-		rewrite ^/plugins/(.*)$ /content/plugins/$1 last;
 		rewrite ^/fonts/(.*)$ /content/themes/<%= app_theme %>/fonts/$1 last;
+
+		rewrite ^/plugins/(.*)$ /content/plugins/$1 last;
 
 		rewrite ^ /index.php last;
 	}
