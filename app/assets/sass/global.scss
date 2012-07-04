@@ -65,16 +65,7 @@ html, body {
  */
 
 // Portfolio
-@import "pages/portfolio";
-
-// Front page
-@import "pages/front-page";
-
-// Projects
-@import "pages/projects";
-
-// Blog
-@import "pages/blog";
+@import "pages/*";
 
 
 /*

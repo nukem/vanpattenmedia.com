@@ -1,0 +1,10 @@
+#notepad {
+	font-size: 90%;
+	background: #f8f8d6;
+	margin: 10px 0 20px;
+	padding: 20px 20px 0;
+	@include rotate(-1deg);
+	border: 1px solid #979859;
+	@include border-radius(3px);
+	@include box-shadow(-2px 2px 10px #CCC);
+}
