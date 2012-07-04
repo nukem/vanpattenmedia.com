@@ -1,29 +1,41 @@
-<% if app_stage == "production" %>
-# Redirect to www.*
 server {
-	listen 8080;
-	server_name <%= app_domain %>;
-	rewrite ^ $scheme://www.<%= app_domain %>$request_uri permanent;
-}
-<% end %>
 
-server {
+	##################################
+	#                                #
+	#        Default settings        #
+	#                                #
+	##################################
+
+	# Error Logging
 	error_log /var/log/nginx/error.log notice;
 	# rewrite_log on;
 
+	# Set the port
 	listen 8080;
 
+	# Where are we located? What should we load by default?
 	root <%= app_deploy_to %>/current/public;
-
 	index index.php index.html index.htm;
 
+	# What's our domain name?
+	# Redirect to www. if on production
 	<% if app_stage == "production" %>
 	server_name www.<%= app_domain %>;
+	rewrite ^ $scheme://www.<%= app_domain %>$request_uri permanent;
 	<% else %>
 	server_name <%= app_domain %>;
 	<% end %>
 
-	sendfile off; # avoid sendfile issues with sending stale files
+	# Avoid sendfile issues with sending stale files
+	# More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
+	sendfile off;
+
+
+	##################################
+	#                                #
+	#   Rewrites and asset caching   #
+	#                                #
+	##################################
 
 	location / {
 		try_files $uri $uri/ @rewrites;
@@ -36,23 +48,18 @@ server {
 		rewrite ^ /index.php last;
 	}
 
-	# Act on specific static filetypes
-	location ~* \.(?:ico|css|js|gif|jpe?g|png|eot|ttf|otf|woff|svg)$ {
-		# Mask TimThumb
-		rewrite ^/img/thumbnail/grayblur/([0-9]+)w(.*)$ /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=$2&w=$1&f=2|8|8|8|8|8|8|8|8 last;
 
-		# Rule for QuickAssets compatibility
-		rewrite "^/(css|js|img)/([a-z0-9]*).(?:[0-9]*).([a-z]{2,4})$" /content/themes/<%= app_theme %>/$1/$2.$3 last;
+	###################
+	#      Fonts      #
+	###################
 
-		# Roots inspired rewrites
-		rewrite ^/css/(.*)$ /content/themes/<%= app_theme %>/css/$1 last;
-		rewrite ^/js/(.*)$ /content/themes/<%= app_theme %>/js/$1 last;
-		rewrite ^/img/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
+	location ~* \.(?:eot|ttf|otf|woff|svg)$ {
+		# Roots-inspired rewrites
 		rewrite ^/fonts/(.*)$ /content/themes/<%= app_theme %>/fonts/$1 last;
 
-		# Some basic cache-control for static files to be sent to the browser
+		# Caching
 		<% if app_stage != "dev" %>
-		expires 8h;
+		expires 120d;
 		add_header Pragma public;
 		add_header Cache-Control "public, must-revalidate, proxy-revalidate";
 		<% else %>
@@ -62,27 +69,93 @@ server {
 		<% end %>
 	}
 
-	# redirect server error pages to the static page /50x.html
-	#error_page 404 /404.html;
-	#error_page 500 502 503 504 /50x.html;
-	#location = /50x.html {
-	#   root /usr/share/nginx/www;
-	#}
 
-	# remove the robots line if you want to use wordpress' virtual robots.txt
+	###################
+	#      Images     #
+	###################
+
+	location ~* \.(?:ico|gif|jpe?g|png)$ {
+		# Mask TimThumb
+		rewrite ^/img/thumbnail/grayblur/([0-9]+)w(.*)$ /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=$2&w=$1&f=2|8|8|8|8|8|8|8|8 last;
+
+		# Roots-inspired rewrites
+		rewrite ^/img/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
+
+		# QuickAssets
+		rewrite "^/img/([a-z0-9]*).(?:[0-9]*).([a-z]{2,4})$" /content/themes/<%= app_theme %>/img/$1.$2 last;
+
+		# Caching
+		<% if app_stage != "dev" %>
+		expires 7d;
+		add_header Pragma public;
+		add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+		<% else %>
+		expires 0m;
+		add_header Pragma no-cache;
+		add_header Cache-Control "no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0";
+		<% end %>
+	}
+
+
+	###################
+	#     CSS & JS    #
+	###################
+
+	location ~* \.(?:css|js)$ {
+		# Roots-inspired rewrites
+		rewrite ^/css/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
+		rewrite ^/js/(.*)$ /content/themes/<%= app_theme %>/img/$1 last;
+
+		# QuickAssets
+		rewrite "^/(css|js)/([a-z0-9]*).(?:[0-9]*).([a-z]{2,4})$" /content/themes/<%= app_theme %>/$1/$2.$3 last;
+
+		# Caching
+		<% if app_stage != "dev" %>
+		expires 2d;
+		add_header Pragma public;
+		add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+		<% else %>
+		expires 0m;
+		add_header Pragma no-cache;
+		add_header Cache-Control "no-cache, no-store, must-revalidate, proxy-revalidate, max-age=0";
+		<% end %>
+	}
+
+
+	##################################
+	#                                #
+	#         Error handling         #
+	#                                #
+	##################################
+
+	# redirect server error pages to the static page /50x.html
+	# error_page 404 /404.html;
+	# error_page 500 502 503 504 /50x.html;
+	# location = /50x.html {
+	# 	root /usr/share/nginx/www;
+	# }
+
+	# Don't log when robots or favicon is accessed or 404'd
 	location = /robots.txt  { access_log off; log_not_found off; }
 	location = /favicon.ico { access_log off; log_not_found off; }
 
-	# this prevents hidden files (beginning with a period) from being served
+	# Prevents dotfiles from being served
 	location ~ /\.          { access_log off; log_not_found off; deny all; }
 
-	# disable execution of PHP from uploads folder
+	# Disable execution of PHP from uploads folder
 	location ~* /content/uploads/.*\.php$ {
 		return 403;
 	}
 
 	# TODO also catch any TimThumb directories here for strengthening TimThumb security
 	# -- or indeed any other directory that accepts uploads
+
+
+	##################################
+	#                                #
+	#      PHP-related settings      #
+	#                                #
+	##################################
 
 	location ~ \.php {
 		# prevent accidental PHP execution of non-PHP extensions
