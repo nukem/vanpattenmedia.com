@@ -6,5 +6,9 @@
 <?php endwhile; endif; ?>
 
 <div class="ten columns">
-	plans
+	<div class="two columns alpha">Features</div>
+	<div class="two columns">Old</div>
+	<div class="two columns">Lite</div>
+	<div class="two columns">Pro</div>
+	<div class="two columns omega">Enterprise</div>
 </div>

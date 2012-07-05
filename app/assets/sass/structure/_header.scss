@@ -47,8 +47,7 @@
 	@include rgba-background( rgba(black, 0.35) );
 	padding: 12px 10px;
 	position: relative;
-	left: 0px;
-	margin: 0 0 0;
+	margin: 0 0 0 10px;
 	color: #FFF;
 	@include text-shadow(0 1px 1px #000, 0 0 3px #000);
 	font: 90% $header-font;
