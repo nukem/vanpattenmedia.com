@@ -34,7 +34,7 @@
 			}
 		}
 
-		&.dropdown:hover, &.current-menu-item.dropdown {
+		&.dropdown:hover, &.current-menu-item, &.current-menu-parent.dropdown {
 			& > a {
 				padding: 10px 12px 38px;
 				@include border-bottom-radius(0px);
@@ -46,6 +46,16 @@
 
 			.dropdown-menu {
 				display: block;
+
+				.current-menu-item {
+					font-weight: bold;
+				}
+			}
+		}
+
+		&.dropdown:hover {
+			.dropdown-menu {
+				z-index: 100;
 			}
 		}
 	}
@@ -53,10 +63,11 @@
 
 .dropdown-menu {
 	position: absolute;
-	right: 10px;
-	bottom: 0;
-	padding-top: 6px;
+	right: 0;
+	bottom: -7px;
+	padding: 6px 10px 6px 0;
 	background: #FFF;
+	border-bottom: 1px dotted $vpmtan;
 
 	li {
 		display: inline;

@@ -53,8 +53,18 @@ html, body {
 @import "structure/slider";
 
 #main-container {
-	padding: 50px 0 10px;
+	padding: 60px 0 40px;
 	background: #FFF;
+}
+
+#content {
+
+}
+
+#sidebar {
+	padding: 0 0 0 20px;
+	border-left: 1px dotted $vpmtan;
+	@include box-sizing(border-box);
 }
 
 

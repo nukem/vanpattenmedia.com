@@ -9,10 +9,10 @@
 	<?php get_header( $base ); ?>
 	<div id="main-container">
 		<div class="container">
-			<div class="twelve columns">
+			<div class="twelve columns" id="content">
 				<?php include rach5_template_path(); ?>
 			</div>
-			<div class="four columns nav">
+			<div class="four columns" id="sidebar">
 				<?php get_sidebar( $base ); ?>
 			</div>
 		</div>

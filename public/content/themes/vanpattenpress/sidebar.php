@@ -1,5 +1,5 @@
 <nav id="nav">
-	<div id="menus">
+	<!-- <div id="menus">
 		<?php wp_nav_menu( array(
 			'menu' => 'primary-menu',
 			'container' => 'false'
@@ -9,5 +9,5 @@
 			'menu' => 'secondary-menu',
 			'container' => 'false'
 		)); ?>
-	</div>
+	</div> -->
 </nav>
