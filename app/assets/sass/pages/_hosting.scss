@@ -8,3 +8,87 @@
 	@include border-radius(6px);
 	@include box-shadow(-2px 2px 10px #DDD);
 }
+
+#plans-table {
+	border-collapse: separate;
+}
+
+.plan {
+	border-bottom: 1px solid #000;
+	font-weight: bold;
+
+	&.pro {
+		border-bottom: none;
+	}
+}
+
+td {
+	padding: 4px;
+	text-align: center;
+}
+
+.feature-name {
+	text-align: left;
+	font-size: 90%;
+}
+
+.feature-section {
+	padding-top: 20px;
+	@extend .feature-name;
+	font: 18px $header-font;
+}
+
+.feature-section-end {
+	border-bottom: 1px dotted #CCC;
+
+	&.pro {
+		border-bottom: none;
+	}
+}
+
+.cell {
+	font-size: 80%;
+
+	#pricing & {
+		font: 24px $header-font;
+		padding: 20px 0;
+	}
+
+	sup {
+		font-size: 75%;
+		margin: 0 0 0 1px;
+		position: relative;
+		top: -3px;
+	}
+
+	&.old {
+		background: #EEE;
+		color: #666;
+	}
+
+	&.pro {
+		background: lighten(green, 20%);
+		border-left: 1px solid green;
+		border-right: 1px solid green;
+		font-size: 110%;
+
+		#pricing & {
+			font: 32px $header-font;
+			padding: 10px 0;
+		}
+	}
+}
+
+.plan.pro {
+	@extend .cell.pro;
+
+	border-top: 1px solid green;
+	@include border-top-radius(12px);
+}
+
+tfoot .pro {
+	height: 16px;
+	@extend .cell.pro;
+	border-bottom: 1px solid green;
+	@include border-bottom-radius(12px);
+}
