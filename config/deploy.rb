@@ -74,15 +74,33 @@ namespace :vpm do
     upload("./config/s3.yml", "#{shared_path}/config/s3.yml")
   end
 
-  desc "Upload compiled JS and CSS"
+  desc "Upload compiled JS, CSS, and Compass-rendered images"
   task :upload_assets, :roles => :app do
-    run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/js/"
+    run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/js/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/img/rgbapng/"
 
     system("compass compile -e production --force")
     system("jammit -o .")
 
-    upload("./public/content/themes/#{project["application"]["theme"]}/css/", "#{release_path}/public/content/themes/#{project["application"]["theme"]}/", :via => :scp, :recursive => :true)
-    upload("./public/content/themes/#{project["application"]["theme"]}/js/", "#{release_path}/public/content/themes/#{project["application"]["theme"]}/", :via => :scp, :recursive => :true)
+    upload(
+      "./public/content/themes/#{project["application"]["theme"]}/css/",
+      "#{release_path}/public/content/themes/#{project["application"]["theme"]}/",
+      :via => :scp,
+      :recursive => :true
+    )
+
+    upload(
+      "./public/content/themes/#{project["application"]["theme"]}/js/",
+      "#{release_path}/public/content/themes/#{project["application"]["theme"]}/",
+      :via => :scp,
+      :recursive => :true
+    )
+
+    upload(
+      "./public/content/themes/#{project["application"]["theme"]}/img/rgbapng/",
+      "#{release_path}/public/content/themes/#{project["application"]["theme"]}/img/",
+      :via => :scp,
+      :recursive => :true
+    )
   end
 
   desc "Symlink database credentials to the current release directory"
