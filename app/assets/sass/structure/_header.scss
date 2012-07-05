@@ -1,7 +1,6 @@
 #header {
-	min-height: 160px;
 	position: relative;
-	border-bottom: 1px solid #BFBEB9;
+	padding: 50px 0 0;
 }
 
 #header-inner {
@@ -16,9 +15,9 @@
 	height: auto;
 	z-index: 100;
 	line-height: 1;
-	padding: 40px 0 8px;
+	padding: 0 0 8px;
 	position: relative;
-	left: -6px;
+	left: -5px;
 
 	img {
 		max-width: 435px;
@@ -30,6 +29,10 @@
 
 #alert-container {
 	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 #alert-announcement {
@@ -54,5 +57,35 @@
 		&:active {
 			@include vpm-button($background-color, $text-color, active, $spread);
 		}
+	}
+}
+
+#header-background {
+	@include background-size('cover');
+	background-position: center -100px;
+	height: 40px;
+	width: 100%;
+	border-top: 1px solid $global-border-color;
+	border-bottom: 1px solid $global-border-color;
+	position: absolute;
+	bottom: 0px;
+	z-index: 10;
+
+	//@include box-sizing(border-box);
+
+	#alert {
+		@include rgba-background( rgba(black, 0.35) );
+		padding: 12px 10px;
+		position: relative;
+		left: 0px;
+		margin: 0 0 0;
+		color: #FFF;
+		@include text-shadow(0 1px 1px #000, 0 0 3px #000);
+		font: 90% $header-font;
+		float: left;
+	}
+
+	a {
+		color: #DDD;
 	}
 }

@@ -1,18 +1,13 @@
 #header-nav {
-	position: absolute;
-	top: 32px;
-	left: 0;
-	right: 0;
-	height: 160px;
-
-	ul {
+	& > ul {
 		float: right;
-		margin: 0;
+		margin: 23px 0 0;
+		height: 106px;
 	}
 
 	.menu > li {
 		float: left;
-		margin: 62px 0 0 18px;
+		margin: 0 0 0 18px;
 
 		.dropdown-menu {
 			display: none;
@@ -28,6 +23,8 @@
 			font: 16px $header-font;
 			@include box-shadow(0 1px 3px #504D3F inset, 0 0 10px #c4bba7);
 			@include border-radius(4px);
+			position: relative;
+			z-index: 30;
 
 			&:hover {
 				@include rgba-background(rgba(darken($vpmtan, 30%), 0.5));
@@ -36,7 +33,7 @@
 
 		&.dropdown:hover, &.current-menu-item, &.current-menu-parent.dropdown {
 			& > a {
-				padding: 10px 12px 38px;
+				padding: 10px 12px 77px;
 				@include border-bottom-radius(0px);
 				background: #FFF;
 				color: #000;
@@ -46,6 +43,7 @@
 
 			.dropdown-menu {
 				display: block;
+				min-width: 150px;
 
 				.current-menu-item {
 					font-weight: bold;
@@ -64,18 +62,23 @@
 .dropdown-menu {
 	position: absolute;
 	right: 0;
-	bottom: -7px;
-	padding: 6px 10px 6px 0;
+	bottom: 0;
+	border-left: 1px solid $global-border-color;
+	border-right: 1px solid $global-border-color;
 	background: #FFF;
-	border-bottom: 1px dotted $vpmtan;
+	z-index: 50;
+	margin: 0;
 
 	li {
 		display: inline;
-		margin-left: 10px;
 		font-size: 90%;
+		list-style: none;
 	}
 
 	a {
 		text-decoration: none;
+		padding: 10px;
+		display: block;
+		float: left;
 	}
 }

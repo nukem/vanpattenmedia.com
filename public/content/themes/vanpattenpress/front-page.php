@@ -7,40 +7,11 @@
 	</div>
 </div>
 
-<div class="twelve columns">
+<div class="sixteen columns">
 	<section id="featured-quote">
 		<blockquote><span>Wow!  It looks so great, Chris!!  I'm so excited! LOVE, LOVE your work on this!</span></blockquote>
 		<cite>&mdash; Broadway actress <strong><a href="http://www.susanegan.net/">Susan Egan</a></strong></cite>
 	</section>
-
-	<!-- <section class="slider">
-		<?php
-			// Set up a new WP_Query
-			$my_args = array(
-				'post_type'		=>	'hslides',
-				'orderby'		=>	'menu_order',
-				'order'			=>	'ASC'
-			);
-			vpm_wp_query_slider($my_args, 'top');
-		?>
-	</section> -->
-
-	<div class="content">
-		<!-- <div class="entry-content">
-			<br><br><br>
-		</div> -->
-	</div>
-</div>
-
-<div class="four columns" id="nav-wrap">
-	<nav id="nav">
-		<div id="menus">
-			<?php wp_nav_menu( array(
-				'menu' => 'secondary-menu',
-				'container' => 'false'
-			)); ?>
-		</div>
-	</nav>
 </div>
 
 <div class="row">

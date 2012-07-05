@@ -76,7 +76,7 @@ server {
 
 	location ~* \.(?:ico|gif|jpe?g|png)$ {
 		# Mask TimThumb
-		rewrite "^/img/thumbnail/grayblur/([0-9]+)w(.*)$" /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=$2&w=$1&f=2|8|8|8|8|8|8|8|8 last;
+		rewrite "^/img/e:grayblur/b:([0-9]+)/w:([0-9]+)/(.*)$" /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=http://$3&w=$2&f=2|8|8|8|8|8|8|8|8|3,$1 last;
 
 		# QuickAssets-friendly rewrite, with a Roots-inspired core
 		rewrite "^/img/(.*/)?(\w+)(?:\.\d{14})?\.([A-Za-z]{2,4})$" /content/themes/<%= app_theme %>/img/$1$2.$3 last;
