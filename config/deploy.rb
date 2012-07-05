@@ -3,18 +3,18 @@ require "capistrano/ext/multistage"
 project = YAML.load_file("./config/project.yml")
 
 # Defaults...
-set :scm, :git
+set :scm,                   :git
 set :git_enable_submodules, 1
-set :stages, ["staging", "production"]
-set :default_stage, "staging"
+set :stages,                ["staging", "production"]
+set :default_stage,         "staging"
 # set :deploy_via, :remote_cache
 
 # This site...
-set :application, "vanpattenmedia"
-set :repository,  "git://github.com/vanpattenmedia/vanpattenmedia.com.git"
-set :user, "deploy"
-set :app_user, "vanpattenmedia"
-set :app_group, "vanpattenmedia-sitewriters"
+set :application, project["application"]["name"]
+set :repository,  project["application"]["repo"]
+set :user,        "deploy"
+set :app_user,    project["application"]["user"]
+set :app_group,   project["application"]["group"]
 
 # Don't do Railsy things...
 namespace :deploy do
@@ -76,13 +76,13 @@ namespace :vpm do
 
   desc "Upload compiled JS and CSS"
   task :upload_assets, :roles => :app do
-    run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project['application']['theme']}/js/"
+    run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/js/"
 
-    system('compass compile -e production --force')
-    system('jammit -o .')
+    system("compass compile -e production --force")
+    system("jammit -o .")
 
-    upload("./public/content/themes/#{project['application']['theme']}/css/", "#{release_path}/public/content/themes/#{project['application']['theme']}/", :via => :scp, :recursive => :true)
-    upload("./public/content/themes/#{project['application']['theme']}/js/", "#{release_path}/public/content/themes/#{project['application']['theme']}/", :via => :scp, :recursive => :true)
+    upload("./public/content/themes/#{project["application"]["theme"]}/css/", "#{release_path}/public/content/themes/#{project["application"]["theme"]}/", :via => :scp, :recursive => :true)
+    upload("./public/content/themes/#{project["application"]["theme"]}/js/", "#{release_path}/public/content/themes/#{project["application"]["theme"]}/", :via => :scp, :recursive => :true)
   end
 
   desc "Symlink database credentials to the current release directory"

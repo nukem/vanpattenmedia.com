@@ -11,7 +11,7 @@
 			<nav class="eight columns" id="header-nav">
 				<ul>
 					<li><a href="#">About</a></li>
-					<li><a href="#">Design</a></li>
+					<li><a href="#">Services</a></li>
 					<li><a href="#">Projects</a></li>
 					<li><a href="#">Work With Us</a></li>
 				</ul>
