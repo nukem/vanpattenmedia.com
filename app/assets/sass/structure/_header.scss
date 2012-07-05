@@ -27,39 +27,6 @@
 	}
 }
 
-#alert-container {
-	text-align: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
-#alert-announcement {
-	@extend %alerts;
-
-	$text-color: #FFF;
-	$background-color: rgba(desaturate(darken($vpmtan, 20%), 20%), 0.8);
-	@include vpm-alert($text-color, $background-color);
-
-	.button {
-		margin: 0 0 0 5px;
-
-		$text-color: #FFF;
-		$background-color: lighten(#F07E0D, 10%);
-		$spread: 12%;
-		@include vpm-button($background-color, $text-color, default, $spread, 3px);
-
-		&:hover {
-			@include vpm-button($background-color, $text-color, hover, $spread);
-		}
-
-		&:active {
-			@include vpm-button($background-color, $text-color, active, $spread);
-		}
-	}
-}
-
 #header-background {
 	@include background-size('cover');
 	background-position: center -100px;
@@ -71,21 +38,19 @@
 	bottom: 0px;
 	z-index: 10;
 
-	//@include box-sizing(border-box);
-
-	#alert {
-		@include rgba-background( rgba(black, 0.35) );
-		padding: 12px 10px;
-		position: relative;
-		left: 0px;
-		margin: 0 0 0;
-		color: #FFF;
-		@include text-shadow(0 1px 1px #000, 0 0 3px #000);
-		font: 90% $header-font;
-		float: left;
-	}
-
 	a {
 		color: #DDD;
 	}
+}
+
+#alert {
+	@include rgba-background( rgba(black, 0.35) );
+	padding: 12px 10px;
+	position: relative;
+	left: 0px;
+	margin: 0 0 0;
+	color: #FFF;
+	@include text-shadow(0 1px 1px #000, 0 0 3px #000);
+	font: 90% $header-font;
+	float: left;
 }
