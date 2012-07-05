@@ -107,6 +107,33 @@ $body-font: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', 
 	filter: none;
 }
 
+/*
+ * Alerts
+ */
+
+%alerts {
+	min-height: 16px;
+	padding: 8px 4px 8px 8px;
+	font: 400 14px/1 $body-font;
+	@include inline-block();
+	@include border-bottom-radius(3px);
+
+	a {
+		color: #FFF;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.button {
+		padding: 2px 6px;
+		font: {
+			weight: 600;
+		}
+	}
+}
+
 @mixin vpm-alert($text-color, $background-color) {
 	// Text styles
 	color: $text-color;

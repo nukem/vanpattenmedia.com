@@ -8,13 +8,14 @@
 			<div class="eight columns" id="header-inner">
 				<a href="<?php echo home_url(); ?>" id="logo"><img src="<?= $a->url('img', 'logo.png') ?>" alt="Van Patten Media logo" id="vpm-logo"></a>
 			</div>
-			<nav class="eight columns" id="header-nav">
-				<ul>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Work With Us</a></li>
-				</ul>
-			</nav>
 		</div>
 	</header>
+	<div class="container" id="header-nav">
+		<nav class="eight columns offset-by-eight">
+			<?php wp_nav_menu( array(
+				'menu' => 'primary-menu',
+				'container' => 'false',
+				'walker' => new Roots_Navbar_Nav_Walker(),
+			)); ?>
+		</nav>
+	</div>

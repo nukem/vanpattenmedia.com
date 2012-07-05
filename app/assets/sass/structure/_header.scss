@@ -1,6 +1,5 @@
 #header {
-	// font: 300 60px/60px 'Signika Negative', sans-serif;
-	//padding: 65px 0 0;
+	min-height: 160px;
 	position: relative;
 	border-bottom: 1px solid #BFBEB9;
 }
@@ -31,29 +30,6 @@
 
 #alert-container {
 	text-align: center;
-}
-
-%alerts {
-	min-height: 16px;
-	padding: 8px 4px 8px 8px;
-	font: 400 14px/1 $body-font;
-	@include inline-block;
-	@include border-bottom-radius(3px);
-
-	a {
-		color: #FFF;
-	}
-
-	p {
-		margin: 0;
-	}
-
-	.button {
-		padding: 2px 6px;
-		font: {
-			weight: 600;
-		}
-	}
 }
 
 #alert-announcement {

@@ -1,3 +1,7 @@
+// Compass imports
+@import "compass/css3";
+@import "compass/typography";
+
 // Fonts
 @import "includes/fonts";
 @import url(http://fonts.googleapis.com/css?family=Signika+Negative:300,600);
@@ -11,10 +15,6 @@
 
 // Your imports
 @import "includes/definitions";
-
-// Compass imports
-@import "compass/css3";
-@import "compass/typography";
 
 
 /*

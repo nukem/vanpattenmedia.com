@@ -1,51 +1,70 @@
 #header-nav {
+	position: absolute;
+	top: 32px;
+	left: 0;
+	right: 0;
+	height: 160px;
 
 	ul {
 		float: right;
 		margin: 0;
 	}
 
-	li {
+	.menu > li {
 		float: left;
 		margin: 62px 0 0 18px;
+
+		.dropdown-menu {
+			display: none;
+		}
+
+		& > a {
+			@include rgba-background( rgba(lighten(#A5A297, 5%), 0.8) );
+			display: block;
+			text-decoration: none;
+			padding: 10px 12px;
+			color: #FFF;
+			@include text-shadow(0 1px 1px #000);
+			font: 16px $header-font;
+			@include box-shadow(0 1px 3px #504D3F inset, 0 0 10px #c4bba7);
+			@include border-radius(4px);
+
+			&:hover {
+				@include rgba-background(rgba(darken($vpmtan, 30%), 0.5));
+			}
+		}
+
+		&.dropdown:hover, &.current-menu-item.dropdown {
+			& > a {
+				padding: 10px 12px 38px;
+				@include border-bottom-radius(0px);
+				background: #FFF;
+				color: #000;
+				@include text-shadow(none);
+				@include box-shadow(0 2px 3px #555349 inset);
+			}
+
+			.dropdown-menu {
+				display: block;
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+	padding-top: 6px;
+	background: #FFF;
+
+	li {
+		display: inline;
+		margin-left: 10px;
+		font-size: 90%;
 	}
 
 	a {
-		@include rgba-background( rgba(lighten(#A5A297, 5%), 0.8) );
-		display: block;
 		text-decoration: none;
-		padding: 10px 12px;
-		color: #FFF;
-		@include text-shadow(0 1px 1px #000);
-		font: 16px $header-font;
-		@include box-shadow(0 1px 3px #504D3F inset);
-		@include border-radius(4px);
-
-		&:hover {
-			@include rgba-background(rgba(darken($vpmtan, 30%), 0.5));
-		}
-
-		&.current {
-			padding: 10px 12px 38px;
-			@include border-bottom-radius(0px);
-			background: #FFF;
-			color: #000;
-			@include text-shadow(none);
-		}
-	}
-}
-
-.four.columns.nav {
-	float: right;
-
-	nav {
-		//border-left: 1px dotted #CCC;
-		//padding: 0 0 0 20px;
-	}
-}
-
-.menu {
-	li {
-		// line-height: 1;
 	}
 }

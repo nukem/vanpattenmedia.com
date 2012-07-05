@@ -36,7 +36,7 @@
 	<nav id="nav">
 		<div id="menus">
 			<?php wp_nav_menu( array(
-				'menu' => 'primary-menu',
+				'menu' => 'secondary-menu',
 				'container' => 'false'
 			)); ?>
 		</div>
