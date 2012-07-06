@@ -2,6 +2,9 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<div class="five columns">
 		<div id="notepad"><?php the_content(); ?></div>
+		<div id="hosting-call-to-action">
+			<p><a href="/contact/">Contact us to sign up or learn more.</a> Get the speed and security of our managed hosting platform today.</p>
+		</div>
 	</div>
 <?php endwhile; endif; ?>
 
@@ -49,10 +52,10 @@
 			</tr>
 			<tr>
 				<td class="feature-name">Bandwidth</td>
-				<td class="cell old">Unmetered<sup>2</sup></td>
-				<td class="cell">Unmetered<sup>2</sup></td>
-				<td class="cell pro">Unmetered<sup>2</sup></td>
-				<td class="cell">Unmetered<sup>2</sup></td>
+				<td class="cell old">Unmetered<sup>3</sup></td>
+				<td class="cell">Unmetered<sup>3</sup></td>
+				<td class="cell pro">Unmetered<sup>3</sup></td>
+				<td class="cell">Unmetered<sup>3</sup></td>
 			</tr>
 			<tr>
 				<td class="feature-name">Cloud delivery</td>
@@ -169,4 +172,10 @@
 			</tr>
 		</tfoot>
 	</table>
+	<h3>Notes</h3>
+	<ul>
+		<li><sup>1</sup> Space limited to a 250MB soft ceiling (based on current client space averages)</li>
+		<li><sup>2</sup> Uploads are moved to "unlimited space" in the cloud</li>
+		<li><sup>3</sup> Restricted to server-level limits, but not locked to any specific ceiling</li>
+	</ul>
 </div>

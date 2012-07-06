@@ -87,6 +87,13 @@ blockquote {
 	}
 }
 
+sup {
+	font-size: 75%;
+	position: relative;
+	padding: 0 1px;
+	vertical-align: top;
+}
+
 .alignleft, .aligncenter, .alignright {
 	@extend %img-border;
 }

@@ -8,8 +8,26 @@
 	@include box-shadow(0 2px 10px #DDD);
 }
 
+#hosting-call-to-action {
+	font: 22px/1.4 $header-font;
+	//border-top: 1px dotted #CCC;
+	padding: 10px 13px;
+	background: #EEE;
+
+	a {
+		font: 26px/1.4 $header-font;
+		margin: 0 0 20px;
+		display: block;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
 #plans-table {
 	border-collapse: separate;
+	margin: 0 0 30px;
 }
 
 td {
@@ -42,13 +60,6 @@ td {
 	#pricing & {
 		font: 24px $header-font;
 		padding: 20px 0;
-	}
-
-	sup {
-		font-size: 75%;
-		margin: 0 0 0 1px;
-		position: relative;
-		top: -3px;
 	}
 
 	em {
