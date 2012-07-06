@@ -1,5 +1,8 @@
 <% if app_stage == "production" %>
 server {
+	listen 8080;
+
+	# Redirect to www. if on production
 	server_name <%= app_domain %>;
 	rewrite ^ $scheme://www.<%= app_domain %>$request_uri permanent;
 }
@@ -25,7 +28,6 @@ server {
 	index index.php index.html index.htm;
 
 	# What's our domain name?
-	# Redirect to www. if on production
 	<% if app_stage == "production" %>
 	server_name www.<%= app_domain %>;
 	<% else %>
