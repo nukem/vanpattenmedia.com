@@ -1,3 +1,10 @@
+<% if app_stage == "production" %>
+server {
+	server_name <%= app_domain %>;
+	rewrite ^ $scheme://www.<%= app_domain %>$request_uri permanent;
+}
+<% end %>
+
 server {
 
 	##################################
@@ -21,7 +28,6 @@ server {
 	# Redirect to www. if on production
 	<% if app_stage == "production" %>
 	server_name www.<%= app_domain %>;
-	rewrite ^ $scheme://www.<%= app_domain %>$request_uri permanent;
 	<% else %>
 	server_name <%= app_domain %>;
 	<% end %>
