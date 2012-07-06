@@ -46,6 +46,7 @@
 #alert {
 	@include rgba-background( rgba(black, 0.35) );
 	padding: 12px 10px;
+	height: 16px;
 	position: relative;
 	margin: 0 0 0 10px;
 	color: #FFF;
