@@ -39,7 +39,7 @@
 				background: #FFF;
 				color: #000;
 				@include text-shadow(none);
-				@include box-shadow(0 2px 3px #555349 inset);
+				@include box-shadow(0 3px 3px #555349 inset);
 			}
 
 			.dropdown-menu {
