@@ -79,7 +79,7 @@ namespace :vpm do
     run "mkdir -p #{release_path}/public/content/themes/#{project['application']['theme']}/css/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/js/ #{release_path}/public/content/themes/#{project["application"]["theme"]}/img/rgbapng/"
 
     system("compass compile -e production --force")
-    system("jammit -o .")
+    system("jammit -c config/assets.yml")
 
     upload(
       "./public/content/themes/#{project["application"]["theme"]}/css/",

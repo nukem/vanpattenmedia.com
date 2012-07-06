@@ -124,9 +124,9 @@
 			<tr>
 				<td class="feature-name">Physical Backups</td>
 				<td class="cell feature-section-end old"></td>
-				<td class="cell feature-section-end"></td>
-				<td class="cell feature-section-end pro"></td>
-				<td class="cell feature-section-end"></td>
+				<td class="cell feature-section-end"><em>Soon</em></td>
+				<td class="cell feature-section-end pro"><em>Soon</em></td>
+				<td class="cell feature-section-end"><em>Soon</em></td>
 			</tr>
 		</tbody>
 		<tbody>

@@ -3,7 +3,7 @@ guard 'compass' do
 end
 
 guard 'livereload' do
-  watch(%r{.+\.(css|js|html?|php|inc)$})
+  watch(%r{.+\.(css|js|html?|php|inc|png|jpg|gif)$})
 end
 
 guard 'jammit', :output_folder => "./public/content/themes/vanpattenpress/js/" do
