@@ -32,7 +32,7 @@
 					$cat_ID = $category->cat_ID;
 				}
 				// Output all the things!
-				echo '<div id="slide-' . get_the_ID() . '" '; post_class('slide header-top'); echo ' style="background: url(' . get_bloginfo('template_directory') . '/img/e:grayblur/b:8/w:700/' . preg_replace('#^http://#i', '', $full_url[0]) . '">' . "\n";
+				echo '<div id="slide-' . get_the_ID() . '" '; post_class('slide header-top'); echo ' style="background: url(/img/e:grayblur/b:8/w:700/' . preg_replace('#^http://#i', '', $full_url[0]) . ')">' . "\n";
 
 						echo '<a href="' . get_permalink() . '">' . "\n";
 
