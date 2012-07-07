@@ -1,8 +1,13 @@
 %img-border {
 	border: 1px solid #BBB;
 	background: #FFF;
-	padding: 3px;
+	padding: 8px;
 	@include box-shadow(0 1px 4px -2px black);
+	@include border-radius(2px);
+}
+
+.post-title {
+	font-weight: bold;
 }
 
 a {

@@ -25,8 +25,8 @@
 
 html, body {
 	background: $vpmtan image-url('noise.png') center center;
-	color: black;
-	font: 300 16px/1.9 $body-font;
+	color: lighten(black, 35%);
+	font: 300 15px/1.8 $body-font;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -53,7 +53,7 @@ html, body {
 @import "structure/slider";
 
 #main-container {
-	padding: 20px 0 15px;
+	padding: 30px 0 15px;
 	background: #FFF;
 }
 
