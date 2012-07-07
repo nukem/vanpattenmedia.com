@@ -84,7 +84,15 @@ server {
 
 	location ~* \.(?:ico|gif|jpe?g|png)$ {
 		# Mask TimThumb
-		rewrite "^/img/e:grayblur/b:([0-9]+)/w:([0-9]+)/(.*)$" /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=http://$3&w=$2&f=2|8|8|8|8|8|8|8|8|3,$1 last;
+		<% if app_stage != "dev" %>
+		rewrite "^/img/e:grayblur/b:([0-9]+)/w:([0-9]+)/static.<%= site_domain %>/(.*)$" /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=http://static.<%= site_domain %>/$3&w=$2&f=2|8|8|8|8|8|8|8|8|3,$1 last; # force the rewrite to the correct domain
+	
+		# Redirect /content/uploads requests to CloudFront with a 301
+		rewrite "^/content/uploads/(.*)$" http://static.<%= site_domain %>/content/uploads/$1 permanent;
+
+		<% else %>
+		rewrite "^/img/e:grayblur/b:([0-9]+)/w:([0-9]+)/<%= app_domain %>/(.*)$" /content/themes/<%= app_theme %>/img/timthumb/timthumb.php?src=http://<%= app_domain %>/$3&w=$2&f=2|8|8|8|8|8|8|8|8|3,$1 last; # force the rewrite to the correct domain
+		<% end %>
 
 		# QuickAssets-friendly rewrite, with a Roots-inspired core
 		rewrite "^/img/(.*/)?(\w+)(?:\.\d{14})?\.([A-Za-z]{2,4})$" /content/themes/<%= app_theme %>/img/$1$2.$3 last;
@@ -148,8 +156,10 @@ server {
 		return 403;
 	}
 
-	# TODO also catch any TimThumb directories here for strengthening TimThumb security
-	# -- or indeed any other directory that accepts uploads
+	# Disable any public access to TimThumb cache
+	location ~* /content/themes/<%= app_theme %>/img/timthumb/cache/.*$ {
+		return 403;
+	}
 
 
 	##################################
