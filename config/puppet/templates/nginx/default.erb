@@ -38,9 +38,7 @@ server {
 	# More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
 	sendfile off;
 
-	#######################
-	#  TimThumb internal  #
-	#######################
+	# TimThumb internal security lockdown
 	location ~* ^(?:/content/themes/<%= app_theme %>)?/img/timthumb/timthumb(?:-config)?.php {
 		# prevent direct querying of timthumb.php
 		internal;
