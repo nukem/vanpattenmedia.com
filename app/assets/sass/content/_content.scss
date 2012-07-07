@@ -1,6 +1,6 @@
 %img-border {
 	border: 1px solid #BBB;
-	background: #FFF;
+	background: #F9F9F9;
 	padding: 8px;
 	@include box-shadow(0 1px 4px -2px black);
 	@include border-radius(2px);
@@ -99,8 +99,12 @@ sup {
 	vertical-align: top;
 }
 
-.alignleft, .aligncenter, .alignright {
+.alignleft, .aligncenter, .alignnone, .alignright {
 	@extend %img-border;
+
+	img {
+		@include border-radius(2px);
+	}
 }
 
 .alignleft {
@@ -108,7 +112,7 @@ sup {
 	margin: 5px 20px 10px 0;
 }
 
-.aligncenter {
+.aligncenter, .alignnone {
 	margin: 9px auto 10px;
 	display: block;
 }
@@ -121,7 +125,7 @@ sup {
 .wp-caption-text {
 	font: 12px $body-font;
 	color: #666;
-	margin: 4px 0 0;
+	margin: 2px;
 	display: block;
 }
 
@@ -141,4 +145,12 @@ strong.cta {
 			background: #336699;
 		}
 	}
+}
+
+code {
+	font-family: monospace;
+	background: #EEE;
+	border: 1px solid #CCC;
+	padding: 2px;
+	@include border-radius(3px);
 }

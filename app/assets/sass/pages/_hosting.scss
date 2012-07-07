@@ -83,6 +83,7 @@ td {
 		font-size: 110%;
 		font-weight: bold;
 		@include text-shadow(0 1px 1px white);
+		color: #000;
 
 		#pricing & {
 			font: 32px $header-font;
