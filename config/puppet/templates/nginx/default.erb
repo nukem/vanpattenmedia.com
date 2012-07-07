@@ -85,7 +85,7 @@ server {
 		internal;
 		try_files $uri =404;
 		location ~ \..*/.*\.php$ {
-			return 404
+			return 404;
 		}
 		fastcgi_pass unix:/var/run/php5-fpm-pools-<%= app_name %>.sock;
 	}
