@@ -11,7 +11,7 @@
 				)); ?>
 			</nav>
 		</div>
-		<div id="header-background">
+		<div id="header-background" style="background-image: url(/img/e:grayblur/b:100/w:1200/static.vanpattenmedia.com/content/uploads/2012/02/Susan-Egan-Meg-in-Hercules-Belle-on-Broadway-everyday-Mom-700x525.png)">
 			<div class="container">
 				<div id="alert">Now available: Total Slider 1.0.4. <a href="http://wordpress.org/extend/plugins/total-slider/changelog/">Read more...</a></div>
 			</div>
