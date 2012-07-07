@@ -77,6 +77,13 @@ server {
 		<% end %>
 	}
 
+	#######################
+	#  TimThumb internal  #
+	#######################
+	location ~* ^(?:/content/themes/<%= app_theme %>)?/img/timthumb/ {
+		# prevent direct querying of timthumb.php
+		internal;
+	}
 
 	###################
 	#      Images     #
