@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
   if File.exist?("./config/vagrant-custom.rb")
     require "./config/vagrant-custom.rb"
   else
-    config.vm.network :hostonly, "192.168.33.50"
+    config.vm.forward_port 80, 8080
   end
 
   # bring in the YAML!!!111!1oneONE
