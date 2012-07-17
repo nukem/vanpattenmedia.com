@@ -12,9 +12,40 @@
 	}
 }
 
+#blog-features {
+	margin: 5px 0 30px;
+	
+	a {
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		padding: 50px 10px 10px 0;
+		line-height: 1.5;
+		background-size: cover;
+		background-position: center;
+		@include border-radius(4px);
+		border-left: 3px solid rgba(black, 0.75);
+
+		&:hover {
+			border-left: 3px solid rgba(black, 0.75);
+		}
+	}
+
+	div {
+		padding: 3px 4px 4px;
+		@include rgba-background(rgba(black, 0.75));
+		@include border-right-radius(4px);
+	}
+}
+
+.post-title {
+	font-weight: bold;
+	margin: 0;
+}
+
 .info {
 	font: 14px $header-font !important;
-	margin: 0 0 20px 3px !important;
+	margin: 10px 0 20px 0px !important;
 	color: #AAA;
 	display: block;
 	text-align: left;
