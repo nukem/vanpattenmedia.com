@@ -31,7 +31,7 @@
 
 	<?php /* JavaScript */
 	?><script type="text/javascript" src="//cdn.vanpattenmedia.com/js/libs/labjs/2.0.3/LAB.min.js"></script>
-	<script type="text/javascript" src="http://use.typekit.com/seu0myl.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/seu0myl.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script type="text/javascript">
 		$LAB
