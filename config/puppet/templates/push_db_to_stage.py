@@ -123,6 +123,13 @@ source_db_prefix = source_stage[0] + "_"
 dest_db_prefix = dest_stage[0] + "_"
 
 
+# get confirmation from the user
+confirm = raw_input("Are you sure you want to download the '" + source_stage + "' database and push it to '" + dest_stage + "'? (y/n): ")
+
+if not confirm == 'y' and not confirm == 'Y':
+	print "Exiting as requesting."
+	exit(1)
+
 # connect to source
 source_db = _mysql.escape_string(config[source_stage]['name'])
 source_user = _mysql.escape_string(config[source_stage]['user'])
@@ -139,6 +146,14 @@ source_dump = sdump.communicate()
 
 print "Done."
 print
+
+
+# get confirmation from the user
+confirm = raw_input("This is your final chance to cancel the push of the database to '" + dest_stage + "'. Once started, it must not be interrupted, or a restore may be needed. Do you want to go ahead? (y/n): ")
+
+if not confirm == 'y' and not confirm == 'Y':
+        print "Exiting as requesting."
+        exit(1)
 
 
 print "Pushing the source (" + source_stage + ") database up to " + dest_stage + "..."
