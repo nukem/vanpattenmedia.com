@@ -20,16 +20,16 @@ end
 %>
 
 package { "nginx":
-	ensure => latest,
+	ensure => installed,
 #	hasrestart => true
 }
 
 package { "php5-fpm":
-	ensure => latest
+	ensure => installed
 }
 
 package { "varnish":
-	ensure => latest
+	ensure => installed
 }
 
 <% if app_stage == "dev" %>
