@@ -5,3 +5,18 @@ application:
   group: vanpattenmedia-sitewriters
   theme: vanpattenpress
   domain: vanpattenmedia.com
+  tbl_prefix: wp_
+  servers:
+    dev:
+      ip: 127.0.0.1
+      port: 2222
+      user: vagrant
+    staging:
+      ip: 50.116.59.75
+      port: 9012
+      user: deploy
+    production:
+      ip: 50.116.59.75
+      port: 9012
+      user: deploy
+

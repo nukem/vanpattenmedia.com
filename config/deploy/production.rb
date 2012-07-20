@@ -1,13 +1,15 @@
-# Server options
-server "50.116.59.75", :app, :web, :db, :primary => true
-ssh_options[:port]        = 9012
-default_run_options[:pty] = true
-
 # Set stage
 set :app_stage,  "production"
 
 project  = YAML.load_file("./config/project.yml")
 database = YAML.load_file("./config/database.yml")
+
+
+# Server options
+server project['application']['servers'][fetch(:app_stage)]['ip'], :app, :web, :db, :primary => true
+ssh_options[:port]        = project['application']['servers'][fetch(:app_stage)]['port']
+default_run_options[:pty] = true
+
 
 set :db_name,     database[fetch(:app_stage)]['name']
 set :db_user,     database[fetch(:app_stage)]['user']

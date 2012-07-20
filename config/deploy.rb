@@ -12,7 +12,7 @@ set :default_stage,         "staging"
 # This site...
 set :application, project["application"]["name"]
 set :repository,  project["application"]["repo"]
-set :user,        "deploy"
+set :user,        "deploy" #TODO load me from YAML? The app_stage isn't loaded yet.
 set :app_user,    project["application"]["user"]
 set :app_group,   project["application"]["group"]
 

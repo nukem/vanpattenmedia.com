@@ -28,6 +28,7 @@ import subprocess
 from subprocess import Popen, PIPE, STDOUT
 import _mysql
 from pprint import pprint
+import argparse
 
 ips = {}
 ssh_ports = {}
@@ -38,17 +39,46 @@ homes = {}
 upload_paths = {}
 upload_url_paths = {}
 
-#####################################################################################
-#                                   Configuration                                   #
-#####################################################################################
+# argument parsing
+parser = argparse.ArgumentParser(description='Command line arguments')
+parser.add_argument('source_stage', help='The stage from which to download the database.')
+parser.add_argument('dest_stage', help='The stage whose database should be replaced.')
+parser.add_argument('-d', '--database-config', default='config/database.yml', help='The path to the database.yml file. (Default: %(default)s)')
+parser.add_argument('-p', '--project-config', default='config/project.yml', help='The path to the project.yml file. (Default: %(default)s)')
+arguments = parser.parse_args()
 
-config_path = 'config/database.yml'
 
-## NOTE: I need to be properly ERBed
-## do I actually need to be called by `cap deploy` and not be here?
-## does work manually dev -> staging. staging -> production not yet tested
+db_config_path = arguments.database_config
+proj_config_path = arguments.project_config
 
-# IPs and ports for connecting to the server for each stage
+source_stage = arguments.source_stage
+dest_stage = arguments.dest_stage
+
+# bring in WordPress and stage settings from project.yml
+try:
+        proj_config_file = open(proj_config_path, 'r')
+except IOError as e:
+
+        print "Could not open project configuration file from " + proj_config_path + "."
+        print "I/O Error({0}): {1}".format(e.errno, e.strerror)
+        print "Cannot continue."
+        exit(1)
+
+try:
+        proj_config = yaml.safe_load(proj_config_file)
+except yaml.YAMLError as e:
+        print "Unable to parse project configuration file."
+        print "YAMLError({0}): {1}".format(e.errno, e.strerror)
+        exit(1)
+
+# bring in tbl_prefix
+if not 'tbl_prefix' in proj_config:
+	print "The tbl_prefix was not found in the project configuration file."
+	exit(1)
+tbl_prefix = proj_config['tbl_prefix']
+
+
+
 ips['dev'] = '127.0.0.1'
 ssh_ports['dev'] = '2222'
 users['dev'] = 'vagrant'
@@ -76,48 +106,36 @@ upload_url_paths['production'] = 'http://static.vanpattenmedia.com/content/uploa
 
 tblprefix = "wp_" # expecting the same table prefix across stages
 
-#####################################################################################
-#                                 End Configuration                                 #
-#####################################################################################
-
-# check arguments
-if len(sys.argv) < 3:
-	print "Usage: " + os.path.basename(__file__) + " source_stage dest_stage"
-	print os.path.basename(__file__) + " will automatically determine database credentials from " + config_path + "."
-	exit(1)
-
 
 # bring in database credentials from YAML
 try:
-        config_file = open(config_path, 'r')
+        db_config_file = open(db_config_path, 'r')
 except IOError as e:
 
-        print "Could not open database configuration file from " + config_path + "."
+        print "Could not open database configuration file from " + db_config_path + "."
         print "I/O Error({0}): {1}".format(e.errno, e.strerror)
         print "Cannot continue."
         exit(1)
 
 try:
-        config = yaml.safe_load(config_file)
+        db_config = yaml.safe_load(db_config_file)
 except yaml.YAMLError as e:
         print "Unable to parse database configuration file."
         print "YAMLError({0}): {1}".format(e.errno, e.strerror)
 	exit(1)
 
 # sanity checking of config YAML
-if not sys.argv[1] in config:
-        print "The '" + sys.argv[1] + "' stage was not found in the database config YAML file."
+if not source_stage in db_config:
+        print "The '" + source_stage + "' stage was not found in the database config YAML file."
         exit(1)
-if not sys.argv[2] in config:
-	print "The '" + sys.argv[2] + "' stage was not found in the database config YAML file."        
+if not dest_stage in db_config:
+	print "The '" + dest_stage + "' stage was not found in the database config YAML file."        
 	exit(1)
-for stage in [sys.argv[1], sys.argv[2]]:
-	if not 'name' in config[stage] or not 'user' in config[stage] or not 'password' in config[stage] or not 'host' in config[stage] or not 'grant_to' in config[stage]:
+for stage in [source_stage, dest_stage]:
+	if not 'name' in db_config[stage] or not 'user' in db_config[stage] or not 'password' in db_config[stage] or not 'host' in db_config[stage] or not 'grant_to' in db_config[stage]:
 		print "The '" + stage + "' stage does not have all of the required YAML attributes in the config file."
 		exit(1)
 
-source_stage = sys.argv[1]
-dest_stage = sys.argv[2]
 
 source_db_prefix = source_stage[0] + "_"
 dest_db_prefix = dest_stage[0] + "_"
@@ -131,9 +149,9 @@ if not confirm == 'y' and not confirm == 'Y':
 	exit(1)
 
 # connect to source
-source_db = _mysql.escape_string(config[source_stage]['name'])
-source_user = _mysql.escape_string(config[source_stage]['user'])
-source_pass = _mysql.escape_string(config[source_stage]['password'])
+source_db = _mysql.escape_string(db_config[source_stage]['name'])
+source_user = _mysql.escape_string(db_config[source_stage]['user'])
+source_pass = _mysql.escape_string(db_config[source_stage]['password'])
 
 
 # mysqldump the source
@@ -161,9 +179,9 @@ print
 print "Depending on upload speed and DB size, this may take a few minutes. Please be patient."
 
 # execute against the destination
-dest_db = _mysql.escape_string(config[dest_stage]['name'])
-dest_user = _mysql.escape_string(config[dest_stage]['user'])
-dest_pass = _mysql.escape_string(config[dest_stage]['password'])
+dest_db = _mysql.escape_string(db_config[dest_stage]['name'])
+dest_user = _mysql.escape_string(db_config[dest_stage]['user'])
+dest_pass = _mysql.escape_string(db_config[dest_stage]['password'])
 
 dexec = Popen(['ssh', '-p', ssh_ports[dest_stage], '-l', users[dest_stage], ips[dest_stage], 'mysql -u ' + dest_user + ' -p' + dest_pass + ' ' + dest_db], stdin=PIPE, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
 
