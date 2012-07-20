@@ -10,7 +10,7 @@
 # home and upload_path, as well as rewriting content URLs.
 #
 #
-# Requires PyYAML for DB credentials import, Paramiko for SSHing around, and Python-MySQL for string escaping
+# Requires PyYAML for DB credentials import and Python-MySQL for string escaping
 #
 # Assumes Puppet, or deploy:setup has already created the DBs and populated the priv tables with the username/passwords
 # specified in database.yml.
@@ -72,39 +72,50 @@ except yaml.YAMLError as e:
         exit(1)
 
 # bring in tbl_prefix
-if not 'tbl_prefix' in proj_config:
+if not 'tbl_prefix' in proj_config['application']:
 	print "The tbl_prefix was not found in the project configuration file."
 	exit(1)
-tbl_prefix = proj_config['tbl_prefix']
+tbl_prefix = proj_config['application']['tbl_prefix']
 
+# begin to bring in servers stuff
+if not 'servers' in proj_config['application']:
+	print "The servers section was not found in the project configuration file."
+	exit(1)
 
+if not source_stage in proj_config['application']['servers']:
+	print "The '" + source_stage + "' stage was not specified in the project configuration file's 'servers' section."
+	exit(1)
 
-ips['dev'] = '127.0.0.1'
-ssh_ports['dev'] = '2222'
-users['dev'] = 'vagrant'
-ips['staging'] = '50.116.59.75'
-ssh_ports['staging'] = '9012'
-users['staging'] = 'deploy'
-ips['production'] = '50.116.59.75'
-ssh_ports['production'] = '9012'
-users['production'] = 'deploy'
+if not dest_stage in proj_config['application']['servers']:
+	print "The '" + dest_stage + "' stage was not specified in the project configuration file's 'servers' section."
+	exit(1)
 
-# desired WordPress settings for siteurl, home, upload_path and upload_url_path configuration
-homes['dev'] = 'http://dev.vanpattenmedia.com/'
-siteurls['dev'] = 'http://dev.vanpattenmedia.com/wp'
-upload_paths['dev']  = 'content/uploads'
-upload_url_paths['dev'] = 'http://dev.vanpattenmedia.com/content/uploads'
-homes['staging'] = 'http://staging.vanpattenmedia.com/'
-siteurls['staging'] = 'http://staging.vanpattenmedia.com/wp'
-upload_paths['staging']  = '../../../../../content/uploads'
-upload_url_paths['staging'] = 'http://static.vanpattenmedia.com/content/uploads'
+for stage in [source_stage, dest_stage]:
+	# sanity check the stage in the YAML
+	if not 'ip' in proj_config['application']['servers'][stage] or not 'port' in proj_config['application']['servers'][stage] or not 'user' in proj_config['application']['servers'][stage]:
+		print "The '" + stage + "' stage in the 'servers' section of the project configuration file does not have one or more of the required 'ip', 'port' or 'user' entries."
+		exit(1)
 
-homes['production'] = 'http://www.vanpattenmedia.com/'
-siteurls['production'] = 'http://www.vanpattenmedia.com/wp'
-upload_paths['production']  = '../../../../../content/uploads'
-upload_url_paths['production'] = 'http://static.vanpattenmedia.com/content/uploads'
+	# load the YAML vars into our internal vars
+	ips[stage] = proj_config['application']['servers'][stage]['ip']
+	ssh_ports[stage] = str(proj_config['application']['servers'][stage]['port'])
+	users[stage] = proj_config['application']['servers'][stage]['user']
 
-tblprefix = "wp_" # expecting the same table prefix across stages
+	# infer some WordPress-y type things from YAML and our sensible defaults
+	if stage == 'production':
+		url_prefix = 'www'
+	else:
+		url_prefix = stage
+		
+	if stage == 'dev':
+		upload_url_path_prefix = 'uploads'
+	else:
+		upload_url_path_prefix = 'static'
+
+	homes[stage] = 'http://' + url_prefix + '.' + proj_config['application']['domain'] + '/'
+	siteurls[stage] = 'http://' + url_prefix + '.' + proj_config['application']['domain'] + '/wp'
+	upload_paths[stage] = '../../../../../content/uploads'
+	upload_url_paths[stage] = 'http://' + upload_url_path_prefix + '.' + proj_config['application']['domain'] + '/content/uploads'
 
 
 # bring in database credentials from YAML
@@ -148,6 +159,7 @@ if not confirm == 'y' and not confirm == 'Y':
 	print "Exiting as requesting."
 	exit(1)
 
+
 # connect to source
 source_db = _mysql.escape_string(db_config[source_stage]['name'])
 source_user = _mysql.escape_string(db_config[source_stage]['user'])
@@ -162,12 +174,13 @@ sdump = Popen(['ssh', '-p', ssh_ports[source_stage], '-l', users[source_stage], 
 
 source_dump = sdump.communicate()
 
+
 print "Done."
 print
 
 
 # get confirmation from the user
-confirm = raw_input("This is your final chance to cancel the push of the database to '" + dest_stage + "'. Once started, it must not be interrupted, or a restore may be needed. Do you want to go ahead? (y/n): ")
+confirm = raw_input("This is your final stop before the push of the database to '" + dest_stage + "'. Once started, it must not be interrupted, or a restore may be needed. Do you want to go ahead? (y/n): ")
 
 if not confirm == 'y' and not confirm == 'Y':
         print "Exiting as requesting."
@@ -186,6 +199,8 @@ dest_pass = _mysql.escape_string(db_config[dest_stage]['password'])
 dexec = Popen(['ssh', '-p', ssh_ports[dest_stage], '-l', users[dest_stage], ips[dest_stage], 'mysql -u ' + dest_user + ' -p' + dest_pass + ' ' + dest_db], stdin=PIPE, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
 
 dest_result = dexec.communicate(input=source_dump[0])
+
+
 print "Done."
 print
 
@@ -200,8 +215,8 @@ new_upload_path = _mysql.escape_string(upload_paths[dest_stage])
 old_siteurl = _mysql.escape_string(siteurls[source_stage])
 new_siteurl = _mysql.escape_string(siteurls[dest_stage])
 old_home = _mysql.escape_string(homes[source_stage])
-new_home = _mysql.escape_string(siteurls[dest_stage])
-tblprefix = _mysql.escape_string(tblprefix)
+new_home = _mysql.escape_string(homes[dest_stage])
+tblprefix = _mysql.escape_string(tbl_prefix)
 
 # sub into the MySQL commands
 sql = "UPDATE `" + tblprefix + "posts` SET post_content = REPLACE(post_content, '" + old_upload_url_path + "', '" + new_upload_url_path + "');\n\
