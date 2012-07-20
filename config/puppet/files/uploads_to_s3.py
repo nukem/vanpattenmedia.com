@@ -11,32 +11,36 @@
 
 import yaml
 from sys import exit
+import sys
 import os
-from os.path import relpath
+from os.path import relpath, exists
 import boto
 from boto.s3.connection import S3Connection
 from boto.s3.bucket import Bucket
 from boto.s3.key import Key
 
 
-#####################################################################################
-#                                   Configuration                                   #
-#####################################################################################
+# check arguments
+if len(sys.argv) < 3:
+        print "Usage: " + os.path.basename(__file__) + " config_path content_directory"
+        exit(1)
 
-config_path = '/home/<%= app_user %>/<%= app_domain %>/shared/config/s3.yml'
-content_directory = '/home/<%= app_user %>/uploads.<%= site_domain %>/'
 
-#####################################################################################
-#                                 End Configuration                                 #
-#####################################################################################
+# bring in config path and content directory from CLI
+config_path = sys.argv[1]
+content_directory = sys.argv[2]
 
+# sanity checking for directories
+if not exists(config_path) or not exists(content_directory):
+	print "Could not open config path or content directory. Do they both exist?"
+	exit(1)
 
 # bring in S3 credentials from YAML
 try:
 	config_file = open(config_path, 'r')
 except IOError as e:
 
-	print "Could not open S3 configuration file from /home/<%= app_user %>/<%= app_domain %>/current/config/s3.yml."
+	print "Could not open S3 configuration file from the config path."
 	print "I/O Error({0}): {1}".format(e.errno, e.strerror)
 	print "Cannot continue."
 	exit(1)
@@ -70,11 +74,11 @@ except S3ResponseError as e:
 	exit(1)
 
 
-# loop through uploads.<%= app_domain %> directory
+# loop through uploads. directory
 for root, dirs, files in os.walk(content_directory):
 	for file in files:
 
-		# get full directory path (e.g. /home/<%= app_user %>/uploads.../content/uploads/
+		# get full directory path (e.g. /home/         /uploads.../content/uploads/
 		#								2012/06/test.jpg)
 		this_file = os.path.join(root, file)
 
