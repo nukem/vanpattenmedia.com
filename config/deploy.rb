@@ -2,6 +2,9 @@
 require "capistrano/ext/multistage"
 project = YAML.load_file("./config/project.yml")
 
+# Require erb-render for including ERB fragments
+require "./config/erb-render.rb"
+
 # Defaults...
 set :scm,                   :git
 set :git_enable_submodules, 1
@@ -15,6 +18,7 @@ set :repository,  project["application"]["repo"]
 set :user,        "deploy" #TODO load me from YAML? The app_stage isn't loaded yet.
 set :app_user,    project["application"]["user"]
 set :app_group,   project["application"]["group"]
+set :app_access_users, project["application"]["access_users"]
 
 # Don't do Railsy things...
 namespace :deploy do
@@ -44,9 +48,13 @@ namespace :puppet do
   desc "Set up puppet"
   task :show, :roles => :app do
     run "mkdir -p /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
-    upload("./config/puppet/templates", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}", :via => :scp, :recursive => :true)
+    upload("./config/puppet", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}", :via => :scp, :recursive => :true)
+    upload("./config/nginx", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/nginx", :via => :scp, :recursive => :true)
+    upload("./config/php", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/php", :via => :scp, :recursive => :true)
+    upload("./config/scripts", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/scripts", :via => :scp, :recursive => :true)
+    upload("./config/varnish", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/varnish", :via => :scp, :recursive => :true)
 
-    puppet_manifest = ERB.new(File.read("./config/puppet/templates/site.pp.erb")).result(binding)
+    puppet_manifest = ERB.new(File.read("./config/puppet/site.pp.erb")).result(binding)
     put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
 
     run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"

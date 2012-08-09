@@ -9,6 +9,10 @@ database = YAML.load_file("./config/database.yml")
 server project['application']['servers'][fetch(:app_stage)]['ip'], :app, :web, :db, :primary => true
 ssh_options[:port]        = project['application']['servers'][fetch(:app_stage)]['port']
 default_run_options[:pty] = true
+<<<<<<< HEAD
+=======
+ssh_options[:forward_agent] = true
+>>>>>>> wpframe/master
 
 
 set :db_name,     database[fetch(:app_stage)]['name']

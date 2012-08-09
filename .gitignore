@@ -18,6 +18,12 @@ site.pp
 vagrant-custom.rb
 
 # Site
+<<<<<<< HEAD
 css
 js
 rgbapng
+=======
+css/
+js/
+rgbapng
+>>>>>>> wpframe/master
