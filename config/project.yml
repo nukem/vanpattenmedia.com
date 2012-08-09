@@ -3,6 +3,8 @@ application:
   repo: git://github.com/vanpattenmedia/vanpattenmedia.com.git
   user: vanpattenmedia
   group: vanpattenmedia-sitewriters
+  deploy_user: deploy
+  access_users: [deploy, vanpattenmedia, chris, peter]
   theme: vanpattenpress
   domain: vanpattenmedia.com
   tbl_prefix: wp_
@@ -19,4 +21,3 @@ application:
       ip: 50.116.59.75
       port: 9012
       user: deploy
-
