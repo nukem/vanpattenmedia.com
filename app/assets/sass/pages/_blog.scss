@@ -52,8 +52,23 @@
 	clear: both;
 }
 
+#author-bio {
+	border-top: 1px dotted #CCC;
+	padding: 20px 0 0;
+	margin: 20px 0 0;
+	font-size: 90%;
+	color: lighten($text-color, 10%);
+}
+
+#author-avatar {
+	float: left;
+	@extend %img-border;
+	margin: 5px 15px 0 0;
+	line-height: 0
+}
+
 #comments_wrap {
 	border-top: 1px dotted #CCC;
-	padding: 10px 0 0;
-	margin: 40px 0 0;
+	padding: 20px 0 0;
+	margin: 30px 0 0;
 }

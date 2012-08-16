@@ -12,6 +12,10 @@
 		</article>
 
 		<?php if ( is_single() ) : ?>
+		<section id="author-bio">
+			<div id="author-avatar"><?= get_avatar( get_the_author_meta('user_email'), '80', '' ) ?></div>
+			<strong>About the author:</strong> <?= get_the_author_meta('description') ?>
+		</section>
 		<section id="comments">
 			<div id="comments_wrap">
 				<?php comments_template(); ?>

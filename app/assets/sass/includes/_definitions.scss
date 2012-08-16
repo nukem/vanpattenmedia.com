@@ -4,6 +4,8 @@
  *
  */
 
+$text-color: #595959;
+
 $link-color: #369;
 $link-color-hover: lighten($link-color, 14%);
 $link-color-active: #F90;
@@ -19,7 +21,7 @@ $vpmtan: darken(#F6F3EB, 7%);
  *
  */
 
-$header-font: 'adelle', $sans-serif;
+$header-font: 'adelle', $serif;
 
 $body-font: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
 
