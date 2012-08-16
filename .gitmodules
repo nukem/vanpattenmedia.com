@@ -7,9 +7,6 @@
 [submodule "public/content/plugins/rach5-helper"]
 	path = public/content/plugins/rach5-helper
 	url = git://github.com/vanpattenmedia/rach5-helper.git
-[submodule "public/wp"]
-	path = public/wp
-	url = git://github.com/WordPress/WordPress.git
 [submodule "vendor/php/quickassets"]
 	path = vendor/php/quickassets
 	url = git://github.com/vanpattenmedia/quickassets.git
@@ -28,3 +25,6 @@
 [submodule "config/scripts/modules"]
 	path = config/scripts/modules
 	url = git@github.com:vanpattenmedia/vpmframe-module-scripts.git
+[submodule "public/wp"]
+	path = public/wp
+	url = git://github.com/WordPress/WordPress.git
