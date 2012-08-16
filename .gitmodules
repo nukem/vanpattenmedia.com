@@ -18,13 +18,13 @@
 	url = git://github.com/vanpattenmedia/vpmframe-module-nginx.git
 [submodule "config/php/modules"]
 	path = config/php/modules
-	url = git@github.com:vanpattenmedia/vpmframe-module-php.git
+	url = git://github.com/vanpattenmedia/vpmframe-module-php.git
 [submodule "config/varnish/modules"]
 	path = config/varnish/modules
-	url = git@github.com:vanpattenmedia/vpmframe-module-varnish.git
+	url = git://github.com/vanpattenmedia/vpmframe-module-varnish.git
 [submodule "config/scripts/modules"]
 	path = config/scripts/modules
-	url = git@github.com:vanpattenmedia/vpmframe-module-scripts.git
+	url = git://github.com/vanpattenmedia/vpmframe-module-scripts.git
 [submodule "public/wp"]
 	path = public/wp
 	url = git://github.com/WordPress/WordPress.git
