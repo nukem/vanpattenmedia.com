@@ -67,8 +67,10 @@ server {
 	###################
 	#      Images     #
 	###################
-	
-	<%= render "#{config_path}/nginx/modules/images.erb", binding %>
+
+	location ~* \.(?:ico|gif|jpe?g|png)$ {
+		<%= render "#{config_path}/nginx/modules/images.erb", binding %>
+	}
 
 	###################
 	#     CSS & JS    #
