@@ -76,6 +76,12 @@ define( 'WPLANG', '' );
 //ini_set( 'display_errors', 0 );
 //define( 'WP_DEBUG_DISPLAY', false );
 
+// ==============================================
+// SSL login and admin (for *.vanpattenmedia.com)
+// ==============================================
+define('FORCE_SSL_LOGIN', true);
+define('FORCE_SSL_ADMIN', true);
+
 // ===================
 // Bootstrap WordPress
 // ===================
