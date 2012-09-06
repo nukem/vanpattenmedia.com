@@ -18,6 +18,7 @@ site.pp
 vagrant-custom.rb
 
 # Site
-css/
-js/
-rgbapng
+public/content/themes/vanpattenpress/css/
+public/content/themes/vanpattenpress/js/
+public/content/themes/vanpattenpress/img/
+!public/content/themes/vanpattenpress/img/timthumb/
