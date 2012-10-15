@@ -155,7 +155,9 @@ pre {
 	font-family: monospace;
 	background: #EEE;
 	border: 1px solid #CCC;
-	padding: 2px;
+	padding: 7px 10px;
 	@include border-radius(3px);
 	margin: 0 0 20px 0;
+	font-size: 90%;
+	line-height: 1.4;
 }
