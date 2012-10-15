@@ -150,3 +150,12 @@ code {
 	padding: 2px;
 	@include border-radius(3px);
 }
+
+pre {
+	font-family: monospace;
+	background: #EEE;
+	border: 1px solid #CCC;
+	padding: 2px;
+	@include border-radius(3px);
+	margin: 0 0 20px 0;
+}
