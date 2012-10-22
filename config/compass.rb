@@ -1,6 +1,6 @@
 # Require some gems
 require "rgbapng"
-require 'sass-globbing'
+require "sass-globbing"
 
 # Load project config
 require "yaml"
