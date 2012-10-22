@@ -16,7 +16,7 @@
 
 <div class="row">
 	<section class="one-third column homebox">
-		<a href="http://www.vanpattenmedia.com/websites/">
+		<a href="<?php home_url() ?>/websites/">
 			<div class="slide header-bottom">
 				<div>
 					<h2>Web design</h2>
@@ -28,7 +28,7 @@
 	</section>
 
 	<section class="one-third column homebox">
-		<a href="http://www.vanpattenmedia.com/websites/wordpress/">
+		<a href="<?php home_url() ?>/websites/wordpress/">
 			<div class="slide header-bottom">
 				<div>
 					<h2>WordPress</h2>
@@ -40,7 +40,7 @@
 	</section>
 
 	<section class="one-third column homebox">
-		<a href="http://labs.vanpattenmedia.com/">
+		<a href="<?= home_url() ?>/projects/">
 			<div class="slide header-bottom">
 				<div>
 					<h2>Open source</h2>
