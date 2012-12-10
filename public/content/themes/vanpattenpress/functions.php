@@ -55,7 +55,23 @@ add_image_size( 'project-screenshot-thumbnail', 106, 80, true );
 
 // Content width
 if ( ! isset( $content_width ) ) {
-	$content_width = 900;
+	$content_width = 500;
+}
+
+/**
+ * function vpm_is_staging
+ * Detect if you're at a staging.* URL.
+ * @since 1.6
+ */
+function vpm_is_staging() {
+	$urlParts = explode('.', $_SERVER['HTTP_HOST']);
+	if ( $urlParts[0] == 'staging' ) {
+		return true;
+	} elseif ( $urlParts[0] == 'dev' ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // Remove items from the menu bar
