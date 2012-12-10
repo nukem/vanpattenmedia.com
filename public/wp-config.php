@@ -1,44 +1,63 @@
 <?php
-// ===================================================
-// Load database info and local development parameters
-// ===================================================
 
-require_once(dirname(__FILE__).'./../vendor/php/yaml/lib/sfYamlParser.php');
-$yaml = new sfYamlParser();
-$config = $yaml->parse(file_get_contents(dirname(__FILE__).'./../config/database.yml'));
+// Setup the YAML parser, load some yaml files
+require_once( dirname( __FILE__ ) . './../vendor/php/yaml/lib/sfYamlParser.php' );
+$yaml     = new sfYamlParser();
+$project  = $yaml->parse( file_get_contents( dirname( __FILE__ ) . './../config/project.yml' ) );
+$database = $yaml->parse( file_get_contents( dirname( __FILE__ ) . './../config/database.yml' ) );
 
-$urlParts = explode('.', $_SERVER['HTTP_HOST']);
-if ($urlParts[0] == 'dev') {
+// ===================================================
+// Setup the dev, staging, and production environments
+// ===================================================
+$urlParts = explode( '.', $_SERVER['HTTP_HOST'] );
+if ( $urlParts[0] == 'dev' ) {
 	// Local dev
-	define( 'WP_STAGE', 'dev' );
-	foreach($config['dev'] as $db_variable => $value) {
-		define(('DB_' . strtoupper($db_variable)), $value);
+	define( 'WP_STAGE',   'dev' );
+	define( 'WP_HOME',    'http://dev.' . $project['application']['domain'] );
+	define( 'WP_SITEURL', 'http://dev.' . $project['application']['domain'] . '/wp' );
+
+	// Show errors
+	ini_set( 'display_errors', 1 );
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_DISPLAY', true );
+
+	foreach ( $database['dev'] as $db_variable => $value ) {
+		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
 	}
-	define('WP_DEBUG', true);
-} elseif ($urlParts[0] == 'staging') {
+} elseif ( $urlParts[0] == 'staging' ) {
 	// Staging
 	define( 'WP_STAGE', 'staging' );
-	foreach($config['staging'] as $db_variable => $value) {
-		define(('DB_' . strtoupper($db_variable)), $value);
+	define( 'WP_HOME',    'http://staging.' . $project['application']['domain'] );
+	define( 'WP_SITEURL', 'http://staging.' . $project['application']['domain'] . '/wp' );
+
+	// Show errors
+	ini_set( 'display_errors', 1 );
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_DISPLAY', true );
+
+	foreach ( $database['staging'] as $db_variable => $value ) {
+		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
 	}
 } else {
 	// Production
 	define( 'WP_STAGE', 'production' );
-	foreach($config['production'] as $db_variable => $value) {
-		define(('DB_' . strtoupper($db_variable)), $value);
-	}
+	define( 'WP_HOME',    'http://www.' . $project['application']['domain'] );
+	define( 'WP_SITEURL', 'http://www.' . $project['application']['domain'] . '/wp' );
 
-	// ==============================================
-	// SSL login and admin (for *.vanpattenmedia.com)
-	// ==============================================
-	define('FORCE_SSL_LOGIN', true);
-	define('FORCE_SSL_ADMIN', true);
+	// Hide errors
+	ini_set( 'display_errors', 0 );
+	define( 'WP_DEBUG', false );
+	define( 'WP_DEBUG_DISPLAY', false );
+
+	foreach ( $database['production'] as $db_variable => $value ) {
+		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
+	}
 }
 
 // ==============
 // Misc. Settings
 // ==============
-define('WP_POST_REVISIONS', 8);
+define( 'WP_POST_REVISIONS', 8 );
 
 // ========================
 // Custom Content Directory
@@ -54,16 +73,8 @@ define( 'DB_COLLATE', '' );
 
 // ==============================================================
 // Salts, for security
-// Grab these from: https://api.wordpress.org/secret-key/1.1/salt
 // ==============================================================
-define('AUTH_KEY',         ',r8}aNC}*|K^$z]`iZ;`J!$aiGX0A~Eq,}YIcLW];pf|PD4QjmOXf+}uUf}pA}vg');
-define('SECURE_AUTH_KEY',  'elbv~#PcKSDUPKpp82)!mrj5s=|j%yG6Z-RV~|nYs-IJ1shK6|[3o1]q ^w2Id#q');
-define('LOGGED_IN_KEY',    'h+m]`fZ29Ce_AJ<o][Y=z1|Z>fzWC}k^D]UIEM?ruqomd|^pT}Y31=PThCWp-zG5');
-define('NONCE_KEY',        '-@]uHep@53j?T64(UM|An>,#R+>-l4|1@aF~sR$3`x0>3j;haGP0P#+$9n-(:KG6');
-define('AUTH_SALT',        'TNDAzvF m1lP9Yz%t8OeYj?RaSu5#_ER(48kpb4^OgK#N)A;(jR|fJ|%L|359_X9');
-define('SECURE_AUTH_SALT', 'N@T-{vWKPt5y6oVg-g[|;U3e9Tz&[*#Z(~ceT?%e6`%KAzl2%@2Se4A/r-A/sH@t');
-define('LOGGED_IN_SALT',   'V<KhzEHhMwzfAq/gN{Y04GSEHf~Iq(+c:zjm}9.87NV9RWJ/Y(Iot,sxCUG XCp?');
-define('NONCE_SALT',       '~-gZF&py;nSNfdQXYL>dfF4Uu0VN/b561nmF0nkmg7cM{JeS8?3[$ljC~tQr-K}:');
+include dirname( __FILE__ ) . './../config/wp-salts.php';
 
 // ============
 // Table prefix
@@ -79,8 +90,8 @@ define( 'WPLANG', '' );
 // ===========
 // Hide errors
 // ===========
-//ini_set( 'display_errors', 0 );
-//define( 'WP_DEBUG_DISPLAY', false );
+ini_set( 'display_errors', 0 );
+define( 'WP_DEBUG_DISPLAY', false );
 
 // ===================
 // Bootstrap WordPress
