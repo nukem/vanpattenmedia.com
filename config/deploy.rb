@@ -51,7 +51,7 @@ after "deploy:setup", "permissions:fix_setup_ownership", "salts:generate_wp_salt
 before "deploy:create_symlink", "credentials:upload_db_cred", "credentials:upload_s3_cred", "credentials:symlink_db_cred", "salts:symlink_wp_salts"
 
 # Compile and upload assets
-before "deploy", "assets:local_temp_clone", "assets:compile_local_images", "assets:compile_local_js", "assets:compile_local_css"
+before "deploy", "assets:local_temp_clone", "assets:compile_local_css", "assets:compile_local_js", "assets:compile_local_images"
 before "deploy:create_symlink", "assets:upload_asset_css", "assets:upload_asset_js", "assets:upload_asset_images"
 
 # Fix ownership

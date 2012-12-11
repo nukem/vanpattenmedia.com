@@ -24,6 +24,7 @@ if ( $urlParts[0] == 'dev' ) {
 	foreach ( $database['dev'] as $db_variable => $value ) {
 		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
 	}
+	$table_prefix = DB_TBL_PREFIX;
 } elseif ( $urlParts[0] == 'staging' ) {
 	// Staging
 	define( 'WP_STAGE', 'staging' );
@@ -38,6 +39,7 @@ if ( $urlParts[0] == 'dev' ) {
 	foreach ( $database['staging'] as $db_variable => $value ) {
 		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
 	}
+	$table_prefix = DB_TBL_PREFIX;
 } else {
 	// Production
 	define( 'WP_STAGE', 'production' );
@@ -52,6 +54,7 @@ if ( $urlParts[0] == 'dev' ) {
 	foreach ( $database['production'] as $db_variable => $value ) {
 		define( ( 'DB_' . strtoupper( $db_variable ) ), $value );
 	}
+	$table_prefix = DB_TBL_PREFIX;
 }
 
 // ==============
@@ -75,11 +78,6 @@ define( 'DB_COLLATE', '' );
 // Salts, for security
 // ==============================================================
 include dirname( __FILE__ ) . './../config/wp-salts.php';
-
-// ============
-// Table prefix
-// ============
-$table_prefix  = 'wp_';
 
 // ================================
 // Language
