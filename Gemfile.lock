@@ -15,10 +15,10 @@ GIT
 
 GIT
   remote: git://github.com/vanpattenmedia/vpmframe-gem.git
-  revision: 18e41a5d19ea65397a65d1d1caf295b9fc0778b4
+  revision: f42f87f3a5ff21fbca38b8658c326423f3b38c0f
   branch: master
   specs:
-    vpmframe (0.2.7)
+    vpmframe (0.3.0)
 
 GEM
   remote: http://rubygems.org/
