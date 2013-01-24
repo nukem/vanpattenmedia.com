@@ -13,17 +13,17 @@ stage:
     http_port: 15000
     ssh_port: 22000
     user: vagrant
-    upload_url_path:
-    upload_path:
+    upload_url_path: http://uploads.vanpattenmedia.com/content/uploads 
+    upload_path: ../../../../../uploads.vanpattenmedia.com/content/uploads
   staging:
     ip: 50.116.59.75
     ssh_port: 9012
     user: deploy
-    upload_url_path:
-    upload_path:
+    upload_url_path: http://static.vanpattenmedia.com/content/uploads
+    upload_path: ../../../../../uploads.vanpattenmedia.com/content/uploads
   production:
     ip: 50.116.59.75
     ssh_port: 9012
     user: deploy
-    upload_url_path:
-    upload_path:
+    upload_url_path: http://static.vanpattenmedia.com/content/uploads
+    upload_path: ../../../../../uploads.vanpattenmedia.com/content/uploads
