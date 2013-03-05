@@ -1,0 +1,4 @@
+source: raw
+destination: ../public
+
+permalink: /:year/:title/
