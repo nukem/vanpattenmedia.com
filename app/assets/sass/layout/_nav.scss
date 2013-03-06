@@ -1,0 +1,9 @@
+.header-nav {
+	@include at-breakpoint( $break-a ) {
+		@include span-columns( $break-a-content-width omega, $break-a-cols );
+	}
+
+	@include at-breakpoint( $break-b ) {
+		@include span-columns( $break-b-content-width omega, $break-b-cols );
+	}
+}

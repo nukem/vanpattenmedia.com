@@ -1,0 +1,7 @@
+.box {
+	background: $base-color-background;
+	color: $base-color-text;
+	@include box-shadow;
+	@include border-radius;
+	padding: 0.2em 1.2em;
+}

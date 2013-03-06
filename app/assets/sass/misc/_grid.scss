@@ -1,0 +1,21 @@
+%full-container {
+	@include container;
+
+	@include at-breakpoint( $break-a ) {
+		@include set-container-width;
+	}
+
+	@include at-breakpoint( $break-b ) {
+		@include set-container-width;
+	}
+}
+
+%push-past-sidebar {
+	@include at-breakpoint( $break-a ) {
+		@include pre( $break-a-sidebar-width );
+	}
+
+	@include at-breakpoint( $break-b ) {
+		@include pre( $break-b-sidebar-width );
+	}
+}

@@ -1,0 +1,7 @@
+.content {
+	@extend %full-container;
+}
+
+.content-inner {
+	@extend %push-past-sidebar;
+}

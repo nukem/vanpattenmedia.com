@@ -1,0 +1,29 @@
+.header {
+	@extend %full-container;
+	height: 150px;
+}
+
+.header-logo {
+	@include at-breakpoint( $break-a ) {
+		@include span-columns( $break-a-sidebar-width, $break-a-cols );
+	}
+
+	@include at-breakpoint( $break-b ) {
+		@include span-columns( $break-b-sidebar-width, $break-b-cols );
+	}
+}
+
+#logo {
+	text-decoration: none;
+	
+	&:before {
+		font: 80px/1 "vpm";
+		content: "v";
+		color: #FFF;
+		@include text-shadow;
+	}
+
+	& > span {
+		display: none;
+	}
+}

@@ -1,6 +1,3 @@
-require "yaml"
-project = YAML.load_file("./config/project.yml")
-
 group :development do
   # Compass
   guard 'compass' do

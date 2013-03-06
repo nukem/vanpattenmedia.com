@@ -18,6 +18,7 @@ group :development do
   gem "compass-validator"
   gem "oily_png"
   gem "css_parser"
+  gem "susy"
 
   # Image optimization
   gem "image_optim"

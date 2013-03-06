@@ -1,0 +1,30 @@
+$base-font-family: 'proxima-nova', 'Helvetica', 'Arial', sans-serif;
+$base-font-size: 15px;
+
+$base-color-background: white;
+$base-color-text: #444;
+
+// Susy settings
+$total-columns: 6;
+$column-width: 5em;
+$gutter-width: 1em;
+$grid-padding: 2em;
+
+// Susy breakpoints
+$break-a: 50em 9;
+$break-a-cols: 9;
+$break-a-sidebar-width: 3;
+$break-a-content-width: 6;
+
+$break-b: 60em 12;
+$break-b-cols: 12;
+$break-b-sidebar-width: 3;
+$break-b-content-width: 9;
+
+// Compass defaults
+$default-text-shadow-color: #000;
+$default-text-shadow-v-offset: 1px;
+
+$default-box-shadow-color: #000;
+$default-box-shadow-v-offset: 1px;
+$default-box-shadow-blur: 4px;

@@ -1,4 +1,8 @@
-source: raw
-destination: ../public
-
+# Jekyll settings
+source: ./raw
+destination: ./public
 permalink: /:year/:title/
+
+# Site settings
+title: Van Patten Media
+url: http://www.vanpattenmedia.com

@@ -1,6 +1,7 @@
 # Require some gems
 require 'rgbapng'
 require 'sass-globbing'
+require 'susy'
 
 # Path to theme from project root
 project_path      = "./"
