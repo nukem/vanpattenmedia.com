@@ -8,13 +8,15 @@
 		{% include header.html %}
 
 		{% for post in site.posts %}
-		<section class="content row">
-			<div class="content-inner">
-				<time>{{ post.date | date: "%d %b %Y" }}</time>
-				<a href="{{ post.url }}">{{ post.title }}</a>
-				{{ post.content | striphtml | truncatewords:100 }}
-			</div>
-		</section>
+		<div class="row {% cycle '', 'invert' %}">
+			<article class="content">
+				<h2 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+				<p><time>{{ post.date | date: "%d %b %Y" }}</time></p>
+				<div class="entry-content">
+					<p>{{ post.content | strip_html | truncatewords:70 }}</p>
+				</div>
+			</article>
+		</div>
 		{% endfor %}
 	</div>
 </body>

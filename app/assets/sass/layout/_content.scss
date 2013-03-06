@@ -1,18 +1,15 @@
-.content {
-	padding-left: 320px;
-}
-
-.content-inner {
-	padding: 20px 0;
-	width: 70%;
-	min-width: 500px;
-}
-
 .row {
 	background: image-url('logo.png') fixed no-repeat;
-	min-height: 1000px;
+	padding: 20px 0 0 309px;
 }
 
 .row.invert {
 	background: image-url('logo-invert.png') fixed no-repeat;
+}
+
+.content {
+	padding: 1px 20px;
+	width: 70%;
+	min-width: 500px;
+	background: rgba( black, 0.5 );
 }
