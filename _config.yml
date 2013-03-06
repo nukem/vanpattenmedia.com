@@ -1,8 +1,14 @@
 # Jekyll settings
-source:      ./raw
-destination: ./public
-plugins:     ./app/jekyll/plugins
-permalink:   /:year/:title/
+source:         ./raw
+destination:    ./public
+plugins:        ./app/jekyll/plugins
+permalink:      "/:year/:title/"
+
+# Improved pagination
+# https://github.com/mojombo/jekyll/pull/521
+paginate:       10
+paginate_files: blog/index.html
+paginate_style: "/blog/:page/"
 
 # Site settings
 title: Van Patten Media
