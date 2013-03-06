@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+	{% include banner.html %}
+	<div id="wrapper">
+		{% include header.html %}
+		<div id="content">
+			<article id="post">
+				<header>
+					<h2 id="post-title">{{ page.title }}</h2>
+				</header>
+				<div class="entry-content">{{ content }}</div>
+			</article>
+		</div>
+	</div>
+</body>
+</html>

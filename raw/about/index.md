@@ -3,7 +3,6 @@ title: About Us
 author: Chris Van Patten
 layout: page
 ---
-# 
 
 Van Patten Media is a full service digital design agency, specializing in end-to-end website solutions. We conceptualize, design, develop, host, and maintain websites and products for clients in the United States and throughout the world.
 
