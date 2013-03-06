@@ -8,7 +8,7 @@ permalink:      "/:year/:title/"
 # https://github.com/mojombo/jekyll/pull/521
 paginate:       10
 paginate_files: blog/index.html
-paginate_style: "/blog/:page/"
+paginate_style: "/blog/page/:page/"
 
 # Site settings
 title: Van Patten Media
