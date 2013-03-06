@@ -1,7 +1,8 @@
 # Jekyll settings
-source: ./raw
+source:      ./raw
 destination: ./public
-permalink: /:year/:title/
+plugins:     ./app/jekyll/plugins
+permalink:   /:year/:title/
 
 # Site settings
 title: Van Patten Media

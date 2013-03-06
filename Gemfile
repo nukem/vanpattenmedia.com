@@ -20,6 +20,9 @@ group :development do
   gem "css_parser"
   gem "susy"
 
+  # Jekyll plugins
+  gem "liquid-inheritance"
+
   # Image optimization
   gem "image_optim"
 

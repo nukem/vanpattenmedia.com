@@ -10,7 +10,7 @@ group :development do
   end
 
   # Jammit
-  guard 'jammit', :output_folder => "./public/javascripts/" do
+  guard 'jammit', :output_folder => "./raw/javascripts/" do
     watch('config/assets.yml') # Make sure we're using the latest assets.yml file
     watch(%r{(?:javascripts)(/.+)\.(js)}) { |m| m[0] unless m[1] =~ /\/\./ }
   end
@@ -18,9 +18,9 @@ group :development do
   # Images
   guard 'shell' do
     watch(%r{app/assets/images/(.+\/)?(.+\.[gif|jpg|png]+)}) do |m|
-      `mkdir -p ./public/content/themes/#{project["theme"]}/img/#{m[1]}`
-      `cp #{m[0]} ./public/content/themes/#{project["theme"]}/img/#{m[1]}#{m[2]}`
-      `image_optim --no-pngout ./public/images/#{m[1]}#{m[2]}`
+      `mkdir -p ./raw/images/#{m[1]}`
+      `cp #{m[0]} ./raw/images/#{m[1]}#{m[2]}`
+      `image_optim --no-pngout ./raw/images/#{m[1]}#{m[2]}`
     end
   end
 end

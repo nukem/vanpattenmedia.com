@@ -1,1 +1,6 @@
-public
+public/
+raw/javascripts/
+raw/fonts/
+raw/images/
+raw/css/
+app/assets/video/

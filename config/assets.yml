@@ -5,9 +5,6 @@ package_path:          javascripts
 
 javascripts:
   script:
-    - vendor/javascripts/jquery.cycle/jquery.cycle.all.js
-    - vendor/javascripts/video.js/3.2.0/video.js
-    - vendor/javascripts/bigvideo/bigvideo.js
+    - vendor/javascripts/jquery.videobg/0.2/*
     - app/assets/javascripts/video.js
-    - app/assets/javascripts/slider.js
     - app/assets/javascripts/script.js

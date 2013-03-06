@@ -1,16 +1,16 @@
 .header {
-	@extend %full-container;
+	width: 289px;
 	height: 150px;
+	float: left;
 }
 
 .header-logo {
-	@include at-breakpoint( $break-a ) {
-		@include span-columns( $break-a-sidebar-width, $break-a-cols );
-	}
-
-	@include at-breakpoint( $break-b ) {
-		@include span-columns( $break-b-sidebar-width, $break-b-cols );
-	}
+	background: image-url('logo.png') fixed no-repeat;
+	display: block;
+	width: 289px;
+	height: 150px;
+	text-indent: -1000in;
+	overflow: hidden;
 }
 
 #logo {

@@ -83,6 +83,7 @@ GEM
     jammit (0.6.5)
       yui-compressor (>= 0.9.3)
     json (1.7.7)
+    liquid-inheritance (0.1.1)
     listen (0.7.3)
     lumberjack (1.0.2)
     method_source (0.8.1)
@@ -138,6 +139,7 @@ DEPENDENCIES
   guard-shell!
   image_optim
   jammit
+  liquid-inheritance
   oily_png
   rb-fsevent (~> 0.9.1)
   sass (>= 3.2.0)

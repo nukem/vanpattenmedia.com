@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+{% include head.html %}
+<body>
+	<div class="vpm">
+		{% include header.html %}
+		<section class="content">
+			<div class="content-inner">
+
+				<ul id="posts">
+				{% for post in site.posts %}
+					<li>
+						<time>{{ post.date | date: "%d %b %Y" }}</time>
+						<a href="{{ post.url }}">{{ post.title }}</a>
+					</li>
+				{% endfor %}
+				</ul>
+
+			</div>
+		</section>
+	</div>
+</body>
+</html>

@@ -1,7 +1,3 @@
 .content {
-	@extend %full-container;
-}
-
-.content-inner {
-	@extend %push-past-sidebar;
+	margin-left: 250px;
 }

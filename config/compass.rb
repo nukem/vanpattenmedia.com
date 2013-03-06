@@ -7,10 +7,10 @@ require 'susy'
 project_path      = "./"
 
 # Where's stuff being spit out?
-css_dir           = "public/css"
-images_dir        = "public/images"
-javascripts_dir   = "public/javascripts"
-fonts_dir         = "public/fonts"
+css_dir           = "raw/css"
+images_dir        = "raw/images"
+javascripts_dir   = "raw/javascripts"
+fonts_dir         = "raw/fonts"
 
 # Where are we pulling from?
 sass_dir          = "app/assets/sass"

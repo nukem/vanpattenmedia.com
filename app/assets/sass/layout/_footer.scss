@@ -1,19 +1,8 @@
 .footer {
-	@include container;
-
-	@include at-breakpoint( $break-a ) {
-		@include set-container-width;
-	}
-
-	@include at-breakpoint( $break-b ) {
-		@include set-container-width;
-	}
-
 	@include text-shadow;
 }
 
 #legal {
-	@extend %push-past-sidebar;
 	padding: 1em 0 0;
 }
 
