@@ -9,15 +9,12 @@
 // Fonts
 @import "misc/fonts";
 
-// Externals
-@import "vendor/bigvideo/bigvideo";
-
 // Theme
 @import "misc/theme";
 @import "misc/grid";
 
 body {
-	background: black;
+	background: #333;
 	color: white;
 	font: #{$base-font-size}/1.5 $base-font-family;
 }

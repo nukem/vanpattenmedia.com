@@ -2,10 +2,12 @@
 	width: 289px;
 	height: 150px;
 	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 
 .header-logo {
-	background: image-url('logo.png') fixed no-repeat;
 	display: block;
 	width: 289px;
 	height: 150px;

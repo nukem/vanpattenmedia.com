@@ -6,20 +6,16 @@
 <body>
 	<div class="vpm">
 		{% include header.html %}
-		<section class="content">
+
+		{% for post in site.posts %}
+		<section class="content row">
 			<div class="content-inner">
-
-				<ul id="posts">
-				{% for post in site.posts %}
-					<li>
-						<time>{{ post.date | date: "%d %b %Y" }}</time>
-						<a href="{{ post.url }}">{{ post.title }}</a>
-					</li>
-				{% endfor %}
-				</ul>
-
+				<time>{{ post.date | date: "%d %b %Y" }}</time>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+				{{ post.content | striphtml | truncatewords:100 }}
 			</div>
 		</section>
+		{% endfor %}
 	</div>
 </body>
 </html>
