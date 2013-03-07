@@ -1,6 +1,7 @@
 .row {
 	background: image-url('logo.png') fixed no-repeat;
 	padding: 20px 0 0 309px;
+	min-height: 130px;
 }
 
 .row.invert {
@@ -12,4 +13,8 @@
 	width: 70%;
 	min-width: 500px;
 	background: rgba( black, 0.5 );
+}
+
+.row.invert .content {
+	background: rgba( white, 0.5 );
 }

@@ -6,7 +6,7 @@ permalink:      "/:year/:title/"
 
 # Improved pagination
 # https://github.com/mojombo/jekyll/pull/521
-paginate:       10
+paginate:       5
 paginate_files: blog/index.html
 paginate_style: "/blog/page/:page/"
 

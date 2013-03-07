@@ -14,7 +14,7 @@
 @import "misc/grid";
 
 body {
-	background: #333;
+	background: #333 image-url('background.png') center/cover fixed no-repeat;
 	color: white;
 	font: #{$base-font-size}/1.5 $base-font-family;
 }
