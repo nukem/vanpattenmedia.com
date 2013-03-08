@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+{% include head.html %}
+<body>
+	<div class="vpm">
+		{% include header.html %}
+
+		<div class="row invert home-slogan">
+				<h2 class="home-slogan-text">Creative apps and websites for creative people.</h2>
+				<ul class="home-portfolio">
+				{% for page in site.pages limit:3 %}
+					<li class="home-portfolio-item">
+						{{ page.title }}
+					</li>
+				{% endfor %}
+				</ul>
+		</div>
+		{{ content }}
+	</div>
+</body>
+</html>

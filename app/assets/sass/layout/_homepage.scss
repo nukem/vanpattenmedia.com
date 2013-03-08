@@ -1,0 +1,38 @@
+.home-slogan {
+	@extend %content;
+	padding-top: 300px;
+	min-height: auto;
+}
+
+.home-slogan-text {
+	margin: 0;
+	font: {
+	   size: 200%;
+	   weight: normal;
+   }
+	@include text-shadow;
+}
+
+.home-portfolio {
+	width: 100%;
+	padding: 10px 0 0;
+	margin: 0;
+	height: 150px;
+}
+
+.home-portfolio-item {
+	list-style: none;
+	float: left;
+	background: rgba( black, 0.5 );
+	min-height: 150px;
+	width: 30%;
+	margin-right: 3%;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+.home-portfolio-image {
+	
+}

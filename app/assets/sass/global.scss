@@ -14,7 +14,8 @@
 @import "misc/grid";
 
 body {
-	background: #333 image-url('background.png') center/cover fixed no-repeat;
+	//background: #333 image-url('background.png') center/cover fixed no-repeat;
+	background: #444;
 	color: white;
 	font: #{$base-font-size}/1.5 $base-font-family;
 }
@@ -31,3 +32,4 @@ body {
 @import "layout/nav";
 @import "layout/content";
 @import "layout/footer";
+@import "layout/homepage";
