@@ -6,7 +6,6 @@ permalink: /2012/customising-admin-panel-talk/
 dsq_thread_id:
   - 970849739
 ---
-# 
 
 After I spoke about [Customising the WordPress admin panel in Toronto][1], I gave a modified version of the same talk to our local [WordPress meetup group in Buffalo][2] (a fine group of folks, if you’re ever in the area).
 

@@ -6,7 +6,6 @@ permalink: /2012/admin-inspiration-customise-the-visual-editor/
 dsq_thread_id:
   - 979354345
 ---
-# 
 
 In our last WordPress custom admin screencast, we showed you a [cool custom widget][1]. In this next part, we take a look at customising the visual editor, one of the most used areas in WordPress.
 

@@ -6,7 +6,6 @@ permalink: /2013/wp-admin-inspiration-custom-menus/
 dsq_thread_id:
   - 1003091660
 ---
-# 
 
 ![Screen Shot 2013-01-01 at 13.02.27][1]The WordPress admin menu in action. 
 Did you know we love [customising][2] the [WordPress][3] admin [panel][4]? No? [Well we do!][5] A [*lot*][6], in fact.

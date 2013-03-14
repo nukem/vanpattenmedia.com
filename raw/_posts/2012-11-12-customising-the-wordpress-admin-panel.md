@@ -6,7 +6,6 @@ permalink: /2012/customising-the-wordpress-admin-panel/
 dsq_thread_id:
   - 924374787
 ---
-# 
 
 I was so lucky to have the opportunity to speak at WordCamp Toronto: Developers last Sunday on a topic I’m very passionate about: customising the WordPress admin panel so it’s focused on clients and tailored to the site you’ve built.
 

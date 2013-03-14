@@ -12,9 +12,14 @@
 
 .content {
 	padding: 1px 20px;
+	margin-right: 4%;
 	background: rgba( black, 0.5 );
 }
 
 .row.invert .content-box {
 	background: rgba( white, 0.5 );
+}
+
+.entry {
+	margin-bottom: 20px;
 }

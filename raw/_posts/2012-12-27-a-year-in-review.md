@@ -6,11 +6,8 @@ permalink: /2012/a-year-in-review/
 dsq_thread_id:
   - 995437191
 ---
-# 
 
 It’s been a busy year at Van Patten Media. I thought I’d take a few moments to review what we’ve worked on, the cool projects we were involved with, and where we’re headed in the new year.
-
-
 
 [We started the year with a long-fated face-to-face!][1] Peter Upfold—the resident tech genius at VPM—and myself finally met in person at London’s Gatwick Airport. Peter and I have worked together for many years, but this was our first time in the same place (let alone the same continent).
 

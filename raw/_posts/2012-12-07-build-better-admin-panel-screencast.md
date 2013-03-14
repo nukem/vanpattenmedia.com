@@ -6,7 +6,6 @@ permalink: /2012/build-better-admin-panel-screencast/
 dsq_thread_id:
   - 962061945
 ---
-# 
 
 [![][2]][2]I’ve talked a bit on this blog [about my love of customising the WordPress admin panel][2]. It’s an excellent way of improving your experience with WordPress and making it easier (and more fun) to maintain your site.
 

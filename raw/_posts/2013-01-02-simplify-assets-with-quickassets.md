@@ -6,7 +6,6 @@ permalink: /2013/simplify-assets-with-quickassets/
 dsq_thread_id:
   - 1003074357
 ---
-# 
 
 Smart caching is a powerful way to ensure your websites are as fast as possible. Letting your users’ browsers save copies of images or stylesheets and reference those on subsequent page reloads means less download time, fewer wasted server resources, and happier users. In the age of CDNs that price by the download, smart caching is even a great way to save money.
 

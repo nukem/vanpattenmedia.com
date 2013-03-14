@@ -6,7 +6,6 @@ permalink: /2012/book-review-developers-code/
 dsq_thread_id:
   - 957596472
 ---
-# 
 
 ![][1]It’s no secret that here at Van Patten Media [we love DoneDone][2], a wonderful web application for managing projects and tracking issues.
 

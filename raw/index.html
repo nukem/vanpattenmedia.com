@@ -19,29 +19,21 @@ layout: base
 		{% endfor %}
 		</ul>
 	</section>
-</div>
 
-<section class="row">
 	<div class="content">
 		<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
 		<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
 	</div>
-</section>
-
-<section class="row invert">
-	<div class="content">
-		<h2>On our blog&hellip;</h2>
-		{% for post in site.posts limit:5 %}
-			<article>
-				<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-				<div class="entry-content">
-					{{ post.content | strip_html | truncatewords:50 }}
-				</div>
-			</article>
-		{% endfor %}
-	</div>
-</section>
-
-<div class="row" style="height: 1000px">
-Hi!
 </div>
+
+<section class="row">
+	<h2>On our blog&hellip;</h2>
+	{% for post in site.posts limit:3 %}
+		<article class="entry content">
+			<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<div class="entry-content">
+				{{ post.content | strip_html | truncatewords:20 }}
+			</div>
+		</article>
+	{% endfor %}
+</section>
