@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 {% include head.html %}
 <body>
-	<div id="content">
-		<article id="page">
-			<header>
-				<h2 id="post-title">{{ page.title }}</h2>
-			</header>
-			<div class="entry-content">{{ content }}</div>
-		</article>
+	<div class="vpm">
+		{% include header.html %}
+
+		<div class="row">
+			{{ content }}
+		</div>
+
+		{% include footer.html %}
 	</div>
 </body>
 </html>
