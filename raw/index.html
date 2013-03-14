@@ -3,15 +3,17 @@ title: Home
 layout: base
 ---
 
-<div class="row invert home-slogan">
-	<h2 class="home-slogan-text">Creative apps and websites for creative people.</h2>
+<div class="row invert transparent home-spacing"></div>
+
+<div class="row invert">
+	<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
 	<section>
-		<ul class="home-portfolio">
+		<ul class="home-boxes">
 		{% for page in site.pages %}
 			{% if page.layout == 'portfolio' %}
-			<li class="home-portfolio-item">
-				<a href="{{ page.url }}" class="home-portfolio-link">
-					<div class="home-portfolio-image"></div>
+			<li class="home-boxes-item">
+				<a href="{{ page.url }}" class="home-boxes-link home-boxes-padding">
+					<div class="home-boxes-image" style="background-image: url('');"></div>
 					{{ page.title }}
 				</a>
 			</li>
@@ -27,7 +29,37 @@ layout: base
 </div>
 
 <section class="row">
-	<h2>On our blog&hellip;</h2>
+	<h2 class="section-header">Our services</h2>
+	<ul class="home-boxes">
+		<li class="home-boxes-item">
+			<div class="home-boxes-padding">
+				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
+				WordPress
+			</div>
+		</li>
+		<li class="home-boxes-item">
+			<div class="home-boxes-padding">
+				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/website.png');"></div>
+				Web apps
+			</div>
+		</li>
+		<li class="home-boxes-item">
+			<div class="home-boxes-padding">
+				<div class="home-boxes-image" style="background-image: url('');"></div>
+				Product development
+			</div>
+		</li>
+		<li class="home-boxes-item">
+			<div class="home-boxes-padding">
+				<div class="home-boxes-image" style="background-image: url('');"></div>
+				Content strategy
+			</div>
+		</li>
+	</ul>
+</section>
+
+<section class="row invert">
+	<h2 class="section-header">On our blog&hellip;</h2>
 	{% for post in site.posts limit:3 %}
 		<article class="entry content">
 			<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
