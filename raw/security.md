@@ -2,8 +2,8 @@
 title: Security
 author: Peter Upfold
 layout: page
+permalink: security/
 ---
-# 
 
 We take security issues with our websites and projects very seriously, but we also want our approach to security to be positive, productive and healthy — for us, for our customers and for security researchers too.
 

@@ -29,3 +29,30 @@
 .row.invert .content-box {
 	background: rgba( white, 0.5 );
 }
+
+.entry {
+	padding: 1px 175px 20px 20px;
+	position: relative;
+	@extend %clearfix;
+}
+
+.entry-title {
+	margin-bottom: 0.2em;
+}
+
+%thumbnail {
+	background-size: cover;
+	background-repeat: none;
+	background-color: lighten( $base-color-background, 25% );
+}
+
+.entry-thumbnail {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 150px;
+	min-height: 50px;
+	margin: 5px;
+	@extend %thumbnail;
+}

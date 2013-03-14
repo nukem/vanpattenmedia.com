@@ -2,8 +2,8 @@
 title: Colophon
 author: Chris Van Patten
 layout: page
+permalink: colophon/
 ---
-# 
 
 Van Patten Media is exists thanks to a number of awesome open source technologies and great online services. In no particular order, here’s a (fairly) comprehensive list.
 

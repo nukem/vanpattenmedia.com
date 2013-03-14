@@ -2,8 +2,8 @@
 title: Contact Us
 author: Chris Van Patten
 layout: page
+permalink: contact/
 ---
-# 
 
 Did [our portfolio][1] convince you? Do you like [the way we work][2]? Let’s take this relationship to the next level, and build something great together!
 

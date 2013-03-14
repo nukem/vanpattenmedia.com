@@ -5,7 +5,7 @@ layout: base
 
 <div class="row invert transparent home-spacing"></div>
 
-<div class="row invert">
+<div class="row">
 	<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
 	<section>
 		<ul class="home-boxes">
@@ -13,7 +13,7 @@ layout: base
 			{% if page.layout == 'portfolio' %}
 			<li class="home-boxes-item">
 				<a href="{{ page.url }}" class="home-boxes-link home-boxes-padding">
-					<div class="home-boxes-image" style="background-image: url('');"></div>
+					<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
 					{{ page.title }}
 				</a>
 			</li>
@@ -28,7 +28,7 @@ layout: base
 	</div>
 </div>
 
-<section class="row">
+<section class="row invert">
 	<h2 class="section-header">Our services</h2>
 	<ul class="home-boxes">
 		<li class="home-boxes-item">
@@ -58,14 +58,17 @@ layout: base
 	</ul>
 </section>
 
-<section class="row invert">
+<section class="row">
 	<h2 class="section-header">On our blog&hellip;</h2>
 	{% for post in site.posts limit:3 %}
 		<article class="entry content">
-			<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-			<div class="entry-content">
-				{{ post.content | strip_html | truncatewords:20 }}
+			<div class="entry-text">
+				<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+				<div class="entry-content">
+					{{ post.content | strip_html | truncatewords:13 }}
+				</div>
 			</div>
+			<div class="entry-thumbnail" style="background-image: url('')"></div>
 		</article>
 	{% endfor %}
 </section>
