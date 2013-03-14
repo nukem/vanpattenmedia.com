@@ -14,14 +14,22 @@
 @import "misc/grid";
 
 body {
-	//background: #333 image-url('background.png') center/cover fixed no-repeat;
-	background: #444;
-	color: white;
+	//background: $base-color-background image-url('background.png') center/cover fixed no-repeat;
+	background: $base-color-background;
+	color: $base-color-text;
 	font: #{$base-font-size}/1.5 $base-font-family;
 }
 
 .vpm {
 	position: relative;
+}
+
+a {
+	color: darken( $base-color-text, 20% );
+
+	&:hover {
+		color: $base-color-text;
+	}
 }
 
 // Modules
@@ -31,5 +39,6 @@ body {
 @import "layout/header";
 @import "layout/nav";
 @import "layout/content";
+@import "layout/typography";
 @import "layout/footer";
 @import "layout/homepage";

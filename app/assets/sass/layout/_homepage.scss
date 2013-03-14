@@ -24,15 +24,26 @@
 	list-style: none;
 	float: left;
 	background: rgba( black, 0.5 );
-	min-height: 150px;
+	min-height: 100px;
 	width: 30%;
 	margin-right: 3%;
+	font-size: 90%;
 
 	&:last-child {
 		margin: 0;
 	}
 }
 
+.home-portfolio-link {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color: $base-color-text;
+}
+
 .home-portfolio-image {
-	
+	width: 100%;
+	height: 100px;
+	background: red;
+	margin: 0 0 5px;
 }
