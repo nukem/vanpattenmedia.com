@@ -8,8 +8,8 @@ layout: base
 	<ul class="home-boxes">
 	{% for page in site.pages %}
 		{% if page.layout == 'portfolio' %}
-		<li class="home-boxes-item">
-			<a href="{{ page.url }}" class="home-boxes-link home-boxes-padding">
+		<li class="three-up home-boxes-item">
+			<a href="{{ page.url }}" class="home-boxes-link">
 				<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
 				{{ page.title }}
 			</a>
@@ -27,35 +27,27 @@ layout: base
 <section>
 	<h2 class="section-header">Our services</h2>
 	<ul class="home-boxes">
-		<li class="home-boxes-item">
-			<div class="home-boxes-padding">
-				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
-				WordPress
-			</div>
+		<li class="three-up home-boxes-item">
+			<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
+			WordPress
 		</li>
-		<li class="home-boxes-item">
-			<div class="home-boxes-padding">
-				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/website.png');"></div>
-				Web apps
-			</div>
+		<li class="three-up home-boxes-item">
+			<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/website.png');"></div>
+			Web apps
 		</li>
-		<li class="home-boxes-item">
-			<div class="home-boxes-padding">
-				<div class="home-boxes-image" style="background-image: url('');"></div>
-				Product development
-			</div>
+		<li class="three-up home-boxes-item">
+			<div class="home-boxes-image" style="background-image: url('');"></div>
+			Product development
 		</li>
-		<li class="home-boxes-item">
-			<div class="home-boxes-padding">
-				<div class="home-boxes-image" style="background-image: url('');"></div>
-				Content strategy
-			</div>
+		<li class="three-up home-boxes-item">
+			<div class="home-boxes-image" style="background-image: url('');"></div>
+			Content strategy
 		</li>
 	</ul>
 </section>
 
 <section>
-	<h2 class="section-header">On our blog&hellip;</h2>
+	<h2 class="section-header">On our blog</h2>
 	{% for post in site.posts limit:3 %}
 		<article class="entry content">
 			<div class="entry-text">
@@ -67,4 +59,16 @@ layout: base
 			<div class="entry-thumbnail" style="background-image: url('')"></div>
 		</article>
 	{% endfor %}
+</section>
+
+<section class="bios">
+	<h2 class="section-header">Who we are</h2>
+	<div class="content two-up">
+		<h3>Chris Van Patten</h3>
+		<p>Chris Van Patten is the founder of Van Patten Media and its current Creative Director. With a life-long background in the theatre (he has a degree in Theatre Design &amp; Technology) Chris has made it a part of Van Patten Media’s core mission to bring effective and attractive websites to artists and arts organizations in the United States and abroad.</p>
+	</div>
+	<div class="content two-up">
+		<h3>Peter Upfold</h3>
+		<p>Peter Upfold is a web developer, technology enthusiast, blogger and podcaster. Peter has worked in the realm of web development, particularly with PHP and MySQL, for several years, and is also interested in many other aspects of technology, from programming to networking and servers (Peter is the lead developer of our managed hosting platform). He is also excited about the ongoing potential of technology to empower people and make a real difference to people’s lives.</p>
+	</div>
 </section>

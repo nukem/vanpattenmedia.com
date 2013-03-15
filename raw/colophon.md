@@ -2,6 +2,7 @@
 title: Colophon
 author: Chris Van Patten
 layout: page
+infooter: true
 permalink: colophon/
 ---
 

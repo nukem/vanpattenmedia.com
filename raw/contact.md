@@ -2,6 +2,7 @@
 title: Contact Us
 author: Chris Van Patten
 layout: page
+infooter: true
 permalink: contact/
 ---
 
@@ -12,5 +13,6 @@ Did [our portfolio][1] convince you? Do you like [the way we work][2]? Let’s 
 
 Email or call us directly.
 
-*   **Email**: 
-*   **Phone**: 716-222-0287 *(**Please email first** – we’re more efficient emailers!)*
++   **Email**: info@vanpattenmedia.com
++   **Phone**: 716-222-0287 *(**Please email first** – we’re more efficient emailers!)*
+

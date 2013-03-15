@@ -4,14 +4,12 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 {% include head.html %}
 <body>
-	<div class="vpm">
-		{% include header.html %}
+	{% include header.html %}
 
-		<div class="row">
-			{{ content }}
-		</div>
-
-		{% include footer.html %}
+	<div class="row">
+		{{ content }}
 	</div>
+
+	{% include footer.html %}
 </body>
 </html>

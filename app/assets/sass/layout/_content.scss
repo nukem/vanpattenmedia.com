@@ -1,21 +1,26 @@
 .row {
-	background-color: rgba( white, 0.2 );
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-image: image-url('logo.png');
+	background-color: rgba( white, 0.25 );
+//	background-repeat: no-repeat;
+//	background-attachment: fixed;
+//	background-image: image-url('logo.png');
+	@include border-right-radius;
 	padding: 20px 20px 20px 309px;
 	min-height: 130px;
 	width: 60%;
 	max-width: 960px;
 	min-width: 600px;
-}
 
-.row.invert {
-	background-image: image-url('logo-invert.png');
-}
+	&.invert {
+//		background-image: image-url('logo-invert.png');
+	}
 
-.row.transparent {
-	background-color: transparent;
+	&.transparent {
+		background-color: transparent;
+	}
+
+	&.primary {
+		padding-bottom: 4%;
+	}
 }
 
 .content {
@@ -30,29 +35,20 @@
 	background: rgba( white, 0.5 );
 }
 
-.entry {
-	padding: 1px 175px 20px 20px;
-	position: relative;
-	@extend %clearfix;
+// two-up
+%up {
+	float: left;
+	@include box-sizing(border-box);
 }
 
-.entry-title {
-	margin-bottom: 0.2em;
+.two-up {
+	width: 46%;
+	margin-right: 4%;
+	@extend %up;
 }
 
-%thumbnail {
-	background-size: cover;
-	background-repeat: none;
-	background-color: lighten( $base-color-background, 25% );
-}
-
-.entry-thumbnail {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 150px;
-	min-height: 50px;
-	margin: 5px;
-	@extend %thumbnail;
+.three-up {
+	width: 30%;
+	margin-right: 3%;
+	@extend %up;
 }

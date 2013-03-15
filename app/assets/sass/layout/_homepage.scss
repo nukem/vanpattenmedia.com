@@ -22,24 +22,18 @@
 
 .home-boxes-item {
 	list-style: none;
-	float: left;
 	background: rgba( black, 0.5 );
 	@include border-radius;
 	min-height: 100px;
-	width: 30%;
 	margin-top: 15px;
-	margin-right: 3%;
 	font-size: 90%;
+	padding: 5px;
 }
 
 .home-boxes-link {
 	display: block;
 	text-decoration: none;
 	color: $base-color-text;
-}
-
-.home-boxes-padding {
-	padding: 5px;
 }
 
 .home-boxes-image {
@@ -51,4 +45,37 @@
 
 .section-header {
 	margin: 2em 0 0;
+}
+
+// Blog entries
+.entry {
+	padding: 1px 175px 20px 20px;
+	position: relative;
+	@extend %clearfix;
+}
+
+.entry-title {
+	margin-bottom: 0.2em;
+}
+
+%thumbnail {
+	background-size: cover;
+	background-repeat: none;
+	background-color: lighten( $base-color-background, 25% );
+}
+
+.entry-thumbnail {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 150px;
+	min-height: 50px;
+	margin: 5px;
+	@extend %thumbnail;
+}
+
+// Bios
+.bios {
+	@extend %clearfix;
 }

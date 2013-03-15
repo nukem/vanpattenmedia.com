@@ -1,3 +1,14 @@
-<div class="row invert transparent">
-	<div class="content">&copy; 2009-2013 Van Patten Media</div>
-</div>
+<footer class="footer row invert transparent">
+	<p>&copy; 2009-2013 Van Patten Media
+		{% for page in site.pages %}
+			{% if page.infooter == true %}
+				&bull; <a href="{{ page.url }}">{{ page.title }}</a>
+			{% endif %}
+		{% endfor %}
+	</p>
+</footer>
+
+<video loop preload autoplay muted id="video-background">
+	<source src="video/times-square.mp4" type="video/mp4">
+	<source src="video/times-square.ogv" type="video/ogg">
+</video>

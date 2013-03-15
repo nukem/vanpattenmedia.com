@@ -1,31 +1,18 @@
 .header {
 	width: 289px;
-	height: 150px;
-	float: left;
-	position: fixed;
-	top: 0;
-	left: 0;
+	height: 170px;
+//	float: left;
+//	position: fixed;
+//	top: 0;
+//	left: 0;
+	position: absolute;
 }
 
 .header-logo {
 	display: block;
-	width: 289px;
-	height: 150px;
+	width: inherit;
+	height: inherit;
 	text-indent: -1000in;
 	overflow: hidden;
-}
-
-#logo {
-	text-decoration: none;
-	
-	&:before {
-		font: 80px/1 "vpm";
-		content: "v";
-		color: #FFF;
-		@include text-shadow;
-	}
-
-	& > span {
-		display: none;
-	}
+	background: image-url('logo-invert.png') no-repeat;
 }

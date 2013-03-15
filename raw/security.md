@@ -2,6 +2,7 @@
 title: Security
 author: Peter Upfold
 layout: page
+infooter: true
 permalink: security/
 ---
 
