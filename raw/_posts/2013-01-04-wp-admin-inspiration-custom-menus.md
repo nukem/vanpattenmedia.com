@@ -3,6 +3,7 @@ title: 'WP Admin Inspiration: Custom Menus'
 author: Chris Van Patten
 layout: post
 permalink: /2013/wp-admin-inspiration-custom-menus/
+feature_image: http://static.vanpattenmedia.com/content/uploads/2013/01/Screen-Shot-2013-01-01-at-13.02.27.png
 dsq_thread_id:
   - 1003091660
 ---

@@ -56,7 +56,9 @@ layout: base
 					{{ post.content | strip_html | truncatewords:13 }}
 				</div>
 			</div>
-			<div class="entry-thumbnail" style="background-image: url('')"></div>
+			{% if post.feature_image %}
+			<div class="entry-thumbnail" style="background-image: url('{{ post.feature_image }}')"></div>
+			{% endif %}
 		</article>
 	{% endfor %}
 </section>

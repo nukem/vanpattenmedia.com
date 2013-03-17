@@ -6,10 +6,10 @@
 <body>
 	{% include header.html %}
 
-	<div class="row">
+	<div class="row primary">
+		<h2 class="entry-title">{{ page.title }}</h2>
+		<p><time>{{ page.date | date: "%d %b %Y" }}</time> by {{ page.author }}</p>
 		<article class="content">
-			<h2 class="entry-title">{{ page.title }}</h2>
-			<p><time>{{ page.date | date: "%d %b %Y" }}</time></p>
 			<div class="entry-content">
 				{{ content }}
 			</div>
