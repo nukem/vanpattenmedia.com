@@ -20,8 +20,7 @@
 	padding: 1px 20px;
 	margin-right: 4%;
 	margin-top: 20px;
-	background: rgba( black, 0.5 );
-	@include border-radius;
+	@extend %box;
 }
 
 .row.invert .content-box {

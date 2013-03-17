@@ -1,0 +1,39 @@
+.prt-header {
+	@extend %clearfix;
+}
+
+.prt-heading {
+	float: left;
+}
+
+.prt-features {
+	float: right;
+	list-style: none;
+	margin: 1.1em 4% 0 0;
+
+	li {
+		float: left;
+		font-size: 40px;
+		@include text-shadow(0 0 5px black);
+		margin: 0 0 0 20px;
+	}
+
+	.icon {
+		width: 40px;
+	}
+}
+
+.screenshot {
+	position: relative;
+	min-height: 100px;
+	padding: 5px;
+
+	& > a {
+		display: block;
+		line-height: 0;
+	}
+
+	img {
+		width: 100%;
+	}
+}

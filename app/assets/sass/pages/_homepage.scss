@@ -7,17 +7,8 @@
 	@include text-shadow;
 }
 
-.home-boxes {
-	width: 100%;
-	padding: 0;
-	margin: 0;
-	@extend %clearfix;
-}
-
 .home-boxes-item {
-	list-style: none;
-	background: rgba( black, 0.5 );
-	@include border-radius;
+	@extend %box;
 	min-height: 100px;
 	margin-top: 15px;
 	font-size: 90%;

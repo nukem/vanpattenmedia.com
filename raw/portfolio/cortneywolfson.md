@@ -6,6 +6,9 @@ portfolio:
   url: http://www.cortneywolfson.com/
   identity: true
   wordpress: true
+  images:
+    - screenshot.png
+    - news.png
 ---
 
 We created a fun and playful new website for Broadway actress **Cortney Wolfson**, perfect for her to showcase an extensive collection of YouTube videos, photos and multimedia.

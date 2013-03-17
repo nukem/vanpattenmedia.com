@@ -3,8 +3,6 @@ title: A Tale of Stale Content
 author: Peter Upfold
 layout: post
 permalink: /2012/a-tale-of-stale-content/
-dsq_thread_id:
-  - 734114744
 ---
 # 
 

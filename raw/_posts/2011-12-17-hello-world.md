@@ -3,8 +3,6 @@ title: Hello world!
 author: Chris Van Patten
 layout: post
 permalink: /2011/hello-world/
-dsq_thread_id:
-  - 544195859
 ---
 # 
 

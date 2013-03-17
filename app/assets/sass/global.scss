@@ -4,7 +4,6 @@
 // Compass Imports
 @import "compass/css3";
 @import "compass/layout";
-@import "susy";
 
 // Fonts
 @import "misc/fonts";
@@ -18,10 +17,6 @@ body {
 	background: $base-color-background;
 	color: $base-color-text;
 	font: #{$base-font-size}/1.5 $base-font-family;
-}
-
-.vpm {
-	position: relative;
 }
 
 a {
@@ -40,10 +35,12 @@ a {
 @import "layout/content";
 @import "layout/typography";
 @import "layout/footer";
-@import "layout/homepage";
+
+// Pages
+@import "pages/homepage";
+@import "pages/portfolio";
 
 // Video
-
 #video-background {
 	position: fixed;
 	bottom: 0px;

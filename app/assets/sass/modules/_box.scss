@@ -1,7 +1,12 @@
-.box {
-	background: $base-color-background;
-	color: $base-color-text;
-	@include box-shadow;
+.boxes {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	@extend %clearfix;
+	list-style: none;
+}
+
+%box {
+	background: rgba( black, 0.5 );
 	@include border-radius;
-	padding: 0.2em 1.2em;
 }

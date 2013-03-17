@@ -10,3 +10,30 @@ $fonts: (vpm);
 		'#{$font}/#{$font}.eot'
 	)
 }
+
+.icon {
+	font-family: "vpm";
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	
+	span {
+		display: none;
+	}
+}
+
+.icon-html5:before {
+	content: '';
+}
+
+.icon-identity:before {
+	content: '';
+}
+
+.icon-responsive:before {
+	content: '';
+}
+
+.icon-wordpress:before {
+	content: '';
+}

@@ -6,15 +6,30 @@
 <body>
 	{% include header.html %}
 
-	<div class="row">
-		<h2 class="entry-title">{{ page.title }}</h2>
-		<a href="{{ page.portfolio['url'] }}">{{ page.portfolio['url'] }}</a>
-		<div class="content">
+	<article class="row">
+		<header class="prt-header">
+			<div class="prt-heading">
+				<h2 class="entry-title">{{ page.title }}</h2>
+				<a href="{{ page.portfolio['url'] }}">{{ page.portfolio['url'] }}</a>
+			</div>
+			<ul class="prt-features">
+				{% if page.portfolio['html5'] %}<li><i class="icon icon-html5"><span>HTML5</span></i></li>{% endif%}
+				{% if page.portfolio['identity'] %}<li><i class="icon icon-identity"><span>Identity</span></i></li>{% endif%}
+				{% if page.portfolio['responsive'] %}<li><i class="icon icon-responsive"><span>Responsive</span></i></li>{% endif%}
+				{% if page.portfolio['wordpress'] %}<li><i class="icon icon-wordpress"><span>WordPress</span></i></li>{% endif%}
+			</ul>
+		</header>
+		<div class="content entry-content">
 			{{ content }}
 		</div>
-		<div class="two-up">Screenshot 1</div>
-		<div class="two-up">Screenshot 2</div>
-	</div>
+		<ul class="boxes">
+			{% for image in page.portfolio['images'] %}
+				<li class="two-up content screenshot">
+					<a href="{{ page.url }}{{ image }}"><img src="{{ page.url }}{{ image }}" alt="Screenshot of website for {{ page.title }}"></a>
+				</li>
+			{% endfor %}
+		</ul>
+	</article>
 
 	{% include footer.html %}
 </body>

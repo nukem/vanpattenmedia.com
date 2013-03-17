@@ -3,36 +3,18 @@ title: Home
 layout: base
 ---
 
-<div class="row">
-	<section>
-		<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
-		<ul class="home-boxes">
-		{% assign i = 0 %}
-		{% for page in site.pages %}
-			{% if page.layout == 'portfolio' %}
-				{% if i < 3 %}
-					<li class="three-up home-boxes-item">
-						<a href="{{ page.url }}" class="home-boxes-link">
-							<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
-							{{ page.title }}
-						</a>
-					</li>
-					{% assign i = i|plus:1 %}
-				{% endif %}
-			{% endif %}
-		{% endfor %}
-		</ul>
-	</section>
+<section class="row">
+	<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
 	
 	<article class="content">
 		<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
 		<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
 	</article>
-</div>
+</section>
 
 <section class="row">
 	<h2 class="section-header">Our services</h2>
-	<ul class="home-boxes">
+	<ul class="boxes">
 		<li class="three-up home-boxes-item">
 			<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
 			WordPress
@@ -49,6 +31,26 @@ layout: base
 			<div class="home-boxes-image" style="background-image: url('');"></div>
 			Content strategy
 		</li>
+	</ul>
+</section>
+
+<section class="row">
+	<h2 class="section-header">Selected work</h2>
+	<ul class="boxes">
+	{% assign i = 0 %}
+	{% for page in site.pages %}
+		{% if page.layout == 'portfolio' %}
+			{% if i < 50 %}
+				<li class="three-up home-boxes-item">
+					<a href="{{ page.url }}" class="home-boxes-link">
+						<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
+						{{ page.title }}
+					</a>
+				</li>
+				{% assign i = i|plus:1 %}
+			{% endif %}
+		{% endif %}
+	{% endfor %}
 	</ul>
 </section>
 
