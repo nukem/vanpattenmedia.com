@@ -1,21 +1,18 @@
 .row {
 	background-color: rgba( white, 0.25 );
-	padding: 20px 0 20px 4%;
+	padding: 20px 0 4% 4%;
+	margin: 2em 0;
 	@include border-right-radius;
 	max-width: 750px;
 
 	@media #{$full} {
-		padding: 20px 20px 20px 309px;
+		padding: 20px 20px 4% 309px;
 		width: 60%;
 		max-width: 850px;
 	}
 
 	&.transparent {
 		background-color: transparent;
-	}
-
-	&.primary {
-		padding-bottom: 4%;
 	}
 }
 

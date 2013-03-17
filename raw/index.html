@@ -3,28 +3,34 @@ title: Home
 layout: base
 ---
 
-<section>
-	<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
-	<ul class="home-boxes">
-	{% for page in site.pages %}
-		{% if page.layout == 'portfolio' %}
-		<li class="three-up home-boxes-item">
-			<a href="{{ page.url }}" class="home-boxes-link">
-				<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
-				{{ page.title }}
-			</a>
-		</li>
-		{% endif %}
-	{% endfor %}
-	</ul>
-</section>
+<div class="row">
+	<section>
+		<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
+		<ul class="home-boxes">
+		{% assign i = 0 %}
+		{% for page in site.pages %}
+			{% if page.layout == 'portfolio' %}
+				{% if i < 3 %}
+					<li class="three-up home-boxes-item">
+						<a href="{{ page.url }}" class="home-boxes-link">
+							<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
+							{{ page.title }}
+						</a>
+					</li>
+					{% assign i = i|plus:1 %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</section>
+	
+	<article class="content">
+		<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
+		<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
+	</article>
+</div>
 
-<article class="content">
-	<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
-	<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
-</article>
-
-<section>
+<section class="row">
 	<h2 class="section-header">Our services</h2>
 	<ul class="home-boxes">
 		<li class="three-up home-boxes-item">
@@ -46,7 +52,7 @@ layout: base
 	</ul>
 </section>
 
-<section>
+<section class="row">
 	<h2 class="section-header">On our blog</h2>
 	{% for post in site.posts limit:3 %}
 		<article class="entry content">
@@ -63,7 +69,7 @@ layout: base
 	{% endfor %}
 </section>
 
-<section class="bios">
+<section class="row bios">
 	<h2 class="section-header">Who we are</h2>
 	<div class="content two-up bio">
 		<div class="bio-photo" style="background-image: url('http://i.imgur.com/IvZ2qsf.jpg');"></div>

@@ -1,9 +1,3 @@
-.home-slogan {
-	@extend %content;
-	padding-top: 300px;
-	min-height: auto;
-}
-
 .home-slogan-text {
 	margin: 0;
 	font: {
@@ -44,7 +38,11 @@
 }
 
 .section-header {
-	margin: 2em 0 0;
+	margin: 0;
+
+	@media #{$tablet} {
+		margin: 0.7em 0 0;
+	}
 }
 
 // Blog entries
