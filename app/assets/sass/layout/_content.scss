@@ -1,17 +1,15 @@
 .row {
 	background-color: rgba( white, 0.25 );
-//	background-repeat: no-repeat;
-//	background-attachment: fixed;
-//	background-image: image-url('logo.png');
+	padding: 20px 0 20px 4%;
 	@include border-right-radius;
-	padding: 20px 20px 20px 309px;
-	min-height: 130px;
-	width: 60%;
-	max-width: 960px;
-	min-width: 600px;
+	max-width: 750px;
 
-	&.invert {
-//		background-image: image-url('logo-invert.png');
+	@media #{$full} {
+		padding: 20px 20px 20px 309px;
+		min-height: 130px;
+		width: 60%;
+		max-width: 960px;
+		min-width: 600px;
 	}
 
 	&.transparent {
@@ -42,13 +40,21 @@
 }
 
 .two-up {
-	width: 46%;
 	margin-right: 4%;
 	@extend %up;
+
+	@media #{$tablet} {
+		width: 46%;
+	}
 }
 
 .three-up {
-	width: 30%;
-	margin-right: 3%;
+	width: 46%;
+	margin-right: 4%;
 	@extend %up;
+
+	@media #{$tablet} {
+		width: 30%;
+		margin-right: 3%;
+	}
 }

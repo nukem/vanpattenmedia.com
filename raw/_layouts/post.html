@@ -14,6 +14,19 @@
 				{{ content }}
 			</div>
 		</article>
+		<nav class="pnav">
+			{% if page.previous %}
+			<div class="two-up content">
+				<a href="{{ page.previous.url }}" class="nav-prev">&larr;<span class="pnav-label"> Previous</span></a>
+			</div>
+			{% endif %}
+
+			{% if page.next %}
+			<div class="two-up content">
+				<a href="{{ page.next.url }}" class="nav-next"><span class="nav-label">Next </span>&rarr;</a>
+			</div>
+			{% endif %}
+		</nav>
 	</div>
 
 	{% include footer.html %}
