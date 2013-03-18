@@ -6,26 +6,29 @@
 <body>
 	{% include header.html %}
 
-	<div class="row">
+	<article class="row">
 		<div class="row-interior">
 			<h2 class="entry-title">{{ page.title }}</h2>
 			<p><time>{{ page.date | date: "%d %b %Y" }}</time> by {{ page.author }}</p>
-			<article class="content">
+			<div class="content">
 				<div class="entry-content">
 					{{ content }}
 				</div>
-			</article>
-			<nav class="post-nav">
-				{% if page.previous %}
-				<a href="{{ page.previous.url }}" class="nav-prev two-up content">&larr;<span class="nav-label"> Previous</span></a>
-				{% endif %}
-
-				{% if page.next %}
-				<a href="{{ page.next.url }}" class="nav-next two-up content"><span class="nav-label">Next </span>&rarr;</a>
-				{% endif %}
-			</nav>
+			</div>
 		</div>
-	</div>
+	</article>
+
+	<nav class="row post-nav">
+		<div class="row-interior">
+			{% if page.previous %}
+			<a href="{{ page.previous.url }}" class="nav-prev two-up content">&larr; <span class="nav-label">Previous</span></a>
+			{% endif %}
+
+			{% if page.next %}
+			<a href="{{ page.next.url }}" class="nav-next two-up content"><span class="nav-label">Next</span> &rarr;</a>
+			{% endif %}
+		</div>
+	</nav>
 
 	<section class="row">
 		<div class="row-interior">

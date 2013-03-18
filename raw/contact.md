@@ -6,13 +6,10 @@ infooter: true
 permalink: contact/
 ---
 
-Did [our portfolio][1] convince you? Do you like [the way we work][2]? Let’s take this relationship to the next level, and build something great together!
-
- [1]: http://www.vanpattenmedia.com/clients/ "Clients"
- [2]: http://www.vanpattenmedia.com/websites/ "Methods"
+Did [our portfolio][/] convince you? Do you like the way we work? Let’s take this relationship to the next level, and build something great together!
 
 Email or call us directly.
 
 +   **Email**: info@vanpattenmedia.com
-+   **Phone**: 716-222-0287 *(**Please email first** – we’re more efficient emailers!)*
++   **Phone**: 716-222-0287 (**Please email first** – we’re more efficient emailers!)
 

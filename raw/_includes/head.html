@@ -21,6 +21,13 @@
 	
 	<!-- og:site_name -->
 	{% if site.title %}<meta property="og:site_name" content="{{ site.title }}">{% endif %}
+
+	<!-- og:image -->
+	{% if page.layout == 'portfolio' %}
+		{% for image in page.portfolio['images'] %}
+		<meta property="og:image" content="{{ site.url }}{{ page.url }}{{ image }}">
+		{% endfor %}
+	{% endif %}
 	
 	<!-- og:url -->
 	{% if page.url %}<meta property="og:url" content="{{ site.url }}{{ page.url }}">{% endif %}
