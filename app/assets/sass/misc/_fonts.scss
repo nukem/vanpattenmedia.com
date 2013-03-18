@@ -3,9 +3,7 @@ $fonts: (vpm);
 @each $font in $fonts {
 	@include font-face( $font,
 		font-files(
-			'#{$font}/#{$font}.woff',
-			'#{$font}/#{$font}.ttf',
-			'#{$font}/#{$font}.svg', svg
+			'#{$font}/#{$font}.woff'
 		),
 		'#{$font}/#{$font}.eot'
 	)
