@@ -1,13 +1,14 @@
-.header {
-	width: 289px;
-	height: 150px;
-}
-
 .header-logo {
 	display: block;
-	width: inherit;
-	height: inherit;
-	text-indent: -1000in;
+	width: 261px;
 	overflow: hidden;
-	background: image-url('logo-invert.png') no-repeat;
+	background: rgba(white, 0.25);
+	@include border-bottom-radius;
+	padding: 100px 20px 9px;
+	margin: 0 0 0 20px;
+
+	img {
+		width: inherit;
+		height: auto;
+	}
 }

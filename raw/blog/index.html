@@ -3,8 +3,7 @@ title: Blog
 layout: base
 ---
 
-<div class="row invert"></div>
-<div class="row">
+<section class="row">
 
 	{% for post in paginator.posts %}
 	<article class="content">
@@ -15,22 +14,21 @@ layout: base
 		</div>
 	</article>
 	{% endfor %}
+</section>
 	
+<section class="row pagination">
 	<!-- Pagination links -->
-	<div class="pagination">
-		{% if paginator.previous_page %}
-			<a href="/blog/{{paginator.previous_page}}" class="previous">Previous</a>
-		{% else %}
-			<span class="previous">Previous</span>
-		{% endif %}
-		
-		<span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+	{% if paginator.previous_page %}
+		<a href="/blog/{{paginator.previous_page}}" class="previous">Previous</a>
+	{% else %}
+		<span class="previous">Previous</span>
+	{% endif %}
 	
-		{% if paginator.next_page %}
-			<a href="/blog/{{paginator.next_page}}" class="next ">Next</a>
-		{% else %}
-			<span class="next">Next</span>
-		{% endif %}
-	</div>
+	<span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
 
-</div>
+	{% if paginator.next_page %}
+		<a href="/blog/{{paginator.next_page}}" class="next ">Next</a>
+	{% else %}
+		<span class="next">Next</span>
+	{% endif %}
+</section>
