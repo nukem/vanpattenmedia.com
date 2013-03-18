@@ -1,16 +1,15 @@
 # Require some gems
 require 'rgbapng'
 require 'sass-globbing'
-require 'susy'
 
 # Path to theme from project root
 project_path      = "./"
 
 # Where's stuff being spit out?
 css_dir           = "raw/css"
-images_dir        = "raw/images"
-javascripts_dir   = "raw/javascripts"
-fonts_dir         = "raw/fonts"
+images_dir        = "public/images"
+javascripts_dir   = "public/javascripts"
+fonts_dir         = "public/fonts"
 
 # Where are we pulling from?
 sass_dir          = "app/assets/sass"

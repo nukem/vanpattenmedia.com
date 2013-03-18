@@ -5,6 +5,4 @@ package_path:          javascripts
 
 javascripts:
   script:
-    - vendor/javascripts/jquery.videobg/0.2/*
-    - app/assets/javascripts/video.js
     - app/assets/javascripts/script.js
