@@ -1,8 +1,0 @@
-compress_assets:       on
-gzip_assets:           off
-javascript_compressor: uglifier
-package_path:          content/themes/vanpattenpress/js
-
-javascripts:
-  script:
-    - app/assets/javascripts/*.js
