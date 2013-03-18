@@ -14,23 +14,20 @@
 				{{ content }}
 			</div>
 		</article>
-		<nav class="pnav">
+		<nav class="post-nav">
 			{% if page.previous %}
-			<div class="two-up content">
-				<a href="{{ page.previous.url }}" class="nav-prev">&larr;<span class="pnav-label"> Previous</span></a>
-			</div>
+			<a href="{{ page.previous.url }}" class="nav-prev two-up content">&larr;<span class="nav-label"> Previous</span></a>
 			{% endif %}
 
 			{% if page.next %}
-			<div class="two-up content">
-				<a href="{{ page.next.url }}" class="nav-next"><span class="nav-label">Next </span>&rarr;</a>
-			</div>
+			<a href="{{ page.next.url }}" class="nav-next two-up content"><span class="nav-label">Next </span>&rarr;</a>
 			{% endif %}
 		</nav>
 	</div>
-	<div class="row">
+
+	<section class="row">
 		<h2 class="section-header">Share your thoughts</h2>
-		<div class="content">
+		<div class="content comments">
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
 				var disqus_shortname = 'vanpattenmedia';
@@ -44,7 +41,7 @@
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		</div>
-	</div>
+	</section>
 
 	{% include footer.html %}
 </body>

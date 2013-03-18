@@ -1,0 +1,17 @@
+.comments {
+	padding-top: 20px;
+}
+
+.post-nav {
+	@extend %clearfix;
+}
+
+.nav-prev {
+	display: block;
+	padding: 10px 20px;
+}
+
+.nav-next {
+	@extend .nav-prev;
+	text-align: right;
+}
