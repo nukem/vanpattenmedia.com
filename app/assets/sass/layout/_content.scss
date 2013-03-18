@@ -1,12 +1,11 @@
 .row {
-	background-color: rgba( white, 0.25 );
-	padding: 20px 0 4% 4%;
+	background-color: rgba( white, 0.1 );
 	margin: 2em 0;
 	@include border-right-radius;
 	max-width: 750px;
 
 	@media #{$full} {
-		padding: 20px 20px 4% 341px;
+		padding-left: 321px;
 		width: 60%;
 		max-width: 850px;
 	}
@@ -14,6 +13,13 @@
 	&.transparent {
 		background-color: transparent;
 	}
+}
+
+.row-interior {
+	background: rgba( white, 0.1 );
+	@include border-right-radius;
+	padding: 20px 0 4% 4%;
+	@extend %clearfix;
 }
 
 .content {

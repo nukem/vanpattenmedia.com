@@ -7,12 +7,14 @@
 	{% include header.html %}
 
 	<div class="row primary">
-		<h2 class="entry-title">{{ page.title }}</h2>
-		<article class="content">
-			<div class="entry-content">
-				{{ content }}
-			</div>
-		</article>
+		<div class="row-interior">
+			<h2 class="entry-title">{{ page.title }}</h2>
+			<article class="content">
+				<div class="entry-content">
+					{{ content }}
+				</div>
+			</article>
+		</div>
 	</div>
 
 	{% include footer.html %}

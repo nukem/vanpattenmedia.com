@@ -4,87 +4,97 @@ layout: base
 ---
 
 <section class="row">
-	<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
-	
-	<article class="content">
-		<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
-		<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
-	</article>
-</section>
-
-<section class="row">
-	<h2 class="section-header">Our services</h2>
-	<ul class="boxes">
-		<li class="three-up home-boxes-item">
-			<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
-			WordPress
-		</li>
-		<li class="three-up home-boxes-item">
-			<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/website.png');"></div>
-			Web apps
-		</li>
-		<li class="three-up home-boxes-item">
-			<div class="home-boxes-image" style="background-image: url('');"></div>
-			Product development
-		</li>
-		<li class="three-up home-boxes-item">
-			<div class="home-boxes-image" style="background-image: url('');"></div>
-			Content strategy
-		</li>
-	</ul>
-</section>
-
-<section class="row">
-	<h2 class="section-header">Selected work</h2>
-	<ul class="boxes">
-	{% assign i = 0 %}
-	{% for page in site.pages %}
-		{% if page.layout == 'portfolio' %}
-			{% if i < 50 %}
-				<li class="three-up home-boxes-item">
-					<a href="{{ page.url }}" class="home-boxes-link">
-						<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
-						{{ page.title }}
-					</a>
-				</li>
-				{% assign i = i|plus:1 %}
-			{% endif %}
-		{% endif %}
-	{% endfor %}
-	</ul>
-</section>
-
-<section class="row">
-	<h2 class="section-header">On our blog</h2>
-	{% for post in site.posts limit:3 %}
-		<article class="entry content">
-			<div class="entry-text">
-				<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-				<div class="entry-content">
-					{{ post.content | strip_html | truncatewords:13 }}
-				</div>
-			</div>
-			{% if post.feature_image %}
-			<div class="entry-thumbnail" style="background-image: url('{{ post.feature_image }}')"></div>
-			{% endif %}
+	<div class="row-interior">
+		<h2 class="home-slogan-text">Creative apps and websites for creative people</h2>
+		
+		<article class="content">
+			<p class="lead">Van Patten Media is a full service digital studio. We help artists, actors, theatres, and singers take ownership of their web presence.</p>
+			<p>We also build web applications (for clients and for ourselves) like <a href="http://marquee.io/">Marquee.io</a> and <a href="http://www.coachmenyc.com/">CoachMeNYC</a>. We also created <a href="http://www.howibookedit.com/">How I Booked It</a>, an archive of interviews with people working in the theatre on how they got their start.</p>
 		</article>
-	{% endfor %}
+	</div>
 </section>
 
-<section class="row bios">
-	<h2 class="section-header">Who we are</h2>
-	<div class="content two-up bio">
-		<div class="bio-photo" style="background-image: url('http://i.imgur.com/IvZ2qsf.jpg');"></div>
-		<div class="bio-text">
-			<h3>Chris Van Patten</h3>
-			<p>Chris Van Patten is the founder of Van Patten Media and its current Creative Director. With a life-long background in the theatre (he has a degree in Theatre Design &amp; Technology) Chris has made it a part of Van Patten Media’s core mission to bring effective and attractive websites to artists and arts organizations in the United States and abroad.</p>
-		</div>
+<section class="row">
+	<div class="row-interior">
+		<h2 class="section-header">Our services</h2>
+		<ul class="boxes">
+			<li class="three-up home-boxes-item">
+				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/wordpress.jpg');"></div>
+				WordPress
+			</li>
+			<li class="three-up home-boxes-item">
+				<div class="home-boxes-image" style="background-image: url('http://www.vanpattenmedia.com/content/themes/vanpattenpress/img/homepage/homeboxes/website.png');"></div>
+				Web apps
+			</li>
+			<li class="three-up home-boxes-item">
+				<div class="home-boxes-image" style="background-image: url('');"></div>
+				Product development
+			</li>
+			<li class="three-up home-boxes-item">
+				<div class="home-boxes-image" style="background-image: url('');"></div>
+				Content strategy
+			</li>
+		</ul>
 	</div>
-	<div class="content two-up bio">
-		<div class="bio-photo" style="background-image: url('http://i.imgur.com/4AGslwI.jpg');"></div>
-		<div class="bio-text">
-			<h3>Peter Upfold</h3>
-			<p>Peter Upfold is a web developer, technology enthusiast, blogger and podcaster. Peter has worked in the realm of web development, particularly with PHP and MySQL, for several years, and is also interested in many other aspects of technology, from programming to networking and servers. He is also excited about the ongoing potential of technology to empower people and make a real difference to people’s lives.</p>
+</section>
+
+<section class="row">
+	<div class="row-interior">
+		<h2 class="section-header">Selected work</h2>
+		<ul class="boxes">
+		{% assign i = 0 %}
+		{% for page in site.pages %}
+			{% if page.layout == 'portfolio' %}
+				{% if i < 50 %}
+					<li class="three-up home-boxes-item">
+						<a href="{{ page.url }}" class="home-boxes-link">
+							<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
+							{{ page.title }}
+						</a>
+					</li>
+					{% assign i = i|plus:1 %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
+</section>
+
+<section class="row">
+	<div class="row-interior">
+		<h2 class="section-header">On our blog</h2>
+		{% for post in site.posts limit:3 %}
+			<article class="entry content">
+				<div class="entry-text">
+					<h3 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+					<div class="entry-content">
+						{{ post.content | strip_html | truncatewords:13 }}
+					</div>
+				</div>
+				{% if post.feature_image %}
+				<div class="entry-thumbnail" style="background-image: url('{{ post.feature_image }}')"></div>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</div>
+</section>
+
+<section class="row">
+	<div class="row-interior">
+		<h2 class="section-header">Who we are</h2>
+		<div class="content two-up bio">
+			<div class="bio-photo" style="background-image: url('http://i.imgur.com/IvZ2qsf.jpg');"></div>
+			<div class="bio-text">
+				<h3>Chris Van Patten</h3>
+				<p>Chris Van Patten is the founder of Van Patten Media and its current Creative Director. With a life-long background in the theatre (he has a degree in Theatre Design &amp; Technology) Chris has made it a part of Van Patten Media’s core mission to bring effective and attractive websites to artists and arts organizations in the United States and abroad.</p>
+			</div>
+		</div>
+		<div class="content two-up bio">
+			<div class="bio-photo" style="background-image: url('http://i.imgur.com/4AGslwI.jpg');"></div>
+			<div class="bio-text">
+				<h3>Peter Upfold</h3>
+				<p>Peter Upfold is a web developer, technology enthusiast, blogger and podcaster. Peter has worked in the realm of web development, particularly with PHP and MySQL, for several years, and is also interested in many other aspects of technology, from programming to networking and servers. He is also excited about the ongoing potential of technology to empower people and make a real difference to people’s lives.</p>
+			</div>
 		</div>
 	</div>
 </section>

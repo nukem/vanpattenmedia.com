@@ -6,40 +6,44 @@
 <body>
 	{% include header.html %}
 
-	<div class="row primary">
-		<h2 class="entry-title">{{ page.title }}</h2>
-		<p><time>{{ page.date | date: "%d %b %Y" }}</time> by {{ page.author }}</p>
-		<article class="content">
-			<div class="entry-content">
-				{{ content }}
-			</div>
-		</article>
-		<nav class="post-nav">
-			{% if page.previous %}
-			<a href="{{ page.previous.url }}" class="nav-prev two-up content">&larr;<span class="nav-label"> Previous</span></a>
-			{% endif %}
+	<div class="row">
+		<div class="row-interior">
+			<h2 class="entry-title">{{ page.title }}</h2>
+			<p><time>{{ page.date | date: "%d %b %Y" }}</time> by {{ page.author }}</p>
+			<article class="content">
+				<div class="entry-content">
+					{{ content }}
+				</div>
+			</article>
+			<nav class="post-nav">
+				{% if page.previous %}
+				<a href="{{ page.previous.url }}" class="nav-prev two-up content">&larr;<span class="nav-label"> Previous</span></a>
+				{% endif %}
 
-			{% if page.next %}
-			<a href="{{ page.next.url }}" class="nav-next two-up content"><span class="nav-label">Next </span>&rarr;</a>
-			{% endif %}
-		</nav>
+				{% if page.next %}
+				<a href="{{ page.next.url }}" class="nav-next two-up content"><span class="nav-label">Next </span>&rarr;</a>
+				{% endif %}
+			</nav>
+		</div>
 	</div>
 
 	<section class="row">
-		<h2 class="section-header">Share your thoughts</h2>
-		<div class="content comments">
-			<div id="disqus_thread"></div>
-			<script type="text/javascript">
-				var disqus_shortname = 'vanpattenmedia';
+		<div class="row-interior">
+			<h2 class="section-header">Share your thoughts</h2>
+			<div class="content comments">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+					var disqus_shortname = 'vanpattenmedia';
 
-				/* * * DON'T EDIT BELOW THIS LINE * * */
-				(function() {
-					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</div>
 		</div>
 	</section>
 
