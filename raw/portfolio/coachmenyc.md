@@ -7,4 +7,6 @@ portfolio:
   responsive: true
   identity: true
   html5: true
+  images:
+    - screenshot.png
 ---

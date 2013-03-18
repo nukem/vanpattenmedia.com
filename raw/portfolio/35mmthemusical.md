@@ -7,6 +7,8 @@ portfolio:
   wordpress: true
   responsive: true
   html5: true
+  images:
+    - screenshot.png
 ---
 
 **35mm** is a “musical exhibition” by composer Ryan Scott Oliver, inspired by the photography of Matthew Murphy. A website that incorporated video, photography, and audio was key to capture the essence of the production, which is receiving its first complete production in mid-March in New York City and a cast recording soon after.

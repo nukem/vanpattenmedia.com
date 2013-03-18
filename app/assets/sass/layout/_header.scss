@@ -1,14 +1,19 @@
 .header-logo {
 	display: block;
-	width: 261px;
 	overflow: hidden;
 	background: rgba(white, 0.25);
-	@include border-bottom-radius;
-	padding: 100px 20px 9px;
-	margin: 0 0 0 20px;
+	text-align: center;
+	padding: 20px 20px 9px;
+
+	@media #{$tablet} {
+		@include border-bottom-radius;
+		padding-top: 100px;
+		margin-left: 20px;
+		width: 261px;
+	}
 
 	img {
-		width: inherit;
+		width: 261px;
 		height: auto;
 	}
 }

@@ -5,6 +5,8 @@ permalink: julia-nathan/
 portfolio:
   url: http://www.julia-nathan.com/
   wordpress: true
+  images:
+    - screenshot.png
 ---
 
 Actress, comedienne, and future star Julia Nathan was looking for a central place online that could hold her biography and resume, extensive collection of multimedia, and update her fans with latest news. And she wanted to be able to manage it herself.

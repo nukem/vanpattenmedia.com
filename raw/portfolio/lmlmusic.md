@@ -6,6 +6,8 @@ portfolio:
   url: http://www.lmlmusic.com/
   wordpress: true
   html5: true
+  images:
+    - screenshot.png
 ---
 
 Although the previous iteration of the **LML Music** website was powered by WordPress, it was clunky and difficult to manage. Using custom plugins and a ground-up rearchitecture of the site, we were able to simplify administration and give it a brand new modern look.

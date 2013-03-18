@@ -6,4 +6,6 @@ portfolio:
   url: http://www.oneregionforward.org/
   wordpress: true
   html5: true
+  images:
+    - screenshot.png
 ---
