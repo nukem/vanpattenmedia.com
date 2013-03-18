@@ -21,7 +21,7 @@ server {
 
 	# Where are we located? What should we load by default?
 	root <%= app_deploy_to %>/current/public;
-	index index.php index.html index.htm;
+	index index.html index.htm;
 
 	# What's our domain name?
 	<% if app_stage == "production" %>
@@ -34,27 +34,8 @@ server {
 	# More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
 	sendfile off;
 
-	# Lockdown TimThumb
-	<%= render "#{config_path}/nginx/modules/timthumb-lockdown.erb", binding %>
-
-
-	##################################
-	#                                #
-	#   Rewrites and asset caching   #
-	#                                #
-	##################################
-
 	location / {
-		try_files $uri $uri/ @rewrites;
-	}
-
-	location @rewrites {
-		<%= render "#{config_path}/nginx/modules/rewrites/default.erb", binding %>
-		
-		# wp-content -> content?
-
-		# If nothing matches, send it to index.php
-		rewrite ^ /index.php last;
+		try_files $uri $uri/ /index.html last;
 	}
 
 
@@ -64,6 +45,7 @@ server {
 
 	<%= render "#{config_path}/nginx/modules/fonts.erb", binding %>
 
+
 	###################
 	#      Images     #
 	###################
@@ -72,11 +54,13 @@ server {
 		<%= render "#{config_path}/nginx/modules/images.erb", binding %>
 	}
 
+
 	###################
 	#     CSS & JS    #
 	###################
 
 	<%= render "#{config_path}/nginx/modules/css-quickassets.erb", binding %>
+
 
 	###################
 	#  Error handling #
@@ -91,109 +75,79 @@ server {
 
 	<%= render "#{config_path}/nginx/modules/default-deny.erb", binding %>
 
-	##################################
-	#                                #
-	#      PHP-related settings      #
-	#                                #
-	##################################
-
-	<%= render "#{config_path}/nginx/modules/php-fpm.erb", binding %>
-
 }
+
 
 # SSL server
 
 server {
 
-        ##################################
-        #                                #
-        #        Default settings        #
-        #                                #
-        ##################################
+	##################################
+	#                                #
+	#        Default settings        #
+	#                                #
+	##################################
 
-        # Error Logging
-        error_log /var/log/nginx/error.log notice;
-        # rewrite_log on;
+	# Error Logging
+	error_log /var/log/nginx/error.log notice;
+	# rewrite_log on;
 
-        # Set the port
-        listen 443 ssl;
+	# Set the port
+	listen 443 ssl;
 	# SSL settings are set globally for all servers in the Nginx global configuration
 
-        # Where are we located? What should we load by default?
-        root <%= app_deploy_to %>/current/public;
-        index index.php index.html index.htm;
+	# Where are we located? What should we load by default?
+	root <%= app_deploy_to %>/current/public;
+	index index.html index.htm;
 
-        # What's our domain name?
-        <% if app_stage == "production" %>
-        server_name www.<%= app_domain %>;
-        <% else %>
-        server_name <%= app_domain %>;
-        <% end %>
+	# What's our domain name?
+	<% if app_stage == "production" %>
+	server_name www.<%= app_domain %>;
+	<% else %>
+	server_name <%= app_domain %>;
+	<% end %>
 
-        # Avoid sendfile issues with sending stale files
-        # More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
-        sendfile off;
+	# Avoid sendfile issues with sending stale files
+	# More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
+	sendfile off;
 
-        # Lockdown TimThumb
-        <%= render "#{config_path}/nginx/modules/timthumb-lockdown.erb", binding %>
-
-
-        ##################################
-        #                                #
-        #   Rewrites and asset caching   #
-        #                                #
-        ##################################
-
-        location / {
-                try_files $uri $uri/ @rewrites;
-        }
-
-        location @rewrites {
-                <%= render "#{config_path}/nginx/modules/rewrites/default.erb", binding %>
-
-                # If nothing matches, send it to index.php
-                rewrite ^ /index.php last;
-        }
+	location / {
+		try_files $uri $uri/ /index.html last;
+	}
 
 
-        ###################
-        #      Fonts      #
-        ###################
+	###################
+	#      Fonts      #
+	###################
+	
+	<%= render "#{config_path}/nginx/modules/fonts.erb", binding %>
 
-        <%= render "#{config_path}/nginx/modules/fonts.erb", binding %>
 
-        ###################
-        #      Images     #
-        ###################
+	###################
+	#      Images     #
+	###################
 
-        <%= render "#{config_path}/nginx/modules/images.erb", binding %>
+	<%= render "#{config_path}/nginx/modules/images.erb", binding %>
 
-        ###################
-        #     CSS & JS    #
-        ###################
 
-        <%= render "#{config_path}/nginx/modules/css-quickassets.erb", binding %>
+	###################
+	#     CSS & JS    #
+	###################
 
-        ###################
-        #  Error handling #
-        ###################
+	<%= render "#{config_path}/nginx/modules/css-quickassets.erb", binding %>
 
-        # redirect server error pages to the static page /50x.html
-        # error_page 404 /404.html;
-        # error_page 500 502 503 504 /50x.html;
-        # location = /50x.html {
-        #       root /usr/share/nginx/www;
-        # }
 
-        <%= render "#{config_path}/nginx/modules/default-deny.erb", binding %>
+	###################
+	#  Error handling #
+	###################
 
-        ##################################
-        #                                #
-        #      PHP-related settings      #
-        #                                #
-        ##################################
+	# redirect server error pages to the static page /50x.html
+	# error_page 404 /404.html;
+	# error_page 500 502 503 504 /50x.html;
+	# location = /50x.html {
+	#       root /usr/share/nginx/www;
+	# }
 
-        <%= render "#{config_path}/nginx/modules/php-fpm.erb", binding %>
-	# must override port for SSL
-	fastcgi_param  SERVER_PORT        443;
+	<%= render "#{config_path}/nginx/modules/default-deny.erb", binding %>
+
 }
