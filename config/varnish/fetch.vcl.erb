@@ -1,0 +1,48 @@
+#
+# Varnish vcl_fetch for this site  that loads from modules/
+#
+# Your WPFrame derived projects will have custom configuration here,
+# but can also load predefined functionality from varnish/modules with render()
+#
+
+<% require "#{config_path}/erb-render.rb" %>
+
+# Do not fail to include the if line below, or your rules will become Varnish-global
+if (req.http.host ~ "<%= site_domain %>$") {
+
+	# cache home page for quite some time
+	if (req.url == "/" ) {
+		unset beresp.http.expires;
+		set beresp.http.cache-control = "max-age=600";
+		set beresp.ttl = 24h;
+		set beresp.http.X-VPM-Is-New-Object = "1";
+	}
+
+	# cache blog posts
+	if (req.url ~ "^/([0-9]{4})/") {
+		unset beresp.http.expires;
+		set beresp.http.cache-control = "max-age=300";
+		set beresp.ttl = 18h;
+		set beresp.http.X-VPM-Is-New-Object = "1";
+	}
+
+
+	#projects/websites/about/services/contact
+	if (req.url ~ "^/(projects|about|services|contact)/") {
+		unset beresp.http.expires;
+		set beresp.http.cache-control = "max-age=600";
+		set beresp.ttl = 24h;
+		set beresp.http.X-VPM-Is-New-Object = "1";
+	}
+
+	# post-processed images can be cached for quite some time indeed
+	if (req.url ~ "^/img/e:grayblur/") {
+		unset beresp.http.expires;
+		set beresp.ttl = 10d;
+		set beresp.http.X-VPM-Is-New-Object = "1";
+	}
+
+	# Cookie handling -- override if you have custom cookies that need to be dynamic
+	<%= render "#{config_path}/varnish/modules/fetch/wordpress-cookies.erb", binding %> 
+
+}
