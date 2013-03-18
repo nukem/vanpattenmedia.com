@@ -2,7 +2,7 @@
 
 This is our website, open sourcified!
 
-Want to contribute? Go right ahead. The content is all handled via WordPress, but you can contribute to the look of the site (or steal from us, under the license terms) with the code above.
+Want to contribute? Go right ahead. You can contribute to the look of the site (or steal from us, under the license terms) with the code above.
 
 ## Getting started
 
@@ -11,12 +11,13 @@ Want to contribute? Go right ahead. The content is all handled via WordPress, bu
 3. `git clone git://github.com/vanpattenmedia/vanpattenmedia.com.git`
 4. `cd vanpattenmedia.com`
 5. `bundle install`
-6. `vagrant up` _(probably won't work unless you use an alternate Vagrant box)_
+6. `jekyll --auto --server`
 7. `bundle exec guard`
+8. [0.0.0.0:4000](0.0.0.0:4000)
 
 ### License
 
-**Copyright &copy; 2012, Van Patten Media.**
+**Copyright &copy; 2012-2013, Van Patten Media.**
 
 All rights reserved.
 
@@ -31,7 +32,3 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 ### License Exceptions
 
 The above license applies to all original code. Bundled libraries and fonts are subject to their own licenses.
-
-In particular, we use...
-
-*   <a href="https://github.com/somerandomdude/Iconic">IconicStroke</a> (<a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">SIL Open Font License</a>)
