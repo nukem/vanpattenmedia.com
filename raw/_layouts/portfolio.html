@@ -11,18 +11,21 @@
 			<header class="prt-header">
 				<div class="prt-heading">
 					<h2 class="entry-title">{{ page.title }}</h2>
-					<a href="{{ page.portfolio['url'] }}">{{ page.portfolio['url'] }}</a>
+					{% if page.portfolio['url'] %}<a href="{{ page.portfolio['url'] }}">{{ page.portfolio['url'] }}</a>{% endif %}
 				</div>
 				<ul class="prt-features">
-					{% if page.portfolio['html5'] %}<li><i data-tooltip="HTML5" class="icon icon-html5"><span>HTML5</span></i></li>{% endif%}
-					{% if page.portfolio['identity'] %}<li><i data-tooltip="Identity Design" class="icon icon-identity"><span>Identity</span></i></li>{% endif%}
-					{% if page.portfolio['responsive'] %}<li><i data-tooltip="Responsive" class="icon icon-responsive"><span>Responsive</span></i></li>{% endif%}
-					{% if page.portfolio['wordpress'] %}<li><i data-tooltip="WordPress" class="icon icon-wordpress"><span>WordPress</span></i></li>{% endif%}
+					{% if page.portfolio['html5'] %}<li><i data-tooltip="HTML5" class="icon icon-html5"><span>HTML5</span></i></li>{% endif %}
+					{% if page.portfolio['identity'] %}<li><i data-tooltip="Identity Design" class="icon icon-identity"><span>Identity</span></i></li>{% endif %}
+					{% if page.portfolio['responsive'] %}<li><i data-tooltip="Responsive" class="icon icon-responsive"><span>Responsive</span></i></li>{% endif %}
+					{% if page.portfolio['wordpress'] %}<li><i data-tooltip="WordPress" class="icon icon-wordpress"><span>WordPress</span></i></li>{% endif %}
 				</ul>
 			</header>
+			{% if content %}
 			<div class="content entry-content">
 				{{ content }}
 			</div>
+			{% endif %}
+			{% if page.portfolio['images'] %}
 			<ul class="boxes">
 				{% for image in page.portfolio['images'] %}
 					<li class="two-up content screenshot">
@@ -30,6 +33,7 @@
 					</li>
 				{% endfor %}
 			</ul>
+			{% endif %}
 		</div>
 	</article>
 
