@@ -22,8 +22,8 @@
 	<!-- og:site_name -->
 	{% if site.title %}<meta property="og:site_name" content="{{ site.title }}">{% endif %}
 
-	<!-- og:image -->
 	{% if page.layout == 'portfolio' %}
+	<!-- og:image -->
 		{% for image in page.portfolio['images'] %}
 		<meta property="og:image" content="{{ site.url }}{{ page.url }}{{ image }}">
 		{% endfor %}
@@ -31,9 +31,6 @@
 	
 	<!-- og:url -->
 	{% if page.url %}<meta property="og:url" content="{{ site.url }}{{ page.url }}">{% endif %}
-	
-	<!-- og:owner_link -->
-	{% if site.owner_link %}<meta property="article:author" content="{{ site.owner_link }}">{% endif %}
 	
 	<!-- og:description / meta description -->
 	{% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt }}">
