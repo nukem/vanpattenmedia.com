@@ -18,7 +18,6 @@ set :user,             project['deploy_user']
 set :app_user,         project['user']
 set :app_group,        project['group']
 set :app_access_users, project['access_users']
-set :app_theme,        project['theme']
 set :repository,       project['repo']
 set :site_domain,      project['domain']
 
@@ -28,7 +27,6 @@ require 'vpmframe/capistrano/assets'
 require 'vpmframe/capistrano/puppet'
 require 'vpmframe/capistrano/credentials'
 require 'vpmframe/capistrano/permissions'
-require 'vpmframe/capistrano/wp-salts'
 
 # Don't do Railsy things...
 namespace :deploy do
@@ -41,32 +39,43 @@ namespace :deploy do
   end
 end
 
+namespace :jekyll do
+  desc "Compile the jekyll site"
+  task :compile, :roles => :app do
+    # CSS
+    system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
+
+    # JavaScript
+    system("cd ~/.captemp/#{fetch(:application)} && jammit -c config/assets.yml")
+
+    # Images
+    system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
+    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images")
+
+    # Jekyll
+    system("cd ~/.captemp/#{fetch(:application)} && jekyll")
+  end
+
+  desc "Upload the jekyll site"
+  task :upload, :roles => :app do
+    system("scp -r -P #{fetch(:app_port)} ~/.captemp/#{fetch(:application)}/public #{fetch(:user)}@#{fetch(:app_server)}:#{release_path}/")
+  end
+end
+
 # Setup related tasks
 before "deploy:setup",
   "puppet:show"
 
 after "deploy:setup",
   "permissions:fix_setup_ownership",
-  "salts:generate_wp_salts"
-
-# Upload and symlink DB credentials
-before "deploy:create_symlink",
-  "credentials:upload_db_cred",
-  "credentials:upload_s3_cred",
-  "credentials:symlink_db_cred",
-  "salts:symlink_wp_salts"
 
 # Compile and upload assets
 before "deploy",
   "assets:local_temp_clone",
-  "assets:compile_local_images",
-  "assets:compile_local_css",
-  "assets:compile_local_js"
+  "jekyll:compile"
 
 before "deploy:create_symlink",
-  "assets:upload_asset_css",
-  "assets:upload_asset_js",
-  "assets:upload_asset_images"
+  "jekyll:upload"
 
 # Fix ownership
 before "deploy:restart",
