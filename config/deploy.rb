@@ -67,7 +67,7 @@ before "deploy:setup",
   "puppet:show"
 
 after "deploy:setup",
-  "permissions:fix_setup_ownership",
+  "permissions:fix_setup_ownership"
 
 # Compile and upload assets
 before "deploy",

@@ -18,10 +18,9 @@ group :development do
   gem "compass-validator"
   gem "oily_png"
   gem "css_parser"
-  gem "susy"
 
-  # Jekyll plugins
-  gem "liquid-inheritance"
+  # Jekyll
+  gem "jekyll"
 
   # Image optimization
   gem "image_optim"
@@ -36,7 +35,6 @@ group :development do
   gem "guard-livereload", "~> 1.0.3"
   gem "guard-jammit"
   gem "guard-shell", :git => "git://github.com/hawx/guard-shell.git"
-  gem "guard-bundler"
   gem "yajl-ruby"
   gem "rb-fsevent", "~> 0.9.1"
 end
