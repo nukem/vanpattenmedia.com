@@ -73,6 +73,28 @@ layout: base
 
 <section class="row">
 	<div class="row-interior">
+		<h2 class="section-header" id="our-projects">Our projects</h2>
+		<ul class="boxes">
+		{% assign i = 0 %}
+		{% for page in site.pages %}
+			{% if page.layout == 'project' %}
+				{% if i < 50 %}
+					<li class="three-up home-boxes-item project">
+						<a href="{{ page.url }}" class="home-boxes-link">
+							<div class="home-boxes-image" style="background-image: url('{{ page.url }}{{ page.project['thumbnail'] }}');"></div>
+							{{ page.title }}
+						</a>
+					</li>
+					{% assign i = i|plus:1 %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
+</section>
+
+<section class="row">
+	<div class="row-interior">
 		<h2 class="section-header" id="on-our-blog"><a href="/blog/">On our blog</a></h2>
 		{% for post in site.posts limit:3 %}
 			<article class="entry content">

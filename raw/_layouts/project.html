@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+{% include head.html %}
+<body>
+	{% include header.html %}
+
+	<div class="row primary">
+		<div class="row-interior">
+			<h2 class="entry-title">{{ page.title }}</h2>
+			<article class="content">
+				<div class="entry-content">
+					{{ content }}
+				</div>
+			</article>
+		</div>
+	</div>
+
+	{% include footer.html %}
+</body>
+</html>
