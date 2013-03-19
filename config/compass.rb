@@ -8,8 +8,8 @@ project_path      = "./"
 # Where's stuff being spit out?
 css_dir           = "raw/css"
 images_dir        = "raw/images"
-javascripts_dir   = "javascripts"
-fonts_dir         = "fonts"
+javascripts_dir   = "raw/javascripts"
+fonts_dir         = "raw/fonts"
 
 # Where are we pulling from?
 sass_dir          = "app/assets/sass"

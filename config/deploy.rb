@@ -45,11 +45,14 @@ namespace :jekyll do
     system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
     system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images")
 
-    # CSS
-    system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
+	# Fonts
+    system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/fonts/ ~/.captemp/#{fetch(:application)}/raw/fonts")
 
     # JavaScript
     system("cd ~/.captemp/#{fetch(:application)} && jammit -c config/assets.yml")
+
+    # CSS
+    system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
 
     # Jekyll
     system("cd ~/.captemp/#{fetch(:application)} && jekyll")
