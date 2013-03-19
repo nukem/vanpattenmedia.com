@@ -43,7 +43,7 @@ namespace :jekyll do
   task :compile, :roles => :app do
     # Images
     system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
-    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images")
+    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images/*")
 
 	# Fonts
     system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/fonts/ ~/.captemp/#{fetch(:application)}/raw/fonts")
