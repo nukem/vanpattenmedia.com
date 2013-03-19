@@ -24,7 +24,6 @@ set :site_domain,      project['domain']
 # Load vpmframe requirements
 require 'vpmframe/erb-render'
 require 'vpmframe/capistrano/assets'
-require 'vpmframe/capistrano/puppet'
 require 'vpmframe/capistrano/credentials'
 require 'vpmframe/capistrano/permissions'
 
@@ -42,15 +41,15 @@ end
 namespace :jekyll do
   desc "Compile the jekyll site"
   task :compile, :roles => :app do
+    # Images
+    system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
+    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images")
+
     # CSS
     system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
 
     # JavaScript
     system("cd ~/.captemp/#{fetch(:application)} && jammit -c config/assets.yml")
-
-    # Images
-    system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
-    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images")
 
     # Jekyll
     system("cd ~/.captemp/#{fetch(:application)} && jekyll")
@@ -60,6 +59,33 @@ namespace :jekyll do
   task :upload, :roles => :app do
     system("scp -r -P #{fetch(:app_port)} ~/.captemp/#{fetch(:application)}/public #{fetch(:user)}@#{fetch(:app_server)}:#{release_path}/")
   end
+end
+
+namespace :puppet do
+
+  desc "Set up puppet"
+  task :show, :roles => :app do
+    # Remove any existing directories, so we can reupload them
+    run "rm -rf /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
+
+    # Make the directory again
+    run "mkdir -p /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}"
+
+    # Upload the configurations
+    upload("./config/erb-render.rb", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/erb-render.rb", :via => :scp)
+    upload("./config/puppet", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}", :via => :scp, :recursive => :true)
+    upload("./config/nginx", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/nginx", :via => :scp, :recursive => :true)
+    upload("./config/scripts", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/scripts", :via => :scp, :recursive => :true)
+    upload("./config/varnish", "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/varnish", :via => :scp, :recursive => :true)
+
+    # Render the manifest
+    puppet_manifest = ERB.new(File.read("./config/puppet/site.pp.erb")).result(binding)
+    put puppet_manifest, "/home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
+
+    # Apply the manifest
+    run "#{sudo} puppet apply /home/#{fetch(:user)}/tmp/#{fetch(:app_name)}/#{fetch(:app_stage)}/site.pp"
+  end
+
 end
 
 # Setup related tasks
