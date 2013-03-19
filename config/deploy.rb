@@ -49,7 +49,7 @@ namespace :jekyll do
     system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/fonts/ ~/.captemp/#{fetch(:application)}/raw/fonts")
 
     # JavaScript
-    system("cd ~/.captemp/#{fetch(:application)} && jammit -c config/assets.yml")
+    system("cd ~/.captemp/#{fetch(:application)} && jammit -o ./raw/javascripts")
 
     # CSS
     system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
