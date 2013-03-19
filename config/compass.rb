@@ -7,7 +7,7 @@ project_path      = "./"
 
 # Where's stuff being spit out?
 css_dir           = "raw/css"
-images_dir        = "public/images"
+images_dir        = "raw/images"
 javascripts_dir   = "javascripts"
 fonts_dir         = "fonts"
 

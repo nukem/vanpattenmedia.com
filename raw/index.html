@@ -48,7 +48,9 @@ layout: base
 				{% if i < 50 %}
 					<li class="three-up home-boxes-item">
 						<a href="{{ page.url }}" class="home-boxes-link">
-							<div class="home-boxes-image" style="background-image: url('{{ page.url }}screenshot.png');"></div>
+							{% for image in page.portfolio['images'] limit:1 %}
+							<div class="home-boxes-image" style="background-image: url('{{ page.url }}{{ image }}');"></div>
+							{% endfor %}
 							{{ page.title }}
 						</a>
 					</li>

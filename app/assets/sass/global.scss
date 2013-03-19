@@ -16,8 +16,8 @@
 @import "misc/clearfix";
 
 body {
-	//background: $base-color-background image-url('background.png') center/cover fixed no-repeat;
-	background: $base-color-background;
+	background: $base-color-background image-url('background.jpg') left fixed no-repeat;
+	background-size: cover;
 	color: $base-color-text;
 	font: #{$base-font-size}/1.5 $base-font-family;
 }
