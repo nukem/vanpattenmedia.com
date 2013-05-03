@@ -41,21 +41,11 @@ end
 namespace :jekyll do
   desc "Compile the jekyll site"
   task :compile, :roles => :app do
-    # Images
-    system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/images/ ~/.captemp/#{fetch(:application)}/raw/images")
-    system("image_optim --no-pngout ~/.captemp/#{fetch(:application)}/raw/images/*")
-
 	# Fonts
     system("cp -R ~/.captemp/#{fetch(:application)}/app/assets/fonts/ ~/.captemp/#{fetch(:application)}/raw/fonts")
 
     # JavaScript
-    system("cd ~/.captemp/#{fetch(:application)} && jammit -o ./raw/javascripts")
-
-    # CSS
-    system("cd ~/.captemp/#{fetch(:application)} && compass compile -e production --force")
-
-    # Jekyll
-    system("cd ~/.captemp/#{fetch(:application)} && jekyll")
+    system("cd ~/.captemp/#{fetch(:application)} && make assets")
   end
 
   desc "Upload the jekyll site"
