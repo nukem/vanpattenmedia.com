@@ -8,7 +8,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    capistrano (2.15.4)
+    capistrano (2.14.2)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -119,7 +119,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano
+  capistrano (= 2.14.2)
   compass
   compass-rgbapng
   guard

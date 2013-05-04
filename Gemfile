@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :development do
-  gem "capistrano"
+  gem "capistrano", "2.14.2"
   gem "vpmframe", :git => "git://github.com/vanpattenmedia/vpmframe-gem.git", :branch => "make"
 
   # Sass 3.2+, Compass and plugins

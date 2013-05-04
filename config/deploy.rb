@@ -48,7 +48,7 @@ namespace :jekyll do
     system("cd ~/.captemp/#{fetch(:application)} && make assets")
 
 	# Go Jekyll Go
-    system("cd ~/.captemp/#{fetch(:application)} && jekyll compile")
+    system("cd ~/.captemp/#{fetch(:application)} && jekyll")
   end
 
   desc "Upload the jekyll site"
