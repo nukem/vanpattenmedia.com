@@ -1,13 +1,13 @@
 RAW = ./app/assets
-COMPILED = ./raw
+COMPILED = ./public/assets
 
 assets: images javascripts css
 
 css:
-	compass compile
+	bundle exec compass compile
 
 javascripts:
-	jammit
+	bundle exec jammit
 
 images:
 	mkdir -p $(COMPILED)/images/
@@ -17,7 +17,7 @@ images:
 clean: clean-css clean-javascripts clean-images
 
 clean-css:
-	rm -rf $(COMPILED)/css/
+	rm -rf $(COMPILED)/stylesheets/
 
 clean-javascripts:
 	rm -rf $(COMPILED)/js/

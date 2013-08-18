@@ -6,10 +6,10 @@ require 'sass-globbing'
 project_path      = "./"
 
 # Where's stuff being spit out?
-css_dir           = "raw/css"
-images_dir        = "raw/images"
-javascripts_dir   = "raw/javascripts"
-fonts_dir         = "raw/fonts"
+css_dir           = "public/assets/stylesheets"
+images_dir        = "public/assets/images"
+javascripts_dir   = "public/assets/javascripts"
+fonts_dir         = "public/assets/fonts"
 
 # Where are we pulling from?
 sass_dir          = "app/assets/sass"
