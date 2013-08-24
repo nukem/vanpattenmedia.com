@@ -1,0 +1,20 @@
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: 2em;
+
+.col-row {
+	@include container;
+}
+
+.col-one-third {
+	@include span-columns( 4, 12 );
+}
+
+.col-two-third {
+	@include span-columns( 8, 12 );
+}
+
+.col-last {
+	@include omega;
+}

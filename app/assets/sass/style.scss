@@ -1,0 +1,32 @@
+// Normalize reset
+@import "vendor/normalize/2.0.1/normalize";
+
+// Compass Imports
+@import "compass/css3";
+@import "compass/layout";
+@import "susy";
+
+// Theme
+@import "misc/theme";
+//@import "misc/clearfix";
+
+// Layout
+@import "layout/header";
+
+// Modules
+@import "modules/col";
+
+body {
+	background: $base-color-background image-url('background.jpg') left fixed no-repeat;
+	background-size: cover;
+	color: $base-color-text;
+	font: #{$base-font-size}/1.5 $base-font-family;
+}
+
+a {
+	color: darken( $base-color-text, 20% );
+
+	&:hover {
+		color: $base-color-text;
+	}
+}
