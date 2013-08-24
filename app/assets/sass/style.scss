@@ -30,6 +30,10 @@ body {
 	height: 100%;
 }
 
+.content {
+	background: rgba( black, 0.5 );
+}
+
 a {
 	color: darken( $base-color-text, 20% );
 
