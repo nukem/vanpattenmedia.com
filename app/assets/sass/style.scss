@@ -15,12 +15,19 @@
 
 // Modules
 @import "modules/col";
+@import "modules/gal";
+
+html {
+	height: 100%;
+}
 
 body {
-	background: $base-color-background image-url('background.jpg') left fixed no-repeat;
+	background: $base-color-background image-url('background.jpg') center fixed no-repeat;
 	background-size: cover;
 	color: $base-color-text;
 	font: #{$base-font-size}/1.5 $base-font-family;
+	@include text-shadow;
+	height: 100%;
 }
 
 a {

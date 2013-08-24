@@ -1,0 +1,70 @@
+.gal {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gal-full {
+	.gal-item {
+		@include span-columns( 3, 12 );
+
+		&:nth-child(4n) {
+			@extend .col-last;
+		}
+	}
+}
+
+.gal-half {
+	.gal-item {
+		@include span-columns( 3, 6 );
+
+		&:nth-child(2n) {
+			@extend .col-last;
+		}
+	}
+}
+
+.gal-item {
+	@include span-columns( 3, 12 );
+	background: black;
+	text-align: center;
+	margin-bottom: 2em;
+	position: relative;
+	min-height: 100px;
+	line-height: 0;
+
+	h2 {
+		display: table;
+		width: 80%; 
+		margin: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		padding: 0;
+		visibility: hidden;
+		z-index: 10;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		position: relative;
+		z-index: 5;
+	}
+
+	&:hover {
+		h2 {
+			visibility: visible;
+		}
+
+		img {
+			@include opacity( .25 );
+		}
+	}
+}
+
+.gal-item-link {
+	display: block;
+}

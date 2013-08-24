@@ -1,5 +1,6 @@
 .header {
-	height: 400px;
+	min-height: 200px;
+	height: 100%;
 	text-align: center;
 	position: relative;
 }
@@ -15,7 +16,7 @@
 	right: 0;
 
 	img {
-		width: 261px;
-		height: 42px;
+		width: 400px;
+		height: auto;
 	}
 }

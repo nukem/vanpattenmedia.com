@@ -1,10 +1,14 @@
 $total-columns: 12;
-$column-width: 4em;
-$gutter-width: 1em;
+$column-width: 3.5em;
+$gutter-width: 2em;
 $grid-padding: 2em;
 
 .col-row {
 	@include container;
+}
+
+.col-half {
+	@include span-columns( 6, 12 );
 }
 
 .col-one-third {
