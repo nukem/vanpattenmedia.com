@@ -10,6 +10,7 @@ group :development do
   gem "susy"
   gem "compass"
   gem "compass-rgbapng"
+  gem "compass-normalize"
   gem "oily_png"
 
   # Image optimization

@@ -1,6 +1,7 @@
 # Require some gems
 require 'rgbapng'
 require 'susy'
+require 'compass-normalize'
 require 'sass-globbing'
 
 # Path to theme from project root

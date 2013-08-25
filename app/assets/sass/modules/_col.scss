@@ -5,7 +5,8 @@ $grid-padding: 2em;
 
 .col-row {
 	@include container;
-	padding: 2rem 0;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 .col-half {

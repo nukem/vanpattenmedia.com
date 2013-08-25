@@ -6,6 +6,5 @@ package_path:          assets/javascripts
 javascripts:
   script:
     - app/assets/javascripts/script.js
-  portfolio:
-    - vendor/javascripts/jquery.tipsy/jquery.tipsy.js
-    - app/assets/javascripts/portfolio.js
+  libraries:
+    - vendor/javascripts/formalize/1.2/*.js

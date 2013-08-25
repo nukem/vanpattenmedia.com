@@ -1,0 +1,25 @@
+.form-block {
+	margin-bottom: 1rem;
+}
+
+.form-label {
+	@extend h2;
+	line-height: 18px;
+	margin: 0;
+	width: 100px;
+	float: left;
+	padding: 0.8rem 0;
+	@include opacity( 0.5 );
+}
+
+.form-controls {
+	margin-left: 100px;
+}
+
+input[type="text"], input[type="email"] {
+	min-width: 50%;
+}
+
+textarea {
+	min-height: 200px;
+}

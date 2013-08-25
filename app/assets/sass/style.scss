@@ -1,10 +1,12 @@
 // Normalize reset
-@import "vendor/normalize/2.0.1/normalize";
+$legacy-support-for-ie8: true;
+@import "normalize";
 
 // Compass Imports
 @import "compass/css3";
 @import "compass/layout";
 @import "susy";
+@import "misc/formalize";
 
 // Theme
 @import "misc/theme";
@@ -12,6 +14,7 @@
 
 // Layout
 @import "layout/header";
+@import "layout/forms";
 
 // Modules
 @import "modules/col";
@@ -40,4 +43,8 @@ a {
 	&:hover {
 		color: $base-color-text;
 	}
+}
+
+.copyright span {
+	@extend h2;
 }
