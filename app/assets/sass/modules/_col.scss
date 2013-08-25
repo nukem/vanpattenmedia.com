@@ -19,19 +19,18 @@ $break-secondary: 600px;
 }
 
 .col-one-third {
-	@include breakpoint( $break-primary ) {
+	@include breakpoint( $break-secondary ) {
 		@include span-columns( 4, 12 );
+		@include omega;
 	}
 }
 
 .col-two-third {
-	@include breakpoint( $break-primary ) {
+	@include breakpoint( $break-secondary ) {
 		@include span-columns( 8, 12 );
 	}
 }
 
 .col-last {
-	@include breakpoint( $break-primary ) {
-		@include omega;
-	}
+	@include omega;
 }

@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 
-	$('.gal-item').on({
-		mouseenter: function() {
+	$('.gal-item').hover(
+		function() {
 			$(this).find('img').pixastic(
 				'blurfast',
 				{
@@ -10,11 +10,11 @@ $(document).ready(function() {
 				}
 			);
 		},
-		mouseleave: function() {
+		function() {
 			$(this).find('canvas').each( function() {
 				Pixastic.revert(this);
 			} );
 		}
-	});
+	);
 
 });
