@@ -6,10 +6,28 @@
 
 .gal-full {
 	.gal-item {
-		@include span-columns( 3, 12 );
+		@include breakpoint( 0 $break-secondary ) {
+			@include span-columns( 6, 12 );
 
-		&:nth-child(4n) {
-			@extend .col-last;
+			&:nth-child(2n) {
+				@include omega;
+			}
+		}
+
+		@include breakpoint( $break-secondary $break-primary ) {
+			@include span-columns( 4, 12 );
+
+			&:nth-child(3n) {
+				@include omega;
+			}
+		}
+
+		@include breakpoint( $break-primary ) {
+			@include span-columns( 3, 12 );
+
+			&:nth-child(4n) {
+				@include omega;
+			}
 		}
 	}
 }
@@ -19,13 +37,12 @@
 		@include span-columns( 3, 6 );
 
 		&:nth-child(2n) {
-			@extend .col-last;
+			@include omega;
 		}
 	}
 }
 
 .gal-item {
-	@include span-columns( 3, 12 );
 	background: black;
 	text-align: center;
 	margin-bottom: 2em;

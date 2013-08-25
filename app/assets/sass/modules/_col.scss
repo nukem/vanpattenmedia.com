@@ -3,6 +3,9 @@ $column-width: 3.5em;
 $gutter-width: 2em;
 $grid-padding: 2em;
 
+$break-primary: 800px;
+$break-secondary: 600px;
+
 .col-row {
 	@include container;
 	padding-top: 2rem;
@@ -10,15 +13,21 @@ $grid-padding: 2em;
 }
 
 .col-half {
-	@include span-columns( 6, 12 );
+	@include breakpoint( $break-secondary ) {
+		@include span-columns( 6, 12 );
+	}
 }
 
 .col-one-third {
-	@include span-columns( 4, 12 );
+	@include breakpoint( $break-primary ) {
+		@include span-columns( 4, 12 );
+	}
 }
 
 .col-two-third {
-	@include span-columns( 8, 12 );
+	@include breakpoint( $break-primary ) {
+		@include span-columns( 8, 12 );
+	}
 }
 
 .col-last {

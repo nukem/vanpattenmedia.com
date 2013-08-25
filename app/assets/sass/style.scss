@@ -6,19 +6,19 @@ $legacy-support-for-ie8: true;
 @import "compass/css3";
 @import "compass/layout";
 @import "susy";
-@import "misc/formalize";
-
-// Theme
-@import "misc/theme";
-//@import "misc/clearfix";
-
-// Layout
-@import "layout/header";
-@import "layout/forms";
+@import "breakpoint";
 
 // Modules
 @import "modules/col";
 @import "modules/gal";
+
+// Misc
+@import "misc/theme";
+@import "misc/formalize";
+
+// Layout
+@import "layout/header";
+@import "layout/forms";
 
 html {
 	height: 100%;

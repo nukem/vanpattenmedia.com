@@ -11,6 +11,7 @@ group :development do
   gem "compass"
   gem "compass-rgbapng"
   gem "compass-normalize"
+  gem "breakpoint"
   gem "oily_png"
 
   # Image optimization

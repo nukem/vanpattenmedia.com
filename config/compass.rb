@@ -3,6 +3,7 @@ require 'rgbapng'
 require 'susy'
 require 'compass-normalize'
 require 'sass-globbing'
+require 'breakpoint'
 
 # Path to theme from project root
 project_path      = "./"
