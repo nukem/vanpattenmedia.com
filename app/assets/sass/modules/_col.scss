@@ -31,5 +31,7 @@ $break-secondary: 600px;
 }
 
 .col-last {
-	@include omega;
+	@include breakpoint( $break-primary ) {
+		@include omega;
+	}
 }

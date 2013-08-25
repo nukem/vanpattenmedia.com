@@ -52,19 +52,8 @@
 	@include border-radius;
 	overflow: hidden;
 
-	h2 {
-		display: table;
-		width: 80%; 
-		margin: auto;
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		padding: 0;
+	.gal-text {
 		visibility: hidden;
-		z-index: 10;
-		line-height: 1.1;
 	}
 
 	img {
@@ -75,13 +64,41 @@
 	}
 
 	&:hover {
-		h2 {
+		.gal-text {
 			visibility: visible;
 		}
+	}
+}
 
-		img {
-			@include opacity( .25 );
-		}
+.gal-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	@include rgba-background( rgba( black, 0.6 ) );
+}
+
+.gal-text-content-wrap {
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+.gal-text-content {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 1.1;
+	padding: 0 1rem;
+
+	h2 {
+		margin-top: 0;
+	}
+	
+	p {
+		margin-bottom: 0;
 	}
 }
 

@@ -9,9 +9,9 @@ group :development do
 
     # images
     watch(%r{app/assets/images/(.+\/)?(.+\.[gif|jpg|png]+)}) do |m|
-      `mkdir -p ./raw/images/#{m[1]}`
-      `cp #{m[0]} ./raw/images/#{m[1]}#{m[2]}`
-      `image_optim --no-pngout ./raw/images/#{m[1]}#{m[2]}`
+      `mkdir -p ./public/assets/images/#{m[1]}`
+      `cp #{m[0]} ./public/assets/images/#{m[1]}#{m[2]}`
+      `image_optim --no-pngout ./public/assets/images/#{m[1]}#{m[2]}`
     end
 
     # css

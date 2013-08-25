@@ -1,22 +1,25 @@
 .header {
 	min-height: 200px;
-	height: 100%;
 	text-align: center;
 	position: relative;
+	display: table;
+	width: 100%;
+
+	@include breakpoint( $break-primary ) {
+		height: 100%;
+	}
 }
 
 .logo {
-	display: table;
-	width: 50%; 
-	margin: auto;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+	display: table-cell;
+	vertical-align: middle;
 
 	img {
-		width: 400px;
+		width: 250px;
 		height: auto;
+		
+		@include breakpoint( $break-secondary ) {
+			width: 400px;
+		}
 	}
 }

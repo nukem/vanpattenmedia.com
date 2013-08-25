@@ -20,9 +20,9 @@ clean-css:
 	rm -rf $(COMPILED)/stylesheets/
 
 clean-javascripts:
-	rm -rf $(COMPILED)/js/
+	rm -rf $(COMPILED)/javascripts/
 
 clean-images:
-	rm -rf $(COMPILED)/img/
+	rm -rf $(COMPILED)/images/
 
 .PHONY: assets css javascripts images clean clean-css clean-javascripts clean-images

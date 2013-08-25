@@ -8,3 +8,4 @@ javascripts:
     - app/assets/javascripts/script.js
   libraries:
     - vendor/javascripts/formalize/1.2/*.js
+    - vendor/javascripts/pixastic/*.js

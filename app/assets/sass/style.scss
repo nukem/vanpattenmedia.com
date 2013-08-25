@@ -4,9 +4,9 @@ $legacy-support-for-ie8: true;
 
 // Compass Imports
 @import "compass/css3";
-@import "compass/layout";
-@import "susy";
 @import "breakpoint";
+@import "rgbapng";
+@import "susy";
 
 // Modules
 @import "modules/col";
