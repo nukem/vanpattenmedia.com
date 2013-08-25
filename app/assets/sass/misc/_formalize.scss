@@ -4,13 +4,6 @@
 
 @import "compass/css3";
 
-// `Widths
-//----------------------------------------------------------------------------------------------------
-
-.input_full {
-  width: 100%;
-}
-
 // Added via JS to <textarea> and class="input-full".
 // Applies only to IE7. Other browsers don't need it.
 
@@ -134,7 +127,7 @@ input[type="week"] {
   color: black;
   outline: 0;
   margin: 0;
-  padding: 3px 4px;
+  padding: 8px;
   text-align: left;
   font-size: 1.5rem;
   // Leaving out Helvetica Neue, to not throw off size="..."
