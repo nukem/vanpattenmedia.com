@@ -6,9 +6,9 @@ $(document).ready(function() {
 	
 	$('.more').hover(
 		function() {
-			$(this).fadeTo(500, 0.75);
+			$(this).fadeTo(250, 0.9);
 		}, function() {
-			$(this).fadeTo(500, 0.5);
+			$(this).fadeTo(250, 0.5);
 		}
 	);
 
