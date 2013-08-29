@@ -48,3 +48,17 @@ a {
 .copyright span {
 	@extend h2;
 }
+
+.call-to-action {
+	margin-top: 2em;
+	font-size: 120%;
+
+	.button:hover {
+		color: black;
+	}
+}
+
+.button-text {
+	margin: 0 1em;
+	line-height: 36px;
+}

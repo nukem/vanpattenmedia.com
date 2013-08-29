@@ -5,7 +5,7 @@
 .form-label {
 	display: block;
 	@extend h2;
-	margin: 0 0 0.15rem;
+	margin: 0 0 0.5rem;
 	@include opacity( 0.5 );
 
 	@include breakpoint( $break-primary ) {
