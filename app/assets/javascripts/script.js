@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-	$('.more').delay(1000).fadeTo(500, 0.5);
+	$.localScroll();
+
+	$('.more').delay(500).fadeTo(500, 0.5);
 	
 	$('.more').hover(
 		function() {
