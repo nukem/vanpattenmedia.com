@@ -8,6 +8,5 @@ javascripts:
     - app/assets/javascripts/script.js
   libraries:
     - vendor/javascripts/formalize/1.2/*.js
-    - vendor/javascripts/pixastic/*.js
     - vendor/javascripts/jquery.scrollTo/1.4.6/*.js
     - vendor/javascripts/jquery.localScroll/1.2.9b/*.js
