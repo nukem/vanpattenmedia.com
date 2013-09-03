@@ -7,7 +7,7 @@
 		<div class="logo">
 			<img class="logo-image" src="/assets/images/logo.png" alt="Van Patten Media logo" title="Van Patten Media">
 		</div>
-		<a class="more" href="#more">▾</a>
+		<a class="more" href="#more">&#x25BE;</a>
 	</header>
 	<a name="more"></a>
 	<div class="content">
