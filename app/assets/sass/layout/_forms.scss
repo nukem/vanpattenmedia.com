@@ -1,5 +1,6 @@
 .form-block {
 	margin-bottom: 1rem;
+	min-height: 43px;
 }
 
 .form-label {
@@ -10,7 +11,7 @@
 
 	@include breakpoint( $break-primary ) {
 		margin: 0;
-		padding: 0.8rem 0;
+		padding: 0.7rem 0 0;
 		width: 100px;
 		float: left;
 	}

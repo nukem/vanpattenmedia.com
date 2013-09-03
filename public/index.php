@@ -204,7 +204,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-half col-last">
+			<div class="col-half">
 				<h1>Our Team</h1>
 				<p>Van Patten Media is comprised of a rotating group of world-class freelancers. Some of the most frequent members of our team appear below.</p>
 				<ul class="gal gal-half">

@@ -16,6 +16,10 @@ $break-secondary: 600px;
 	@include breakpoint( $break-secondary ) {
 		@include span-columns( 6, 12 );
 	}
+
+	&:last-child {
+		@include omega;
+	}
 }
 
 .col-one-third {
