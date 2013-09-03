@@ -1,37 +1,7 @@
-<!--
-
-This website is open source on Github.
-
-Feel free to send changes and fixes.
-
-https://github.com/vanpattenmedia/vanpattenmedia.com
-
-Note that the license strictly applies to source code that we created. All images and copy is copywritten; all external libraries are used under the terms of their own licenses.
-
--->
+<?php include '../app/views/message.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Van Patten Media</title>
-
-	<script type="text/javascript">
-		(function() {
-			var config = {
-				kitId: 'clh2wue',
-				scriptTimeout: 3000
-			};
-			var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-		})();
-	</script>
-
-	<link rel="stylesheet" href="/assets/stylesheets/style.css">
-
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/assets/javascripts/libraries.js"></script>
-	<script type="text/javascript" src="/assets/javascripts/script.js"></script>
-</head>
+<?php include '../app/views/head.php'; ?>
 <body>
 	<header class="header">
 		<div class="logo">
@@ -208,23 +178,23 @@ Note that the license strictly applies to source code that we created. All image
 				<h1>Get in touch</h1>
 				<p>Website design is a complex and involved process, but starting the conversation is easy: just fill out the form below to learn how Van Patten Media can help your business.</p>
 				<p>We only accept a limited number of clients at any time to ensure we can deliver high quality results. Consequently, there is typically a 1&ndash;2 month waiting period for our services. Get in touch as early as possible to ensure availability.</p>
-				<form action="">
+				<form action="/thank-you/" method="post">
 					<div class="form-block">
 						<label class="form-label" for="">Name</label>
 						<div class="form-controls">
-							<input type="text" placeholder="Arya Stark">
+							<input type="text" id="name" name="name" required>
 						</div>
 					</div>
 					<div class="form-block">
 						<label class="form-label" for="">Email</label>
 						<div class="form-controls">
-							<input type="email" placeholder="arya@wintermail.com">
+							<input type="email" id="email" name="email" required>
 						</div>
 					</div>
 					<div class="form-block">
 						<label class="form-label" for="">Message</label>
 						<div class="form-controls">
-							<textarea id="" name=""></textarea>
+							<textarea id="message" name="message" required></textarea>
 						</div>
 					</div>
 					<div class="form-block">
@@ -281,7 +251,7 @@ Note that the license strictly applies to source code that we created. All image
 			</div>
 		</section>
 		<footer class="footer col-row">
-			<p class="copyright">&copy; 2013 Van Patten Media Inc.</h2>
+			<p class="copyright">&copy; 2013 Van Patten Media Inc. <a href="http://blog.vanpattenmedia.com/">Read our blog.</a></h2>
 		</footer>
 	</div>
 </body>
