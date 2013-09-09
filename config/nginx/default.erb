@@ -41,7 +41,7 @@ server {
 	# More: <http://www.vanpattenmedia.com/2012/a-tale-of-stale-content/>
 	sendfile off;
 
-	rewrite ^/(\d{4}/.*/) http://blog.vanpattenmedia.com/$1 permanent;
+	rewrite "^/(\d{4}/.*/)" http://blog.vanpattenmedia.com/$1 permanent;
 
 	location / {
 		try_files $uri $uri/ /index.html last;
