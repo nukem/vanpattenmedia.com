@@ -30,6 +30,14 @@ require 'vpmframe/capistrano/credentials'
 require 'vpmframe/capistrano/permissions'
 require 'vpmframe/capistrano/wp-salts'
 
+namespace :custom_assets do
+  desc "Upload local assets"
+  task :upload_local_assets, :roles => :app do
+    # Upload assets
+    system("scp -r -P #{fetch(:app_port)} ~/.captemp/#{fetch(:application)}/public/assets #{fetch(:user)}@#{fetch(:app_server)}:#{release_path}/public/")
+  end
+end
+
 # Don't do Railsy things...
 namespace :deploy do
   task :finalize_update do transaction do end end
@@ -54,7 +62,7 @@ before "deploy",
   "assets:compile_local_assets"
 
 before "deploy:create_symlink",
-  "assets:upload_local_assets"
+  "custom_assets:upload_local_assets"
 
 # Fix ownership
 before "deploy:restart",
