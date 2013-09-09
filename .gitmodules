@@ -1,0 +1,6 @@
+[submodule "config/php/modules"]
+	path = config/php/modules
+	url = https://github.com/vanpattenmedia/vpmframe-module-php.git
+[submodule "config/puppet/modules"]
+	path = config/puppet/modules
+	url = https://github.com/vanpattenmedia/vpmframe-module-puppet.git

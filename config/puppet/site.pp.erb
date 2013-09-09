@@ -241,6 +241,15 @@ service { "nginx":
 	restart => "/usr/sbin/nginx -t && /usr/sbin/service nginx reload"
 }
 
+##################################
+#                                #
+#        PHP configuration       #
+#                                #
+##################################
+
+<%= render "#{modules_path}/php5-fpm.erb", binding %>
+<%= render "#{modules_path}/php-logging.erb", binding %>
+
 
 ##################################
 #                                #
