@@ -1,7 +1,12 @@
 .gal {
-	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin: 0 0 1.5rem;
+	@extend %clearfix;
+
+	@include breakpoint( $break-secondary ) {
+		margin: 0;
+	}
 }
 
 .gal-full {
