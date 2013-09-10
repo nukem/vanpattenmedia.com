@@ -25,12 +25,16 @@ html {
 }
 
 body {
-	background: $base-color-background image-url('background.jpg') center fixed no-repeat;
-	background-size: cover;
+	background: $base-color-background;
 	color: $base-color-text;
 	font: #{$base-font-size}/1.5 $base-font-family;
 	@include text-shadow;
 	height: 100%;
+
+	@include breakpoint( $break-primary ) {
+		background: $base-color-background image-url('background.jpg') center fixed no-repeat;
+		background-size: cover;
+	}
 }
 
 .content {

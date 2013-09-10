@@ -2,7 +2,9 @@ $(document).ready(function() {
 
 	$.localScroll();
 
-	$('.more').delay(500).fadeTo(500, 0.5);
+	$('.more').delay(500).animate({
+		opacity: 0.5
+	}, 500 );
 	
 	$('.more').hover(
 		function() {
