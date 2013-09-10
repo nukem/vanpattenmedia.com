@@ -1,6 +1,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>Van Patten Media</title>
 
 	<script type="text/javascript">
@@ -19,7 +20,6 @@
 	<script type="text/javascript" src="/assets/javascripts/libraries.js"></script>
 	<script type="text/javascript" src="/assets/javascripts/script.js"></script>
 	<!--[if lt IE 9]>
-	<meta http-equiv="X-UA-Compatible" content="IE=8">
 	<script src="/assets/javascripts/ie.js"></script>
 	<![endif]-->
 
