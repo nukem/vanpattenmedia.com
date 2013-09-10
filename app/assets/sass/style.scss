@@ -41,6 +41,10 @@ body {
 	background: rgba( black, 0.5 );
 }
 
+.content-main {
+	padding-top: 2rem;
+}
+
 a {
 	color: darken( $base-color-text, 20% );
 
@@ -54,7 +58,7 @@ a {
 }
 
 .call-to-action {
-	margin-top: 2em;
+	margin-top: 1rem;
 	font-size: 120%;
 
 	.button:hover {

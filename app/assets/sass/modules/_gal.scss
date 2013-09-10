@@ -45,18 +45,18 @@
 .gal-item {
 	background: black;
 	text-align: center;
-	margin-bottom: 2em;
 	position: relative;
 	min-height: 100px;
 	line-height: 0;
 	@include border-radius;
 	overflow: hidden;
+	margin-bottom: 0.5rem;
 
+	@include breakpoint( $break-secondary ) {
+		margin-bottom: 2rem;
+	}
 
 	.gal-text {
-		//@include transition-property( opacity );
-		//@include transition-duration( 0.25s );
-		//@include transition-timing-function( ease-in-out );
 		@include opacity( 0 );
 	}
 
