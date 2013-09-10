@@ -4,3 +4,6 @@
 [submodule "config/puppet/modules"]
 	path = config/puppet/modules
 	url = https://github.com/vanpattenmedia/vpmframe-module-puppet.git
+[submodule "config/nginx/modules"]
+	path = config/nginx/modules
+	url = https://github.com/vanpattenmedia/vpmframe-module-nginx.git
