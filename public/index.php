@@ -1,4 +1,3 @@
-<?php include '../app/views/message.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../app/views/head.php'; ?>

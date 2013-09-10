@@ -19,7 +19,6 @@ function email($array) {
 	mail($to, $subject, $message, $headers);
 }
 
-include '../../app/views/message.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
