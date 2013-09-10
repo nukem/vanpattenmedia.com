@@ -18,6 +18,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 1.5rem;
 	letter-spacing: 2px;
+	margin-top: 0;
+	padding: 3rem 0 0;
 }
 
 h2 {
@@ -28,7 +30,7 @@ h2 {
 ul {
 	list-style: square;
 	padding: 0 0 0 1em;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 p {
